@@ -3,41 +3,35 @@
           box-sizing: border-box;
 }
 
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 a {
   text-decoration: none;
 }
 
 body {
-  z-index: -1000;
-  display: block;
-  margin: 0;
-  background-color: #666469;
-}
-
-#all_menu_id {
-  height: 90%;
-  width: 200px;
-  position: fixed;
-  display: block;
-  left: 0px;
-  bottom: 0px;
-  z-index: 100;
+  padding: 0;
+  margin: 0px;
+  z-index: -10000;
 }
 
 .menu-open-button {
-  position: relative;
   display: inline-block;
-  height: 100%;
-  width: 200px;
+  width: 100px;
+  height: 100px;
+  z-index: 100px;
 }
 
-.menuButton {
-  display: block;
+#menu-button-id {
   position: absolute;
-  width: 50px;
-  height: 50px;
-  top: 30px;
-  left: 30px;
+  width: 70px;
+  height: 70px;
+  top: 20px;
+  left: 20px;
   background: gray;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
@@ -45,26 +39,34 @@ body {
   border-bottom-left-radius: 10px;
 }
 
-.menuButton div {
+.menu-button div {
   display: block;
   position: absolute;
   background: black;
   right: 50%;
   top: 50%;
-  width: 40px;
-  height: 1px;
+  width: 50px;
+  height: 2px;
   -webkit-transform: translate(50%, 0);
-          transform: translate(50%, 0);
+  transform: translate(50%, 0);
 }
 
-.menuButton div:nth-of-type(1) {
-  -webkit-transform: translate(50%, -10px);
-          transform: translate(50%, -10px);
+.menu-button div:nth-of-type(1) {
+  -webkit-transform: translate(50%, -15px);
+  transform: translate(50%, -15px);
 }
 
-.menuButton div:nth-of-type(3) {
-  -webkit-transform: translate(50%, 10px);
-          transform: translate(50%, 10px);
+.menu-button div:nth-of-type(3) {
+  -webkit-transform: translate(50%, 15px);
+  transform: translate(50%, 15px);
+}
+
+.home-button {
+  display: inline-block;
+}
+
+.register_login_logout {
+  display: inline-block;
 }
 
 nav {
@@ -88,12 +90,12 @@ nav.active {
   transition: .3s;
   bottom: 20px;
   left: 20px;
-  transition: .3s;
 }
 
 .Menu-buttons.active {
   opacity: 1;
   visibility: visible;
+  z-index: 1000;
 }
 
 .profile-button {
@@ -236,18 +238,19 @@ nav.active {
 }
 
 #border_line::after {
-  content: "";
   display: block;
   height: 3px;
   background-image: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
 }
 
 .header-nav-box {
+  display: block;
   width: 100%;
   height: 110px;
   position: fixed;
   background: -webkit-gradient(linear, left top, right bottom, from(gray), to(black));
   background: linear-gradient(to bottom right, gray, black);
+  z-index: 1000;
 }
 
 .lines {
@@ -288,11 +291,24 @@ nav.active {
   left: 40%;
 }
 
-.content {
-  position: absolute;
+.under-header {
   display: block;
+  position: absolute;
+  background-color: #7e7e7e;
   top: 110px;
+  height: 740px;
   width: 100%;
-  height: 80%;
+  z-index: 100;
 }
-/*# sourceMappingURL=base.css.map */
+
+.all_menu_class {
+  height: 110px;
+}
+
+.all_menu_class.content {
+  position: absolute;
+  top: 100px;
+  width: 100%;
+  height: 100%;
+}
+/*# sourceMappingURL=base2.css.map */

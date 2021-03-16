@@ -1,10 +1,9 @@
-{% extends 'base2.html' %}
+{% extends 'base.html' %}
 {% load static %}
 {% block stylesheet %}
 <link rel="stylesheet" href="{% static 'login/login.css' %}"
 {% endblock %}
 {% block contents %}
 <h2>ログイン</h2>
-<img src="{% static 'images/computer01.jpg' %}" alt = "画像" id = "01code"></img>
 {% include '_form.html' with submit_label='ログイン' %}
 {% endblock　%}

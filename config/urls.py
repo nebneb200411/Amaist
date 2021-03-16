@@ -18,13 +18,27 @@ from django.urls import path, include
 from django.views.generic import TemplateView
 from django.contrib.auth.decorators import login_required
 from registration import views
+from . import settings
+from django.conf.urls.static import static
+
+# admin.site.site_title = 'WebApp管理サイト'
+# admin.site.site_header = 'WebApp管理サイト'
+# admin.site.index_title = 'メニュー'
+# admin.site.disable_action('delete_selected')
 
 index_view = TemplateView.as_view(template_name='registration/index.html')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', login_required(index_view), name='index'), 
+    path('', login_required(index_view), name='index'),
     path('', include('django.contrib.auth.urls')),
-    path('registration/', views.SignUpView.as_view(), name = 'sign_up'),
-    path('activate/<uidb64>/<token>/', views.ActivateView.as_view(), name='activate'),
+    path('registration/', views.SignUpView.as_view(), name='sign_up'),
+    path('activate/<uidb64>/<token>/',
+         views.ActivateView.as_view(), name='activate'),
+    path('summernote/', include('django_summernote.urls')),
+    path('article/', include('Article.urls'))
 ]
+
+# 開発環境なので以下を設定
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, documet_root=settings.MEDIA_ROOT)

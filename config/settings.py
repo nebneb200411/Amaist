@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -29,8 +30,10 @@ ALLOWED_HOSTS = ['*']
 
 
 # Application definition
-#上から順に読み込まれるので注意
+# 上から順に読み込まれるので注意
 INSTALLED_APPS = [
+    'Article',
+    'django_summernote',
     'registration',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -52,7 +55,6 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'config.urls'
 
-import os
 
 TEMPLATES = [
     {
@@ -120,23 +122,31 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-#staticファイルの読み込み
+# staticファイルの読み込み
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
 
 
-#本プロジェクトで用いるユーザーモデル
+# 本プロジェクトで用いるユーザーモデル
 AUTH_USER_MODEL = 'registration.User'
 
-#ログイン成功時のURLおよび，ログアウト後のURL
+# ログイン成功時のURLおよび，ログアウト後のURL
 LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/login/'
 
-#個人サーバー用Email設定
+# 個人サーバー用Email設定
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-#フロントエンドURLの設定
+# フロントエンドURLの設定
 FRONTEND_URL = "http://127.0.0.1:8000/"
+
+# メディアの設定
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+X_FRAME_OPTIONS = 'SAMEORIGIN'
+
+SUMMERNOTE_THEME = 'bs4'
