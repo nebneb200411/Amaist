@@ -1,7 +1,8 @@
 from django.db import models
 from django.contrib.auth import get_user_model
 
-# ユーザーモデルの取得をする
+
+# ユーザー名取得
 User = get_user_model()
 
 

@@ -32,7 +32,8 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 # 上から順に読み込まれるので注意
 INSTALLED_APPS = [
-    'Article',
+    'profiles',
+    'article',
     'django_summernote',
     'registration',
     'django.contrib.admin',

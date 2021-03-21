@@ -36,7 +36,8 @@ urlpatterns = [
     path('activate/<uidb64>/<token>/',
          views.ActivateView.as_view(), name='activate'),
     path('summernote/', include('django_summernote.urls')),
-    path('article/', include('Article.urls'))
+    path('article/', include('article.urls')),
+    path('profile/', include('profiles.urls')),
 ]
 
 # 開発環境なので以下を設定

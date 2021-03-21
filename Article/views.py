@@ -13,12 +13,13 @@ class ArticleFormCreateView(LoginRequiredMixin, CreateView):
     success_url = reverse_lazy('index')
     model = Article
 
-    def save(self, form):
+    def form_valid(self, form):
         article = form.save(commit=False)
-        article.user = self.request.user
+        article.author = self.request.user
         article.save()
         messages.success(self.request, '記事を作成しました')
-        return super().save(form)
+        return super().form_valid(form)
 
-    def save_fail(self, form):
+    def form_invalid(self, form):
         messages.error(self.request, '記事の作成に失敗しました')
+        return super().form_invalid(form)
