@@ -2,6 +2,10 @@
 {% block contents %}
 <p><a href="{% url 'password_change' %}">パスワードの変更</a></p>
 <p><a href = "{% url 'password_reset' %}">パスワードを忘れた場合</a></p>
-{{ username }}
-{{ icon }}
+{% for profile in profile_data %}
+{{ profile.icon }}
+{{ profile.username }}
+{{ profile.articles }}
+{{ profile.introduction }}
+{% endfor %}
 {% endblock %}

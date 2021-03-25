@@ -2,9 +2,11 @@ from django.views.generic.edit import CreateView
 from django.urls import reverse_lazy
 from .forms import SignUpForm
 from .forms import activate_user
-from django.views.generic import TemplateView
-from django.views.generic import DeleteView
+from django.views.generic import TemplateView, UpdateView, DetailView, DeleteView
 from .models import User
+from django.contrib.auth.mixins import LoginRequiredMixin
+from .forms import ProfileForm
+from django.contrib import messages
 
 # SigUpのためのViewを作成
 
@@ -28,3 +30,26 @@ class ActivateView(TemplateView):
 class UserDeleteView(DeleteView):
     model = User
     success_url = reverse_lazy('login')
+
+
+class UserProfileUpdateView(UpdateView, LoginRequiredMixin):
+    model = User
+    template_name = 'profile/profile_update.html'
+    form_class = ProfileForm
+
+    def get_success_url(self):
+        return reverse_lazy('index')
+
+    def form_valid(self, form):
+        messages.success(self.request, 'プロフィールの編集に成功しました．')
+        return super().form_valid(form)
+
+    def form_invalid(self, form):
+        messages.error(self.request, 'プロフィールの編集に失敗しました．')
+        return super().form_invalid(form)
+
+
+class UserProfileDetailView(DetailView, LoginRequiredMixin):
+    model = User
+    template_name = 'profile/profile_detail.html'
+    pk_url_kwargs = 'id'

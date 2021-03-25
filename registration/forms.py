@@ -5,6 +5,7 @@ from django.conf import settings
 from django.contrib.auth.tokens import default_token_generator
 from django.utils.encoding import force_bytes, force_text
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
+from django import forms
 
 # ユーザーモデルの取得
 User = get_user_model()
@@ -59,3 +60,14 @@ def activate_user(uidb64, token):
         return True
 
     return False
+
+
+class ProfileForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ('icon', 'username', 'introduction')
+        widgets = {
+            'icon': forms.FileInput(attrs={'class': 'icon'}),
+            'introduction': forms.TextInput(attrs={'class': 'introduction'}),
+            'username': forms.TextInput(attrs={'class': 'username'}),
+        }

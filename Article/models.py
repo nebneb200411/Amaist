@@ -14,7 +14,7 @@ class Article(models.Model):
     updated_at = models.DateTimeField('更新日', auto_now=True)
 
     def __str__(self):
-        return self.author
+        return self.title
 
     class Meta:
         verbose_name = '記事'

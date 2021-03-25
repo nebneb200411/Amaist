@@ -37,7 +37,10 @@ urlpatterns = [
          views.ActivateView.as_view(), name='activate'),
     path('summernote/', include('django_summernote.urls')),
     path('article/', include('article.urls')),
-    path('profile/', include('profiles.urls')),
+    path('profile_update/<int:pk>', views.UserProfileUpdateView.as_view(),
+         name='profile_update'),
+    path('profile_detail/<int:pk>', views.UserProfileDetailView.as_view(),
+         name='profile_detail')
 ]
 
 # 開発環境なので以下を設定
