@@ -39,10 +39,14 @@ urlpatterns = [
     path('article/', include('article.urls')),
     path('profile_update/<int:pk>', views.UserProfileUpdateView.as_view(),
          name='profile_update'),
+    path('profile_detail/<int:pk>',
+         views.ArticleListView.as_view(), name='article_list'),
     path('profile_detail/<int:pk>', views.UserProfileDetailView.as_view(),
-         name='profile_detail')
+         name='profile_detail'),
+
 ]
 
 # 開発環境なので以下を設定
 if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, documet_root=settings.MEDIA_ROOT)
+    urlpatterns += static(settings.MEDIA_URL,
+                          document_root=settings.MEDIA_ROOT)

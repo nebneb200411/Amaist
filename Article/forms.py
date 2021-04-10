@@ -9,4 +9,5 @@ class ArticleForm(forms.ModelForm):
         fields = ('title', 'content')
         widgets = {
             'content': SummernoteWidget(),
+            'title': forms.TextInput(attrs={'class': 'title'}),
         }

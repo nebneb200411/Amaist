@@ -2,11 +2,12 @@ from django.views.generic.edit import CreateView
 from django.urls import reverse_lazy
 from .forms import SignUpForm
 from .forms import activate_user
-from django.views.generic import TemplateView, UpdateView, DetailView, DeleteView
+from django.views.generic import TemplateView, UpdateView, DetailView, DeleteView, ListView
 from .models import User
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .forms import ProfileForm
 from django.contrib import messages
+from article.models import Article
 
 # SigUpのためのViewを作成
 
@@ -49,7 +50,18 @@ class UserProfileUpdateView(UpdateView, LoginRequiredMixin):
         return super().form_invalid(form)
 
 
+class ArticleListView(ListView, LoginRequiredMixin):
+    model = Article
+    pagenate_by = 5
+    template_name = 'profile/profile_detail.html'
+
+    def get_queryset(self):
+        articles = Article.objects.filter(
+            author=self.request.user).order_by('-created_at')
+        return articles
+
+
 class UserProfileDetailView(DetailView, LoginRequiredMixin):
-    model = User
     template_name = 'profile/profile_detail.html'
     pk_url_kwargs = 'id'
+    model = User
