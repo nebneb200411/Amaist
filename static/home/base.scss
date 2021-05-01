@@ -14,303 +14,130 @@ a {
 }
 
 body {
-    padding: 0;
-    margin: 0px;
-    z-index: -10000;
-    height: 0px;
-}
+    background-color: gray;
 
-.menu-open-button {
-    display: inline-block;
-    width: 100px;
-    height: 100px;
-    z-index: 100px;
-}
+    header {
+        position: fixed;
+        height: 100px;
+        width: 100%;
 
-//*ハンバーガーメニュー
-#menu-button-id {
-    position: absolute;
-    width: 70px;
-    height: 70px;
-    top: 20px;
-    left: 20px;
-    background: gray;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
-}
+        .menu-button closed {
+            visibility: hidden;
+        }
 
-.menu-button div {
-    display: block;
-    position: absolute;
-    background: black;
-    right: 50%;
-    top: 50%;
-    width: 50px;
-    height: 2px;
-    -webkit-transform: translate(50%, 0);
-    transform: translate(50%, 0);
-}
+        .menu-button {
+            position: relative;
+            top: 10px;
+            left: 10px;
+            width: 80px;
+            height: 80px;
+            background-color: transparent;
+            border-radius: 10px;
+            border: solid 2px gray;
 
-.menu-button div:nth-of-type(1) {
-    -webkit-transform: translate(50%, -15px);
-    transform: translate(50%, -15px);
-}
+            &.clicked {
+                background-color: blue;
+                transition: .3s;
+            }
 
-.menu-button div:nth-of-type(3) {
-    -webkit-transform: translate(50%, 15px);
-    transform: translate(50%, 15px);
-}
 
-//ハンバーガーメニュー
-.home-button {
-    display: inline-block;
-}
 
-.register_login_logout {
-    display: inline-block;
-}
+            .top-line {
+                position: absolute;
+                top: 25%;
+                left: 50%;
+                display: block;
+                width: 70%;
+                height: 5px;
+                border: solid 2px white;
+                background-color: white;
+                transform: translateX(-50%);
+                -webkit-transform: translateX(-50%);
+            }
 
-nav {
-    opacity: 0;
-    visibility: hidden;
-    -webkit-transition: .3s;
-    transition: .3s;
-}
+            .middle-line {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                display: block;
+                width: 70%;
+                height: 5px;
+                border: solid 2px white;
+                background-color: white;
+                transform: translateX(-50%);
+                -webkit-transform: translateX(-50%);
+            }
 
-nav.active {
-    opacity: 1;
-    visibility: visible;
-}
+            .bottom-line {
+                position: absolute;
+                top: 75%;
+                left: 50%;
+                display: block;
+                width: 70%;
+                height: 5px;
+                border: solid 2px white;
+                background-color: white;
+                transform: translateX(-50%);
+                -webkit-transform: translateX(-50%);
+            }
+        }
 
-.Menu-buttons {
-    display: block;
-    opacity: 0;
-    position: absolute;
-    visibility: hidden;
-    -webkit-transition: .3s;
-    transition: .3s;
-    bottom: 20px;
-    left: 20px;
-}
+        .header-nav {
+            position: relative;
+            width: 15%;
+            top: 10px;
+            background-color: black;
+            transform: translateX(-100%);
+            transition: .3s;
 
-.Menu-buttons.active {
-    opacity: 1;
-    visibility: visible;
-    z-index: 1000;
-}
 
-.profile-button {
-    display: block;
-    position: relative;
-    height: 140px;
-    width: 200px;
-}
+            &.slide-in {
+                transform: translateX(0px);
+                transition: .3s;
+            }
 
-#profile {
-    position: absolute;
-    left: 10px;
-}
 
-.training-button {
-    display: block;
-    position: relative;
-    height: 140px;
-    width: 200px;
-}
+            .header-menu {}
 
-#training {
-    display: block;
-    position: absolute;
-    right: 10px;
-}
 
-.article-button {
-    display: block;
-    position: relative;
-    height: 140px;
-    width: 200px;
-}
 
-#article {
-    display: block;
-    position: absolute;
-    left: 10px;
-}
 
-.competition-button {
-    display: block;
-    position: relative;
-    height: 140px;
-    width: 200px;
-}
+            li {
+                padding: 10px;
+                border-bottom: solid 1px white;
+                list-style: none;
+            }
 
-#competition {
-    display: block;
-    position: absolute;
-    right: 10px;
-}
+        }
+    }
 
-.topics-button {
-    display: block;
-    position: relative;
-    height: 140px;
-    width: 200px;
-}
+    main {
+        display: block;
+        position: absolute;
+        top: 100px;
+        width: 100%;
+        height: 80%;
 
-#topics {
-    display: block;
-    position: absolute;
-    left: 10px;
-}
+        .login-content {
+            position: relative;
+            top: 100px;
+            height: 100%;
 
-.register-button {
-    position: relative;
-    display: inline-block;
-    width: 150px;
-    height: 110px;
-}
+            form {
+                position: absolute;
+                transform: translate(50%, 90%);
+                -webkit-transform: translate(50%, 90%);
+                width: 50%;
+            }
 
-#register_button {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    font-size: 20px;
-    font-style: italic;
-    font-family: 'Droid Sans';
-    font-weight: bold;
-    color: white;
-}
+            h2 {
+                transform: translateX(50%);
+                -webkit-transform: translateX(50%);
+            }
+        }
 
-#login_button {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    font-size: 20px;
-    font-style: italic;
-    font-family: 'Droid Sans';
-    font-weight: bold;
-    color: white;
-}
 
-.login-button {
-    position: relative;
-    display: inline-block;
-    width: 150px;
-    height: 110px;
-}
+    }
 
-.logout-button {
-    position: relative;
-    display: inline-block;
-    width: 150px;
-    height: 110px;
-}
 
-#logout_button {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    font-size: 20px;
-    font-style: italic;
-    font-family: 'Droid Sans';
-    font-weight: bold;
-    color: white;
-}
-
-.register_login_logout {
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    width: 500px;
-    height: 110px;
-}
-
-#border_line {
-    position: absolute;
-    top: 250px;
-    left: 100px;
-    visibility: hidden;
-}
-
-#border_line::after {
-    display: block;
-    height: 3px;
-    background-image: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
-}
-
-.header-nav-box {
-    display: block;
-    width: 100%;
-    height: 110px;
-    position: fixed;
-    background: -webkit-gradient(linear, left top, right bottom, from(gray), to(black));
-    background: linear-gradient(to bottom right, gray, black);
-    z-index: 1000;
-}
-
-.lines {
-    z-index: 100;
-    position: relative;
-}
-
-#profile-link {
-    color: black;
-}
-
-#profile-button {
-    z-index: 100;
-}
-
-#line_28 {
-    z-index: -1;
-}
-
-.home-button {
-    position: relative;
-    display: inline-block;
-    width: 10%;
-    height: 100%;
-}
-
-.home-button>i {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-}
-
-.fa-home {
-    font-size: 30px;
-    color: white;
-    position: relative;
-    top: 40%;
-    left: 40%;
-}
-
-.under-header {
-    display: block;
-    position: absolute;
-    background-color: rgb(126, 126, 126);
-    top: 110px;
-    height: 740px;
-    width: 100%;
-    z-index: 100;
-}
-
-.all_menu_class {
-    height: 0px;
-}
-
-.all_menu_class.content {
-    position: absolute;
-    top: 100px;
-    width: 100%;
-    height: 100%;
 }

@@ -12,20 +12,25 @@
 
 <div class='profile-left'>
 
-    <div class='icon'><img src="{{ MEDIA_URL }}{{user.icon}}"/ style="width:300px; height:auto;">
-    </div>
+    <div class='container'>
+        <div class='row'>
+
+            <div class='my-div-style w-100' id='icon'><img src="{{ MEDIA_URL }}{{user.icon}}"/ style="width:300px; height:auto;">
+            </div>
 
 
-    <div class='username'> 
+            <div class='my-div-style w-100' id='username'> 
 
-        <h1><p>{{user.username}}</p></h1>
+                <h1><p>{{user.username}}</p></h1>
 
-    </div>
+            </div>
 
-    <div class='introduction'> 
+            <div class='my-div-style w-100' id='introduction'> 
 
-        {{user.introduction}}
+                {{user.introduction}}
 
+            </div>
+        </div>
     </div>
 
 </div> 

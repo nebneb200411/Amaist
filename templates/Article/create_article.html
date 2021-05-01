@@ -5,7 +5,7 @@
     {% csrf_token %}
     {% autoescape off %}
     {{form.as_p}}
-    <input type="submit" label='記事を作成'></input>
+    <input type="submit" label='記事を作成' class="btn btn-success"></input>
     {% endautoescape %}
 </form>
 {% endblock contents %}

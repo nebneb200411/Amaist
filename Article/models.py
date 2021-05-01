@@ -1,7 +1,6 @@
 from django.db import models
 from django.contrib.auth import get_user_model
 
-
 # ユーザー名取得
 User = get_user_model()
 

@@ -16,302 +16,122 @@ a {
 }
 
 body {
-  padding: 0;
-  margin: 0px;
-  z-index: -10000;
-  height: 0px;
+  background-color: gray;
 }
 
-.menu-open-button {
-  display: inline-block;
-  width: 100px;
-  height: 100px;
-  z-index: 100px;
-}
-
-#menu-button-id {
-  position: absolute;
-  width: 70px;
-  height: 70px;
-  top: 20px;
-  left: 20px;
-  background: gray;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px;
-}
-
-.menu-button div {
-  display: block;
-  position: absolute;
-  background: black;
-  right: 50%;
-  top: 50%;
-  width: 50px;
-  height: 2px;
-  -webkit-transform: translate(50%, 0);
-  transform: translate(50%, 0);
-}
-
-.menu-button div:nth-of-type(1) {
-  -webkit-transform: translate(50%, -15px);
-  transform: translate(50%, -15px);
-}
-
-.menu-button div:nth-of-type(3) {
-  -webkit-transform: translate(50%, 15px);
-  transform: translate(50%, 15px);
-}
-
-.home-button {
-  display: inline-block;
-}
-
-.register_login_logout {
-  display: inline-block;
-}
-
-nav {
-  opacity: 0;
-  visibility: hidden;
-  -webkit-transition: .3s;
-  transition: .3s;
-}
-
-nav.active {
-  opacity: 1;
-  visibility: visible;
-}
-
-.Menu-buttons {
-  display: block;
-  opacity: 0;
-  position: absolute;
-  visibility: hidden;
-  -webkit-transition: .3s;
-  transition: .3s;
-  bottom: 20px;
-  left: 20px;
-}
-
-.Menu-buttons.active {
-  opacity: 1;
-  visibility: visible;
-  z-index: 1000;
-}
-
-.profile-button {
-  display: block;
-  position: relative;
-  height: 140px;
-  width: 200px;
-}
-
-#profile {
-  position: absolute;
-  left: 10px;
-}
-
-.training-button {
-  display: block;
-  position: relative;
-  height: 140px;
-  width: 200px;
-}
-
-#training {
-  display: block;
-  position: absolute;
-  right: 10px;
-}
-
-.article-button {
-  display: block;
-  position: relative;
-  height: 140px;
-  width: 200px;
-}
-
-#article {
-  display: block;
-  position: absolute;
-  left: 10px;
-}
-
-.competition-button {
-  display: block;
-  position: relative;
-  height: 140px;
-  width: 200px;
-}
-
-#competition {
-  display: block;
-  position: absolute;
-  right: 10px;
-}
-
-.topics-button {
-  display: block;
-  position: relative;
-  height: 140px;
-  width: 200px;
-}
-
-#topics {
-  display: block;
-  position: absolute;
-  left: 10px;
-}
-
-.register-button {
-  position: relative;
-  display: inline-block;
-  width: 150px;
-  height: 110px;
-}
-
-#register_button {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  font-size: 20px;
-  font-style: italic;
-  font-family: 'Droid Sans';
-  font-weight: bold;
-  color: white;
-}
-
-#login_button {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  font-size: 20px;
-  font-style: italic;
-  font-family: 'Droid Sans';
-  font-weight: bold;
-  color: white;
-}
-
-.login-button {
-  position: relative;
-  display: inline-block;
-  width: 150px;
-  height: 110px;
-}
-
-.logout-button {
-  position: relative;
-  display: inline-block;
-  width: 150px;
-  height: 110px;
-}
-
-#logout_button {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  font-size: 20px;
-  font-style: italic;
-  font-family: 'Droid Sans';
-  font-weight: bold;
-  color: white;
-}
-
-.register_login_logout {
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  width: 500px;
-  height: 110px;
-}
-
-#border_line {
-  position: absolute;
-  top: 250px;
-  left: 100px;
-  visibility: hidden;
-}
-
-#border_line::after {
-  display: block;
-  height: 3px;
-  background-image: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
-}
-
-.header-nav-box {
-  display: block;
-  width: 100%;
-  height: 110px;
+body header {
   position: fixed;
-  background: -webkit-gradient(linear, left top, right bottom, from(gray), to(black));
-  background: linear-gradient(to bottom right, gray, black);
-  z-index: 1000;
-}
-
-.lines {
-  z-index: 100;
-  position: relative;
-}
-
-#profile-link {
-  color: black;
-}
-
-#profile-button {
-  z-index: 100;
-}
-
-#line_28 {
-  z-index: -1;
-}
-
-.home-button {
-  position: relative;
-  display: inline-block;
-  width: 10%;
-  height: 100%;
-}
-
-.home-button > i {
-  position: absolute;
+  height: 100px;
   width: 100%;
-  height: 100%;
 }
 
-.fa-home {
-  font-size: 30px;
-  color: white;
+body header .menu-button closed {
+  visibility: hidden;
+}
+
+body header .menu-button {
   position: relative;
-  top: 40%;
-  left: 40%;
+  top: 10px;
+  left: 10px;
+  width: 80px;
+  height: 80px;
+  background-color: transparent;
+  border-radius: 10px;
+  border: solid 2px gray;
 }
 
-.under-header {
+body header .menu-button.clicked {
+  background-color: blue;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+body header .menu-button .top-line {
+  position: absolute;
+  top: 25%;
+  left: 50%;
   display: block;
+  width: 70%;
+  height: 5px;
+  border: solid 2px white;
+  background-color: white;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+}
+
+body header .menu-button .middle-line {
   position: absolute;
-  background-color: #7e7e7e;
-  top: 110px;
-  height: 740px;
-  width: 100%;
-  z-index: 100;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: 70%;
+  height: 5px;
+  border: solid 2px white;
+  background-color: white;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
 }
 
-.all_menu_class {
-  height: 0px;
+body header .menu-button .bottom-line {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  display: block;
+  width: 70%;
+  height: 5px;
+  border: solid 2px white;
+  background-color: white;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
 }
 
-.all_menu_class.content {
+body header .header-nav {
+  position: relative;
+  width: 15%;
+  top: 10px;
+  background-color: black;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+body header .header-nav.slide-in {
+  -webkit-transform: translateX(0px);
+          transform: translateX(0px);
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+body header .header-nav li {
+  padding: 10px;
+  border-bottom: solid 1px white;
+  list-style: none;
+}
+
+body main {
+  display: block;
   position: absolute;
   top: 100px;
   width: 100%;
+  height: 80%;
+}
+
+body main .login-content {
+  position: relative;
+  top: 100px;
   height: 100%;
+}
+
+body main .login-content form {
+  position: absolute;
+  transform: translate(50%, 90%);
+  -webkit-transform: translate(50%, 90%);
+  width: 50%;
+}
+
+body main .login-content h2 {
+  transform: translateX(50%);
+  -webkit-transform: translateX(50%);
 }
 /*# sourceMappingURL=base.css.map */
