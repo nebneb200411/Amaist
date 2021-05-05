@@ -65,3 +65,6 @@ class UserProfileDetailView(DetailView, LoginRequiredMixin):
     template_name = 'profile/profile_detail.html'
     pk_url_kwargs = 'id'
     model = User
+
+    def get_context_data(self, **kwargs):
+        return super().get_context_data(**kwargs)

@@ -4,6 +4,8 @@
 <link rel="stylesheet" href="{% static 'login/login.css' %}"
 {% endblock %}
 {% block contents %}
-<h2>ログイン</h2>
-{% include '_form.html' with submit_label='ログイン' %}
-{% endblock　%}
+    <div class="login_contents">
+        <h2>ログイン</h2>
+        {% include '_form.html' with submit_label='ログイン' %}
+    </div>
+{% endblock contents%}
