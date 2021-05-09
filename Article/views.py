@@ -23,3 +23,9 @@ class ArticleFormCreateView(LoginRequiredMixin, CreateView):
     def form_invalid(self, form):
         messages.error(self.request, '記事の作成に失敗しました')
         return super().form_invalid(form)
+
+
+class ArticleView(ListView):
+    template_name = 'registration/index.html'
+    model = Article
+    order_by = '-created_at'

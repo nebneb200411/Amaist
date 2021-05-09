@@ -5,4 +5,5 @@ app_name = 'article'
 
 urlpatterns = [
     path('', views.ArticleFormCreateView.as_view(), name='CreateArticle'),
+    path('index/', views.ArticleView.as_view(), name='article_list'),
 ]

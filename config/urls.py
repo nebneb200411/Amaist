@@ -20,6 +20,7 @@ from django.contrib.auth.decorators import login_required
 from registration import views
 from . import settings
 from django.conf.urls.static import static
+from article.views import ArticleView
 
 # admin.site.site_title = 'WebApp管理サイト'
 # admin.site.site_header = 'WebApp管理サイト'
@@ -31,19 +32,14 @@ index_view = TemplateView.as_view(template_name='registration/index.html')
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', login_required(index_view), name='index'),
+    path('', ArticleView.as_view(), name='article_timeline'),
     path('', include('django.contrib.auth.urls')),
     path('registration/', views.SignUpView.as_view(), name='sign_up'),
     path('activate/<uidb64>/<token>/',
          views.ActivateView.as_view(), name='activate'),
     path('summernote/', include('django_summernote.urls')),
     path('article/', include('article.urls')),
-    path('profile_update/<int:pk>', views.UserProfileUpdateView.as_view(),
-         name='profile_update'),
-    path('profile_detail/<int:pk>',
-         views.ArticleListView.as_view(), name='article_list'),
-    path('profile_detail/<int:pk>', views.UserProfileDetailView.as_view(),
-         name='profile_detail'),
-
+    path('profile/', include('registration.urls')),
 ]
 
 # 開発環境なので以下を設定

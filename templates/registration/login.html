@@ -7,5 +7,10 @@
     <div class="login_contents">
         <h2>ログイン</h2>
         {% include '_form.html' with submit_label='ログイン' %}
+        <div class='forget_password_link'>
+        <p><a href = "{% url 'password_reset' %}">パスワードを忘れた場合</a></p>
+        </div>
     </div>
+
+    
 {% endblock contents%}
