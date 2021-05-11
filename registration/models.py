@@ -9,3 +9,13 @@ class User(AbstractUser):
     icon = models.ImageField('アイコン', upload_to='images', blank=True)
     # articles = models.ForeignKey(
     # 'article.Article', blank=True, on_delete=models.CASCADE, null=True)
+
+
+class Follow(models.Model):
+    follow_by = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name='follow_to')
+    follow_to = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name='follow_by')
+
+    def __str__(self):
+        return self.follow_by
