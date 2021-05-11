@@ -1,4 +1,4 @@
-from django.views.generic import CreateView, ListView
+from django.views.generic import CreateView, ListView, DetailView, UpdateView
 from .forms import ArticleForm
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -9,7 +9,7 @@ from django.contrib import messages
 
 class ArticleFormCreateView(LoginRequiredMixin, CreateView):
     form_class = ArticleForm
-    template_name = "Article/create_article.html"
+    template_name = "article/create_article.html"
     success_url = reverse_lazy('index')
     model = Article
 
@@ -29,3 +29,18 @@ class ArticleView(ListView):
     template_name = 'registration/index.html'
     model = Article
     order_by = '-created_at'
+
+
+class ArticleDetailView(DetailView):
+    template_name = 'article/detail.html'
+    model = Article
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['pk'] = Article.objects.filter()(pk=self.kwargs.get('pk'))
+        return context
+
+
+class ArticleModifyView(UpdateView):
+    template_name = 'article/modify.html'
+    model = Article
