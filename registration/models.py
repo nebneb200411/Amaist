@@ -7,15 +7,19 @@ class User(AbstractUser):
     introduction = models.TextField(
         '自己紹介', max_length=255, unique=True, blank=True)
     icon = models.ImageField('アイコン', upload_to='images', blank=True)
+    followees = models.ManyToManyField('User', verbose_name='フォロー中のユーザー',
+                                       through='Follow', related_name='+', through_fields=('follower', 'followee'))
+    followers = models.ManyToManyField('User', verbose_name='フォローされているユーザー',
+                                       through='Follow', related_name='+', through_fields=('followee', 'follower'))
     # articles = models.ForeignKey(
     # 'article.Article', blank=True, on_delete=models.CASCADE, null=True)
 
 
 class Follow(models.Model):
-    follow_by = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name='follow_to')
-    follow_to = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name='follow_by')
+    follower = models.ForeignKey(
+        'User', on_delete=models.CASCADE, related_name='follower_friendship', null=True)
+    followee = models.ForeignKey(
+        'User', on_delete=models.CASCADE, related_name='followee_friendship', null=True)
 
-    def __str__(self):
-        return self.follow_by
+    class Meta:
+        unique_together = ('follower', 'followee')

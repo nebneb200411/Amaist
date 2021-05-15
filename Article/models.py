@@ -5,6 +5,13 @@ from django.contrib.auth import get_user_model
 User = get_user_model()
 
 
+class Tag(models.Model):
+    tag_name = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.tag_name
+
+
 class Article(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     content = models.TextField('テキスト')
@@ -12,6 +19,7 @@ class Article(models.Model):
     created_at = models.DateTimeField('作成日', auto_now_add=True)
     updated_at = models.DateTimeField('更新日', auto_now=True)
     good_count = models.IntegerField('いいねの数', default=0)
+    #tags = models.ManyToManyField('タグ', Tag)
 
     def __str__(self):
         return self.title
