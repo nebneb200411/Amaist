@@ -3,7 +3,7 @@ from django.urls import reverse_lazy
 from .forms import SignUpForm
 from .forms import activate_user
 from django.views.generic import TemplateView, UpdateView, DetailView, DeleteView, ListView
-from .models import User
+from .models import User, Follow
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .forms import ProfileForm
 from django.contrib import messages
@@ -70,3 +70,8 @@ class UserProfileDetailView(DetailView, LoginRequiredMixin):
         context = super().get_context_data(**kwargs)
         context['pk'] = User.objects.filter(pk=self.kwargs.get('pk'))
         return context
+
+
+class FriendAddView(TemplateView, LoginRequiredMixin):
+    template_name = 'profile/other_user_profile.html'
+    model = Follow
