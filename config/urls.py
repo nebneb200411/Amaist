@@ -40,6 +40,7 @@ urlpatterns = [
     path('summernote/', include('django_summernote.urls')),
     path('article/', include('article.urls')),
     path('profile/', include('registration.urls')),
+    path('profiles/', include('profiles.urls')),
 ]
 
 # 開発環境なので以下を設定
