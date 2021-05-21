@@ -29,6 +29,17 @@ class ArticleView(ListView):
     template_name = 'registration/index.html'
     model = Article
     order_by = '-created_at'
+    
+
+class ArticleListView(ListView, LoginRequiredMixin):
+    model = Article
+    pagenate_by = 5
+    template_name = 'profile/profile_detail.html'
+
+    def get_queryset(self):
+        articles = Article.objects.filter(
+            author=self.request.user).order_by('-created_at')
+        return articles
 
 
 class ArticleDetailView(DetailView):
