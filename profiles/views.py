@@ -1,23 +1,25 @@
-from django.shortcuts import render
-from django.views.generic import TemplateView, UpdateView, DetailView, DeleteView, ListView
+from django.views.generic import UpdateView, DetailView, ListView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth import get_user_model
 from .models import Profile
+from .forms import ProfileForm
+from django.urls import reverse_lazy
+from django.contrib import messages
+from django.shortcuts import redirect
 
 User = get_user_model()
 
 
 class ProfileListView(LoginRequiredMixin, ListView):
     model = Profile
-    template_name = 'profile/profile_list.html'
-    context_object_name = 'profiles'
+    template_name = 'profiles/profile_list.html'
 
     def get_queryset(self):
         return Profile.objects.exclude(user=self.request.user)
 
 
 class UserProfileDetailView(DetailView, LoginRequiredMixin):
-    template_name = 'profile/profile_detail.html'
+    template_name = 'profiles/profile_detail.html'
     model = Profile
 
     def get_object(self, **kwargs):
@@ -52,3 +54,17 @@ class UserProfileUpdateView(UpdateView, LoginRequiredMixin):
     def form_invalid(self, form):
         messages.error(self.request, 'プロフィールの編集に失敗しました．')
         return super().form_invalid(form)
+
+
+def follow_unfollow_view(request):
+    if request.method == 'POST':
+        my_profile = Profile.objects.get(user=request.user)
+        pk = request.POST.get('profile_pk')
+        obj = Profile.objects.get(pk=pk)
+
+        if obj.user in my_profile.following.user:
+            my_profile.following.remove(obj.user)
+        else:
+            my_profile.following.add(obj.user)
+        return redirect(request.META.get('HTTP_REFERER'))
+    return redirect('index')

@@ -15,3 +15,9 @@ class Profile(models.Model):
     icon = models.ImageField('アイコン', upload_to='images', blank=True)
     articles = models.OneToOneField(
         Article, on_delete=models.CASCADE, null=True)
+
+    def profile_post(self):
+        return self.post_set.all()
+
+    def __str__(self):
+        return str(self.user.username)
