@@ -29,12 +29,12 @@ class ArticleView(ListView):
     template_name = 'registration/index.html'
     model = Article
     order_by = '-created_at'
-    
+
 
 class ArticleListView(ListView, LoginRequiredMixin):
     model = Article
     pagenate_by = 5
-    template_name = 'profile/profile_detail.html'
+    template_name = 'profiles/profile_detail.html'
 
     def get_queryset(self):
         articles = Article.objects.filter(

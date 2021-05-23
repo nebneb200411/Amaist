@@ -13,6 +13,8 @@ User = get_user_model()
 class ProfileListView(LoginRequiredMixin, ListView):
     model = Profile
     template_name = 'profiles/profile_list.html'
+    context_object_name = 'profiles'
+    pagenate_by = 20
 
     def get_queryset(self):
         return Profile.objects.exclude(user=self.request.user)
@@ -40,7 +42,7 @@ class UserProfileDetailView(DetailView, LoginRequiredMixin):
 
 
 class UserProfileUpdateView(UpdateView, LoginRequiredMixin):
-    model = User
+    model = Profile
     template_name = 'profile/profile_update.html'
     form_class = ProfileForm
 

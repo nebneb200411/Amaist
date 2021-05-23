@@ -1,8 +1,33 @@
 {% extends 'base.html' %}
+{% load static %}
+{% block stylesheet %}
+    <link rel="stylesheet" href="{% static 'profile/profile_list/profile_list.css' %}"
+{% endblock stylesheet %}
 
-{% block 'contents' %}
+{% block contents %}
+    <p>ユーザーのプロフィール</p>
     {% for profile in profiles %}
-    {{profile}}
-{% endfor %}
-{% endblock 'contents' %}
+    <div class="container-fluid">
+        <div class="row">
+            <hr>
+            <div class="col-2">
+                <img src="{{MEDIA_URL}}{{profile.icon}}" class="user-icon" alt="user-profile"/>
+            </div>
+            <div class="col-2">
+                {{profile.user.username}}
+            </div>
+            <div class="col-6">
+                {{profile.introduction}}
+            </div>
+            <div class="col-2">
+                <form class="follow-form">
+                    <button type="button" class="btn btn-outline-primary">＋</button>
+            </div>
+            <hr>
+        </div>
+    </div>
+    {% endfor %}
+{% endblock contents %}
+
+
 

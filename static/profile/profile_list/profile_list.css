@@ -1,0 +1,11 @@
+body main div div hr {
+  border-top: 1px solid #b0c4de;
+  border-bottom: 1px solid #afeeee;
+  width: 90%;
+}
+
+body main div div .user-icon {
+  border-radius: 50%;
+  width: 100%;
+}
+/*# sourceMappingURL=profile_list.css.map */
