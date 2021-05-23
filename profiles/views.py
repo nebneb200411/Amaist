@@ -21,8 +21,8 @@ class ProfileListView(LoginRequiredMixin, ListView):
 
 
 class UserProfileDetailView(DetailView, LoginRequiredMixin):
-    template_name = 'profiles/profile_detail.html'
     model = Profile
+    template_name = 'profiles/profile_detail.html'
 
     def get_object(self, **kwargs):
         pk = self.kwargs.get('pk')
@@ -43,7 +43,7 @@ class UserProfileDetailView(DetailView, LoginRequiredMixin):
 
 class UserProfileUpdateView(UpdateView, LoginRequiredMixin):
     model = Profile
-    template_name = 'profile/profile_update.html'
+    template_name = 'profiles/profile_update.html'
     form_class = ProfileForm
 
     def get_success_url(self):
@@ -69,4 +69,4 @@ def follow_unfollow_view(request):
         else:
             my_profile.following.add(obj.user)
         return redirect(request.META.get('HTTP_REFERER'))
-    return redirect('index')
+    return redirect('profiles:profile_list')

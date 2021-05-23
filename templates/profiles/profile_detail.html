@@ -7,35 +7,35 @@
 <link rel="stylesheet"href="{% static 'profile/profile_detail/profile_detail.css' %}"> 
 {% endblock stylesheet %}
 
-
 {% block contents %}
-
-<div class='profile-left'>
-
-    <div class='container'>
+    <div class='container-fluid'>
         <div class='row'>
-
-            <div class='my-div-style w-100' id='icon'><img src="{{ MEDIA_URL }}{{user.icon}}"/ style="width:300px; height:auto;">
+            <div class='my-div-style w-100' id='icon'><img src="{{ MEDIA_URL }}{{object.icon}}"/ style="width:300px; height:auto;">
             </div>
-
-
             <div class='my-div-style w-100' id='username'> 
-
-                <h1><p>{{user.username}}</p></h1>
-
+                <h1><p>{{object.user.username}}</p></h1>
             </div>
-
             <div class='my-div-style w-100' id='introduction'> 
-
-                {{user.introduction}}
-
+                {{object.introduction}}
             </div>
         </div>
+        {% if follow %}
+            <form action="{% url 'profiles:follow_unfollow_view' %}" method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="profile_pk" value="{{object.pk}}"/>
+                <button type="submit" class="btn btn-outline-warning">－</button>
+            </form>
+        {% else %}
+            <button type="submit" class="btn btn-outline-primary">＋</button>
+        {% endif %}
+
+        
     </div>
 
-</div> 
 
 
+
+<!--
 <div class='profile-right'>
     <div class="container">
         <div class="row">
@@ -89,9 +89,13 @@
         </div>
     </div>
 </div>
+-->
 
-<div class='password_change_link'>
-    <p><a href="{% url 'password_change' %}">パスワードの変更</a></p>
-</div>
+{% if object.user == request.user %}
+    <div class='password_change_link'>
+        <p><a href="{% url 'password_change' %}">パスワードの変更</a></p>
+    </div>
+{% endif %}
+
 
 {% endblock contents %}
