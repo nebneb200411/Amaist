@@ -5,12 +5,13 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, redirect
 from .models import Article
 from django.contrib import messages
+from profiles.models import Profile
 
 
 class ArticleFormCreateView(LoginRequiredMixin, CreateView):
     form_class = ArticleForm
     template_name = "article/create_article.html"
-    success_url = reverse_lazy('index')
+    success_url = reverse_lazy('profiles:profile_list')
     model = Article
 
     def form_valid(self, form):

@@ -13,8 +13,8 @@ class Profile(models.Model):
         User, related_name="follower", blank=True, default=None)
     introduction = models.TextField(max_length=400, blank=True)
     icon = models.ImageField('アイコン', upload_to='images', blank=True)
-    articles = models.OneToOneField(
-        Article, on_delete=models.CASCADE, null=True)
+    articles = models.ForeignKey(
+        Article, on_delete=models.CASCADE, blank=True, null=True)
 
     def profile_posts(self):
         return self.post_set.all()

@@ -13,7 +13,7 @@ class Tag(models.Model):
 
 
 class Article(models.Model):
-    author = models.OneToOneField(User, on_delete=models.CASCADE)
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
     content = models.TextField('テキスト')
     title = models.TextField('タイトル', max_length=50)
     created_at = models.DateTimeField('作成日', auto_now_add=True)
