@@ -98,7 +98,7 @@
 {% endif %}
 
     <div class="profile-edit">
-        <a href="{% url 'profiles:profile_detail' %}">
+        <a href="{% url 'profiles:profile_detail' user.pk %}">
             <button class="btn btn btn-outline-dark"/>
         </a>
     </div>
