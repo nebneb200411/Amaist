@@ -4,7 +4,7 @@
 
 {% block stylesheet %}
 
-<link rel="stylesheet"href="{% static 'profile/profile_detail/profile_detail.css' %}"> 
+<link rel="stylesheet"href="{% static 'profile/profile_detail/profile_detail.css' %}">
 {% endblock stylesheet %}
 
 {% block contents %}
@@ -12,10 +12,10 @@
         <div class='row'>
             <div class='my-div-style w-100' id='icon'><img src="{{ MEDIA_URL }}{{object.icon}}"/ style="width:300px; height:auto;">
             </div>
-            <div class='my-div-style w-100' id='username'> 
+            <div class='my-div-style w-100' id='username'>
                 <h1><p>{{object.user.username}}</p></h1>
             </div>
-            <div class='my-div-style w-100' id='introduction'> 
+            <div class='my-div-style w-100' id='introduction'>
                 {{object.introduction}}
             </div>
         </div>
@@ -29,7 +29,7 @@
             <button type="submit" class="btn btn-outline-primary">＋</button>
         {% endif %}
 
-        
+
     </div>
 
 
@@ -45,7 +45,7 @@
                         <a class="btn btn-primary float-right" href="{% url 'article:CreateArticle' %}">新規作成</a>
                     </div>
                 {% for article in article_list %}
-                    <div class='articles'> 
+                    <div class='articles'>
                         <a href="#">
                             <h2 class="article-title">{{article.title}}</h2>
                             <h3 class="article-subtitle">{{article.content|truncatechars:20}}</h3>
@@ -96,6 +96,12 @@
         <p><a href="{% url 'password_change' %}">パスワードの変更</a></p>
     </div>
 {% endif %}
+
+    <div class="profile-edit">
+        <a href="{% url 'profiles:profile_detail' %}">
+            <button class="btn btn btn-outline-dark"/>
+        </a>
+    </div>
 
 
 {% endblock contents %}
