@@ -32,8 +32,8 @@
                 <li><a href="#"><i class="fas fa-chevron-right"></i>Competition</a></li>
                 <li><a href="#"><i class="fas fa-chevron-right"></i>Questions</a></li>
                 <li><a href="{% url 'login' %}"><i class="fas fa-chevron-right"></i>Login</a></li>
-                {% if request.user.is_authenticated %}
-                <li><a href="{% url 'profiles:profile_detail' user.pk %}"><i class="fas fa-chevron-right"></i>Profile</a></li>
+                {% if request.user.is_authenticated %}    
+                <li><a href="{% url 'profiles:found_or_not_found' %}"><i class="fas fa-chevron-right"></i>Profile</a></li>
                 {% endif %}
                 
             </ul>

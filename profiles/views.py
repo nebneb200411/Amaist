@@ -1,4 +1,4 @@
-from django.views.generic import UpdateView, DetailView, ListView
+from django.views.generic import UpdateView, DetailView, ListView, CreateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth import get_user_model
 from .models import Profile
@@ -6,6 +6,7 @@ from .forms import ProfileForm
 from django.urls import reverse_lazy
 from django.contrib import messages
 from django.shortcuts import redirect
+from django.views import debug
 
 User = get_user_model()
 
@@ -41,6 +42,26 @@ class UserProfileDetailView(DetailView, LoginRequiredMixin):
         return context
 
 
+class UserProfileCreateView(CreateView, LoginRequiredMixin):
+    model = Profile
+    form_class = ProfileForm
+    template_name = 'profiles/create_userprofile.html'
+
+    def form_valid(self, form):
+        profile = form.save(commit=False)
+        profile.user = self.request.user
+        profile.save()
+        messages.success(self.request, "プロフィールの作成に成功しました")
+        return super().form_valid(form)
+
+    def form_invalid(self, form):
+        messages.success(self.request, "プロフィールの作成に失敗しました")
+        return super().form_invalid(form)
+
+    def get_success_url(self):
+        return reverse_lazy('')
+
+
 class UserProfileUpdateView(UpdateView, LoginRequiredMixin):
     model = Profile
     template_name = 'profiles/profile_update.html'
@@ -70,3 +91,12 @@ def follow_unfollow_view(request):
             my_profile.following.add(obj.user)
         return redirect(request.META.get('HTTP_REFERER'))
     return redirect('profiles:profile_list')
+
+
+def profile_not_found(request, pk):
+    if request.method == 'GET':
+        if Profile.objects.filter(user=request.user).exists():
+            return redirect('profiles:profile_detail' + pk)
+        else:
+            pass
+    return redirect('profiles:profile_create')

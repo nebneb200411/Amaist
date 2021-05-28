@@ -14,4 +14,8 @@ urlpatterns = [
     path('follow_or_unfollow/', views.follow_unfollow_view,
          name='follow_unfollow_view'),
     path('', views.ProfileListView.as_view(), name='profile_list'),
+    path('profile_create/', views.UserProfileCreateView.as_view(),
+         name='profile_create'),
+    path('found_or_not_found/',
+         views.profile_not_found, name='found_or_not_found'),
 ]
