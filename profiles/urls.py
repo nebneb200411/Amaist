@@ -7,6 +7,8 @@ app_name = 'profiles'
 urlpatterns = [
     path('profile_update/<int:pk>/', views.UserProfileUpdateView.as_view(),
          name='profile_update'),
+    path('profile_detail/<int:pk>/',
+         views.profile_not_found, name='profile_detail'),
     # path('profile_detail/<int:pk>/',
     # ArticleListView.as_view(), name='article_list'),
     path('profile_detail/<int:pk>/', views.UserProfileDetailView.as_view(),

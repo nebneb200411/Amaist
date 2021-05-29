@@ -6,7 +6,7 @@ from .forms import ProfileForm
 from django.urls import reverse_lazy
 from django.contrib import messages
 from django.shortcuts import redirect
-from django.views import debug
+from django.shortcuts import get_object_or_404, render
 
 User = get_user_model()
 
@@ -93,10 +93,13 @@ def follow_unfollow_view(request):
     return redirect('profiles:profile_list')
 
 
-def profile_not_found(request, pk):
+def profile_not_found(request, **kwargs):
     if request.method == 'GET':
         if Profile.objects.filter(user=request.user).exists():
-            return redirect('profiles:profile_detail' + pk)
+            pk = request.kwargs('pk')
+            profile = get_object_or_404(Profile, pk=pk)
+            return render(request, 'profiles:profile_detail', {'profile': profile})
         else:
-            pass
+            redirect('profiles:profile_create')
+
     return redirect('profiles:profile_create')
