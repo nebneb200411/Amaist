@@ -6,7 +6,6 @@ from .forms import ProfileForm
 from django.urls import reverse_lazy
 from django.contrib import messages
 from django.shortcuts import redirect
-from django.shortcuts import get_object_or_404, render
 
 User = get_user_model()
 
@@ -59,7 +58,7 @@ class UserProfileCreateView(CreateView, LoginRequiredMixin):
         return super().form_invalid(form)
 
     def get_success_url(self):
-        return reverse_lazy('')
+        return reverse_lazy('article_timeline')
 
 
 class UserProfileUpdateView(UpdateView, LoginRequiredMixin):
@@ -93,12 +92,12 @@ def follow_unfollow_view(request):
     return redirect('profiles:profile_list')
 
 
-def profile_not_found(request, **kwargs):
+def profile_not_found(request):
     if request.method == 'GET':
         if Profile.objects.filter(user=request.user).exists():
-            pk = request.kwargs('pk')
-            profile = get_object_or_404(Profile, pk=pk)
-            return render(request, 'profiles:profile_detail', {'profile': profile})
+            my_profile = Profile.objects.get(user=request.user)
+            pk = my_profile.pk
+            return redirect('profiles:profile_detail', pk=pk)
         else:
             redirect('profiles:profile_create')
 
