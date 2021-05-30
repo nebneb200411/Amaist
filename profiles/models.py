@@ -6,7 +6,8 @@ User = get_user_model()
 
 
 class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(
+        User, related_name="user", on_delete=models.CASCADE)
     following = models.ManyToManyField(
         User, related_name="following", blank=True, default=None)
     follower = models.ManyToManyField(

@@ -38,6 +38,11 @@ class UserProfileDetailView(DetailView, LoginRequiredMixin):
         else:
             follow = True
         context["follow"] = follow
+        # ログイン中のユーザーのフォロー情報を取得
+        login_user_follow_count = my_profile.following.all().count()
+        login_user_follower_count = my_profile.follower.all().count()
+        context["login_user_follow_count"] = login_user_follow_count
+        context["login_user_follower_count"] = login_user_follower_count
         return context
 
 
@@ -83,12 +88,21 @@ def follow_unfollow_view(request):
         my_profile = Profile.objects.get(user=request.user)
         pk = request.POST.get('profile_pk')
         obj = Profile.objects.get(pk=pk)
-
-        if obj.user in my_profile.following.user:
+        follower_list = my_profile.following.all()
+        # this process will add user to following
+        if obj.user in follower_list:
             my_profile.following.remove(obj.user)
         else:
             my_profile.following.add(obj.user)
-        return redirect(request.META.get('HTTP_REFERER'))
+        # this process will add user to follower
+        following_list = obj.follower.all()
+        if my_profile.user in following_list:
+            obj.follower.remove(my_profile.user)
+        else:
+            obj.follower.add(my_profile.user)
+
+        # request.META.get('HTTP_REFERER')
+        return redirect('profiles:profile_list')
     return redirect('profiles:profile_list')
 
 
