@@ -1,3 +1,26 @@
 {% extends 'base.html' %}
 {% block contents %}
+<div class="container">
+    <div class="row">
+        <div class="article-title">
+            {{ object.title }}
+        </div>
+        <div class="article-content">
+            {{ object.content }}
+        </div>
+    </div>
+</div>
+
+
+<!--いいね機能-->
+<div class="goods">
+    <p>{{good_number}}</p>
+</div>
+
+<div class="good_count">
+    <form method="POST" action="{% url 'article:good_count' %}">
+        {% csrf_token %}
+        <input type="hidden" name="good_count" value="{{object.pk}}"/>
+        <button type="submit" class="btn btn-primary">いいね！</button>
+    </form>
 {% endblock contents %}

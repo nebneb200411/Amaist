@@ -5,7 +5,7 @@
             <div class="my-div-style w-100">
                 {% for article in object_list %}
                     <div class="article">
-                        <a href="#">
+                        <a href="{% url 'article:article_detail' article.pk %}">
                             <h2 class="article-author">{{article.author}}</h2>
                             <h3 class-"article-title">{{article.title}}
                         </a>

@@ -20,7 +20,7 @@
             </div>
         </div>
         {% if follow %}
-            <form action="{% url 'profiles:follow_unfollow_view' %}" method="POST">
+            <form method="POST" action="{% url 'profiles:follow_unfollow_view' %}">
                 {% csrf_token %}
                 <input type="hidden" name="profile_pk" value="{{object.pk}}"/>
                 <button type="submit" class="btn btn-outline-warning">－</button>
