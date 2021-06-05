@@ -6,7 +6,7 @@ User = get_user_model()
 
 
 class Tag(models.Model):
-    tag_name = models.CharField(max_length=20)
+    tag_name = models.TextField(max_length=20)
 
     def __str__(self):
         return self.tag_name
@@ -21,6 +21,7 @@ class Article(models.Model):
     updated_at = models.DateTimeField('更新日', auto_now=True)
     good_from = models.ManyToManyField(
         User, related_name="good_from", default=None)
+    tag = models.ManyToManyField(Tag, related_name="tag")
 
     def __str__(self):
         return self.title
@@ -31,20 +32,19 @@ class Article(models.Model):
 
 
 class Comment(models.Model):
-    comment_to = models.OneToOneField(
+    comment_to = models.ForeignKey(
         Article, related_name="comment_to", on_delete=models.CASCADE, default=None)
-    response_from = models.OneToOneField(
+    response_from = models.ForeignKey(
         User, related_name="response_from", on_delete=models.CASCADE)
     response_to = models.ManyToManyField(
-        User, related_name="response_to", default=None, null=True)
+        User, related_name="response_to", default=None)
     comment = models.TextField('コメント', max_length=1000, null=False)
     created_at = models.DateTimeField('コメント日時', auto_now_add=True)
     good = models.IntegerField('いいねの数', default=0)  # 誰がいいねしたかは表示しない．数だけ数える
 
     def __str__(self):
-        return self.response_from
+        return str(self.comment_to)
 
     class Meta:
         verbose_name = 'コメント'
         verbose_name_plural = 'コメント'
-# マイグレーションはまだしない．

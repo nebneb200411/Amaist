@@ -18,7 +18,21 @@
             <div class='my-div-style w-100' id='introduction'>
                 {{object.introduction}}
             </div>
-        </div>  
+        </div>
+        
+            <form method="POST" action="{% url 'profiles:follow_unfollow_view' %}">
+                {% csrf_token %}
+                {% if follow %}
+                    <input type="hidden" name="profile_pk" value="{{object.pk}}"/>
+                    <button type="submit" class="btn btn-outline-warning">－</button>
+                {% else %}
+                    <input type="hidden" name="profile_pk" value="{{object.pk}}"/>
+                    <button type="submit" class="btn btn-outline-primary">＋</button>
+                {% endif %}
+            </form>
+                
+
+
     </div>
 
 
@@ -81,16 +95,7 @@
 -->
 
 
-    <div class='password_change_link'>
-        <p><a href="{% url 'password_change' %}">パスワードの変更</a></p>
-    </div>
-
-
-    <div class="profile-edit">
-        <a href="{% url 'profiles:profile_detail' user.pk %}">
-            <button class="btn btn btn-outline-dark"/>
-        </a>
-    </div>
+    
 
     <div class="follower-following">
         <div class="following-count">

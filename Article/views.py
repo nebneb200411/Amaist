@@ -1,9 +1,9 @@
 from django.views.generic import CreateView, ListView, DetailView, UpdateView
-from .forms import ArticleForm
+from .forms import ArticleForm  # TagInlineFormSet
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, redirect
-from .models import Article, Comment
+from .models import Article, Comment, Tag
 from django.contrib import messages
 from profiles.models import Profile
 
@@ -14,10 +14,22 @@ class ArticleFormCreateView(LoginRequiredMixin, CreateView):
     success_url = reverse_lazy('profiles:profile_list')
     model = Article
 
+    """
+    def get_context_data(self, **kawargs):
+        context = super().get_context_data(**kawargs)
+        context['tags'] = TagInlineFormSet()
+        return context
+    """
+
     def form_valid(self, form):
         article = form.save(commit=False)
         article.author = self.request.user
-        article.save()
+        tags = self.request.POST.getlist('tags')
+        tag_object = Tag()
+        for tag in tags:
+            tag_object = Tag.tag_name = tag
+        created_article = article.save()
+        created_article.tag = tag_object
         messages.success(self.request, '記事を作成しました')
         return super().form_valid(form)
 
@@ -57,6 +69,9 @@ class ArticleDetailView(DetailView):
         evaluators = article.good_from.all()
         good_number = evaluators.count()
         context['good_number'] = good_number
+        # コメントの表示
+        comment_objects = Comment.objects.filter(comment_to=article)
+        context['comment_objects'] = comment_objects
         return context
 
 
@@ -95,7 +110,7 @@ def comment(request):
             return redirect(request.META.get('HTTP_REFERER'))
         # save process
         comment = Comment()
-        if request.POST.get('response_to').exists():
+        if 'User' in request.POST.get('response_to'):
             response_to = request.POST.get('response_to')
             comment.response_to = response_to
         else:

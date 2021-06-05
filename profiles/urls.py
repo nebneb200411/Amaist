@@ -20,4 +20,6 @@ urlpatterns = [
          name='profile_create'),
     path('found_or_not_found/',
          views.profile_not_found, name='found_or_not_found'),
+    path('otheruser_profile/<int:pk>/', views.OtherUserProfileView.as_view(),
+         name='otheruser_profile'),
 ]

@@ -8,9 +8,31 @@
         <div class="article-content">
             {{ object.content }}
         </div>
+        <div class="article-tags">
+            {{object.tag}}
+        </div>
     </div>
 </div>
 
+
+
+<!--コメントの表示-->
+<div class="comment-display">
+    {% for comment_object in comment_objects %}
+        {{comment_object.comment}}
+        {{comment_object.response_from}}
+    {% endfor %}
+</div>
+<!--コメント機能-->
+<div class="comment">
+    <form method="POST" action="{% url 'article:comment'%}">
+        {% csrf_token %}
+        <input type="hidden"  name="response_to" value="{{request.user}}"/>
+        <input type="hidden" name="article_pk" value="{{object.pk}}"/>
+        <input type="text" name="comment"/>
+        <button type="submit" class="btn btn-primary">送信</button>
+    </form>
+</div>
 
 <!--いいね機能-->
 <div class="goods">

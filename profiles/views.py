@@ -33,14 +33,40 @@ class UserProfileDetailView(DetailView, LoginRequiredMixin):
         context = super().get_context_data(**kwargs)
         view_profile = self.get_object()
         my_profile = Profile.objects.get(user=self.request.user)
-        if view_profile in my_profile.following.all():
-            follow = False
-        else:
+        if view_profile.user in my_profile.following.all():
             follow = True
+        else:
+            follow = False
         context["follow"] = follow
         # ログイン中のユーザーのフォロー情報を取得
         login_user_follow_count = my_profile.following.all().count()
         login_user_follower_count = my_profile.follower.all().count()
+        context["login_user_follow_count"] = login_user_follow_count
+        context["login_user_follower_count"] = login_user_follower_count
+        return context
+
+
+class OtherUserProfileView(DetailView):
+    model = Profile
+    template_name = 'profiles/otheruser_profile.html'
+
+    def get_objects(self, **kwargs):
+        pk = self.kwargs.get('pk')
+        view_profile = Profile.objects.get(pk=pk)
+        return view_profile
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        view_profile = self.get_object()
+        my_profile = Profile.objects.get(user=self.request.user)
+        if view_profile.user in my_profile.following.all():
+            follow = True
+        else:
+            follow = False
+        context["follow"] = follow
+        # ログイン中のユーザーのフォロー情報を取得
+        login_user_follow_count = view_profile.following.all().count()
+        login_user_follower_count = view_profile.follower.all().count()
         context["login_user_follow_count"] = login_user_follow_count
         context["login_user_follower_count"] = login_user_follower_count
         return context
