@@ -9,7 +9,9 @@
             {{ object.content }}
         </div>
         <div class="article-tags">
-            {{object.tag}}
+            {% for tag in tags %}
+                <p>{{tag}}</p>
+            {% endfor %}
         </div>
     </div>
 </div>

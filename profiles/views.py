@@ -98,7 +98,7 @@ class UserProfileUpdateView(UpdateView, LoginRequiredMixin):
     form_class = ProfileForm
 
     def get_success_url(self):
-        return reverse_lazy('index')
+        return reverse_lazy('article_timeline')
 
     def form_valid(self, form):
         messages.success(self.request, 'プロフィールの編集に成功しました．')

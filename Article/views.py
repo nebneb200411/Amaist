@@ -14,22 +14,26 @@ class ArticleFormCreateView(LoginRequiredMixin, CreateView):
     success_url = reverse_lazy('profiles:profile_list')
     model = Article
 
-    """
     def get_context_data(self, **kawargs):
         context = super().get_context_data(**kawargs)
-        context['tags'] = TagInlineFormSet()
         return context
-    """
 
     def form_valid(self, form):
         article = form.save(commit=False)
         article.author = self.request.user
+        article.save()
+        pk = article.pk
+        created_article = Article.objects.get(pk=pk)
+        """タグの作成"""
         tags = self.request.POST.getlist('tags')
-        tag_object = Tag()
+        tag_created = []
         for tag in tags:
-            tag_object = Tag.tag_name = tag
-        created_article = article.save()
-        created_article.tag = tag_object
+            created_tag = Tag.objects.create(tag_name=tag)
+            created_tag.save()
+            tag_created.append(created_tag)
+        for tags in tag_created:
+            created_article.tag.add(tags)
+            created_article.save()
         messages.success(self.request, '記事を作成しました')
         return super().form_valid(form)
 
@@ -72,6 +76,9 @@ class ArticleDetailView(DetailView):
         # コメントの表示
         comment_objects = Comment.objects.filter(comment_to=article)
         context['comment_objects'] = comment_objects
+        # Tagの取得
+        tags = article.tag.all()
+        context['tags'] = tags
         return context
 
 
