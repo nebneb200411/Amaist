@@ -140,15 +140,10 @@ LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/login/'
 
-# 個人サーバー用Email設定
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
-# フロントエンドURLの設定
-FRONTEND_URL = "http://127.0.0.1:8000/"
-
 # メディアの設定
-MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 

@@ -43,9 +43,13 @@ class ArticleFormCreateView(LoginRequiredMixin, CreateView):
 
 
 class ArticleView(ListView):
-    template_name = 'registration/index.html'
+    template_name = 'article/index.html'
     model = Article
     order_by = '-created_at'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context
 
 
 class ArticleListView(ListView, LoginRequiredMixin):

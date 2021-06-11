@@ -27,20 +27,17 @@ from article.views import ArticleView
 # admin.site.index_title = 'メニュー'
 # admin.site.disable_action('delete_selected')
 
-index_view = TemplateView.as_view(template_name='registration/index.html')
+index_view = TemplateView.as_view(template_name='artcile/index.html')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', ArticleView.as_view(), name='article_timeline'),
-    #path('', login_required(index_view), name='index'),
     path('', include('django.contrib.auth.urls')),
     path('registration/', views.SignUpView.as_view(), name='sign_up'),
-    # path('activate/<uidb64>/<token>/',
-    # views.ActivateView.as_view(), name='activate'),
     path('summernote/', include('django_summernote.urls')),
-    path('article/', include('article.urls')),
+    path('', include('article.urls')),
     path('profile/', include('registration.urls')),
     path('profiles/', include('profiles.urls')),
+    path('data_library/', include('data_library.urls')),
 ]
 
 # 開発環境なので以下を設定

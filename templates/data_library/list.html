@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block contents %}
+    {% for data_object in object_list %}
+    {{data_object.data_file}}
+    {{data_object.uploader}}
+    {{data_object.created_at}}
+    <a href="{% url 'data_library:detail' data_object.pk %}"/>
+    {% endfor %}
+{% endblock contents %}
