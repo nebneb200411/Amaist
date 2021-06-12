@@ -8,8 +8,8 @@
 
     <form method="POST" class="comment-form" action="{% url 'data_library:comment' %}">
         {% csrf_token %}
-        <input type="hidden" name="data_object_pk" value={{object.pk}}/>
-        <input type="text" name="commnet"/>
+        <input type="hidden" name="data_object_pk" value="{{object.pk}}"/>
+        <input type="text" name="comment"/>
         <button type-"submit" class="btn btn-success">送信</button>
     </form>
 
@@ -22,13 +22,13 @@
     <div class="good-display">
         <p>いいね</p>
         {{good_number}}
-        {{title}}
     </div>
 
     <div class="comment-display">
         <p>コメントの表示</p>
-        {% for comment in comment_list %}
-            <p>{{commnet}}</p>
+        {% for comment_object in comment_list %}
+        {{comment_object.comment_from}}
+        {{comment_object.content}}
         {% endfor %}
     </div>
 {% endblock contents %}

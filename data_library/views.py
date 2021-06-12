@@ -56,10 +56,10 @@ class DataLibraryDetailView(DetailView):
         evaluators = data_object.good.all()
         good_number = evaluators.count()
         context['good_number'] = good_number
-        context['title'] = data_object.introduction
         # comment function
-        comment_list = data_object.comment
-        context['good_number'] = comment_list
+        comment_list = CommentToDataLibrary.objects.filter(
+            comment_to=data_object)
+        context['comment_list'] = comment_list
         return context
 
 
@@ -88,10 +88,15 @@ def comment(request):
         # checkdata
         if not comment_content:
             return redirect(request.META.get('HTTP_REFERER'))
+        else:
+            pass
         # saving process
         comment_to_data_library = CommentToDataLibrary()
+        comment_to_data_library.comment_to = data_object
         comment_to_data_library.content = comment_content
         comment_to_data_library.comment_from = resopnse_from
         comment_to_data_library.save()
-        data_object.comment = comment_to_data_library
+        return redirect('data_library:list')
+
+    else:
         return redirect('data_library:list')
