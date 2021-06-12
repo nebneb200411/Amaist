@@ -41,10 +41,26 @@ class DataLibraryDetailView(DetailView):
     model = DataLibrary
     template_name = 'data_library/detail.html'
 
+    """
     def get_object(self, **kwargs):
         pk = self.kwargs.get('pk')
         view_data_library = DataLibrary.objects.get(pk=pk)
         return view_data_library
+    """
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        # good function
+        pk = self.kwargs.get('pk')
+        data_object = DataLibrary.objects.get(pk=pk)
+        evaluators = data_object.good.all()
+        good_number = evaluators.count()
+        context['good_number'] = good_number
+        context['title'] = data_object.introduction
+        # comment function
+        comment_list = data_object.comment
+        context['good_number'] = comment_list
+        return context
 
 
 def good_count(request):
@@ -57,7 +73,7 @@ def good_count(request):
             data_object.good.remove(evaluator)
             return redirect(request.META.get('HTTP_REFERER'))
         else:
-            data_object.good.remove(evaluator)
+            data_object.good.add(evaluator)
             return redirect(request.META.get('HTTP_REFERER'))
     return redirect('data_library:list')
 

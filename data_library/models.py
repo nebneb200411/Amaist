@@ -21,4 +21,4 @@ class DataLibrary(models.Model):
     comment = models.ManyToManyField(CommentToDataLibrary)
 
     def __str__(self):
-        return self.data_file
+        return str(self.data_file)

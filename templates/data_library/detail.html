@@ -5,4 +5,30 @@
     {{object.uploader}}
     {{object.created_at}}
     {{object.data_file}}
+
+    <form method="POST" class="comment-form" action="{% url 'data_library:comment' %}">
+        {% csrf_token %}
+        <input type="hidden" name="data_object_pk" value={{object.pk}}/>
+        <input type="text" name="commnet"/>
+        <button type-"submit" class="btn btn-success">送信</button>
+    </form>
+
+    <form method="POST" class="good_count" action="{% url 'data_library:good_count' %}">
+        {% csrf_token %}
+        <input type="hidden" name="good_count" value="{{object.pk}}"/>
+        <button type="submit" class="btn btn-primary">いいね！</button>
+    </form>
+
+    <div class="good-display">
+        <p>いいね</p>
+        {{good_number}}
+        {{title}}
+    </div>
+
+    <div class="comment-display">
+        <p>コメントの表示</p>
+        {% for comment in comment_list %}
+            <p>{{commnet}}</p>
+        {% endfor %}
+    </div>
 {% endblock contents %}
