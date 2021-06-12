@@ -5,6 +5,10 @@ from article.models import Article
 User = get_user_model()
 
 
+def icon_path(instance, filename):
+    return f'user/{instance.user.id}/icon/{filename}'
+
+
 class Profile(models.Model):
     user = models.OneToOneField(
         User, related_name="user", on_delete=models.CASCADE)
@@ -13,12 +17,9 @@ class Profile(models.Model):
     follower = models.ManyToManyField(
         User, related_name="follower", blank=True, default=None)
     introduction = models.TextField(max_length=400, blank=True)
-    icon = models.ImageField('アイコン', upload_to='images', blank=True)
+    icon = models.ImageField('アイコン', upload_to=icon_path, blank=True)
     articles = models.ForeignKey(
         Article, on_delete=models.CASCADE, blank=True, null=True)
-
-    def profile_posts(self):
-        return self.post_set.all()
 
     def __str__(self):
         return str(self.user.username)

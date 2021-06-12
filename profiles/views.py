@@ -6,7 +6,7 @@ from .forms import ProfileForm
 from django.urls import reverse_lazy
 from django.contrib import messages
 from django.shortcuts import redirect
-import os
+#import os
 
 User = get_user_model()
 
@@ -81,15 +81,6 @@ class UserProfileCreateView(CreateView, LoginRequiredMixin):
     def form_valid(self, form):
         profile = form.save(commit=False)
         profile.user = self.request.user
-        """
-        user_id = profile.id
-        generate_directory = os.path.join('media/user/', int(user_id))
-        os.makedirs(generate_directory)
-        directory_contents = ['icon']
-        for directory_content in directory_contents:
-            path = os.path.join(generate_directory, directory_content)
-            os.makedirs(path)
-        """
         profile.save()
         messages.success(self.request, "プロフィールの作成に成功しました")
         return super().form_valid(form)

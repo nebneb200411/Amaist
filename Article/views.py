@@ -49,6 +49,10 @@ class ArticleView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        pk = self.kwargs.get('pk')
+        article_object = Article.objects.get(pk=pk)
+        user = article_object.author
+        context['profile_object'] = Profile.objects.get(user=user)
         return context
 
 
@@ -57,10 +61,10 @@ class ArticleListView(ListView, LoginRequiredMixin):
     pagenate_by = 20
     template_name = 'profiles/profile_detail.html'
 
-    def get_queryset(self):
-        articles = Article.objects.filter(
-            author=self.request.user).order_by('-created_at')
-        return articles
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['profile_object'] = Profile.objects.all()
+        return context
 
 
 class ArticleDetailView(DetailView):
