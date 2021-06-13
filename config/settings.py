@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 # 上から順に読み込まれるので注意
 INSTALLED_APPS = [
+    'question',
     'profiles',
     'data_library',
     'article',

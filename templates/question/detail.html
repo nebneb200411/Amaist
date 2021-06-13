@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block contents %}
+    {{object.contributor}}
+    {{object.title}}
+    {{object.created_at}}
+    {{object.content}}
+
+    <form method="POST" class="comment-form" action="{% url 'question:comment' %}">
+        {% csrf_token %}
+        <input type="hidden"  name="response_to" value="{{request.user}}"/>
+        <input type="hidden" name="question_pk" value="{{object.pk}}"/>
+        <input type="text" name="comment"/>
+        <button type-"submit" class="btn btn-success">送信</button>
+    </form>
+
+    <form method="POST" class="good_count" action="{% url 'question:good_count' %}">
+        {% csrf_token %}
+        <input type="hidden" name="good_count" value="{{object.pk}}"/>
+        <button type="submit" class="btn btn-primary">いいね！</button>
+    </form>
+
+    <div class="good-display">
+        <p>いいね</p>
+        {{good_number}}
+    </div>
+
+    <div class="comment-display">
+        <p>コメントの表示</p>
+        {% for comment_object in comment_objects %}
+        {{comment_object.comment_from}}
+        {{comment_object.content}}
+        {% endfor %}
+    </div>
+{% endblock contents %}

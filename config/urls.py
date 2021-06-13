@@ -38,6 +38,7 @@ urlpatterns = [
     path('profile/', include('registration.urls')),
     path('profiles/', include('profiles.urls')),
     path('data_library/', include('data_library.urls')),
+    path('question/', include('question.urls')),
 ]
 
 # 開発環境なので以下を設定

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block contents %}
+    {% for question_object in object_list %}
+    <a href="{% url 'question:detail' question_object.pk %}">
+    <img src="{{ MEDIA_URL }}{{question_object.contributor.user.icon}}"/>
+    {{question_object.contributor}}
+    {{question_object.title}}
+    {{question_object.created_at}}
+    </a>
+    {% endfor %}
+{% endblock contents %}

@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth import get_user_model
 from article.models import Article
+from data_library.models import DataLibrary
+from question.models import Question
 
 User = get_user_model()
 
@@ -20,6 +22,10 @@ class Profile(models.Model):
     icon = models.ImageField('アイコン', upload_to=icon_path, blank=True)
     articles = models.ForeignKey(
         Article, on_delete=models.CASCADE, blank=True, null=True)
+    questions = models.ForeignKey(
+        Question, on_delete=models.CASCADE, default=None, null=True)
+    data_libraries = models.ForeignKey(
+        DataLibrary, on_delete=models.CASCADE, default=None, null=True)
 
     def __str__(self):
         return str(self.user.username)

@@ -30,7 +30,7 @@
                 <li><a href="{% url 'article:list' %}"><i class="fas fa-chevron-right"></i>Home</a></li>
                 <li><a href="{% url 'article:CreateArticle' %}"><i class="fas fa-chevron-right"></i>Article</a></li>
                 <li><a href="{% url 'data_library:list' %}"><i class="fas fa-chevron-right"></i>Data Library</a></li>
-                <li><a href="#"><i class="fas fa-chevron-right"></i>Questions</a></li>
+                <li><a href="{% url 'question:list' %}"><i class="fas fa-chevron-right"></i>Questions</a></li>
                 <li><a href="{% url 'login' %}"><i class="fas fa-chevron-right"></i>Login</a></li>
                 {% if request.user.is_authenticated %}    
                 <li><a href="{% url 'profiles:found_or_not_found' %}"><i class="fas fa-chevron-right"></i>Profile</a></li>

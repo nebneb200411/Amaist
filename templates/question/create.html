@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block contents %}
+<form method="POST">
+    {% csrf_token %}
+    {% autoescape off %}
+    {{form.as_p}}
+    <input type="text" multiple name="tags"/>
+    <input type="text" multiple name="tags"/>
+    <input type="submit" muti label='記事を作成' class="btn btn-success"></input>
+    {% endautoescape %}
+</form>
+{% endblock contents %}
