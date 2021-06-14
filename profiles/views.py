@@ -2,6 +2,8 @@ from django.views.generic import UpdateView, DetailView, ListView, CreateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth import get_user_model
 from .models import Profile
+from question.models import Question
+from article.models import Article
 from .forms import ProfileForm
 from django.urls import reverse_lazy
 from django.contrib import messages
@@ -44,6 +46,10 @@ class UserProfileDetailView(DetailView, LoginRequiredMixin):
         login_user_follower_count = my_profile.follower.all().count()
         context["login_user_follow_count"] = login_user_follow_count
         context["login_user_follower_count"] = login_user_follower_count
+        questions = Question.objects.filter(contributor=self.request.user)
+        context['questions'] = questions
+        articles = Article.objects.filter(author=self.request.user)
+        context['articles'] = articles
         return context
 
 

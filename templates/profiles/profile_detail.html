@@ -84,7 +84,11 @@
     </div>
 </div>
 -->
-
+<div class="questions">
+    {% for question in questions %}
+    {{question.title}}
+    {% endfor %}
+</div>
 
     <div class='password_change_link'>
         <p><a href="{% url 'password_change' %}">パスワードの変更</a></p>
@@ -95,6 +99,12 @@
         <a href="{% url 'profiles:profile_detail' user.pk %}">
             <button class="btn btn btn-outline-dark"/>
         </a>
+    </div>
+
+    <div class="arrticles">
+        {% for article in articles %}
+        {{article.title}}
+        {% endfor %}
     </div>
 
     <div class="follower-following">

@@ -22,10 +22,6 @@ class Profile(models.Model):
     icon = models.ImageField('アイコン', upload_to=icon_path, blank=True)
     articles = models.ForeignKey(
         Article, on_delete=models.CASCADE, blank=True, null=True)
-    questions = models.ForeignKey(
-        Question, on_delete=models.CASCADE, default=None, null=True)
-    data_libraries = models.ForeignKey(
-        DataLibrary, on_delete=models.CASCADE, default=None, null=True)
 
     def __str__(self):
         return str(self.user.username)
