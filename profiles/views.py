@@ -8,7 +8,6 @@ from .forms import ProfileForm
 from django.urls import reverse_lazy
 from django.contrib import messages
 from django.shortcuts import redirect
-#import os
 
 User = get_user_model()
 

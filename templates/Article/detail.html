@@ -7,7 +7,7 @@
             {{ object.title }}
         </div>
         <div class="article-content">
-            {{ object.content }}
+            {{ object.content | safe }}
         </div>
         <div class="article-tags">
             {% for tag in tags %}

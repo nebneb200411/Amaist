@@ -6,6 +6,7 @@ from django.shortcuts import render, redirect
 from .models import Article, Comment, Tag
 from django.contrib import messages
 from profiles.models import Profile
+from django.db.models import Q
 
 
 class ArticleFormCreateView(LoginRequiredMixin, CreateView):
@@ -42,25 +43,29 @@ class ArticleFormCreateView(LoginRequiredMixin, CreateView):
         return super().form_invalid(form)
 
 
-class ArticleView(ListView):
+class ArticleListView(ListView):
     template_name = 'article/index.html'
     model = Article
     order_by = '-created_at'
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        return context
+    def get_query_set(self):
+        object_list = super().get_query_set()
+        article_keyword = self.request.GET.get('article_search')
+        tag_keyword = self.request.GET.get('tag_search')
+        if article_keyword:
+            object_list = Article.objects.filter(
+                Q(title__icontains=article_keyword | Q(
+                    content__icontains=article_keyword))
+            )
 
+        elif tag_keyword:
+            object_list = Tag.objects.filter(
+                Q(name__icontains=tag_keyword)
+            )
 
-class ArticleListView(ListView, LoginRequiredMixin):
-    model = Article
-    pagenate_by = 20
-    template_name = 'profiles/profile_detail.html'
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['profile_object'] = Profile.objects.all()
-        return context
+        else:
+            object_list = Article.objects.all()
+        return object_list
 
 
 class ArticleDetailView(DetailView):

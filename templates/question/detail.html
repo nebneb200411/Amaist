@@ -4,7 +4,7 @@
     {{object.contributor}}
     {{object.title}}
     {{object.created_at}}
-    {{object.content}}
+    {{object.content | safe }}
 
     <form method="POST" class="comment-form" action="{% url 'question:comment' %}">
         {% csrf_token %}

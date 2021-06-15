@@ -20,7 +20,6 @@ from django.contrib.auth.decorators import login_required
 from registration import views
 from . import settings
 from django.conf.urls.static import static
-from article.views import ArticleView
 
 # admin.site.site_title = 'WebApp管理サイト'
 # admin.site.site_header = 'WebApp管理サイト'
