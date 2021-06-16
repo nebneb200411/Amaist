@@ -2,18 +2,20 @@
 {% block contents %}
     <div class="searching">
         <form method="GET" action="{% url 'article:list' %}">
-            {% csrf_token %}
-            <input type="text" name="article_search" value="{{ request.GET.query }}"/>
-            <button type="submit" class="btn btn-success">検索</button>
+            <input type="text" name="article_search" placeholder="記事検索"/>
+            <button type="submit" class="btn btn-success">記事検索</button>
         </form>
-        
+        <form method="GET">
+            <input type="text" name="tag_search" placeholder="タグ検索"/>
+            <button type="submit" class="btn btn-success">タグ検索</button>
+        </form>
     </div>
     <div class="container">
         <div class="row">
             <div class ="col-2"></div>
             <div class="col-8">
                 <div class="my-div-style w-100">
-                    {% for article in object_list %}
+                    {% for article in article_list %}
                         <div class="article">
                             <div class="author_icon">
                             <!--もし画像を選択していないときのデフォルトの画像を表示させる(今のところmodelsでやればいかなーて思ってる)-->

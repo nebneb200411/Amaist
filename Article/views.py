@@ -48,24 +48,20 @@ class ArticleListView(ListView):
     model = Article
     order_by = '-created_at'
 
-    def get_query_set(self):
-        object_list = super().get_query_set()
+    def get_queryset(self):
+        queryset = super().get_queryset()
         article_keyword = self.request.GET.get('article_search')
         tag_keyword = self.request.GET.get('tag_search')
         if article_keyword:
-            object_list = Article.objects.filter(
-                Q(title__icontains=article_keyword | Q(
-                    content__icontains=article_keyword))
-            )
+            queryset = Article.objects.filter(
+                Q(title__icontains=article_keyword) | Q(content__icontains=article_keyword))
 
         elif tag_keyword:
-            object_list = Tag.objects.filter(
-                Q(name__icontains=tag_keyword)
-            )
-
+            queryset = Article.objects.filter(
+                Q(tag__tag_name__icontains=tag_keyword))
         else:
-            object_list = Article.objects.all()
-        return object_list
+            queryset = Article.objects.all()
+        return queryset
 
 
 class ArticleDetailView(DetailView):

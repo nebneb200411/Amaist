@@ -8,6 +8,7 @@ from .forms import ProfileForm
 from django.urls import reverse_lazy
 from django.contrib import messages
 from django.shortcuts import redirect
+from django.db.models import Q
 
 User = get_user_model()
 
@@ -15,11 +16,17 @@ User = get_user_model()
 class ProfileListView(LoginRequiredMixin, ListView):
     model = Profile
     template_name = 'profiles/profile_list.html'
-    context_object_name = 'profiles'
     pagenate_by = 20
 
     def get_queryset(self):
-        return Profile.objects.exclude(user=self.request.user)
+        queryset = super().get_queryset()
+        profile_keyword = self.request.GET.get('profile_search')
+        if profile_keyword:
+            queryset = Profile.objects.filter(
+                Q(user__username__icontains=profile_keyword))
+        else:
+            queryset = Profile.objects.all()
+        return queryset
 
 
 class UserProfileDetailView(DetailView, LoginRequiredMixin):

@@ -5,8 +5,14 @@
 {% endblock stylesheet %}
 
 {% block contents %}
+    <div class="porfile_search">
+        <form method="GET" action = "{% url 'profiles:profile_list' %}">
+            <input type="text" name="profile_search"/>
+            <button type="submit" class="btn btn-primary">ユーザー検索</button>
+        </form>
+    </div>
     <p>ユーザーのプロフィール</p>
-    {% for profile in profiles %}
+    {% for profile in profile_list %}
     <div class="container-fluid">
         <div class="row">
             <hr>
