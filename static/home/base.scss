@@ -20,7 +20,8 @@ body {
         position: fixed;
         height: 100px;
         width: 100%;
-        z-index:100;
+        z-index: 100;
+        background-color: black;
 
         .menu-button closed {
             visibility: hidden;
@@ -39,7 +40,7 @@ body {
             &.clicked {
                 background-color: blue;
                 transition: .3s;
-                z-index:100;
+                z-index: 100;
             }
 
 
@@ -91,7 +92,7 @@ body {
             background-color: black;
             transform: translateX(-100%);
             transition: .3s;
-            z-index:100;
+            z-index: 100;
 
 
             &.slide-in {
@@ -102,8 +103,10 @@ body {
 
             .header-menu {
                 z-index: 100;
+
                 li {
-                    z-index:100;
+                    z-index: 100;
+
                     a {
                         z-index: 100;
                     }
@@ -123,12 +126,10 @@ body {
     }
 
     main {
-        display: block;
-        position: absolute;
-        top:100px;
-        width: 100%;
-        height: 80%;
-        z-index:0;
+        .nothing {
+            height: 100px;
+            width: 100%;
+        }
     }
 
 

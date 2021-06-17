@@ -24,6 +24,7 @@ body header {
   height: 100px;
   width: 100%;
   z-index: 100;
+  background-color: black;
 }
 
 body header .menu-button closed {
@@ -124,12 +125,8 @@ body header .header-nav li {
   list-style: none;
 }
 
-body main {
-  display: block;
-  position: absolute;
-  top: 100px;
+body main .nothing {
+  height: 100px;
   width: 100%;
-  height: 80%;
-  z-index: 0;
 }
 /*# sourceMappingURL=base.css.map */

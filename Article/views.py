@@ -63,6 +63,11 @@ class ArticleListView(ListView):
             queryset = Article.objects.all()
         return queryset
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        return context
+
 
 class ArticleDetailView(DetailView):
     template_name = 'article/detail.html'

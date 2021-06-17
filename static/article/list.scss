@@ -1,0 +1,84 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f8f8ff;
+
+    main {
+        div {
+            div {
+                #left-grid {
+                    hr {
+                        height: 100%;
+                    }
+
+                }
+
+
+                #article-grid {
+                    border: 1px solid #696969;
+                    background-color: white;
+
+                    hr {
+                        width: 100%;
+                        border: 1px solid #191970;
+                        background-color: #228b22;
+                    }
+
+                    div {
+
+                        div {
+                            div {
+
+                                img {
+                                    height: 100%;
+                                    width: 100%;
+                                    border-radius: 50%;
+                                }
+                            }
+                        }
+
+                        div {
+                            h2 {
+                                position: absolute;
+                                top: 50%;
+                                left: 50%;
+                                transform: translateY(-50%) translateX(-50%);
+                                -webkit-transform: translateY(-50%) translateX(-50%);
+                                font-family: 'Times New Roman', Times, serif;
+                            }
+                        }
+
+                        div {
+                            a {
+                                h3 {
+                                    position: absolute;
+                                    top: 50%;
+                                    left: 50%;
+                                    transform: translateY(-50%) translateX(-50%);
+                                    -webkit-transform: translateY(-50%) translateX(-50%);
+                                }
+                            }
+                        }
+                    }
+
+                    div {
+                        .created-at {
+                            .font {
+                                position: absolute;
+                                top: 50%;
+                                left: 50%;
+                                transform: translateY(-50%) translateX(-50%);
+                                -webkit-transform: translateY(-50%) translateX(-50%);
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
