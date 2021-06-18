@@ -5,53 +5,66 @@
           box-sizing: border-box;
 }
 
-body {
-  background-color: #f8f8ff;
+.user-icon {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
 }
 
-body main div div #left-grid hr {
-  height: 100%;
+.good-img {
+  height: 50px;
+  width: 50px;
 }
 
 body main div div #article-grid {
-  border: 1px solid #696969;
-  background-color: white;
+  border: 3px solid #b0e0e6;
 }
 
-body main div div #article-grid hr {
-  width: 100%;
-  border: 1px solid #191970;
-  background-color: #228b22;
+body main div div #article-grid .article-division-hr {
+  height: 8px;
+  background-image: repeating-linear-gradient(45deg, #00bfff 0, #00bfff 1px, transparent 0, transparent 50%), repeating-linear-gradient(135deg, #00bfff 0, #00bfff 1px, transparent 0, transparent 50%);
+  background-size: 8px 8px;
 }
 
-body main div div #article-grid div div div img {
-  height: 100%;
-  width: 100%;
-  border-radius: 50%;
+body main div div #article-grid #author-name-created-at div p {
+  display: inline-block;
 }
 
-body main div div #article-grid div div h2 {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translateY(-50%) translateX(-50%);
-  -webkit-transform: translateY(-50%) translateX(-50%);
-  font-family: 'Times New Roman', Times, serif;
+body main div div #article-grid #author-name-created-at div h2 {
+  display: inline-block;
 }
 
-body main div div #article-grid div div a h3 {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translateY(-50%) translateX(-50%);
-  -webkit-transform: translateY(-50%) translateX(-50%);
+body main div div #article-grid #author-name-created-at div p {
+  display: inline-block;
 }
 
-body main div div #article-grid div .created-at .font {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translateY(-50%) translateX(-50%);
-  -webkit-transform: translateY(-50%) translateX(-50%);
+body main div div #article-grid #author-name-created-at div p {
+  display: inline-block;
+}
+
+body main div div #article-grid #title a {
+  color: #5f9ea0;
+}
+
+body main div div #article-grid #title a h3 {
+  text-align: center;
+}
+
+body main div div #article-grid #title .title-hr {
+  height: 1px;
+  background: -webkit-gradient(linear, left top, right top, from(#87ceeb), color-stop(#000080), to(#87ceeb));
+  background: linear-gradient(to right, #87ceeb, #000080, #87ceeb);
+}
+
+body main div div #article-grid #good-number div {
+  margin: 0 0 0 auto;
+}
+
+body main div div #article-grid #good-number div img {
+  display: inline-block;
+}
+
+body main div div #article-grid #good-number div p {
+  display: inline-block;
 }
 /*# sourceMappingURL=list.css.map */
