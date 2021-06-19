@@ -49,3 +49,29 @@ $('.menu-button').on('click', function () {
 }
 
 );
+
+//プルアップメニューの表示
+$('#article-icon').on('click', function () {
+    $('.hide-and-appear-article').toggleClass('appear');
+}
+);
+
+$('#datalibrary-icon').on('click', function () {
+    $('.hide-and-appear-datalibrary').toggleClass('appear');
+}
+);
+
+$('#profile-icon').on('click', function () {
+    $('.hide-and-appear-profile').toggleClass('appear');
+}
+);
+
+$('#question-icon').on('click', function () {
+    $('.hide-and-appear-question').toggleClass('appear');
+}
+);
+
+$('#createarticle-icon').on('click', function () {
+    $('.hide-and-appear-createarticle').toggleClass('appear');
+}
+);

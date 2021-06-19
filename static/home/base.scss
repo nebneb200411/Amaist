@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+//動的な操作
+
+
+//動的な操作終了
 html {
     -webkit-text-size-adjust: 100%;
     box-sizing: border-box;
@@ -132,5 +136,223 @@ body {
         }
     }
 
+    footer {
+        .footer-menu {
+            position: fixed;
+            bottom: 0px;
+            width: 100%;
 
+            #appear-and-hide-menu {
+                position: fixed;
+                width: 100%;
+
+                div {
+
+                    div {
+                        div {
+
+                            .hide-and-appear-article {
+                                border-radius: 10px 10px 0px 0px;
+                                text-align: center;
+                                visibility: hidden;
+                                background-color: #008080;
+
+                                &.appear {
+                                    visibility: visible;
+                                    transform: translateY(-100%);
+                                    transition: .3s;
+                                }
+
+                                ul {
+                                    margin: 0 0 0;
+                                    padding: 0 0 0;
+                                    list-style-type: none;
+
+                                    li {
+                                        margin: 0 0 0;
+                                        padding: 0 0 0;
+                                        list-style-type: none;
+                                    }
+
+                                }
+                            }
+
+                            li {
+                                a {
+                                    list-style-type: none;
+                                    text-align: left;
+                                    color: white;
+                                }
+                            }
+                        }
+
+                        div {
+                            .hide-and-appear-datalibrary {
+                                border-radius: 10px 10px 0px 0px;
+                                text-align: center;
+                                visibility: hidden;
+                                background-color: #008080;
+
+                                &.appear {
+                                    visibility: visible;
+                                    transform: translateY(-100%);
+                                    transition: .3s;
+                                }
+
+                                ul {
+                                    margin: 0 0 0;
+                                    padding: 0 0 0;
+                                    list-style-type: none;
+
+                                    li {
+                                        margin: 0 0 0;
+                                        padding: 0 0 0;
+                                        list-style-type: none;
+                                    }
+
+                                }
+                            }
+                        }
+
+                        div {
+                            .hide-and-appear-profile {
+                                border-radius: 10px 10px 0px 0px;
+                                text-align: center;
+                                visibility: hidden;
+                                background-color: #008080;
+
+                                &.appear {
+                                    visibility: visible;
+                                    transform: translateY(-100%);
+                                    transition: .3s;
+                                }
+
+                                ul {
+                                    margin: 0 0 0;
+                                    padding: 0 0 0;
+                                    list-style-type: none;
+
+                                    li {
+                                        margin: 0 0 0;
+                                        padding: 0 0 0;
+                                        list-style-type: none;
+                                    }
+
+                                }
+                            }
+                        }
+
+                        div {
+                            .hide-and-appear-question {
+                                border-radius: 10px 10px 0px 0px;
+                                text-align: center;
+                                visibility: hidden;
+                                background-color: #008080;
+
+                                &.appear {
+                                    visibility: visible;
+                                    transform: translateY(-100%);
+                                    transition: .3s;
+                                }
+
+                                ul {
+                                    margin: 0 0 0;
+                                    padding: 0 0 0;
+                                    list-style-type: none;
+
+                                    li {
+                                        margin: 0 0 0;
+                                        padding: 0 0 0;
+                                        list-style-type: none;
+                                    }
+
+                                }
+                            }
+                        }
+
+                        div {
+                            .hide-and-appear-createarticle {
+                                border-radius: 10px 10px 0px 0px;
+                                text-align: center;
+                                visibility: hidden;
+                                background-color: #008080;
+
+                                &.appear {
+                                    visibility: visible;
+                                    transform: translateY(-100%);
+                                    transition: .3s;
+                                }
+
+                                ul {
+                                    margin: 0 0 0;
+                                    padding: 0 0 0;
+                                    list-style-type: none;
+
+                                    li {
+                                        margin: 0 0 0;
+                                        padding: 0 0 0;
+                                        list-style-type: none;
+                                    }
+
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            label {}
+
+            #hide-menu {}
+
+            #menu {
+                background: -moz-linear-gradient(top, #4682b4, #00bfff);
+                background: -webkit-linear-gradient(top, #4682b4, #00bfff);
+                background: linear-gradient(to bottom, #4682b4, #00bfff);
+
+                div {
+                    .footer-links-names {
+                        text-align: center;
+                        color: #f8f8ff;
+                        font-size: 90%;
+                    }
+
+                    .icon-links {
+                        transform: translateY(50%) translateX(50%);
+                        -webkit-transform: translateY(-10%) translateX(70%);
+                    }
+
+                    #article-links {
+                        border-radius: 20px 20px 0px 0px;
+                        border-left: solid 2px white;
+                        border-right: solid 2px white;
+                    }
+
+                    #datalibrary-links {
+                        border-radius: 20px 20px 0px 0px;
+                        border-left: solid 2px white;
+                        border-right: solid 2px white;
+                    }
+
+                    #profile-links {
+                        border-radius: 20px 20px 0px 0px;
+                        border-left: solid 2px white;
+                        border-right: solid 2px white;
+                    }
+
+                    #question-links {
+                        border-left: solid 2px white;
+                        border-right: solid 2px white;
+                        border-radius: 20px 20px 0px 0px;
+                    }
+
+                    #create-article-link {
+                        border-left: solid 2px white;
+                        border-right: solid 2px white;
+                        border-radius: 20px 20px 0px 0px;
+                    }
+                }
+            }
+        }
+    }
 }

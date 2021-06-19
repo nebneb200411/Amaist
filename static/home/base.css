@@ -129,4 +129,202 @@ body main .nothing {
   height: 100px;
   width: 100%;
 }
+
+body footer .footer-menu {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+}
+
+body footer .footer-menu #appear-and-hide-menu {
+  position: fixed;
+  width: 100%;
+}
+
+body footer .footer-menu #appear-and-hide-menu div div div .hide-and-appear-article {
+  border-radius: 10px 10px 0px 0px;
+  text-align: center;
+  visibility: hidden;
+  background-color: #008080;
+}
+
+body footer .footer-menu #appear-and-hide-menu div div div .hide-and-appear-article.appear {
+  visibility: visible;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+body footer .footer-menu #appear-and-hide-menu div div div .hide-and-appear-article ul {
+  margin: 0 0 0;
+  padding: 0 0 0;
+  list-style-type: none;
+}
+
+body footer .footer-menu #appear-and-hide-menu div div div .hide-and-appear-article ul li {
+  margin: 0 0 0;
+  padding: 0 0 0;
+  list-style-type: none;
+}
+
+body footer .footer-menu #appear-and-hide-menu div div div li a {
+  list-style-type: none;
+  text-align: left;
+  color: white;
+}
+
+body footer .footer-menu #appear-and-hide-menu div div div .hide-and-appear-datalibrary {
+  border-radius: 10px 10px 0px 0px;
+  text-align: center;
+  visibility: hidden;
+  background-color: #008080;
+}
+
+body footer .footer-menu #appear-and-hide-menu div div div .hide-and-appear-datalibrary.appear {
+  visibility: visible;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+body footer .footer-menu #appear-and-hide-menu div div div .hide-and-appear-datalibrary ul {
+  margin: 0 0 0;
+  padding: 0 0 0;
+  list-style-type: none;
+}
+
+body footer .footer-menu #appear-and-hide-menu div div div .hide-and-appear-datalibrary ul li {
+  margin: 0 0 0;
+  padding: 0 0 0;
+  list-style-type: none;
+}
+
+body footer .footer-menu #appear-and-hide-menu div div div .hide-and-appear-profile {
+  border-radius: 10px 10px 0px 0px;
+  text-align: center;
+  visibility: hidden;
+  background-color: #008080;
+}
+
+body footer .footer-menu #appear-and-hide-menu div div div .hide-and-appear-profile.appear {
+  visibility: visible;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+body footer .footer-menu #appear-and-hide-menu div div div .hide-and-appear-profile ul {
+  margin: 0 0 0;
+  padding: 0 0 0;
+  list-style-type: none;
+}
+
+body footer .footer-menu #appear-and-hide-menu div div div .hide-and-appear-profile ul li {
+  margin: 0 0 0;
+  padding: 0 0 0;
+  list-style-type: none;
+}
+
+body footer .footer-menu #appear-and-hide-menu div div div .hide-and-appear-question {
+  border-radius: 10px 10px 0px 0px;
+  text-align: center;
+  visibility: hidden;
+  background-color: #008080;
+}
+
+body footer .footer-menu #appear-and-hide-menu div div div .hide-and-appear-question.appear {
+  visibility: visible;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+body footer .footer-menu #appear-and-hide-menu div div div .hide-and-appear-question ul {
+  margin: 0 0 0;
+  padding: 0 0 0;
+  list-style-type: none;
+}
+
+body footer .footer-menu #appear-and-hide-menu div div div .hide-and-appear-question ul li {
+  margin: 0 0 0;
+  padding: 0 0 0;
+  list-style-type: none;
+}
+
+body footer .footer-menu #appear-and-hide-menu div div div .hide-and-appear-createarticle {
+  border-radius: 10px 10px 0px 0px;
+  text-align: center;
+  visibility: hidden;
+  background-color: #008080;
+}
+
+body footer .footer-menu #appear-and-hide-menu div div div .hide-and-appear-createarticle.appear {
+  visibility: visible;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+body footer .footer-menu #appear-and-hide-menu div div div .hide-and-appear-createarticle ul {
+  margin: 0 0 0;
+  padding: 0 0 0;
+  list-style-type: none;
+}
+
+body footer .footer-menu #appear-and-hide-menu div div div .hide-and-appear-createarticle ul li {
+  margin: 0 0 0;
+  padding: 0 0 0;
+  list-style-type: none;
+}
+
+body footer .footer-menu #menu {
+  background: -webkit-gradient(linear, left top, left bottom, from(#4682b4), to(#00bfff));
+  background: linear-gradient(to bottom, #4682b4, #00bfff);
+}
+
+body footer .footer-menu #menu div .footer-links-names {
+  text-align: center;
+  color: #f8f8ff;
+  font-size: 90%;
+}
+
+body footer .footer-menu #menu div .icon-links {
+  transform: translateY(50%) translateX(50%);
+  -webkit-transform: translateY(-10%) translateX(70%);
+}
+
+body footer .footer-menu #menu div #article-links {
+  border-radius: 20px 20px 0px 0px;
+  border-left: solid 2px white;
+  border-right: solid 2px white;
+}
+
+body footer .footer-menu #menu div #datalibrary-links {
+  border-radius: 20px 20px 0px 0px;
+  border-left: solid 2px white;
+  border-right: solid 2px white;
+}
+
+body footer .footer-menu #menu div #profile-links {
+  border-radius: 20px 20px 0px 0px;
+  border-left: solid 2px white;
+  border-right: solid 2px white;
+}
+
+body footer .footer-menu #menu div #question-links {
+  border-left: solid 2px white;
+  border-right: solid 2px white;
+  border-radius: 20px 20px 0px 0px;
+}
+
+body footer .footer-menu #menu div #create-article-link {
+  border-left: solid 2px white;
+  border-right: solid 2px white;
+  border-radius: 20px 20px 0px 0px;
+}
 /*# sourceMappingURL=base.css.map */

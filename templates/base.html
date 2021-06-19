@@ -48,6 +48,93 @@
     {% endblock %}
     </main>
 
+    <footer>
+        <div class="footer-menu">
+            <div class="appearing-menu" id="appear-and-hide-menu">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-2 col-md-2 col-xl-2">
+                            <div class="hide-and-appear-article">
+                                <ul class="hide-and-appear-article-ul" id="links-to-article">
+                                    <li><a href="{% url 'article:CreateArticle' %}">記事作成</a></li>
+                                    <hr>
+                                    <li><a href="{% url 'article:list' %}">記事一覧</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-2 col-md-2 col-xl-2">
+                            <div class="hide-and-appear-datalibrary">
+                                <ul class="hide-and-appear-datalibrary-ul" id="links-to-adatalibrary">
+                                    <li><a href="{% url 'data_library:create' %}">データ投函</a></li>
+                                    <hr>
+                                    <li><a href="{% url 'data_library:list' %}">データ一覧</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-2 col-md-2 col-xl-2">
+                            <div class="hide-and-appear-profile">
+                                <ul class="hide-and-appear-profile-ul" id="links-to-profile">
+                                    {% if request.user.is_authenticated %}    
+                                    <li><a href="{% url 'profiles:found_or_not_found' %}">プロフィール画面へ</a></li>
+                                    {% endif %}
+                                    <hr>
+                                    <li><a href="{% url 'profiles:profile_list' %}">プロフィール一覧</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-2 col-md-2 col-xl-2">
+                            <div class="hide-and-appear-question">
+                                <ul class="hide-and-appear-question-ul" id="links-to-quetion">
+                                    <li><a href="{% url 'question:create' %}">質問作成</a></li>
+                                    <hr>
+                                    <li><a href="{% url 'question:list' %}">質問一覧</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-2 col-md-2 col-xl-2">
+                            <div class="hide-and-appear-createarticle">
+                                <ul class="hide-and-appear-createarticle-ul" id="link-to-create-article">
+                                    <li><a href="{% url 'article:CreateArticle' %}">記事作成</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <lable for="hide-menu"></lable>
+            <input type="checkbox" id="hide-menu"/>
+            <div class="container-fluid" id="menu">
+                <div class="row">
+                    <div class="col-2 col-md-2 col-xl-2" id="article-links">
+                        <p class="footer-links-names">分析結果</p>
+                        <img src="{% static 'images/base/article.png' %}" id="article-icon" class="img-responsive icon-links" height="60%" width="60%"/>
+                    </div>
+                    <div class="col-2 col-md-2 col-xl-2" id="datalibrary-links">
+                        <p class="footer-links-names">データの貯蔵庫</p>
+                        <img src="{% static 'images/base/datalibrary.png' %}" id="datalibrary-icon" class="img-responsive icon-links" height="60px" width="60px"/>
+                    </div>
+                    <div class="col-2 col-md-2 col-xl-2" id="profile-links">
+                        <p class="footer-links-names">Your Profile</p>
+                        <img src="{{MEDIA_URL}}{{request.user.user.icon}}" id="profile-icon" class="img-responsive icon-links" height="60px" width="60px"/>
+                    </div>
+                    <div class="col-2 col-md-2 col-xl-2" id="question-links">
+                        <p class="footer-links-names">Solve Your Question!!</p>
+                        <img src="{% static 'images/base/question.jpg' %}" id="question-icon" class="img-responsive icon-links" height="60px" width="60px"/>
+                        
+                    </div>
+                    <div class="col-2 col-md-2 col-xl-2" id="create-article-link">
+                        <p class="footer-links-names">Let's create Artcile!!</p>
+                        <img src="{% static 'images/base/create_article.png' %}" id="createarticle-icon" class="img-responsive icon-links" height="60px" width="60px"/>
+                    </div>
+                    <div class="col-2 col-md-2 col-xl-2" id="comingsoon-link">
+                        <p class="footer-links-names">Coming Soon...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
 </div>
 <meta charset="utf-8">
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
