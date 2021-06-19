@@ -75,3 +75,8 @@ $('#createarticle-icon').on('click', function () {
     $('.hide-and-appear-createarticle').toggleClass('appear');
 }
 );
+
+$('#hide-and-appear').click(function () {
+    $('.menu-class').toggleClass('hidden');
+    $('.hide-and-appear-class').toggleClass('up');
+});

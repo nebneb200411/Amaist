@@ -303,7 +303,29 @@ body {
 
             label {}
 
-            #hide-menu {}
+            #hide-menu {
+                position: absolute;
+                right: 0px;
+                z-index: 10;
+                cursor: pointer;
+
+                .hide-and-appear-class {
+                    height: 50%;
+                    width: 50%;
+
+                    &.up {
+                        transform: rotateX(180deg);
+                        transition: .3s;
+                    }
+                }
+
+            }
+
+            .menu-class {
+                &.hidden {
+                    visibility: hidden;
+                }
+            }
 
             #menu {
                 background: -moz-linear-gradient(top, #4682b4, #00bfff);

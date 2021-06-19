@@ -282,6 +282,29 @@ body footer .footer-menu #appear-and-hide-menu div div div .hide-and-appear-crea
   list-style-type: none;
 }
 
+body footer .footer-menu #hide-menu {
+  position: absolute;
+  right: 0px;
+  z-index: 10;
+  cursor: pointer;
+}
+
+body footer .footer-menu #hide-menu .hide-and-appear-class {
+  height: 50%;
+  width: 50%;
+}
+
+body footer .footer-menu #hide-menu .hide-and-appear-class.up {
+  -webkit-transform: rotateX(180deg);
+          transform: rotateX(180deg);
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+body footer .footer-menu .menu-class.hidden {
+  visibility: hidden;
+}
+
 body footer .footer-menu #menu {
   background: -webkit-gradient(linear, left top, left bottom, from(#4682b4), to(#00bfff));
   background: linear-gradient(to bottom, #4682b4, #00bfff);
