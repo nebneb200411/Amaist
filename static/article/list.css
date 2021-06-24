@@ -16,8 +16,31 @@
   width: 50px;
 }
 
+body main div div #left-grid {
+  background-color: #dcdcdc;
+}
+
+body main div div #left-grid .searching .searching-hr {
+  background-color: #5f9ea0;
+  height: 1px;
+}
+
+body main div div #left-grid .searching #article-search input {
+  border-radius: 5%;
+  border: 2px solid #f5deb3;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body main div div #left-grid .searching #tag-search input {
+  border-radius: 5%;
+  border: 2px solid #f5deb3;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 body main div div #article-grid {
-  border: 3px solid #b0e0e6;
+  border: 3px solid #5f9ea0;
 }
 
 body main div div #article-grid .article-division-hr {
@@ -66,5 +89,9 @@ body main div div #article-grid #good-number div img {
 
 body main div div #article-grid #good-number div p {
   display: inline-block;
+}
+
+body main div div #right-grid {
+  background-color: #dcdcdc;
 }
 /*# sourceMappingURL=list.css.map */

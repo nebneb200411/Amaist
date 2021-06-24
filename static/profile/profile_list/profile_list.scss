@@ -1,19 +1,38 @@
 body {
     main {
-        div {
+        #user-profiles {
             div {
-                hr {
-                    border-top: 1px solid #b0c4de;
-                    border-bottom: 1px solid #afeeee;
-                    width: 90%;
-                }
-            }
+                #each-user-profile {
+                    div {
+                        div {
+                            #user-icon-box {
+                                border: solid 1px #708090;
+                                padding: 0 2% 2% 0;
 
-            div {
-                .user-icon {
-                    border-radius: 50%;
-                    width: 100%;
+                                .user-icon {
+                                    .user-icon-img {
+                                        border-radius: 50%;
+                                        width: 100%;
+                                    }
+                                }
+                            }
 
+                            #user-username-box {
+                                border: solid 1px #708090;
+                                padding: 0 0 2% 2%;
+                            }
+
+                            #user-profile-detail-box {
+                                border: solid 1px #708090;
+                                padding: 2% 2% 0 0;
+                            }
+
+                            #user-introduction-box {
+                                border: solid 1px #708090;
+                                padding: 2% 0 0 2%;
+                            }
+                        }
+                    }
                 }
             }
         }

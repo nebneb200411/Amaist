@@ -12,30 +12,46 @@
         </form>
     </div>
     <p>ユーザーのプロフィール</p>
-    {% for profile in profile_list %}
-    <div class="container-fluid">
+    <div class="container-fluid user-profiles-class" id="user-profiles">
         <div class="row">
-            <hr>
-            <div class="col-2">
-                <img src="{{MEDIA_URL}}{{profile.icon}}" class="user-icon" alt="user-profile"/>
+            {% for profile in profile_list %}
+            <div class="col-xl-6 col-xm-6 col-12" id="each-user-profile">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xl-4 col-md-4 col-4" id="user-icon-box">
+                            <div class="user-icon">
+                                <img src="{{MEDIA_URL}}{{profile.icon}}" class="img-responsive user-icon-img" alt="user-profile"/>
+                            </div>
+                        </div>
+                        <div class="col-xl-8 col-md-8 col-8" id="user-username-box">
+                            <div class="user-username">
+                                {{profile.user.username}}
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-md-4 col-4" id="user-profile-detail-box">
+                            <div class="user-profile-detail">
+                                <a href="{% url 'profiles:otheruser_profile' profile.pk %}">
+                                    <button type="submit" class="btn btn-outline-primary">詳細</button>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xl-8 col-md-8 col-8" id="user-introduction-box">
+                            <div class="user-introduction">
+                                {{profile.introduction}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-2">
-                {{profile.user.username}}
-            </div>
-            <div class="col-6">
-                {{profile.introduction}}
-            </div>
-            <div class="col-2">
-                <a href="{% url 'profiles:otheruser_profile' profile.pk %}">
-                    <button type="submit" class="btn btn-outline-primary">詳細</button>
-                </a>
-            
-            </div>
-            <hr>
+            {% endfor %}
         </div>
     </div>
-    {% endfor %}
 {% endblock contents %}
+
+{% block script %}
+    <script type="text/javascript" src={% static 'javascript/jquery.matchHeight.js' %}></script>
+    <script type="text/javascript" src="{% static 'profile/profile_list/profile_list.js' %}"></script>
+{% endblock script %}
 
 
 

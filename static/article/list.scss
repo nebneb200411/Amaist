@@ -20,8 +20,37 @@ body {
     main {
         div {
             div {
+                #left-grid {
+                    background-color: #dcdcdc;
+
+                    .searching {
+                        .searching-hr {
+                            background-color: #5f9ea0;
+                            height: 1px;
+                        }
+
+                        #article-search {
+                            input {
+                                border-radius: 5%;
+                                border: 2px solid #f5deb3;
+                                box-sizing: border-box;
+                            }
+
+                            button {}
+                        }
+
+                        #tag-search {
+                            input {
+                                border-radius: 5%;
+                                border: 2px solid #f5deb3;
+                                box-sizing: border-box;
+                            }
+                        }
+                    }
+                }
+
                 #article-grid {
-                    border: 3px solid #b0e0e6;
+                    border: 3px solid #5f9ea0;
 
                     .article-division-hr {
                         height: 8px;
@@ -65,7 +94,7 @@ body {
 
                         .title-hr {
                             height: 1px;
-                            background: linear-gradient(to right, #87ceeb, #000080, #87ceeb)
+                            background: linear-gradient(to right, #87ceeb, #000080, #87ceeb);
                         }
                     }
 
@@ -83,6 +112,10 @@ body {
                             }
                         }
                     }
+                }
+
+                #right-grid {
+                    background-color: #dcdcdc;
                 }
             }
         }
