@@ -1,18 +1,40 @@
 body {
     main {
         #user-profiles {
+            background-color: #a9a9a9;
+
             div {
                 #each-user-profile {
+                    padding: 2% 2% 2% 2%;
+
                     div {
+                        background-color: #3cb371;
+                        height: 100%;
+
                         div {
+                            height: 100%;
+
+                            .profile-element-size {
+                                height: 100%;
+                            }
+
                             #user-icon-box {
                                 border: solid 1px #708090;
                                 padding: 0 2% 2% 0;
+                                height: 50%;
+                                background: radial-gradient(100% 100%, circle, rgba(204, 0, 0, 0) 14px, #0099ff 15px);
 
                                 .user-icon {
+                                    background-color: #2f4f4f;
+                                    width: 100%;
+                                    border: solid 1px #708090;
+
                                     .user-icon-img {
-                                        border-radius: 50%;
                                         width: 100%;
+                                        height: 100%;
+                                        border-radius: 50%;
+                                        object-fit: cover;
+                                        object-position: 0px 0px;
                                     }
                                 }
                             }
@@ -20,16 +42,40 @@ body {
                             #user-username-box {
                                 border: solid 1px #708090;
                                 padding: 0 0 2% 2%;
+                                height: 50%;
+
+                                .user-username {
+                                    background-color: #2f4f4f;
+                                    width: 100%;
+                                    height: 100%;
+                                    border: solid 1px #708090;
+                                }
                             }
 
                             #user-profile-detail-box {
                                 border: solid 1px #708090;
                                 padding: 2% 2% 0 0;
+                                height: 50%;
+
+                                .user-profile-detail {
+                                    background-color: #2f4f4f;
+                                    width: 100%;
+                                    height: 100%;
+                                    border: solid 1px #708090;
+                                }
                             }
 
                             #user-introduction-box {
                                 border: solid 1px #708090;
                                 padding: 2% 0 0 2%;
+                                height: 50%;
+
+                                .user-introduction {
+                                    background-color: #2f4f4f;
+                                    width: 100%;
+                                    height: 100%;
+                                    border: solid 1px #708090;
+                                }
                             }
                         }
                     }

@@ -18,24 +18,24 @@
             <div class="col-xl-6 col-xm-6 col-12" id="each-user-profile">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-xl-4 col-md-4 col-4" id="user-icon-box">
+                        <div class="col-xl-4 col-md-4 col-4 profile-element-size" id="user-icon-box">
                             <div class="user-icon">
                                 <img src="{{MEDIA_URL}}{{profile.icon}}" class="img-responsive user-icon-img" alt="user-profile"/>
                             </div>
                         </div>
-                        <div class="col-xl-8 col-md-8 col-8" id="user-username-box">
+                        <div class="col-xl-8 col-md-8 col-8 profile-element-size" id="user-username-box">
                             <div class="user-username">
                                 {{profile.user.username}}
                             </div>
                         </div>
-                        <div class="col-xl-4 col-md-4 col-4" id="user-profile-detail-box">
+                        <div class="col-xl-4 col-md-4 col-4 profile-element-size"  id="user-profile-detail-box">
                             <div class="user-profile-detail">
                                 <a href="{% url 'profiles:otheruser_profile' profile.pk %}">
                                     <button type="submit" class="btn btn-outline-primary">詳細</button>
                                 </a>
                             </div>
                         </div>
-                        <div class="col-xl-8 col-md-8 col-8" id="user-introduction-box">
+                        <div class="col-xl-8 col-md-8 col-8 profile-element-size" id="user-introduction-box">
                             <div class="user-introduction">
                                 {{profile.introduction}}
                             </div>

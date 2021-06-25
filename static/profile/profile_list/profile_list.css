@@ -1,25 +1,83 @@
+body main #user-profiles {
+  background-color: #a9a9a9;
+}
+
+body main #user-profiles div #each-user-profile {
+  padding: 2% 2% 2% 2%;
+}
+
+body main #user-profiles div #each-user-profile div {
+  background-color: #3cb371;
+  height: 100%;
+}
+
+body main #user-profiles div #each-user-profile div div {
+  height: 100%;
+}
+
+body main #user-profiles div #each-user-profile div div .profile-element-size {
+  height: 100%;
+}
+
 body main #user-profiles div #each-user-profile div div #user-icon-box {
   border: solid 1px #708090;
   padding: 0 2% 2% 0;
+  height: 50%;
+  background: radial-gradient(100% 100%, circle, rgba(204, 0, 0, 0) 14px, #0099ff 15px);
+}
+
+body main #user-profiles div #each-user-profile div div #user-icon-box .user-icon {
+  background-color: #2f4f4f;
+  width: 100%;
+  border: solid 1px #708090;
 }
 
 body main #user-profiles div #each-user-profile div div #user-icon-box .user-icon .user-icon-img {
-  border-radius: 50%;
   width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 0px 0px;
+     object-position: 0px 0px;
 }
 
 body main #user-profiles div #each-user-profile div div #user-username-box {
   border: solid 1px #708090;
   padding: 0 0 2% 2%;
+  height: 50%;
+}
+
+body main #user-profiles div #each-user-profile div div #user-username-box .user-username {
+  background-color: #2f4f4f;
+  width: 100%;
+  height: 100%;
+  border: solid 1px #708090;
 }
 
 body main #user-profiles div #each-user-profile div div #user-profile-detail-box {
   border: solid 1px #708090;
   padding: 2% 2% 0 0;
+  height: 50%;
+}
+
+body main #user-profiles div #each-user-profile div div #user-profile-detail-box .user-profile-detail {
+  background-color: #2f4f4f;
+  width: 100%;
+  height: 100%;
+  border: solid 1px #708090;
 }
 
 body main #user-profiles div #each-user-profile div div #user-introduction-box {
   border: solid 1px #708090;
   padding: 2% 0 0 2%;
+  height: 50%;
+}
+
+body main #user-profiles div #each-user-profile div div #user-introduction-box .user-introduction {
+  background-color: #2f4f4f;
+  width: 100%;
+  height: 100%;
+  border: solid 1px #708090;
 }
 /*# sourceMappingURL=profile_list.css.map */
