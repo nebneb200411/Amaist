@@ -5,7 +5,7 @@
 {% endblock stylesheet %}
 
 {% block contents %}
-    <div class="porfile_search">
+    <div class="porfile-search">
         <form method="GET" action = "{% url 'profiles:profile_list' %}">
             <input type="text" name="profile_search"/>
             <button type="submit" class="btn btn-primary">ユーザー検索</button>
@@ -25,7 +25,8 @@
                         </div>
                         <div class="col-xl-8 col-md-8 col-8 profile-element-size" id="user-username-box">
                             <div class="user-username">
-                                {{profile.user.username}}
+                                <p class="username-p"><u>USERNAME</u></p>
+                                <p class="username-content">{{profile.user.username}}</p>
                             </div>
                         </div>
                         <div class="col-xl-4 col-md-4 col-4 profile-element-size"  id="user-profile-detail-box">
@@ -37,7 +38,8 @@
                         </div>
                         <div class="col-xl-8 col-md-8 col-8 profile-element-size" id="user-introduction-box">
                             <div class="user-introduction">
-                                {{profile.introduction}}
+                                <p class="introduction-p"><u>INTRODUCTION</u></p>
+                                <p class="introduction-content">{{profile.introduction}}</p>
                             </div>
                         </div>
                     </div>

@@ -1,14 +1,35 @@
 body {
     main {
+        .profile-search {
+            position: relative;
+
+            form {
+
+                input {
+                    left: 50%;
+                }
+
+                button {
+                    left: 50%;
+                }
+            }
+        }
+
+        p {
+            text-align: center;
+            font-family: 'ＭＳ Ｐゴシック';
+            font-size: 200%;
+        }
+
         #user-profiles {
-            background-color: #a9a9a9;
+            background-color: #f0f8ff;
 
             div {
                 #each-user-profile {
+                    border-radius: 5vh;
                     padding: 2% 2% 2% 2%;
 
                     div {
-                        background-color: #3cb371;
                         height: 100%;
 
                         div {
@@ -19,19 +40,27 @@ body {
                             }
 
                             #user-icon-box {
-                                border: solid 1px #708090;
+                                border-radius: 5vh 0 0 0;
+                                background-color: #5f9ea0;
                                 padding: 0 2% 2% 0;
                                 height: 50%;
                                 background: radial-gradient(100% 100%, circle, rgba(204, 0, 0, 0) 14px, #0099ff 15px);
 
                                 .user-icon {
-                                    background-color: #2f4f4f;
+                                    position: relative;
+                                    border-radius: 5vh 0 0 0;
+                                    background: linear-gradient(to top, #87ceeb, #e0ffff);
                                     width: 100%;
-                                    border: solid 1px #708090;
+                                    border: solid 3px #5f9ea0;
 
                                     .user-icon-img {
-                                        width: 100%;
-                                        height: 100%;
+                                        position: absolute;
+                                        top: 50%;
+                                        left: 50%;
+                                        -webkit-transform: translate(-50%, -40%);
+                                        transform: translate(-50%, -50%);
+                                        width: 70%;
+                                        height: 70%;
                                         border-radius: 50%;
                                         object-fit: cover;
                                         object-position: 0px 0px;
@@ -40,41 +69,84 @@ body {
                             }
 
                             #user-username-box {
-                                border: solid 1px #708090;
+                                border-radius: 0 5vh 0 0;
+                                background-color: #5f9ea0;
                                 padding: 0 0 2% 2%;
                                 height: 50%;
 
                                 .user-username {
-                                    background-color: #2f4f4f;
+                                    border-radius: 0 5vh 0 0;
+                                    background: linear-gradient(to top, #87ceeb, #e0ffff);
                                     width: 100%;
                                     height: 100%;
-                                    border: solid 1px #708090;
+                                    border: solid 3px #5f9ea0;
+                                }
+
+                                .username-p {
+                                    text-align: center;
+                                    font-family: 'Century Gothic';
+                                    font-size: 150%;
+                                }
+
+                                .username-content {
+                                    top: 50%;
+                                    text-align: center;
+                                    font-family: 'Century Gothic';
+                                    font-size: 300%;
                                 }
                             }
 
                             #user-profile-detail-box {
-                                border: solid 1px #708090;
+                                border-radius: 0 0 0 5vh;
+                                background-color: #5f9ea0;
                                 padding: 2% 2% 0 0;
                                 height: 50%;
 
                                 .user-profile-detail {
-                                    background-color: #2f4f4f;
+                                    position: relative;
+                                    border-radius: 0 0 0 5vh;
+                                    background: linear-gradient(to bottom, #87ceeb, #e0ffff);
                                     width: 100%;
                                     height: 100%;
-                                    border: solid 1px #708090;
+                                    border: solid 3px #5f9ea0;
+
+                                    a {
+                                        button {
+                                            position: relative;
+                                            top: 50%;
+                                            left: 50%;
+                                            -webkit-transform: translate(-50%, -40%);
+                                            transform: translate(-50%, -50%);
+                                            width: 80%;
+                                            height: 45%;
+                                        }
+                                    }
                                 }
                             }
 
                             #user-introduction-box {
-                                border: solid 1px #708090;
+                                border-radius: 0 0 5vh 0;
+                                background-color: #5f9ea0;
                                 padding: 2% 0 0 2%;
                                 height: 50%;
 
                                 .user-introduction {
-                                    background-color: #2f4f4f;
+                                    border-radius: 0 0 5vh 0;
+                                    background: linear-gradient(to bottom, #87ceeb, #e0ffff);
                                     width: 100%;
                                     height: 100%;
-                                    border: solid 1px #708090;
+                                    border: solid 3px #5f9ea0;
+                                }
+
+                                .introduction-p {
+                                    text-align: center;
+                                    font-size: 150%;
+                                }
+
+                                .introduction-content {
+                                    top: 50%;
+                                    text-align: center;
+                                    font-family: 'ＭＳ Ｐゴシック';
                                 }
                             }
                         }
