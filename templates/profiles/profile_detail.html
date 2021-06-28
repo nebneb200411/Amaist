@@ -8,92 +8,109 @@
 {% endblock stylesheet %}
 
 {% block contents %}
-    <div class='container-fluid'>
+    <div class='container-fluid' id="user-icon-username-follow-follower">
         <div class='row'>
-            <div class='my-div-style w-100' id='icon'><img src="{{ MEDIA_URL }}{{object.icon}}"/ style="width:300px; height:auto;">
+            <div class='col-12 col-md-4 col-xl-4' id='icon-and-username'>
+                <img src="{{ MEDIA_URL }}{{object.icon}}" class="img-responsive user-icon">
+                <p class="username">{{ object.user.username }}</p>
             </div>
-            <div class='my-div-style w-100' id='username'>
-                <h1><p>{{object.user.username}}</p></h1>
-            </div>
-            <div class='my-div-style w-100' id='introduction'>
-                {{object.introduction}}
+            <div class='col-12 col-md-8 col-xl-8' id='follow-and-follower'>
+                <div class="follow-count">
+                    <p class="follow-and-follower-p">フォロー数</p>
+                    <p class="follow-and-follower-number">{{ login_user_follow_count }}</p>
+                </div>
+                <div class="follower-count">
+                    <p class="follow-and-follower-p">フォロワー数</p>
+                    <p class="follow-and-follower-number">{{ login_user_follower_count }}</p>
+                </div>
             </div>
         </div>  
+
+        <!--display user's profile-->
+        <div class="introduction-box">
+            <p class="introduction-p">{{object.introduction}}</p>
+        </div>
+
+        <!--profile update button-->
+        <div class="profile-update-box">
+            <a href="{% url 'profiles:profile_update' profile.pk %}">
+                <button type="button" class="btn btn-outline-primary">プロフィールの更新</button>
+            </a>
+            <div class='password_change_link'>
+                <p><a href="{% url 'password_change' %}">パスワードの変更</a></p>
+            </div>
+        </div>
     </div>
-
-<div class="profile_update">
-<a href="{% url 'profiles:profile_update' profile.pk %}">
-    <button type="button" class="btn btn-outline-primary">更新<button>
-</a>
-</div>
-
-
-
-<!--
-<div class='profile-right'>
-    <div class="container">
+    <div class="container" id="user-article-question-box">
         <div class="row">
-            <div class="my-div-style w-100">
-                <div class="col-lg-8 col-md-10 mx-auto">
-                    <div class="cleadfix">
-                        <a class="btn btn-primary float-right" href="{% url 'article:CreateArticle' %}">新規作成</a>
-                    </div>
-                {% for article in article_list %}
-                    <div class='articles'>
-                        <a href="#">
-                            <h2 class="article-title">{{article.title}}</h2>
-                            <h3 class="article-subtitle">{{article.content|truncatechars:20}}</h3>
-                        </a>
-                        <p class="post-meta">{{article.created_at}}</p>
-                    </div>
-                    <hr>
-                {% empty %}
-                    <p>記事を作りましょう！</p>
-                {% endfor %}
+            <div class="col-12 col-md-6 col-xl-6" id="article-box">
+                <p>Articles</p>
+                <hr>
+                <div class="container">
+                    <div class="row">
+                        <div class="my-div-style w-100">
+                            <div class="col-lg-8 col-md-10 mx-auto">
+                                {% for article in articles %}
+                                <div class='articles'>
+                                    <a href="#">
+                                        <h2 class="article-title">{{article.title}}</h2>
+                                        <h3 class="article-subtitle">{{article.content|truncatechars:20}}</h3>
+                                    </a>
+                                    <p class="post-meta">{{article.created_at}}</p>
+                                </div>
+                                <hr>
+                                {% empty %}
+                                    <p>記事を作りましょう！</p>
+                                {% endfor %}
 
-                {% if is_paginated %}
-                    <ul class="pagination">
-                        {% if page_obj.has_previous %}
-                            <li class="page-item">
-                                <a class="page-link" href="?page={{ page_obj.previous_page_number }}">
-                                    <span aria-hidden="true">&laquo;<span>
-                                </a>
-                            </li>
-                        {% endif %}
+                            {% if is_paginated %}
+                                <ul class="pagination">
+                                    {% if page_obj.has_previous %}
+                                        <li class="page-item">
+                                            <a class="page-link" href="?page={{ page_obj.previous_page_number }}">
+                                                <span aria-hidden="true">&laquo;<span>
+                                            </a>
+                                        </li>
+                                    {% endif %}
 
-                        {% for page_num in page_obj.paginator.page_range %}
-                            {% if page_obj.number == page_num %}
-                                <li class="page-item active"><a class-"page-link" href="#">{{page_num}}</a></li>
-                            {% else %}
-                                <li class="page-item"><a class="page-link" href="{{page_num}}">{{page_num}}</a></li>
+                                    {% for page_num in page_obj.paginator.page_range %}
+                                        {% if page_obj.number == page_num %}
+                                            <li class="page-item active"><a class-"page-link" href="#">{{page_num}}</a></li>
+                                        {% else %}
+                                            <li class="page-item"><a class="page-link" href="{{page_num}}">{{page_num}}</a></li>
+                                        {% endif %}
+                                    {% endfor %}
+
+                                    {% if page_obj.has_next %}
+                                        <li class="page-item">
+                                            <a class="page-link" href="?page={{page_obj.next_page_number}}">
+                                                <span aria-hidden="true">&raquo;</span>
+                                            </a>
+                                        </li>
+                                    {% endif %}
+                                </ul>
                             {% endif %}
-                        {% endfor %}
-
-                        {% if page_obj.has_next %}
-                            <li class="page-item">
-                                <a class="page-link" href-"?page={{page_obj.next_page_number}}">
-                                    <span aria-hidden="true">&raquo;</span>
-                                </a>
-                            </li>
-                        {% endif %}
-                    </ul>
-                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-xl-6" id="question-box">
+                <div class="questions">
+                    <p>questions</p>
+                    <hr>
+                    {% for question in questions %}
+                    <a href="{% url 'question:detail' question.pk %}">
+                        <p>{{question.title}}</p>
+                    </a>
+                    <hr>
+                    {% endfor %}
                 </div>
             </div>
         </div>
     </div>
-</div>
--->
 
-<div class="questions">
-    {% for question in questions %}
-    {{question.title}}
-    {% endfor %}
-</div>
 
-    <div class='password_change_link'>
-        <p><a href="{% url 'password_change' %}">パスワードの変更</a></p>
-    </div>
 
 
     <div class="profile-edit">
@@ -102,21 +119,6 @@
         </a>
     </div>
 
-    <div class="arrticles">
-        {% for article in articles %}
-        {{article.title}}
-        {% endfor %}
-    </div>
-
-    <div class="follower-following">
-        <div class="following-count">
-        <p>フォロー数</p>
-        {{ login_user_follow_count }}
-        </div>
-        <div class-"follower-count">
-        <p>フォロワー数</p>
-        {{ login_user_follower_count }}
-        </div>
-    </div>
+    
 
 {% endblock contents %}

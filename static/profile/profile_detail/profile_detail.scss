@@ -1,64 +1,103 @@
-.content {
-    width: 100%;
-    height: 100%;
+main {
+    #user-icon-username-follow-follower {
+        padding: 3% 0 3% 0;
+        background-color: #f08080;
 
-    .profile-left {
-        display: inline-block;
-        width: 45%;
-        height: 100%;
+        div {
+            #icon-and-username {
 
-        .icon {
-            display: block;
-
-            img {
-                display: block;
-                object-fit: cover;
-                border-radius: 50%;
-                position: absolute;
-                top: 25px;
-                left: 100px;
-            }
-        }
-
-
-        .username {
-            display: block;
-
-            h1 {
-                position: relative;
-                padding: .3em;
-
-                &:after {
-                    content: "";
-                    display: block;
-                    height: 4px;
-                    background: linear-gradient(to right, blue, transparent);
+                .user-icon {
+                    width: 70%;
+                    height: 70%;
+                    border-radius: 50%;
+                    object-fit: cover;
+                    object-position: 0px 0px;
                 }
 
-                p {
-                    left: 100px;
-                    font-size: 40px;
+                .username {
                     text-align: center;
+                    font-family: 'Century Gothic';
                 }
 
+                .username {}
             }
 
+            #follow-and-follower {
 
+                .follow-count {
+                    position: relative;
+                    top: 30%;
+                    display: inline-block;
+                    width: 49%;
+                    border-left: solid 3px #5f9ea0;
+                    border-right: solid 3px #5f9ea0;
 
-        }
+                    p {
+                        text-align: center;
+                    }
+                }
 
-        .introduction {
-            display: block;
-            font-size: 30px;
-            font-style: black;
+                .follower-count {
+                    position: relative;
+                    top: 30%;
+                    display: inline-block;
+                    width: 49%;
+                    border-right: solid 3px #5f9ea0;
+
+                    p {
+                        text-align: center;
+                    }
+                }
+            }
         }
     }
 
-    .profile-right {
-        display: inline-block;
-        width: 45%;
-        height: 100%;
-        vertical-align: top;
+    .introduction-box {
+        width: 90%;
+        padding: 2% 0 2% 0;
+        margin: auto;
+        background-color: #f5deb3;
 
+        .introduction-p {
+            text-align: center;
+            font-family: 'ＭＳ Ｐゴシック'
+        }
+    }
+
+    .profile-update-box {
+        left: 5%;
+
+        a {
+            button {}
+        }
+    }
+
+    #user-article-question-box {
+        margin-top: 2%;
+        background-color: #e6e6fa;
+        border: 3px solid #c71585;
+
+        p {
+            text-align: center;
+            font-family: 'Century Gothic';
+        }
+
+        #article-box {
+            hr {
+                color: #00bfff;
+            }
+        }
+
+        #question-box {
+            border-left: 3px solid #00ced1;
+
+            .questions {
+                a {
+                    p {
+                        text-align: center;
+                    }
+                }
+            }
+        }
     }
 }
