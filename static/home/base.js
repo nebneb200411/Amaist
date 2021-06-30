@@ -77,6 +77,8 @@ $('#createarticle-icon').on('click', function () {
 );
 
 $('#hide-and-appear').click(function () {
+    $('.footer-menu').toggleClass('crash');
+    $('.appearing-menu').toggleClass('deep');
     $('.menu-class').toggleClass('hidden');
     $('.hide-and-appear-class').toggleClass('up');
 });

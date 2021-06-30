@@ -82,6 +82,9 @@ class OtherUserProfileView(DetailView):
         login_user_follower_count = view_profile.follower.all().count()
         context["login_user_follow_count"] = login_user_follow_count
         context["login_user_follower_count"] = login_user_follower_count
+        # Get viewing profile's article
+        article_object = Article.objects.filter(author=view_profile.user)
+        context['articles'] = article_object
         return context
 
 
@@ -111,7 +114,7 @@ class UserProfileUpdateView(UpdateView, LoginRequiredMixin):
     form_class = ProfileForm
 
     def get_success_url(self):
-        return reverse_lazy('article_timeline')
+        return reverse_lazy('article:list')
 
     def form_valid(self, form):
         messages.success(self.request, 'プロフィールの編集に成功しました．')

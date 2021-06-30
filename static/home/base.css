@@ -136,6 +136,14 @@ body footer .footer-menu {
   width: 100%;
 }
 
+body footer .footer-menu.crash {
+  display: None;
+}
+
+body footer .footer-menu .appearing-menu.deep {
+  display: None;
+}
+
 body footer .footer-menu #appear-and-hide-menu {
   position: fixed;
   width: 100%;
@@ -286,27 +294,6 @@ body footer .footer-menu #appear-and-hide-menu div div div .hide-and-appear-crea
   list-style-type: none;
 }
 
-body footer .footer-menu #hide-menu {
-  position: absolute;
-  right: 0px;
-  z-index: 10;
-  cursor: pointer;
-}
-
-body footer .footer-menu #hide-menu .hide-and-appear-class {
-  -webkit-transform: translate(200%, -100%);
-          transform: translate(200%, -100%);
-  height: 30%;
-  width: 30%;
-}
-
-body footer .footer-menu #hide-menu .hide-and-appear-class.up {
-  -webkit-transform: rotateX(180deg);
-          transform: rotateX(180deg);
-  -webkit-transition: .3s;
-  transition: .3s;
-}
-
 body footer .footer-menu .menu-class.hidden {
   visibility: hidden;
 }
@@ -354,5 +341,25 @@ body footer .footer-menu #menu div #question-links {
 body footer .footer-menu #menu div #create-article-link {
   border-left: solid 2px white;
   border-right: solid 2px white;
+}
+
+body #menu-hide-and-appear-button {
+  z-index: 10;
+  cursor: pointer;
+}
+
+body #menu-hide-and-appear-button .hide-and-appear-class {
+  position: fixed;
+  right: 1vh;
+  bottom: 20vh;
+  height: 8%;
+  width: auto;
+}
+
+body #menu-hide-and-appear-button .hide-and-appear-class.up {
+  -webkit-transform: rotateX(180deg);
+          transform: rotateX(180deg);
+  -webkit-transition: .3s;
+  transition: .3s;
 }
 /*# sourceMappingURL=base.css.map */
