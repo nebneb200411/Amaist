@@ -1,0 +1,105 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+main {
+    div {
+        div {
+            #article-content {
+                .author-info-box {
+                    .author-icon-box {
+                        display: inline-block;
+                        width: 40%;
+
+                        a {
+                            img {
+                                width: 10vh;
+                                height: auto;
+                                border-radius: 50%;
+                            }
+                        }
+                    }
+
+                    .author-name-box {
+                        display: inline-block;
+                        width: 40%;
+
+                        a {
+                            p {
+                                text-align: center;
+                            }
+                        }
+                    }
+                }
+
+                .tags-and-title-box {
+                    .tag-box {
+                        display: inline-block;
+                        width: 40%;
+
+                        i {
+                            display: inline-block;
+                            width: 40%;
+                        }
+
+                        p {
+                            display: inline-block;
+                            width: 40%;
+                        }
+                    }
+
+                    .title-box {
+                        display: inline-block;
+                        width: 40%;
+
+                        p {
+                            text-align: center;
+                            margin: auto;
+                        }
+                    }
+
+                    .good-number-box {
+                        display: inline-block;
+                        width: 40%;
+                    }
+
+                    .good-post-box {
+                        display: inline-block;
+                        width: 40%;
+                    }
+                }
+
+                .article-content-box {
+                    border: solid 2px #afeeee;
+                }
+
+                .comment-form {}
+
+                .comment-display-box {
+                    .each-user-comment-box {
+                        .commentor-icon {
+                            display: inline-block;
+                            width: 20%;
+
+                            img {
+                                width: 10vh;
+                                height: auto;
+                            }
+                        }
+
+                        .commentor-name {
+                            display: inline-block;
+                            width: 70%;
+                        }
+
+                        .comment-content {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

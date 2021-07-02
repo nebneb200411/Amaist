@@ -1,52 +1,98 @@
 {% extends 'base.html' %}
+{% load static %}
+{% block stylesheet %}
+    <link rel="stylesheet" href="{% static 'article/detail/detail.css' %}"/>
+{% endblock stylesheet %}
 {% block contents %}
-        
-
-<div class="container">
+<div class="container-fluid">
     <div class="row">
-        <div class="article-title">
-            {{ object.title }}
+        <div class="col-12 col-md-3 col-xl-3" id="left-box">
         </div>
-        <div class="article-content">
-            {{ object.content | safe }}
+
+
+        <!--Main content article will discribe in here-->
+        <div class="col-12 col-md-6 col-xl-6" id="article-content">
+            <div class="author-info-box">
+                <div class="author-icon-box">
+                    <a href="{% url 'profiles:profile_detail' profile.pk %}" class="author-icon-link">
+                        <img src="{{MEDIA_URL}}{{object.author.user.icon}}"/>
+                    </a>
+                </div>
+                <div class="author-name-box">
+                    <a href="{% url 'profiles:profile_detail' profile.pk %}" class="author-icon-link">
+                        <p class="author-name">{{object.author}}</p>
+                    </a>
+                </div>
+            </div>
+
+            <!--about article-->
+            <div class="tags-and-title-box">
+                <div class="tag-box">
+                    {% for tag in tags %}
+                        <i class="fas fa-tags"></i>
+                        <p class="tags">{{tag}}</p>
+                        <hr>
+                    {% endfor %}
+                </div>
+                <div class="title-box">
+                    <p class="title">{{object.title}}</p>
+                </div>
+                
+                <!--good-->
+                <div class="good-number-box">
+                    <p class="good-number">{{good_number}}</p>
+                </div>
+
+                <!--post good to this article-->
+                <div class="good-post-box">
+                    <form method="POST" action="{% url 'article:good_count' %}">
+                        {% csrf_token %}
+                        <input type="hidden" name="good_count" value="{{object.pk}}"/>
+                        <button type="submit" class="btn btn-primary">いいね！</button>
+                    </form>
+                </div>
+            </div>
+
+            <!--article content-->
+            <div class="article-content-box">
+                {{object.content|safe}}
+            </div>
+
+            <hr>
+
+            <p>Comments!!</p>
+
+            <!--comment form-->
+            <div class="comment-form">
+                <form method="POST" action="{% url 'article:comment'%}">
+                    {% csrf_token %}
+                    <input type="hidden"  name="response_to" value="{{request.user}}"/>
+                    <input type="hidden" name="article_pk" value="{{object.pk}}"/>
+                    <input type="text" name="comment"/>
+                    <button type="submit" class="btn btn-primary">送信</button>
+                </form>
+            </div>
+
+            <!--display comments-->
+            <div class="comment-display-box">
+                {% for comment_object in comment_objects %}
+                    <div class="each-user-comment-box">
+                        <div class="commentor-icon">
+                            <img src="{{MEDIA_URL}}{{comment_object.response_from.user.icon}}"/>
+                        </div>
+                        <div class="commentor-name">
+                            <p>{{comment_object.response_from}}</p>
+                        </div>
+                        <div class="comment-content">
+                            <p>{{comment_object.comment}}</p>
+                        </div>
+                    </div>
+                <hr>
+                {% endfor %}
+            </div>
         </div>
-        <div class="article-tags">
-            {% for tag in tags %}
-                <p>{{tag}}</p>
-            {% endfor %}
+        <div class="col-12 col-md-3 col-xl-3" id="right-box">
         </div>
     </div>
 </div>
-
-
-
-<!--コメントの表示-->
-<div class="comment-display">
-    {% for comment_object in comment_objects %}
-        {{comment_object.comment}}
-        {{comment_object.response_from}}
-    {% endfor %}
-</div>
-<!--コメント機能-->
-<div class="comment">
-    <form method="POST" action="{% url 'article:comment'%}">
-        {% csrf_token %}
-        <input type="hidden"  name="response_to" value="{{request.user}}"/>
-        <input type="hidden" name="article_pk" value="{{object.pk}}"/>
-        <input type="text" name="comment"/>
-        <button type="submit" class="btn btn-primary">送信</button>
-    </form>
-</div>
-
-<!--いいね機能-->
-<div class="goods">
-    <p>{{good_number}}</p>
-</div>
-
-<div class="good_count">
-    <form method="POST" action="{% url 'article:good_count' %}">
-        {% csrf_token %}
-        <input type="hidden" name="good_count" value="{{object.pk}}"/>
-        <button type="submit" class="btn btn-primary">いいね！</button>
-    </form>
 {% endblock contents %}

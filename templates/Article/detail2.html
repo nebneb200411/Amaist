@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block contents %}
+        
+
+<div class="container">
+    <div class="row">
+        <div class="article-title">
+            {{ object.title }}
+        </div>
+        <div class="article-content">
+            {{ object.content | safe }}
+        </div>
+        <div class="article-tags">
+            {% for tag in tags %}
+                <p>{{tag}}</p>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+
+<!--コメントの表示-->
+<div class="comment-display">
+    {% for comment_object in comment_objects %}
+        {{comment_object.comment}}
+        {{comment_object.response_from}}
+    {% endfor %}
+</div>
+<!--コメント機能-->
+<div class="comment">
+    <form method="POST" action="{% url 'article:comment'%}">
+        {% csrf_token %}
+        <input type="hidden"  name="response_to" value="{{request.user}}"/>
+        <input type="hidden" name="article_pk" value="{{object.pk}}"/>
+        <input type="text" name="comment"/>
+        <button type="submit" class="btn btn-primary">送信</button>
+    </form>
+</div>
+
+<!--いいね機能-->
+<div class="goods">
+    <p>{{good_number}}</p>
+</div>
+
+<div class="good_count">
+    <form method="POST" action="{% url 'article:good_count' %}">
+        {% csrf_token %}
+        <input type="hidden" name="good_count" value="{{object.pk}}"/>
+        <button type="submit" class="btn btn-primary">いいね！</button>
+    </form>
+{% endblock contents %}

@@ -1,0 +1,85 @@
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+main div div #article-content .author-info-box .author-icon-box {
+  display: inline-block;
+  width: 40%;
+}
+
+main div div #article-content .author-info-box .author-icon-box a img {
+  width: 10vh;
+  height: auto;
+  border-radius: 50%;
+}
+
+main div div #article-content .author-info-box .author-name-box {
+  display: inline-block;
+  width: 40%;
+}
+
+main div div #article-content .author-info-box .author-name-box a p {
+  text-align: center;
+}
+
+main div div #article-content .tags-and-title-box .tag-box {
+  display: inline-block;
+  width: 40%;
+}
+
+main div div #article-content .tags-and-title-box .tag-box i {
+  display: inline-block;
+  width: 40%;
+}
+
+main div div #article-content .tags-and-title-box .tag-box p {
+  display: inline-block;
+  width: 40%;
+}
+
+main div div #article-content .tags-and-title-box .title-box {
+  display: inline-block;
+  width: 40%;
+}
+
+main div div #article-content .tags-and-title-box .title-box p {
+  text-align: center;
+  margin: auto;
+}
+
+main div div #article-content .tags-and-title-box .good-number-box {
+  display: inline-block;
+  width: 40%;
+}
+
+main div div #article-content .tags-and-title-box .good-post-box {
+  display: inline-block;
+  width: 40%;
+}
+
+main div div #article-content .article-content-box {
+  border: solid 2px #afeeee;
+}
+
+main div div #article-content .comment-display-box .each-user-comment-box .commentor-icon {
+  display: inline-block;
+  width: 20%;
+}
+
+main div div #article-content .comment-display-box .each-user-comment-box .commentor-icon img {
+  width: 10vh;
+  height: auto;
+}
+
+main div div #article-content .comment-display-box .each-user-comment-box .commentor-name {
+  display: inline-block;
+  width: 70%;
+}
+
+main div div #article-content .comment-display-box .each-user-comment-box .comment-content {
+  width: 100%;
+}
+/*# sourceMappingURL=detail.css.map */

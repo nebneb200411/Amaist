@@ -89,6 +89,9 @@ class ArticleDetailView(DetailView):
         # Tagの取得
         tags = article.tag.all()
         context['tags'] = tags
+        # get user profile model
+        profile = Profile.objects.get(user=article.author)
+        context['profile'] = profile
         return context
 
 
