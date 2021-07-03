@@ -12,6 +12,19 @@
 
         <!--Main content article will discribe in here-->
         <div class="col-12 col-md-6 col-xl-6" id="article-content">
+            <!--display title in here-->
+            <div class="title-box">
+                <div class="theme">
+                    <p class="theme-p"><i>Theme</i></p>
+                </div>
+                <div class="title">
+                    <p class="title">{{object.title}}</p>
+                </div>
+            </div>
+
+            <hr>
+
+            <!-- display author's information in here-->
             <div class="author-info-box">
                 <div class="author-icon-box">
                     <a href="{% url 'profiles:profile_detail' profile.pk %}" class="author-icon-link">
@@ -25,8 +38,10 @@
                 </div>
             </div>
 
+            <hr>
+
             <!--about article-->
-            <div class="tags-and-title-box">
+            <div class="tags-and-good-box">
                 <div class="tag-box">
                     {% for tag in tags %}
                         <i class="fas fa-tags"></i>
@@ -34,22 +49,20 @@
                         <hr>
                     {% endfor %}
                 </div>
-                <div class="title-box">
-                    <p class="title">{{object.title}}</p>
-                </div>
-                
-                <!--good-->
-                <div class="good-number-box">
-                    <p class="good-number">{{good_number}}</p>
-                </div>
+                <!--display good and post good from here-->
+                <div class="good-box">
+                    <div class="good-number-box">
+                        <p class="good-number">{{good_number}}</p>
+                    </div>
 
-                <!--post good to this article-->
-                <div class="good-post-box">
-                    <form method="POST" action="{% url 'article:good_count' %}">
-                        {% csrf_token %}
-                        <input type="hidden" name="good_count" value="{{object.pk}}"/>
-                        <button type="submit" class="btn btn-primary">いいね！</button>
-                    </form>
+                    <!--post good to this article-->
+                    <div class="good-post-box">
+                        <form method="POST" action="{% url 'article:good_count' %}">
+                            {% csrf_token %}
+                            <input type="hidden" name="good_count" value="{{object.pk}}"/>
+                            <button type="submit" class="btn btn-primary">いいね！</button>
+                        </form>
+                    </div>
                 </div>
             </div>
 
@@ -73,12 +86,16 @@
                 </form>
             </div>
 
+            <hr>
+
             <!--display comments-->
             <div class="comment-display-box">
                 {% for comment_object in comment_objects %}
                     <div class="each-user-comment-box">
                         <div class="commentor-icon">
-                            <img src="{{MEDIA_URL}}{{comment_object.response_from.user.icon}}"/>
+                            <a href="{% url 'profiles:profile_detail' comment_object.response_from.user.pk%}">
+                                <img src="{{MEDIA_URL}}{{comment_object.response_from.user.icon}}"/>
+                            </a>
                         </div>
                         <div class="commentor-name">
                             <p>{{comment_object.response_from}}</p>

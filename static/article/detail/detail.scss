@@ -5,9 +5,27 @@
 }
 
 main {
+    background-color: #f0fff0;
+
     div {
         div {
             #article-content {
+
+                //About title 
+                .title-box {
+                    background: radial-gradient(#afeeee, #00bfff);
+                    display: inline-block;
+                    width: 100%;
+                    margin: auto;
+
+                    p {
+                        font-size: 300%;
+                        font-family: "Times New Roman", "MS Pゴシック";
+                        text-align: center;
+                        margin: auto;
+                    }
+                }
+
                 .author-info-box {
                     .author-icon-box {
                         display: inline-block;
@@ -34,40 +52,35 @@ main {
                     }
                 }
 
-                .tags-and-title-box {
+                .tags-and-good-box {
+                    background-color: #d3d3d3;
+
                     .tag-box {
                         display: inline-block;
                         width: 40%;
 
                         i {
                             display: inline-block;
-                            width: 40%;
                         }
 
                         p {
                             display: inline-block;
+                        }
+                    }
+
+                    .good-box {
+                        display: inline-block;
+                        width: 40%;
+
+                        .good-number-box {
+                            display: inline-block;
                             width: 40%;
                         }
-                    }
 
-                    .title-box {
-                        display: inline-block;
-                        width: 40%;
-
-                        p {
-                            text-align: center;
-                            margin: auto;
+                        .good-post-box {
+                            display: inline-block;
+                            width: 40%;
                         }
-                    }
-
-                    .good-number-box {
-                        display: inline-block;
-                        width: 40%;
-                    }
-
-                    .good-post-box {
-                        display: inline-block;
-                        width: 40%;
                     }
                 }
 
@@ -78,6 +91,8 @@ main {
                 .comment-form {}
 
                 .comment-display-box {
+                    background-color: #d2b48c;
+
                     .each-user-comment-box {
                         .commentor-icon {
                             display: inline-block;
@@ -95,7 +110,9 @@ main {
                         }
 
                         .comment-content {
-                            width: 100%;
+                            background-color: #ffffe0;
+                            width: 90%;
+                            margin: auto;
                         }
                     }
                 }

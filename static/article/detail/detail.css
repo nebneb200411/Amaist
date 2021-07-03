@@ -1,8 +1,27 @@
+@charset "UTF-8";
 *,
 *::before,
 *::after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+main {
+  background-color: #f0fff0;
+}
+
+main div div #article-content .title-box {
+  background: radial-gradient(#afeeee, #00bfff);
+  display: inline-block;
+  width: 100%;
+  margin: auto;
+}
+
+main div div #article-content .title-box p {
+  font-size: 300%;
+  font-family: "Times New Roman", "MS Pゴシック";
+  text-align: center;
+  margin: auto;
 }
 
 main div div #article-content .author-info-box .author-icon-box {
@@ -25,43 +44,44 @@ main div div #article-content .author-info-box .author-name-box a p {
   text-align: center;
 }
 
-main div div #article-content .tags-and-title-box .tag-box {
+main div div #article-content .tags-and-good-box {
+  background-color: #d3d3d3;
+}
+
+main div div #article-content .tags-and-good-box .tag-box {
   display: inline-block;
   width: 40%;
 }
 
-main div div #article-content .tags-and-title-box .tag-box i {
+main div div #article-content .tags-and-good-box .tag-box i {
+  display: inline-block;
+}
+
+main div div #article-content .tags-and-good-box .tag-box p {
+  display: inline-block;
+}
+
+main div div #article-content .tags-and-good-box .good-box {
   display: inline-block;
   width: 40%;
 }
 
-main div div #article-content .tags-and-title-box .tag-box p {
+main div div #article-content .tags-and-good-box .good-box .good-number-box {
   display: inline-block;
   width: 40%;
 }
 
-main div div #article-content .tags-and-title-box .title-box {
-  display: inline-block;
-  width: 40%;
-}
-
-main div div #article-content .tags-and-title-box .title-box p {
-  text-align: center;
-  margin: auto;
-}
-
-main div div #article-content .tags-and-title-box .good-number-box {
-  display: inline-block;
-  width: 40%;
-}
-
-main div div #article-content .tags-and-title-box .good-post-box {
+main div div #article-content .tags-and-good-box .good-box .good-post-box {
   display: inline-block;
   width: 40%;
 }
 
 main div div #article-content .article-content-box {
   border: solid 2px #afeeee;
+}
+
+main div div #article-content .comment-display-box {
+  background-color: #d2b48c;
 }
 
 main div div #article-content .comment-display-box .each-user-comment-box .commentor-icon {
@@ -80,6 +100,8 @@ main div div #article-content .comment-display-box .each-user-comment-box .comme
 }
 
 main div div #article-content .comment-display-box .each-user-comment-box .comment-content {
-  width: 100%;
+  background-color: #ffffe0;
+  width: 90%;
+  margin: auto;
 }
 /*# sourceMappingURL=detail.css.map */
