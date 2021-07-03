@@ -22,30 +22,36 @@
                 </div>
             </div>
 
-            <hr>
+            <hr class="horizontal-line">
 
             <!-- display author's information in here-->
             <div class="author-info-box">
+                <p>-Author-</p>
                 <div class="author-icon-box">
-                    <a href="{% url 'profiles:profile_detail' profile.pk %}" class="author-icon-link">
+                    <a href="{% url 'profiles:otheruser_profile' profile.pk %}" class="author-icon-link">
                         <img src="{{MEDIA_URL}}{{object.author.user.icon}}"/>
                     </a>
                 </div>
                 <div class="author-name-box">
-                    <a href="{% url 'profiles:profile_detail' profile.pk %}" class="author-icon-link">
+                    <a href="{% url 'profiles:otheruser_profile' profile.pk %}" class="author-icon-link">
                         <p class="author-name">{{object.author}}</p>
                     </a>
                 </div>
             </div>
 
-            <hr>
+            <hr class="horizontal-line">
 
             <!--about article-->
             <div class="tags-and-good-box">
                 <div class="tag-box">
+                    <hr>
                     {% for tag in tags %}
-                        <i class="fas fa-tags"></i>
-                        <p class="tags">{{tag}}</p>
+                        <div class="each-tag-box">
+                            <div class="icon-and-tag-name">
+                                <i class="fas fa-tags"></i>
+                                <p class="tags">{{tag}}</p>
+                            </div>
+                        </div>
                         <hr>
                     {% endfor %}
                 </div>
@@ -66,14 +72,16 @@
                 </div>
             </div>
 
+            <hr class="horizontal-line content-start-hr" data-content="Content">
+
             <!--article content-->
             <div class="article-content-box">
                 {{object.content|safe}}
             </div>
 
-            <hr>
+            <hr class="horizontal-line">
 
-            <p>Comments!!</p>
+            <p>コメント：</p>
 
             <!--comment form-->
             <div class="comment-form">
@@ -81,30 +89,33 @@
                     {% csrf_token %}
                     <input type="hidden"  name="response_to" value="{{request.user}}"/>
                     <input type="hidden" name="article_pk" value="{{object.pk}}"/>
-                    <input type="text" name="comment"/>
+                    <textarea type="text" name="comment" id="input-comment" rows="5" cols="33" ></textarea>
                     <button type="submit" class="btn btn-primary">送信</button>
                 </form>
             </div>
 
-            <hr>
+            <hr class="horizontal-line">
 
             <!--display comments-->
             <div class="comment-display-box">
                 {% for comment_object in comment_objects %}
                     <div class="each-user-comment-box">
                         <div class="commentor-icon">
-                            <a href="{% url 'profiles:profile_detail' comment_object.response_from.user.pk%}">
+                            <a href="{% url 'profiles:otheruser_profile' comment_object.response_from.user.pk%}">
                                 <img src="{{MEDIA_URL}}{{comment_object.response_from.user.icon}}"/>
                             </a>
                         </div>
                         <div class="commentor-name">
                             <p>{{comment_object.response_from}}</p>
                         </div>
+                        <div class="comment-posted-date">
+                            <p>作成日:{{comment_object.created_at|date:"y/m/d"}}</p>
+                        </div>
+                        <hr>
                         <div class="comment-content">
                             <p>{{comment_object.comment}}</p>
                         </div>
                     </div>
-                <hr>
                 {% endfor %}
             </div>
         </div>

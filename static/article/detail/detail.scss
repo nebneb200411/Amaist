@@ -9,11 +9,17 @@ main {
 
     div {
         div {
+            #left-box {
+                border-right: solid 3px #dcdcdc;
+            }
+
             #article-content {
 
                 //About title 
                 .title-box {
-                    background: radial-gradient(#afeeee, #00bfff);
+                    background: radial-gradient(#20b2aa, #1e90ff);
+                    border: solid 2px #1e90ff;
+                    box-shadow: 0 0 10px #00bfff;
                     display: inline-block;
                     width: 100%;
                     margin: auto;
@@ -27,11 +33,18 @@ main {
                 }
 
                 .author-info-box {
+                    p {
+                        text-align: center;
+                        font-family: "Century Gothic";
+                        font-size: 200%;
+                    }
+
                     .author-icon-box {
                         display: inline-block;
                         width: 40%;
 
                         a {
+
                             img {
                                 width: 10vh;
                                 height: auto;
@@ -45,36 +58,54 @@ main {
                         width: 40%;
 
                         a {
+                            color: #2e8b57;
+
                             p {
                                 text-align: center;
+                                font-family: "arial", "MS Pゴシック";
                             }
                         }
                     }
                 }
 
                 .tags-and-good-box {
+                    border: solid 2px #696969;
                     background-color: #d3d3d3;
+                    box-shadow: 0 0 10px #696969;
 
                     .tag-box {
                         display: inline-block;
                         width: 40%;
 
-                        i {
-                            display: inline-block;
-                        }
+                        .each-tag-box {
+                            .icon-and-tag-name {
+                                width: 80%;
+                                margin: auto;
 
-                        p {
-                            display: inline-block;
+                                i {
+                                    display: inline-block;
+                                }
+
+                                p {
+                                    display: inline-block;
+                                }
+
+                            }
                         }
                     }
 
                     .good-box {
                         display: inline-block;
-                        width: 40%;
+                        width: 50%;
+                        margin: auto;
 
                         .good-number-box {
                             display: inline-block;
                             width: 40%;
+
+                            p {
+                                text-align: right;
+                            }
                         }
 
                         .good-post-box {
@@ -84,22 +115,56 @@ main {
                     }
                 }
 
-                .article-content-box {
-                    border: solid 2px #afeeee;
+                .horizontal-line {
+                    background-color: #1e90ff;
+                    size: 2px;
+                    box-shadow: 0px 10px 10px -5px #7fffd4;
                 }
 
-                .comment-form {}
+                //article content
+
+                .article-content-box {
+                    border: solid 2px #afeeee;
+                    box-shadow: 0 0 8px #48d1cc;
+                }
+
+                .comment-form {
+                    form {
+                        #input-comment {
+                            width: 100%;
+                            height: 200px;
+                            border-radius: 5px;
+                            border: solid 2px #008b8b;
+                            box-shadow: 0 0 10px #a9a9a9;
+                        }
+
+                        #input-comment:focus {
+                            outline: none;
+                            box-shadow: 0 0 20px #87ceeb;
+                        }
+
+                        button {
+                            margin-top: 2%;
+                            margin-left: 80%;
+                        }
+                    }
+                }
 
                 .comment-display-box {
-                    background-color: #d2b48c;
 
                     .each-user-comment-box {
+                        background-color: #ffe4e1;
+                        border: solid 2px #cd5c5c;
+                        box-shadow: 0 0 10px #808080;
+                        margin-bottom: 2%;
+
                         .commentor-icon {
                             display: inline-block;
                             width: 20%;
+                            margin: 5% 0 0 5%;
 
                             img {
-                                width: 10vh;
+                                width: 5vh;
                                 height: auto;
                             }
                         }
@@ -107,15 +172,43 @@ main {
                         .commentor-name {
                             display: inline-block;
                             width: 70%;
+
+                            p {
+                                text-align: center;
+                                font-size: 150%;
+                                font-family: "arial", "MS Pゴシック";
+                            }
+                        }
+
+                        .comment-posted-date {
+                            padding-right: 5%;
+
+                            p {
+                                text-align: right;
+                                font-family: "Times New Roman", "MS Pゴシック";
+                            }
+                        }
+
+                        hr {
+                            background-color: #808080;
+                            width: 90%;
                         }
 
                         .comment-content {
-                            background-color: #ffffe0;
                             width: 90%;
                             margin: auto;
+
+                            p {
+                                text-align: center;
+                                font-family: "Times New Roman", "MS Pゴシック";
+                            }
                         }
                     }
                 }
+            }
+
+            #right-box {
+                border-left: solid 3px #dcdcdc;
             }
         }
     }
