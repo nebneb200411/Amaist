@@ -38,6 +38,7 @@ urlpatterns = [
     path('profiles/', include('profiles.urls')),
     path('data_library/', include('data_library.urls')),
     path('question/', include('question.urls')),
+    path('ckeditor/', include('ckeditor_uploader.urls')),
 ]
 
 # 開発環境なので以下を設定

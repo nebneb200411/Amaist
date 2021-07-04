@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth import get_user_model
+from ckeditor_uploader.fields import RichTextUploadingField
 
 # ユーザー名取得
 User = get_user_model()
@@ -15,7 +16,7 @@ class Tag(models.Model):
 class Article(models.Model):
     author = models.ForeignKey(
         User, related_name="author", on_delete=models.CASCADE)
-    content = models.TextField('テキスト')
+    content = RichTextUploadingField('テキスト', null=False, blank=False)
     title = models.TextField('タイトル', max_length=50)
     created_at = models.DateTimeField('作成日', auto_now_add=True)
     updated_at = models.DateTimeField('更新日', auto_now=True)

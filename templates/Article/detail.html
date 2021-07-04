@@ -2,6 +2,7 @@
 {% load static %}
 {% block stylesheet %}
     <link rel="stylesheet" href="{% static 'article/detail/detail.css' %}"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/monokai.min.css">
 {% endblock stylesheet %}
 {% block contents %}
 <div class="container-fluid">
@@ -124,3 +125,7 @@
     </div>
 </div>
 {% endblock contents %}
+{% block script %}
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+{% endblock script %}

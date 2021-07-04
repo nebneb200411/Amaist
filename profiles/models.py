@@ -20,8 +20,6 @@ class Profile(models.Model):
         User, related_name="follower", blank=True, default=None)
     introduction = models.TextField(max_length=400, blank=True)
     icon = models.ImageField('アイコン', upload_to=icon_path, blank=True)
-    articles = models.ForeignKey(
-        Article, on_delete=models.CASCADE, blank=True, null=True)
 
     def __str__(self):
         return str(self.user.username)

@@ -6,7 +6,7 @@ User = get_user_model()
 
 class DataLibrary(models.Model):
     data_file = models.FileField(upload_to='data_library', null=False)
-    uploader = models.OneToOneField(User, on_delete=models.CASCADE)
+    uploader = models.ForeignKey(User, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     introduction = models.TextField(max_length=20000, null=True)
     good = models.ManyToManyField(User, related_name="good", default=None)
