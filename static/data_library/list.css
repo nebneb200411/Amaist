@@ -1,0 +1,50 @@
+@charset "UTF-8";
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+p {
+  font-family: "Arial", "MS Pゴシック";
+}
+
+main div div #left-box {
+  background-color: #afeeee;
+  border-right: solid 2px #2e8b57;
+}
+
+main div div #main-box .comment-box p {
+  text-align: center;
+}
+
+main div div #main-box .each-data-box {
+  width: 100%;
+}
+
+main div div #main-box .each-data-box .file-box {
+  display: inline-block;
+  width: 20%;
+}
+
+main div div #main-box .each-data-box .file-box a i {
+  width: 80%;
+  height: auto;
+}
+
+main div div #main-box .each-data-box .introduction-box {
+  display: inline-block;
+  width: 60%;
+}
+
+main div div #main-box .each-data-box .poster-date-box {
+  display: inline-block;
+  width: 10%;
+}
+
+main div div #right-box {
+  background-color: #afeeee;
+  border-left: solid 2px #2e8b57;
+}
+/*# sourceMappingURL=list.css.map */

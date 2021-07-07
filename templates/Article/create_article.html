@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block stlesheet %}
+{% block stylesheet %}
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/monokai.min.css">
-{% endblock stlesheet %}
+<link rel="stylesheet" href="{% static 'article/create/create.css' %}"/>
+{% endblock stylesheet %}
 
 {% block contents %}
 <form method="POST">

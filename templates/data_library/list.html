@@ -1,11 +1,70 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block stylesheet %}
+    <link rel="stylesheet" href="{% static 'data_library/list.css' %}">
+{% endblock stylesheet %}
+
 {% block contents %}
-    {% for data_object in object_list %}
+    <div class="container-fluid">
+        <div class="row">
+
+            <!--left side display-->
+            <div class="col-12 col-md-3 col-xl-3" id="left-box">
+            </div>
+
+            <!--main contents-->
+            <div class="col-12 col-md-6 col-xl-6" id="main-box">
+
+                <!--display comment in here-->
+                <div class="comment-box">
+                    <p>データ一覧</p>
+                </div>
+
+                <hr>
+
+                <!--display each user's data file-->
+                {% for data_library in object_list %}
+                <div class="each-data-box">
+
+                    <!--show title-->
+                    <div class="file-box">
+                            <a href="{% url 'data_library:detail' data_library.pk %}">
+                                <i class="fas fa-file-invoice"></i>
+                            </a>
+                    </div>
+
+                    <!--show data discription-->
+                    <div class="introduction-box">
+                        <p>{{data_library.introduction}}</p>
+                    </div> 
+
+                    <!--show posted date and person who post the data-->
+                    <div class="poster-date-box">
+                        <div class="posted-by-box">
+                            <p>uploaded by:{{data_library.uploader}}</p>
+                        </div>
+                        <div class="data-box">
+                            <p>{{data_library.created_at|date:"y/m/d"}}</p>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                </div>
+                {% endfor %}
+            </div>
+
+            <!--right side display-->
+            <div class="col-12 col-md-3 col-xl-3" id="right-box">
+            </div>
+
+        </div>
+    </div>
+<!--{% for data_object in object_list %}
     <a href="{% url 'data_library:detail' data_object.pk %}">
     {{data_object.data_file}}
     {{data_object.uploader}}
     {{data_object.created_at}}
     </a>
-    {% endfor %}
+    {% endfor %}-->
 {% endblock contents %}

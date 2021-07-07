@@ -1,0 +1,29 @@
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+main form p {
+  margin: auto;
+  width: 70%;
+}
+
+main form p input {
+  width: 70%;
+  margin-right: auto;
+  margin-top: 5%;
+  border: solid 2px #008080;
+  border-radius: 5px;
+}
+
+main form p input:focus {
+  -webkit-box-shadow: 0 0 10px #7fffd4;
+          box-shadow: 0 0 10px #7fffd4;
+}
+
+main form .django-ckeditor-widget {
+  width: 100%;
+}
+/*# sourceMappingURL=create.css.map */

@@ -1,0 +1,67 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+//基本設定
+
+p {
+    font-family: "Arial", "MS Pゴシック";
+}
+
+main {
+    div {
+        div {
+            #left-box {
+                background-color: #afeeee;
+                border-right: solid 2px #2e8b57;
+            }
+
+            #main-box {
+
+                .comment-box {
+
+                    p {
+                        text-align: center;
+                    }
+                }
+
+                .each-data-box {
+                    width: 100%;
+
+                    .file-box {
+                        display: inline-block;
+                        width: 20%;
+
+                        a {
+                            i {
+                                width: 80%;
+                                height: auto;
+                            }
+                        }
+
+                    }
+
+                    .introduction-box {
+                        display: inline-block;
+                        width: 60%;
+
+                    }
+
+                    .poster-date-box {
+                        display: inline-block;
+                        width: 10%;
+
+                    }
+                }
+
+            }
+
+            #right-box {
+                background-color: #afeeee;
+                border-left: solid 2px #2e8b57;
+            }
+        }
+    }
+}
