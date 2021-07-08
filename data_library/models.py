@@ -23,6 +23,7 @@ class CommentToDataLibrary(models.Model):
         DataLibrary, related_name="comment_to", on_delete=models.CASCADE, default=None)
     response_to = models.ManyToManyField(
         User, related_name="data_library_response_to")
+    created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.content

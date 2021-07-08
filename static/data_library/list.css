@@ -15,6 +15,10 @@ main div div #left-box {
   border-right: solid 2px #2e8b57;
 }
 
+main div div #main-box .comment-box {
+  background-color: #f5deb3;
+}
+
 main div div #main-box .comment-box p {
   text-align: center;
 }
@@ -28,17 +32,12 @@ main div div #main-box .each-data-box .file-box {
   width: 20%;
 }
 
-main div div #main-box .each-data-box .file-box a i {
-  width: 80%;
-  height: auto;
-}
-
-main div div #main-box .each-data-box .introduction-box {
+main div div #main-box .each-data-box .file-box .introduction-box {
   display: inline-block;
   width: 60%;
 }
 
-main div div #main-box .each-data-box .poster-date-box {
+main div div #main-box .each-data-box .file-box .poster-date-box {
   display: inline-block;
   width: 10%;
 }

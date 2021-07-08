@@ -20,18 +20,9 @@
                     <p>データ一覧</p>
                 </div>
 
-                <hr>
-
                 <!--display each user's data file-->
                 {% for data_library in object_list %}
                 <div class="each-data-box">
-
-                    <!--show title-->
-                    <div class="file-box">
-                            <a href="{% url 'data_library:detail' data_library.pk %}">
-                                <i class="fas fa-file-invoice"></i>
-                            </a>
-                    </div>
 
                     <!--show data discription-->
                     <div class="introduction-box">
@@ -46,6 +37,13 @@
                         <div class="data-box">
                             <p>{{data_library.created_at|date:"y/m/d"}}</p>
                         </div>
+                    </div>
+
+                    <!--jump to data file from here-->
+                    <div class="data-link-box">
+                        <a href="{% url 'data_library:detail' data_library.pk %}">
+                            <button type="submit" class="btn btn-primary">詳細</button>
+                        </a>
                     </div>
 
                     <hr>

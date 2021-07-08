@@ -21,6 +21,7 @@ main {
             #main-box {
 
                 .comment-box {
+                    background-color: #f5deb3;
 
                     p {
                         text-align: center;
@@ -35,27 +36,23 @@ main {
                         width: 20%;
 
                         a {
-                            i {
-                                width: 80%;
-                                height: auto;
-                            }
+                            i {}
                         }
 
+                        .introduction-box {
+                            display: inline-block;
+                            width: 60%;
+
+                        }
+
+                        .poster-date-box {
+                            display: inline-block;
+                            width: 10%;
+
+                        }
                     }
 
-                    .introduction-box {
-                        display: inline-block;
-                        width: 60%;
-
-                    }
-
-                    .poster-date-box {
-                        display: inline-block;
-                        width: 10%;
-
-                    }
                 }
-
             }
 
             #right-box {
