@@ -1,0 +1,92 @@
+@charset "UTF-8";
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.contents-titles {
+  font-size: 200%;
+  color: #364e96;
+  padding: 0.5em 0;
+  border-bottom: solid 3px #364e96;
+}
+
+main div div #datalibrary-content .uploader-info-box p {
+  font-size: 200%;
+  font-family: "arial", "MS Pゴシック";
+}
+
+main div div #datalibrary-content .uploader-info-box .uploader-icon-box {
+  display: inline-block;
+  width: 30%;
+  height: auto;
+}
+
+main div div #datalibrary-content .uploader-info-box .uploader-icon-box a img {
+  width: 100%;
+  height: auto;
+}
+
+main div div #datalibrary-content .uploader-info-box .uploader-name-box {
+  display: inline-block;
+  width: 40%;
+}
+
+main div div #datalibrary-content .uploader-info-box .uploader-name-box a p {
+  text-align: center;
+  font-family: "arial", "MS Pゴシック";
+}
+
+main div div #datalibrary-content .file-box div .file-download-box {
+  position: relative;
+  left: 10%;
+}
+
+main div div #datalibrary-content .good-box .good-post-box {
+  position: relative;
+  left: 50%;
+}
+
+main div div #datalibrary-content .comment-form form #input-comment {
+  width: 100%;
+  border: solid 2px #afeeee;
+}
+
+main div div #datalibrary-content .comment-form form #input-comment:focus {
+  -webkit-box-shadow: 0 0 10px #fafad2;
+          box-shadow: 0 0 10px #fafad2;
+  border: solid 2px #afeeee;
+}
+
+main div div #datalibrary-content .comment-display-box .each-user-comment-box .commentor-icon {
+  display: inline-block;
+  width: 40%;
+}
+
+main div div #datalibrary-content .comment-display-box .each-user-comment-box .commentor-icon a img {
+  width: 20%;
+  height: auto;
+}
+
+main div div #datalibrary-content .comment-display-box .each-user-comment-box .commentor-name {
+  display: inline-block;
+  width: 40%;
+}
+
+main div div #datalibrary-content .comment-display-box .each-user-comment-box .comment-posted-date p {
+  text-align: right;
+}
+
+main div div #datalibrary-content .comment-display-box .each-user-comment-box .comment-content {
+  background-color: #ffefd5;
+  border: solid 2px #e9967a;
+  -webkit-box-shadow: 0 0 10px #a9a9a9;
+          box-shadow: 0 0 10px #a9a9a9;
+}
+
+main div div #datalibrary-content .comment-display-box .each-user-comment-box .comment-content p {
+  text-align: center;
+}
+/*# sourceMappingURL=detail.css.map */

@@ -1,5 +1,11 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load filename %}
+{% block stylesheet %}
+<link rel="stylesheet" href="{% static 'data_library/detail/detail.css' %}">
+{% endblock stylesheet %}
+
+
 {% block contents %}
 <div class="container-fluid">
     <div class="row">
@@ -13,10 +19,10 @@
 
             <!-- display uploader's information in here-->
             <div class="uploader-info-box">
-                <p>-UpLoader-</p>
+                <h1 class="contents-titles">-Uploader-</h1>
                 <div class="uploader-icon-box">
                     <a href="{% url 'profiles:otheruser_profile' object.uploader.user.pk %}" class="author-icon-link">
-                        <img src="{{MEDIA_URL}}{{object.uploader.user.icon}}"/>
+                        <img src="{{MEDIA_URL}}{{object.uploader.user.icon}}" class="img-responsive"/>
                     </a>
                 </div>
                 <div class="uploader-name-box">
@@ -26,14 +32,37 @@
                 </div>
             </div>
 
-            <hr class="horizontal-line">
+            <!-- file can download from here -->
+            <div class="file-box">
+                <h1 class="contents-titles">-Download File-</h1>
+                <div class=" d-inline-flex">
+                    <div clas="file-name-box">
+                        <p><i class="fas fa-file-invoice"></i>    {{object.data_file|get_filename}}      </p>
+                    </div>
+                    <div class="file-download-box">
+                        <a href="{{MEDIA_URL}}{{object.data_file}}" download={{MEDIA_URL}}{{object.data_file}}>
+                            <i class="fas fa-download"></i>
+                        </a>
+                    </div>
+                </div>
+            </div> 
 
-            <!--about file-->
+            <!--display file's discription in here-->
+            <div class="introduction-box">
+                <h1 class="contents-titles">-About File-</h1>
+                <div class="introduction">
+                    <p class="introduction-p">{{object.introduction}}</p>
+                </div>
+            </div>
+
+            <hr>
+
+            <!--good-->
             <div class="good-box">
                 <!--display good and post good from here-->
-                <div class="good-box">
+                <div class="good-number-box d-inline-flex">
                     <div class="good-number-box">
-                        <p class="good-number">{{good_number}}</p>
+                        <p class="good-number"><i class="far fa-thumbs-up"></i>   {{good_number}}</p>
                     </div>
 
                     <!--post good to this article-->
@@ -49,13 +78,6 @@
 
             <hr class="horizontal-line content-start-hr" data-content="Content">
 
-            <!--display file's discription in here-->
-            <div class="introduction-box">
-                <div class="introduction">
-                    <p class="introduction-p">{{object.introduction}}</p>
-                </div>
-            </div>
-
             <hr class="horizontal-line">
 
             <p>コメント：</p>
@@ -65,7 +87,7 @@
                 <form method="POST" action="{% url 'data_library:comment'%}">
                     {% csrf_token %}
                     <input type="hidden"  name="response_to" value="{{request.user}}"/>
-                    <input type="hidden" name="article_pk" value="{{object.pk}}"/>
+                    <input type="hidden" name="data_object_pk" value="{{object.pk}}"/>
                     <textarea type="text" name="comment" id="input-comment" rows="5" cols="33" ></textarea>
                     <button type="submit" class="btn btn-primary">送信</button>
                 </form>
@@ -79,7 +101,7 @@
                     <div class="each-user-comment-box">
                         <div class="commentor-icon">
                             <a href="{% url 'profiles:otheruser_profile' comment_object.comment_from.user.pk%}">
-                                <img src="{{MEDIA_URL}}{{comment_object.comment_from.user.icon}}"/>
+                                <img src="{{MEDIA_URL}}{{comment_object.comment_from.user.icon}}" class="img-responsive"/>
                             </a>
                         </div>
                         <div class="commentor-name">
@@ -88,10 +110,10 @@
                         <div class="comment-posted-date">
                             <p>作成日:{{comment_object.created_at|date:"y/m/d"}}</p>
                         </div>
-                        <hr>
                         <div class="comment-content">
                             <p>{{comment_object.content}}</p>
                         </div>
+                        <hr>
                     </div>
                 {% endfor %}
             </div>
