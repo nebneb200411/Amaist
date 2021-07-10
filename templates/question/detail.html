@@ -1,35 +1,71 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block contents %}
-    {{object.contributor}}
-    {{object.title}}
-    {{object.created_at}}
-    {{object.content | safe }}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 col-md-3 col-xl-3" id="left-box"></div>
+        <div class="col-12 col-md-6 col-xl-6" id="main-box">
 
-    <form method="POST" class="comment-form" action="{% url 'question:comment' %}">
-        {% csrf_token %}
-        <input type="hidden"  name="response_to" value="{{request.user}}"/>
-        <input type="hidden" name="question_pk" value="{{object.pk}}"/>
-        <input type="text" name="comment"/>
-        <button type-"submit" class="btn btn-success">送信</button>
-    </form>
+            <!--display contributor's information-->
+            <div class="contributor-info-box">
+                <div class="contributor-icon-box">
+                    <img src="{{MEDIA_URL}}{{object.contributor.user.icon}}"/>
+                </div>
+                <div class="contributor-name">
+                    <p>{{object.contributor}}</p>
+                </div>
+            </div>
 
-    <form method="POST" class="good_count" action="{% url 'question:good_count' %}">
-        {% csrf_token %}
-        <input type="hidden" name="good_count" value="{{object.pk}}"/>
-        <button type="submit" class="btn btn-primary">いいね！</button>
-    </form>
+            <!--display good and good form-->
+            <div class="good-box">
+                <div class="good-count-box">
+                    <p><i class="far fa-thumbs-up"></i>   {{good_number}}</p>
+                </div>
 
-    <div class="good-display">
-        <p>いいね</p>
-        {{good_number}}
+                <div class="good-form-box">
+                    <form method="POST" class="good_count" action="{% url 'question:good_count' %}">
+                        {% csrf_token %}
+                        <input type="hidden" name="good_count" value="{{object.pk}}"/>
+                        <button type="submit" class="btn btn-primary">いいね！</button>
+                    </form>
+                </div>
+            </div>
+
+            <!--display question's content-->
+            <div class="question-box">
+                <div class="question-created-date-box">
+                    <p>{{object.created_at}}</p>
+                </div>
+                <div class="question-title-box">
+                    <p>{{object.title}}</p>
+                </div>
+                <div class="question-content-box">
+                    {{object.content | safe }}
+                </div>
+            </div>
+
+            <!--comment input box-->
+            <div class="comment-input-box">
+                <form method="POST" class="comment-form" action="{% url 'question:comment' %}">
+                    {% csrf_token %}
+                    <input type="hidden"  name="response_to" value="{{request.user}}"/>
+                    <input type="hidden" name="question_pk" value="{{object.pk}}"/>
+                    <input type="text" name="comment"/>
+                    <button type-"submit" class="btn btn-success">送信</button>
+                </form>
+            </div>
+
+            <!--display comment in here-->
+            <div class="comments-box">
+                <p>コメントの表示</p>
+                {% for comment_object in comment_objects %}
+                {{comment_object.comment_from}}
+                {{comment_object.content}}
+                {% endfor %}
+            </div>
+            
+        </div>
+        <div class="col-12 col-md-3 col-xl-3" id="right-box"></div>
     </div>
-
-    <div class="comment-display">
-        <p>コメントの表示</p>
-        {% for comment_object in comment_objects %}
-        {{comment_object.comment_from}}
-        {{comment_object.content}}
-        {% endfor %}
-    </div>
+</div>
 {% endblock contents %}
