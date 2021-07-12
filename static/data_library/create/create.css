@@ -1,0 +1,26 @@
+main div div #left-box {
+  background-color: #fff0f5;
+  border-right: solid 2px #191970;
+}
+
+main div div #main-box .question-page-title {
+  background-color: #ee82ee;
+  margin-top: 10px;
+}
+
+main div div #main-box .question-page-title p {
+  font-size: 200%;
+  font-family: "arial", "Yu Gothic UI";
+  border-bottom: solid 2px #191970;
+  border-top: solid 2px #191970;
+}
+
+main div div #main-box .question-page-title p span {
+  margin-left: 10px;
+}
+
+main div div #right-box {
+  background-color: #fff0f5;
+  border-left: solid 2px #191970;
+}
+/*# sourceMappingURL=create.css.map */

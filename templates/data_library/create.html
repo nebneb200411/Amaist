@@ -1,12 +1,19 @@
 {% extends 'base.html' %}
 {% load static %}
-
+{% block stylesheet %}
+<link rel="stylesheet" href="{% static 'data_library/create/create.css' %}">
+{% endblock stylesheet %}
 {% block contents %}
 <div class="container-fluid">
     <div class="row">
         <div class="col-12 col-md-3 col-xl-3" id="left-box">
         </div>
         <div class="col-12 col-md-6 col-xl-6" id="main-box">
+
+            <!--discribe what page this is-->
+            <div class="question-page-title">
+                <p><span class="mgn-10"></span><i class="fas fa-file-invoice"></i><span class="mgn-10"></span>データ投函</p>
+            </div>
             <div class="form-box">
                 <form method="POST" enctype="multipart/form-data">
                     {% csrf_token %}
@@ -19,3 +26,7 @@
     </div>
 </div> 
 {% endblock contents %}
+
+{% block script %}
+<script type="text/javascript" src="{% static 'data_library/create/create.js' %}"></script>
+{% endblock script %}

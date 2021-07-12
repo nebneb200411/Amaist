@@ -27,16 +27,72 @@
 
         <div class="header-nav">
             <ul class="header-menu">
-                <li><a href="{% url 'article:list' %}"><i class="fas fa-chevron-right"></i>Home</a></li>
-                <li><a href="{% url 'article:CreateArticle' %}"><i class="fas fa-chevron-right"></i>Article</a></li>
-                <li><a href="{% url 'data_library:list' %}"><i class="fas fa-chevron-right"></i>Data Library</a></li>
-                <li><a href="{% url 'question:list' %}"><i class="fas fa-chevron-right"></i>Questions</a></li>
-                <li><a href="{% url 'login' %}"><i class="fas fa-chevron-right"></i>Login</a></li>
+
+                <!--home button-->
+                <li><a href="{% url 'article:list' %}"><i class="fas fa-home"></i><span class="mgr-10"></span>Home</a></li>
+
+                <!--article menu-->
+                <li id="article-first-menu">
+                    <a href="{% url 'article:CreateArticle' %}"><i class="fas fa-book"></i><span class="mgr-10"></span>Article</a>
+                    <ul class="second-menu" id="article-second-menu">
+                        <li>
+                            <a href="{% url 'article:list' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>Watch Articles</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'article:CreateArticle' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>Create Article</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <!--data library button-->
+                <li id="data-library-first-menu">
+                    <a href="{% url 'data_library:list' %}"><i class="fas fa-database"></i><span class="mgr-10"></span>Data Library</a>
+                    <ul class="second-menu" id="data-library-second-menu">
+                        <li>
+                            <a href="{% url 'data_library:create' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>Create DataLibrary</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'data_library:list' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>Watch DataLibrary</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <!--question-menu-->
+                <li id="question-first-menu">
+                    <a href="{% url 'question:list' %}"><i class="fas fa-question"></i></i><span class="mgr-10"></span>Questions</a>
+                    <ul class="second-menu" id="question-second-menu">
+                        <li>
+                            <a href="{% url 'question:create' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>Create Question</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'question:list' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>Watch Question</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <!--login-->
+                <li><a href="{% url 'login' %}"><i class="fas fa-sign-in-alt"></i><span class="mgr-10"></span>Login</a></li>
+
+                <!--profile-->
                 {% if request.user.is_authenticated %}    
-                <li><a href="{% url 'profiles:found_or_not_found' %}"><i class="fas fa-chevron-right"></i>Profile</a></li>
+                <li id="profile-first-menu"><a href="{% url 'profiles:found_or_not_found' %}"><i class="fas fa-user-circle"></i><span class="mgr-10"></span>Profile</a>
+                    <ul class="second-menu" id="profile-second-menu">
+                        <li>
+                            <a href="{% url 'profiles:found_or_not_found' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>Your Profile</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'profiles:profile_list' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>Watch Profiles</a>
+                        </li>
+                    </ul>
+                </li>
                 {% endif %}
                 
             </ul>
+        </div>
+
+        <!--register-->
+        <div class="register-box">
+            <a href="{% url 'sign_up'%}"><p>Registration</p></a>
         </div>
     </header>
 
@@ -49,6 +105,7 @@
     </main>
 
     <footer>
+    <!--
         <div class="footer-menu">
             <div class="appearing-menu" id="appear-and-hide-menu">
                 <div class="container-fluid">
@@ -104,11 +161,11 @@
             <div class="menu-class container-fluid" id="menu">
                 <div class="row">
                     <div class="col-2 col-md-2 col-xl-2" id="article-links">
-                        <p class="footer-links-names">分析結果</p>
+                        <p class="footer-links-names"></p>
                         <img src="{% static 'images/base/article.png' %}" id="article-icon" class="img-responsive icon-links"/>
                     </div>
                     <div class="col-2 col-md-2 col-xl-2" id="datalibrary-links">
-                        <p class="footer-links-names">データの貯蔵庫</p>
+                        <p class="footer-links-names"></p>
                         <img src="{% static 'images/base/datalibrary.png' %}" id="datalibrary-icon" class="img-responsive icon-links"/>
                     </div>
                     <div class="col-2 col-md-2 col-xl-2" id="profile-links">
@@ -116,12 +173,11 @@
                         <img src="{{MEDIA_URL}}{{request.user.user.icon}}" id="profile-icon" class="img-responsive icon-links"/>
                     </div>
                     <div class="col-2 col-md-2 col-xl-2" id="question-links">
-                        <p class="footer-links-names">Solve Your Question!!</p>
-                        <img src="{% static 'images/base/question.jpg' %}" id="question-icon" class="img-responsive icon-links"/>
-                        
+                        <p class="footer-links-names"></p>
+                        <img src="{% static 'images/base/question.png' %}" id="question-icon" class="img-responsive icon-links"/>
                     </div>
                     <div class="col-2 col-md-2 col-xl-2" id="create-article-link">
-                        <p class="footer-links-names">Let's create Artcile!!</p>
+                        <p class="footer-links-names"></p>
                         <img src="{% static 'images/base/create_article.png' %}" id="createarticle-icon" class="img-responsive icon-links"/>
                     </div>
                     <div class="col-2 col-md-2 col-xl-2" id="comingsoon-link">
@@ -134,7 +190,8 @@
         <div id="menu-hide-and-appear-button">
             <img id="hide-and-appear" class="hide-and-appear-class" src="{% static 'images/base/hide_and_appear.png' %}"/>
         </div>
-    </footer>
+        -->
+</footer>
 
 
 </div>

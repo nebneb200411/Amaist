@@ -21,7 +21,7 @@ body {
 
 body header {
   position: fixed;
-  height: 100px;
+  height: 15vh;
   width: 100%;
   z-index: 100;
   background-color: black;
@@ -89,8 +89,9 @@ body header .menu-button .bottom-line {
 }
 
 body header .header-nav {
+  visibility: hidden;
   position: relative;
-  width: 15%;
+  width: 100%;
   top: 10px;
   background-color: black;
   -webkit-transform: translateX(-100%);
@@ -101,6 +102,7 @@ body header .header-nav {
 }
 
 body header .header-nav.slide-in {
+  visibility: visible;
   -webkit-transform: translateX(0px);
           transform: translateX(0px);
   -webkit-transition: .3s;
@@ -116,7 +118,58 @@ body header .header-nav .header-menu li {
 }
 
 body header .header-nav .header-menu li a {
+  color: #f0f8ff;
   z-index: 100;
+}
+
+body header .header-nav .header-menu li a .mgr-10 {
+  margin-left: 10px;
+}
+
+body header .header-nav .header-menu li .second-menu {
+  background-color: #a9a9a9;
+}
+
+body header .header-nav .header-menu li #article-second-menu {
+  display: none;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+body header .header-nav .header-menu li #data-library-second-menu {
+  display: none;
+}
+
+body header .header-nav .header-menu li #question-second-menu {
+  display: none;
+}
+
+body header .header-nav .header-menu li #profile-second-menu {
+  display: none;
+}
+
+body header .header-nav .header-menu #article-first-menu:hover #article-second-menu {
+  display: block;
+  -webkit-transition: .8s;
+  transition: .8s;
+}
+
+body header .header-nav .header-menu #data-library-first-menu:hover #data-library-second-menu {
+  display: block;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+body header .header-nav .header-menu #question-first-menu:hover #question-second-menu {
+  display: block;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+body header .header-nav .header-menu #profile-first-menu:hover #profile-second-menu {
+  display: block;
+  -webkit-transition: .3s;
+  transition: .3s;
 }
 
 body header .header-nav li {
@@ -126,7 +179,7 @@ body header .header-nav li {
 }
 
 body main .nothing {
-  height: 100px;
+  height: 15vh;
   width: 100%;
 }
 

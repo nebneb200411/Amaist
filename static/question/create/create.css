@@ -1,0 +1,34 @@
+@charset "UTF-8";
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+main div div #left-box {
+  background-color: #e9967a;
+  border-right: solid 2px #ff7f50;
+}
+
+main div div #main-box {
+  background-color: #ffefd5;
+}
+
+main div div #main-box .page-title-box {
+  margin-top: 10px;
+}
+
+main div div #main-box .page-title-box p {
+  width: 60%;
+  border-left: solid 20px #f0e68c;
+  border-bottom: solid 2px #f0e68c;
+  font-family: "arial", "MS Pゴシック";
+  font-size: 200%;
+}
+
+main div div #right-box {
+  background-color: #e9967a;
+  border-left: solid 2px #ff7f50;
+}
+/*# sourceMappingURL=create.css.map */

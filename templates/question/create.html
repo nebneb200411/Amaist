@@ -1,13 +1,39 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block stylesheet %}
+<link rel="stylesheet" href="{% static 'question/create/create.css' %}">
+{% endblock stylesheet %}
 {% block contents %}
-<form method="POST">
-    {% csrf_token %}
-    {% autoescape off %}
-    {{form.as_p}}
-    <input type="text" multiple name="tags"/>
-    <input type="text" multiple name="tags"/>
-    <input type="submit" muti label='記事を作成' class="btn btn-success"></input>
-    {% endautoescape %}
-</form>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 col-md-3 col-xl-3" id="left-box">
+        </div>
+        <div class="col-12 col-md-6 col-xl-6" id="main-box">
+            <!--question-create session-->
+            <div class="page-title-box">
+                <p>質問作成</p>
+            </div>
+
+            <div class="question-create-box">
+                <form method="POST">
+                    {% csrf_token %}
+                    {% autoescape off %}
+                    {{form.as_p}}
+                    <div id="tag-box">
+                        <input type="text" multiple name="tags"/>
+                    </div>
+                    <button class="btn btn-primary" id="tag-add-button">タグ追加</button>
+                    <input type="submit" muti label='記事を作成' class="btn btn-success"></input>
+                    {% endautoescape %}
+                </form>
+            </div>
+        </div>
+        <div class="col-12 col-md-3 col-xl-3" id="right-box">
+        </div>
+    </div>
+</div>
+
+{% block script %}
+<script type="text/javascript" src="{% static 'question/create/create.js' %}"></script>
+{% endblock script %}
 {% endblock contents %}

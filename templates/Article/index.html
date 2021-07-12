@@ -56,6 +56,13 @@
                                 <p>created at:</p>
                                 <p class="font">{{article.created_at}}</p>
                             </div>
+                            
+                            <div class="tag-box">
+                                {% for tag in article.tag.all %}
+                                <p><i class="fas fa-tags"></i>{{tag}}</p>
+                                {% empty %}
+                                {% endfor %}
+                            </div>
                         </div>
 
                         <div class="col-xl-12 col-md-12 col-12" id="title">

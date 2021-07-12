@@ -1,0 +1,34 @@
+main {
+    div {
+        div {
+            #left-box {
+                background-color: #fff0f5;
+                border-right: solid 2px #191970;
+            }
+
+            #main-box {
+
+                .question-page-title {
+                    background-color: #ee82ee;
+                    margin-top: 10px;
+
+                    p {
+                        font-size: 200%;
+                        font-family: "arial", "Yu Gothic UI";
+                        border-bottom: solid 2px #191970;
+                        border-top: solid 2px #191970;
+
+                        span {
+                            margin-left: 10px;
+                        }
+                    }
+                }
+            }
+
+            #right-box {
+                background-color: #fff0f5;
+                border-left: solid 2px #191970;
+            }
+        }
+    }
+}

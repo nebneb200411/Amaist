@@ -22,7 +22,7 @@ body {
 
     header {
         position: fixed;
-        height: 100px;
+        height: 15vh;
         width: 100%;
         z-index: 100;
         background-color: black;
@@ -90,8 +90,9 @@ body {
         }
 
         .header-nav {
+            visibility: hidden;
             position: relative;
-            width: 15%;
+            width: 100%;
             top: 10px;
             background-color: black;
             transform: translateX(-100%);
@@ -100,6 +101,7 @@ body {
 
 
             &.slide-in {
+                visibility: visible;
                 transform: translateX(0px);
                 transition: .3s;
             }
@@ -112,7 +114,69 @@ body {
                     z-index: 100;
 
                     a {
+                        color: #f0f8ff;
                         z-index: 100;
+
+                        i {}
+
+                        .mgr-10 {
+                            margin-left: 10px;
+                        }
+                    }
+
+                    .second-menu {
+                        background-color: #a9a9a9;
+                    }
+
+                    #article-second-menu {
+                        display: none;
+                        transition: .3s;
+                    }
+
+                    #data-library-second-menu {
+                        display: none;
+                    }
+
+                    #question-second-menu {
+                        display: none;
+                    }
+
+                    #profile-second-menu {
+                        display: none;
+                    }
+                }
+            }
+
+            .header-menu {
+                #article-first-menu:hover {
+
+                    #article-second-menu {
+                        display: block;
+                        transition: .8s;
+                    }
+                }
+
+                #data-library-first-menu:hover {
+
+                    #data-library-second-menu {
+                        display: block;
+                        transition: .3s;
+                    }
+                }
+
+                #question-first-menu:hover {
+
+                    #question-second-menu {
+                        display: block;
+                        transition: .3s;
+                    }
+                }
+
+                #profile-first-menu:hover {
+
+                    #profile-second-menu {
+                        display: block;
+                        transition: .3s;
                     }
                 }
             }
@@ -131,7 +195,7 @@ body {
 
     main {
         .nothing {
-            height: 100px;
+            height: 15vh;
             width: 100%;
         }
     }
