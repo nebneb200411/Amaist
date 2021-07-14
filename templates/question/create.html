@@ -18,6 +18,7 @@
                 <form method="POST">
                     {% csrf_token %}
                     {% autoescape off %}
+                    {{form.media}}
                     {{form.as_p}}
                     <div id="tag-box">
                         <input type="text" multiple name="tags"/>

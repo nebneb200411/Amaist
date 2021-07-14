@@ -5,7 +5,7 @@ from profiles.models import Profile
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from django.shortcuts import redirect
-from .forms import DataLibraryCreateForm
+from .forms import DataLibraryCreateForm, CommentForm
 
 
 class DataLibraryCreateView(CreateView, LoginRequiredMixin):
@@ -42,13 +42,6 @@ class DataLibraryDetailView(DetailView):
     model = DataLibrary
     template_name = 'data_library/detail.html'
 
-    """
-    def get_object(self, **kwargs):
-        pk = self.kwargs.get('pk')
-        view_data_library = DataLibrary.objects.get(pk=pk)
-        return view_data_library
-    """
-
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         # good function
@@ -61,7 +54,30 @@ class DataLibraryDetailView(DetailView):
         comment_list = CommentToDataLibrary.objects.filter(
             comment_to=data_object)
         context['comment_list'] = comment_list
+
+        # comment form
+        form = CommentForm()
+        context['form'] = form
         return context
+
+    def post(self, request, pk):
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            # save form at first
+            created_comment = form.save(commit=False)
+
+            # after save comment in alter
+            # get data from posted data
+            data_object_pk = request.POST.get('data_object_pk')
+            data_object = DataLibrary.objects.get(pk=data_object_pk)
+            resopnse_from = self.request.user
+
+            # saving process added
+            created_comment.comment_to = data_object
+            created_comment.comment_from = resopnse_from
+            created_comment.save()
+
+            return redirect(request.META.get('HTTP_REFERER'))
 
 
 def good_count(request):

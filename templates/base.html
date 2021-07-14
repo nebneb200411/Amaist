@@ -16,11 +16,20 @@
 <!--以下ににヘッダーを表示-->
     <header>
 
-        <!--メニューを開くボタン-->
-        <div class = 'menu-button'>
-            <div class="top-line"></div>
-            <div class="middle-line"></div>
-            <div class="bottom-line"></div>
+        <div class="header-box">
+
+            <!--メニューを開くボタン-->
+            <div class = 'menu-button'>
+                <div class="top-line"></div>
+                <div class="middle-line"></div>
+                <div class="bottom-line"></div>
+            </div>
+
+            <!--registration link-->
+            <div class="registration-box">
+                <!--register-->
+                <a href="{% url 'sign_up'%}"><p>Registration</p></a>
+            </div>
         </div>
 
 
@@ -90,10 +99,6 @@
             </ul>
         </div>
 
-        <!--register-->
-        <div class="register-box">
-            <a href="{% url 'sign_up'%}"><p>Registration</p></a>
-        </div>
     </header>
 
 

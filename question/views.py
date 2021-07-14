@@ -3,7 +3,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import CommentToQuestion, Question, QuestionTag
 from django.shortcuts import redirect
 from django.urls import reverse_lazy
-from .forms import QuestionCreateForm
+from .forms import QuestionCreateForm, CommentCreateForm
 
 
 class QuestionCreateView(CreateView, LoginRequiredMixin):
@@ -58,7 +58,21 @@ class QuestionDetailView(DetailView, LoginRequiredMixin):
         # Tagの取得
         tags = quetion.tag.all()
         context['tags'] = tags
+        form = CommentCreateForm()
+        context['form'] = form
         return context
+
+    def post(self, request, pk):
+        form = CommentCreateForm(request.POST)
+        if form.is_valid():
+            created_comment = form.save(commit=False)
+            question_pk = request.POST.get('question_pk')
+            question = Question.objects.get(pk=question_pk)
+            response_from = self.request.user
+            created_comment.comment_to = question
+            created_comment.comment_from = response_from
+            created_comment.save()
+            return redirect(request.META.get('HTTP_REFERER'))
 
 
 def good_count(request):
@@ -74,31 +88,3 @@ def good_count(request):
             question.good_from.add(evaluator)
             return redirect(request.META.get('HTTP_REFERER'))
     return redirect('index')
-
-
-# comment funvtion
-def comment(request):
-    if request.method == 'POST':
-        # gain data
-        question_pk = request.POST.get('question_pk')
-        question = Question.objects.get(pk=question_pk)
-        response_from = request.user
-        comment_content = request.POST.get('comment')
-        # check data
-        if not comment_content:
-            return redirect(request.META.get('HTTP_REFERER'))
-        # save process
-        comment = CommentToQuestion()
-        if 'User' in request.POST.get('response_to'):
-            response_to = request.POST.get('response_to')
-            comment.response_to = response_to
-        else:
-            pass
-        comment.comment_to = question
-        comment.comment_from = response_from
-        comment.content = comment_content
-        comment.save()
-        return redirect(request.META.get('HTTP_REFERER'))
-
-    else:
-        return redirect('index')

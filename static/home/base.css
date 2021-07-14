@@ -31,7 +31,8 @@ body header .menu-button closed {
   visibility: hidden;
 }
 
-body header .menu-button {
+body header .header-box .menu-button {
+  display: inline-block;
   position: relative;
   top: 10px;
   left: 10px;
@@ -42,14 +43,14 @@ body header .menu-button {
   border: solid 2px gray;
 }
 
-body header .menu-button.clicked {
+body header .header-box .menu-button.clicked {
   background-color: blue;
   -webkit-transition: .3s;
   transition: .3s;
   z-index: 100;
 }
 
-body header .menu-button .top-line {
+body header .header-box .menu-button .top-line {
   position: absolute;
   top: 25%;
   left: 50%;
@@ -62,7 +63,7 @@ body header .menu-button .top-line {
   -webkit-transform: translateX(-50%);
 }
 
-body header .menu-button .middle-line {
+body header .header-box .menu-button .middle-line {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -75,7 +76,7 @@ body header .menu-button .middle-line {
   -webkit-transform: translateX(-50%);
 }
 
-body header .menu-button .bottom-line {
+body header .header-box .menu-button .bottom-line {
   position: absolute;
   top: 75%;
   left: 50%;
@@ -86,6 +87,16 @@ body header .menu-button .bottom-line {
   background-color: white;
   transform: translateX(-50%);
   -webkit-transform: translateX(-50%);
+}
+
+body header .header-box .registration-box {
+  display: inline-block;
+  width: 20%;
+  right: 0px;
+}
+
+body header .header-box .registration-box a {
+  color: white;
 }
 
 body header .header-nav {

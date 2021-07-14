@@ -39,7 +39,7 @@ class Comment(models.Model):
         User, related_name="response_from", on_delete=models.CASCADE)
     response_to = models.ManyToManyField(
         User, related_name="response_to", default=None)
-    comment = models.TextField('コメント', max_length=1000, null=False)
+    comment = RichTextUploadingField()
     created_at = models.DateTimeField('コメント日時', auto_now_add=True)
     good = models.IntegerField('いいねの数', default=0)  # 誰がいいねしたかは表示しない．数だけ数える
 

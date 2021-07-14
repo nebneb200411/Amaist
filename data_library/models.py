@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth import get_user_model
+from ckeditor_uploader.fields import RichTextUploadingField
 import os
 
 User = get_user_model()
@@ -20,7 +21,7 @@ class DataLibrary(models.Model):
 
 
 class CommentToDataLibrary(models.Model):
-    content = models.TextField(max_length=200, null=False)
+    content = RichTextUploadingField()
     comment_from = models.ForeignKey(
         User, on_delete=models.CASCADE, default=None)
     comment_to = models.ForeignKey(

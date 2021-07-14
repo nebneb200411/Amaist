@@ -46,12 +46,13 @@
 
             <!--comment input box-->
             <div class="comment-input-box">
-                <form method="POST" class="comment-form" action="{% url 'question:comment' %}">
+                <form method="POST" class="comment-form"><!--action="{% url 'question:comment' %}"-->
                     {% csrf_token %}
                     <input type="hidden"  name="response_to" value="{{request.user}}"/>
                     <input type="hidden" name="question_pk" value="{{object.pk}}"/>
-                    <input type="text" name="comment"/>
-                    <button type-"submit" class="btn btn-success">送信</button>
+                    {{form.media}}
+                    {{form.as_p}}
+                    <button type="submit" class="btn btn-success">送信</button>
                 </form>
             </div>
 

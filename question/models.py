@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth import get_user_model
+from ckeditor_uploader.fields import RichTextUploadingField
 
 User = get_user_model()
 
@@ -15,7 +16,7 @@ class Question(models.Model):
     contributor = models.ForeignKey(
         User, related_name="contributor", on_delete=models.CASCADE)
     title = models.TextField(max_length=50)
-    content = models.TextField()
+    content = RichTextUploadingField()
     created_at = models.DateTimeField(auto_now_add=True)
     good_from = models.ManyToManyField(User, related_name="commet_good_from")
     tag = models.ManyToManyField(QuestionTag, related_name="question_tag")
@@ -25,7 +26,7 @@ class Question(models.Model):
 
 
 class CommentToQuestion(models.Model):
-    content = models.TextField(max_length=200, null=False)
+    content = RichTextUploadingField()
     created_at = models.DateTimeField(auto_now_add=True)
     comment_from = models.ForeignKey(
         User, on_delete=models.CASCADE, default=None)

@@ -1,5 +1,5 @@
 from django.views.generic import CreateView, ListView, DetailView, UpdateView
-from .forms import ArticleForm  # TagInlineFormSet
+from .forms import ArticleForm, ArticleCommentForm
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, redirect
@@ -92,7 +92,34 @@ class ArticleDetailView(DetailView):
         # get user profile model
         profile = Profile.objects.get(user=article.author)
         context['profile'] = profile
+
+        # get CKEditor form from forms.py
+        form = ArticleCommentForm()
+        context['form'] = form
+
         return context
+
+    def post(self, request, pk):
+
+        # import comment form
+        form = ArticleCommentForm(request.POST)
+
+        # saving process
+        if form.is_valid():
+
+            # save form at once
+            created_comment = form.save(commit=False)
+
+            # get the data going to save
+            article_pk = request.POST.get('article_pk')
+            article = Article.objects.get(pk=article_pk)
+            response_from = self.request.user
+
+            # add data to save
+            created_comment.comment_to = article
+            created_comment.response_from = response_from
+            created_comment.save()
+            return redirect(request.META.get('HTTP_REFERER'))
 
 
 class ArticleModifyView(UpdateView):

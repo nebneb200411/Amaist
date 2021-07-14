@@ -86,11 +86,12 @@
 
             <!--comment form-->
             <div class="comment-form">
-                <form method="POST" action="{% url 'article:comment'%}">
+                <form method="POST">
                     {% csrf_token %}
                     <input type="hidden"  name="response_to" value="{{request.user}}"/>
                     <input type="hidden" name="article_pk" value="{{object.pk}}"/>
-                    <textarea type="text" name="comment" id="input-comment" rows="5" cols="33" ></textarea>
+                    {{form.media}}
+                    {{form.as_p}}
                     <button type="submit" class="btn btn-primary">送信</button>
                 </form>
             </div>
@@ -114,7 +115,7 @@
                         </div>
                         <hr>
                         <div class="comment-content">
-                            <p>{{comment_object.comment}}</p>
+                            <p>{{comment_object.comment|safe}}</p>
                         </div>
                     </div>
                 {% endfor %}
