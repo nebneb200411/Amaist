@@ -6,18 +6,48 @@
 {% endblock stylesheet %}
 
 {% block contents %}
-<form method="POST">
-    {% csrf_token %}
-    {% autoescape off %}
-    {{form.media}}
-    {{form.as_p}}
-    <div id="tag-box">
-        <input type="text" multiple name="tags"/>
+<div class="container-fluid">
+    <div class="row">
+        <div id="left-box" class="col-12 col-md-2 col-xl-2"></div>
+        <div id="main-box" class="col-12 col-md-8 col-xl-8">
+            <div class="page-title-box">
+                <p class="page-title">記事作成ページ</p>
+                <img src="{% static 'images/base/create_article.png'%}" class="img-responsive"/>
+            </div>
+            <form method="POST">
+                {% csrf_token %}
+                {% autoescape off %}
+                {{form.media}}
+                <hr>
+                <div class="title-input-box">
+                    <p><i class="fas fa-signature"></i><span class="mgr-10"/><i>-Title-</i></p>
+                    {{form.title}}
+                </div>
+                <hr>
+                <div class="content-input-box">
+                    <p><i class="far fa-newspaper"></i><span class="mgr-10"/><i>-Content-</i></p>
+                    {{form.content}}
+                </div>
+
+                <hr>
+
+                <div id="tag-box">
+                    <!--display this area is to add tags-->
+                    <p><i class="fas fa-tags"></i><span class="mgr-10"/><i>-Tags-</i></p>
+                    <input type="text" multiple name="tags" class="tag-input" placeholder="&#xf02b; tag（任意）"/>
+                </div>
+
+                <div class="tag-input-box-add">
+                    <i class="fas fa-plus-circle fa-2x" id="tag-add-button"></i>
+                </div>
+                <hr>
+                <input type="submit" label='記事を作成' class="btn btn-success" id="submit-button"></input>
+                {% endautoescape %}
+            </form>
+        </div>
+        <div id="right-box" class="col-12 col-md-2 col-xl-2"></div>
     </div>
-    <button class="btn btn-primary" id="tag-add-button">タグ追加</button>
-    <input type="submit" muti label='記事を作成' class="btn btn-success"></input>
-    {% endautoescape %}
-</form>
+</div>
 {% endblock contents %}
 {% block script %}
     <script type="text/javascript" src="{% static 'django-summernote-options/django_summernote_option.js' %}"></script>

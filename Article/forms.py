@@ -9,7 +9,7 @@ class ArticleForm(forms.ModelForm):
         fields = ('title', 'content',)
         widgets = {
             'content': CKEditorWidget(),
-            'title': forms.TextInput(attrs={'class': 'title'}),
+            'title': forms.TextInput(attrs={'class': 'title', 'placeholder': '記事のタイトルを入力してください'}),
         }
 
 

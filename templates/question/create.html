@@ -11,7 +11,7 @@
         <div class="col-12 col-md-6 col-xl-6" id="main-box">
             <!--question-create session-->
             <div class="page-title-box">
-                <p>質問作成</p>
+                <p><span class="mgr-10"/><img src="{% static 'images/base/question.png' %}" class="img-responsive"/><span class="mgr-10"/>質問作成</p>
             </div>
 
             <div class="question-create-box">
@@ -19,12 +19,21 @@
                     {% csrf_token %}
                     {% autoescape off %}
                     {{form.media}}
-                    {{form.as_p}}
+                    {{form.title}}
+                    <hr>
+                    <p id="content-p">-CONTENT-</p>
+                    {{form.content}}
                     <div id="tag-box">
-                        <input type="text" multiple name="tags"/>
+                        <!--display this area is to add tags-->
+                        <p><i class="fas fa-tags"></i>タグ</p>
+                        <input type="text" multiple name="tags" class="tag-input" placeholder="&#xf02b;tag"/>
                     </div>
-                    <button class="btn btn-primary" id="tag-add-button">タグ追加</button>
-                    <input type="submit" muti label='記事を作成' class="btn btn-success"></input>
+
+                    <div class="tag-inputo-box-add">
+                        <i class="fas fa-plus-circle fa-2x" id="tag-add-button"></i>
+                    </div>
+                    <hr>
+                    <input type="submit" label='記事を作成' class="btn btn-success" id="submit-button"></input>
                     {% endautoescape %}
                 </form>
             </div>

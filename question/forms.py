@@ -10,7 +10,7 @@ class QuestionCreateForm(forms.ModelForm):
         fields = ('title', 'content', )
         widgets = {
             'content': CKEditorWidget(),
-            'title': forms.TextInput(attrs={'class': 'title'})
+            'title': forms.TextInput(attrs={'class': 'title', 'placeholder': '質問のタイトルを入力してください'})
         }
 
 
