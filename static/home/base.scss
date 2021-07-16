@@ -5,7 +5,9 @@
 }
 
 //動的な操作
-
+.mgr-10 {
+    margin-left: 10px;
+}
 
 //動的な操作終了
 html {
@@ -32,16 +34,17 @@ body {
         }
 
         .header-box {
+            height: 100%;
+
             .menu-button {
-                display: inline-block;
                 position: relative;
-                top: 10px;
-                left: 10px;
-                width: 80px;
-                height: 80px;
+                margin-top: 3vh;
+                margin-left: 3vh;
+                height: 9vh;
+                width: 9vh;
                 background-color: transparent;
                 border-radius: 10px;
-                border: solid 2px gray;
+                border: solid 2px white;
 
                 &.clicked {
                     background-color: blue;
@@ -57,9 +60,9 @@ body {
                     left: 50%;
                     display: block;
                     width: 70%;
-                    height: 5px;
-                    border: solid 2px white;
-                    background-color: white;
+                    height: 5%;
+                    border: solid 2px #b0c4de;
+                    background-color: #b0c4de;
                     transform: translateX(-50%);
                     -webkit-transform: translateX(-50%);
                 }
@@ -70,9 +73,9 @@ body {
                     left: 50%;
                     display: block;
                     width: 70%;
-                    height: 5px;
-                    border: solid 2px white;
-                    background-color: white;
+                    height: 5%;
+                    border: solid 2px #b0c4de;
+                    background-color: #b0c4de;
                     transform: translateX(-50%);
                     -webkit-transform: translateX(-50%);
                 }
@@ -83,394 +86,400 @@ body {
                     left: 50%;
                     display: block;
                     width: 70%;
-                    height: 5px;
-                    border: solid 2px white;
-                    background-color: white;
+                    height: 5%;
+                    border: solid 2px #b0c4de;
+                    background-color: #b0c4de;
                     transform: translateX(-50%);
                     -webkit-transform: translateX(-50%);
                 }
             }
 
-            .registration-box {
-                display: inline-block;
-                width: 20%;
-
+            .register-box {
                 a {
-                    color: white;
+                    color: #b0c4de;
 
-                    p {}
+                    p {
+                        font-size: 1rem;
+                        font-family: 'Century';
+                        margin-top: 55%;
+                    }
                 }
-
             }
+
+            .user-icon-box {
+                img {
+                    height: 12vh;
+                    width: auto;
+                    margin-right: 30px;
+                    border: solid 4px #b0c4de;
+                    border-radius: 5px;
+                }
+            }
+        }
+    }
+
+
+    .header-nav {
+        visibility: hidden;
+        position: relative;
+        width: 100%;
+        top: 0px;
+        background-color: black;
+        transform: translateX(-100%);
+        transition: .3s;
+        z-index: 100;
+
+
+        &.slide-in {
+            visibility: visible;
+            transform: translateX(0px);
+            transition: .3s;
         }
 
 
-        .header-nav {
-            visibility: hidden;
-            position: relative;
-            width: 100%;
-            top: 10px;
-            background-color: black;
-            transform: translateX(-100%);
-            transition: .3s;
+        .header-menu {
             z-index: 100;
 
-
-            &.slide-in {
-                visibility: visible;
-                transform: translateX(0px);
-                transition: .3s;
-            }
-
-
-            .header-menu {
+            li {
                 z-index: 100;
 
-                li {
+                a {
+                    color: #f0f8ff;
                     z-index: 100;
 
-                    a {
-                        color: #f0f8ff;
-                        z-index: 100;
+                    i {}
+                }
 
-                        i {}
+                .second-menu {
+                    background-color: #a9a9a9;
+                }
 
-                        .mgr-10 {
-                            margin-left: 10px;
-                        }
-                    }
+                #article-second-menu {
+                    display: none;
+                    transition: .3s;
+                }
 
-                    .second-menu {
-                        background-color: #a9a9a9;
-                    }
+                #data-library-second-menu {
+                    display: none;
+                }
 
-                    #article-second-menu {
-                        display: none;
-                        transition: .3s;
-                    }
+                #question-second-menu {
+                    display: none;
+                }
 
-                    #data-library-second-menu {
-                        display: none;
-                    }
-
-                    #question-second-menu {
-                        display: none;
-                    }
-
-                    #profile-second-menu {
-                        display: none;
-                    }
+                #profile-second-menu {
+                    display: none;
                 }
             }
-
-            .header-menu {
-                #article-first-menu:hover {
-
-                    #article-second-menu {
-                        display: block;
-                        transition: .8s;
-                    }
-                }
-
-                #data-library-first-menu:hover {
-
-                    #data-library-second-menu {
-                        display: block;
-                        transition: .3s;
-                    }
-                }
-
-                #question-first-menu:hover {
-
-                    #question-second-menu {
-                        display: block;
-                        transition: .3s;
-                    }
-                }
-
-                #profile-first-menu:hover {
-
-                    #profile-second-menu {
-                        display: block;
-                        transition: .3s;
-                    }
-                }
-            }
-
-
-
-
-            li {
-                padding: 10px;
-                border-bottom: solid 1px white;
-                list-style: none;
-            }
-
         }
-    }
 
-    main {
-        .nothing {
-            height: 15vh;
-            width: 100%;
+        .header-menu {
+            #article-first-menu:hover {
+
+                #article-second-menu {
+                    display: block;
+                    transition: .8s;
+                }
+            }
+
+            #data-library-first-menu:hover {
+
+                #data-library-second-menu {
+                    display: block;
+                    transition: .3s;
+                }
+            }
+
+            #question-first-menu:hover {
+
+                #question-second-menu {
+                    display: block;
+                    transition: .3s;
+                }
+            }
+
+            #profile-first-menu:hover {
+
+                #profile-second-menu {
+                    display: block;
+                    transition: .3s;
+                }
+            }
         }
+
+
+
+
+        li {
+            padding: 10px;
+            border-bottom: solid 1px white;
+            list-style: none;
+        }
+
     }
+}
 
-    footer {
-        .footer-menu {
-            position: fixed;
-            bottom: 0px;
-            width: 100%;
+main {
+    .nothing {
+        height: 15vh;
+        width: 100%;
+    }
+}
 
-            &.crash {
+footer {
+    .footer-menu {
+        position: fixed;
+        bottom: 0px;
+        width: 100%;
+
+        &.crash {
+            display: None;
+        }
+
+        .appearing-menu {
+            &.deep {
                 display: None;
             }
+        }
 
-            .appearing-menu {
-                &.deep {
-                    display: None;
-                }
-            }
+        #appear-and-hide-menu {
+            position: fixed;
+            width: 100%;
 
-            #appear-and-hide-menu {
-                position: fixed;
-                width: 100%;
+            div {
 
                 div {
+                    div {
+
+                        .hide-and-appear-article {
+                            border-radius: 10px 10px 0px 0px;
+                            text-align: center;
+                            visibility: hidden;
+                            background-color: #008080;
+
+                            &.appear {
+                                visibility: visible;
+                                transform: translateY(-100%);
+                                transition: .3s;
+                            }
+
+                            ul {
+                                margin: 0 0 0;
+                                padding: 0 0 0;
+                                list-style-type: none;
+
+                                li {
+                                    margin: 0 0 0;
+                                    padding: 0 0 0;
+                                    list-style-type: none;
+                                }
+
+                            }
+                        }
+
+                        li {
+                            a {
+                                list-style-type: none;
+                                text-align: left;
+                                color: white;
+                            }
+                        }
+                    }
 
                     div {
-                        div {
+                        .hide-and-appear-datalibrary {
+                            border-radius: 10px 10px 0px 0px;
+                            text-align: center;
+                            visibility: hidden;
+                            background-color: #008080;
 
-                            .hide-and-appear-article {
-                                border-radius: 10px 10px 0px 0px;
-                                text-align: center;
-                                visibility: hidden;
-                                background-color: #008080;
+                            &.appear {
+                                visibility: visible;
+                                transform: translateY(-100%);
+                                transition: .3s;
+                            }
 
-                                &.appear {
-                                    visibility: visible;
-                                    transform: translateY(-100%);
-                                    transition: .3s;
-                                }
+                            ul {
+                                margin: 0 0 0;
+                                padding: 0 0 0;
+                                list-style-type: none;
 
-                                ul {
+                                li {
                                     margin: 0 0 0;
                                     padding: 0 0 0;
                                     list-style-type: none;
-
-                                    li {
-                                        margin: 0 0 0;
-                                        padding: 0 0 0;
-                                        list-style-type: none;
-                                    }
-
                                 }
-                            }
 
-                            li {
-                                a {
-                                    list-style-type: none;
-                                    text-align: left;
-                                    color: white;
-                                }
                             }
                         }
+                    }
 
-                        div {
-                            .hide-and-appear-datalibrary {
-                                border-radius: 10px 10px 0px 0px;
-                                text-align: center;
-                                visibility: hidden;
-                                background-color: #008080;
+                    div {
+                        .hide-and-appear-profile {
+                            border-radius: 10px 10px 0px 0px;
+                            text-align: center;
+                            visibility: hidden;
+                            background-color: #008080;
 
-                                &.appear {
-                                    visibility: visible;
-                                    transform: translateY(-100%);
-                                    transition: .3s;
-                                }
+                            &.appear {
+                                visibility: visible;
+                                transform: translateY(-100%);
+                                transition: .3s;
+                            }
 
-                                ul {
+                            ul {
+                                margin: 0 0 0;
+                                padding: 0 0 0;
+                                list-style-type: none;
+
+                                li {
                                     margin: 0 0 0;
                                     padding: 0 0 0;
                                     list-style-type: none;
-
-                                    li {
-                                        margin: 0 0 0;
-                                        padding: 0 0 0;
-                                        list-style-type: none;
-                                    }
-
                                 }
+
                             }
                         }
+                    }
 
-                        div {
-                            .hide-and-appear-profile {
-                                border-radius: 10px 10px 0px 0px;
-                                text-align: center;
-                                visibility: hidden;
-                                background-color: #008080;
+                    div {
+                        .hide-and-appear-question {
+                            border-radius: 10px 10px 0px 0px;
+                            text-align: center;
+                            visibility: hidden;
+                            background-color: #008080;
 
-                                &.appear {
-                                    visibility: visible;
-                                    transform: translateY(-100%);
-                                    transition: .3s;
-                                }
+                            &.appear {
+                                visibility: visible;
+                                transform: translateY(-100%);
+                                transition: .3s;
+                            }
 
-                                ul {
+                            ul {
+                                margin: 0 0 0;
+                                padding: 0 0 0;
+                                list-style-type: none;
+
+                                li {
                                     margin: 0 0 0;
                                     padding: 0 0 0;
                                     list-style-type: none;
-
-                                    li {
-                                        margin: 0 0 0;
-                                        padding: 0 0 0;
-                                        list-style-type: none;
-                                    }
-
                                 }
+
+                                hr {
+                                    color: #e0ffff;
+                                }
+
                             }
                         }
+                    }
 
-                        div {
-                            .hide-and-appear-question {
-                                border-radius: 10px 10px 0px 0px;
-                                text-align: center;
-                                visibility: hidden;
-                                background-color: #008080;
+                    div {
+                        .hide-and-appear-createarticle {
+                            border-radius: 10px 10px 0px 0px;
+                            text-align: center;
+                            visibility: hidden;
+                            background-color: #008080;
 
-                                &.appear {
-                                    visibility: visible;
-                                    transform: translateY(-100%);
-                                    transition: .3s;
-                                }
+                            &.appear {
+                                visibility: visible;
+                                transform: translateY(-100%);
+                                transition: .3s;
+                            }
 
-                                ul {
+                            ul {
+                                margin: 0 0 0;
+                                padding: 0 0 0;
+                                list-style-type: none;
+
+                                li {
                                     margin: 0 0 0;
                                     padding: 0 0 0;
                                     list-style-type: none;
-
-                                    li {
-                                        margin: 0 0 0;
-                                        padding: 0 0 0;
-                                        list-style-type: none;
-                                    }
-
-                                    hr {
-                                        color: #e0ffff;
-                                    }
-
                                 }
+
                             }
                         }
-
-                        div {
-                            .hide-and-appear-createarticle {
-                                border-radius: 10px 10px 0px 0px;
-                                text-align: center;
-                                visibility: hidden;
-                                background-color: #008080;
-
-                                &.appear {
-                                    visibility: visible;
-                                    transform: translateY(-100%);
-                                    transition: .3s;
-                                }
-
-                                ul {
-                                    margin: 0 0 0;
-                                    padding: 0 0 0;
-                                    list-style-type: none;
-
-                                    li {
-                                        margin: 0 0 0;
-                                        padding: 0 0 0;
-                                        list-style-type: none;
-                                    }
-
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-
-            label {}
-
-
-
-            .menu-class {
-                &.hidden {
-                    visibility: hidden;
-                }
-            }
-
-            #menu {
-                background: -moz-linear-gradient(top, #4682b4, #00bfff);
-                background: -webkit-linear-gradient(top, #4682b4, #00bfff);
-                background: linear-gradient(to bottom, #4682b4, #00bfff);
-
-                div {
-
-                    .footer-links-names {
-                        text-align: center;
-                        color: #f8f8ff;
-                        font-size: 90%;
-                    }
-
-                    .icon-links {
-                        transform: translate(60%, 0%);
-                        vertical-align: middle;
-                        width: 40%;
-                        height: auto;
-                        cursor: pointer;
-                    }
-
-                    #article-links {
-                        border-left: solid 2px white;
-                        border-right: solid 2px white;
-                    }
-
-                    #datalibrary-links {
-                        border-left: solid 2px white;
-                        border-right: solid 2px white;
-                    }
-
-                    #profile-links {
-                        border-left: solid 2px white;
-                        border-right: solid 2px white;
-                    }
-
-                    #question-links {
-                        border-left: solid 2px white;
-                        border-right: solid 2px white;
-                    }
-
-                    #create-article-link {
-                        border-left: solid 2px white;
-                        border-right: solid 2px white;
                     }
                 }
             }
         }
-    }
 
-    #menu-hide-and-appear-button {
-        z-index: 10;
-        cursor: pointer;
+        label {}
 
-        .hide-and-appear-class {
-            position: fixed;
-            right: 1vh;
-            bottom: 20vh;
-            height: 8%;
-            width: auto;
 
-            &.up {
-                transform: rotateX(180deg);
-                transition: .3s;
+
+        .menu-class {
+            &.hidden {
+                visibility: hidden;
             }
         }
 
+        #menu {
+            background: -moz-linear-gradient(top, #4682b4, #00bfff);
+            background: -webkit-linear-gradient(top, #4682b4, #00bfff);
+            background: linear-gradient(to bottom, #4682b4, #00bfff);
+
+            div {
+
+                .footer-links-names {
+                    text-align: center;
+                    color: #f8f8ff;
+                    font-size: 90%;
+                }
+
+                .icon-links {
+                    transform: translate(60%, 0%);
+                    vertical-align: middle;
+                    width: 40%;
+                    height: auto;
+                    cursor: pointer;
+                }
+
+                #article-links {
+                    border-left: solid 2px white;
+                    border-right: solid 2px white;
+                }
+
+                #datalibrary-links {
+                    border-left: solid 2px white;
+                    border-right: solid 2px white;
+                }
+
+                #profile-links {
+                    border-left: solid 2px white;
+                    border-right: solid 2px white;
+                }
+
+                #question-links {
+                    border-left: solid 2px white;
+                    border-right: solid 2px white;
+                }
+
+                #create-article-link {
+                    border-left: solid 2px white;
+                    border-right: solid 2px white;
+                }
+            }
+        }
     }
+}
+
+#menu-hide-and-appear-button {
+    z-index: 10;
+    cursor: pointer;
+
+    .hide-and-appear-class {
+        position: fixed;
+        right: 1vh;
+        bottom: 20vh;
+        height: 8%;
+        width: auto;
+
+        &.up {
+            transform: rotateX(180deg);
+            transition: .3s;
+        }
+    }
+
 }

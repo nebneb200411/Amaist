@@ -5,6 +5,10 @@
           box-sizing: border-box;
 }
 
+.mgr-10 {
+  margin-left: 10px;
+}
+
 html {
   -webkit-text-size-adjust: 100%;
   -webkit-box-sizing: border-box;
@@ -31,16 +35,19 @@ body header .menu-button closed {
   visibility: hidden;
 }
 
+body header .header-box {
+  height: 100%;
+}
+
 body header .header-box .menu-button {
-  display: inline-block;
   position: relative;
-  top: 10px;
-  left: 10px;
-  width: 80px;
-  height: 80px;
+  margin-top: 3vh;
+  margin-left: 3vh;
+  height: 9vh;
+  width: 9vh;
   background-color: transparent;
   border-radius: 10px;
-  border: solid 2px gray;
+  border: solid 2px white;
 }
 
 body header .header-box .menu-button.clicked {
@@ -56,9 +63,9 @@ body header .header-box .menu-button .top-line {
   left: 50%;
   display: block;
   width: 70%;
-  height: 5px;
-  border: solid 2px white;
-  background-color: white;
+  height: 5%;
+  border: solid 2px #b0c4de;
+  background-color: #b0c4de;
   transform: translateX(-50%);
   -webkit-transform: translateX(-50%);
 }
@@ -69,9 +76,9 @@ body header .header-box .menu-button .middle-line {
   left: 50%;
   display: block;
   width: 70%;
-  height: 5px;
-  border: solid 2px white;
-  background-color: white;
+  height: 5%;
+  border: solid 2px #b0c4de;
+  background-color: #b0c4de;
   transform: translateX(-50%);
   -webkit-transform: translateX(-50%);
 }
@@ -82,27 +89,36 @@ body header .header-box .menu-button .bottom-line {
   left: 50%;
   display: block;
   width: 70%;
-  height: 5px;
-  border: solid 2px white;
-  background-color: white;
+  height: 5%;
+  border: solid 2px #b0c4de;
+  background-color: #b0c4de;
   transform: translateX(-50%);
   -webkit-transform: translateX(-50%);
 }
 
-body header .header-box .registration-box {
-  display: inline-block;
-  width: 20%;
+body header .header-box .register-box a {
+  color: #b0c4de;
 }
 
-body header .header-box .registration-box a {
-  color: white;
+body header .header-box .register-box a p {
+  font-size: 1rem;
+  font-family: 'Century';
+  margin-top: 55%;
 }
 
-body header .header-nav {
+body header .header-box .user-icon-box img {
+  height: 12vh;
+  width: auto;
+  margin-right: 30px;
+  border: solid 4px #b0c4de;
+  border-radius: 5px;
+}
+
+body .header-nav {
   visibility: hidden;
   position: relative;
   width: 100%;
-  top: 10px;
+  top: 0px;
   background-color: black;
   -webkit-transform: translateX(-100%);
           transform: translateX(-100%);
@@ -111,7 +127,7 @@ body header .header-nav {
   z-index: 100;
 }
 
-body header .header-nav.slide-in {
+body .header-nav.slide-in {
   visibility: visible;
   -webkit-transform: translateX(0px);
           transform: translateX(0px);
@@ -119,107 +135,103 @@ body header .header-nav.slide-in {
   transition: .3s;
 }
 
-body header .header-nav .header-menu {
+body .header-nav .header-menu {
   z-index: 100;
 }
 
-body header .header-nav .header-menu li {
+body .header-nav .header-menu li {
   z-index: 100;
 }
 
-body header .header-nav .header-menu li a {
+body .header-nav .header-menu li a {
   color: #f0f8ff;
   z-index: 100;
 }
 
-body header .header-nav .header-menu li a .mgr-10 {
-  margin-left: 10px;
-}
-
-body header .header-nav .header-menu li .second-menu {
+body .header-nav .header-menu li .second-menu {
   background-color: #a9a9a9;
 }
 
-body header .header-nav .header-menu li #article-second-menu {
+body .header-nav .header-menu li #article-second-menu {
   display: none;
   -webkit-transition: .3s;
   transition: .3s;
 }
 
-body header .header-nav .header-menu li #data-library-second-menu {
+body .header-nav .header-menu li #data-library-second-menu {
   display: none;
 }
 
-body header .header-nav .header-menu li #question-second-menu {
+body .header-nav .header-menu li #question-second-menu {
   display: none;
 }
 
-body header .header-nav .header-menu li #profile-second-menu {
+body .header-nav .header-menu li #profile-second-menu {
   display: none;
 }
 
-body header .header-nav .header-menu #article-first-menu:hover #article-second-menu {
+body .header-nav .header-menu #article-first-menu:hover #article-second-menu {
   display: block;
   -webkit-transition: .8s;
   transition: .8s;
 }
 
-body header .header-nav .header-menu #data-library-first-menu:hover #data-library-second-menu {
+body .header-nav .header-menu #data-library-first-menu:hover #data-library-second-menu {
   display: block;
   -webkit-transition: .3s;
   transition: .3s;
 }
 
-body header .header-nav .header-menu #question-first-menu:hover #question-second-menu {
+body .header-nav .header-menu #question-first-menu:hover #question-second-menu {
   display: block;
   -webkit-transition: .3s;
   transition: .3s;
 }
 
-body header .header-nav .header-menu #profile-first-menu:hover #profile-second-menu {
+body .header-nav .header-menu #profile-first-menu:hover #profile-second-menu {
   display: block;
   -webkit-transition: .3s;
   transition: .3s;
 }
 
-body header .header-nav li {
+body .header-nav li {
   padding: 10px;
   border-bottom: solid 1px white;
   list-style: none;
 }
 
-body main .nothing {
+main .nothing {
   height: 15vh;
   width: 100%;
 }
 
-body footer .footer-menu {
+footer .footer-menu {
   position: fixed;
   bottom: 0px;
   width: 100%;
 }
 
-body footer .footer-menu.crash {
+footer .footer-menu.crash {
   display: None;
 }
 
-body footer .footer-menu .appearing-menu.deep {
+footer .footer-menu .appearing-menu.deep {
   display: None;
 }
 
-body footer .footer-menu #appear-and-hide-menu {
+footer .footer-menu #appear-and-hide-menu {
   position: fixed;
   width: 100%;
 }
 
-body footer .footer-menu #appear-and-hide-menu div div div .hide-and-appear-article {
+footer .footer-menu #appear-and-hide-menu div div div .hide-and-appear-article {
   border-radius: 10px 10px 0px 0px;
   text-align: center;
   visibility: hidden;
   background-color: #008080;
 }
 
-body footer .footer-menu #appear-and-hide-menu div div div .hide-and-appear-article.appear {
+footer .footer-menu #appear-and-hide-menu div div div .hide-and-appear-article.appear {
   visibility: visible;
   -webkit-transform: translateY(-100%);
           transform: translateY(-100%);
@@ -227,32 +239,32 @@ body footer .footer-menu #appear-and-hide-menu div div div .hide-and-appear-arti
   transition: .3s;
 }
 
-body footer .footer-menu #appear-and-hide-menu div div div .hide-and-appear-article ul {
+footer .footer-menu #appear-and-hide-menu div div div .hide-and-appear-article ul {
   margin: 0 0 0;
   padding: 0 0 0;
   list-style-type: none;
 }
 
-body footer .footer-menu #appear-and-hide-menu div div div .hide-and-appear-article ul li {
+footer .footer-menu #appear-and-hide-menu div div div .hide-and-appear-article ul li {
   margin: 0 0 0;
   padding: 0 0 0;
   list-style-type: none;
 }
 
-body footer .footer-menu #appear-and-hide-menu div div div li a {
+footer .footer-menu #appear-and-hide-menu div div div li a {
   list-style-type: none;
   text-align: left;
   color: white;
 }
 
-body footer .footer-menu #appear-and-hide-menu div div div .hide-and-appear-datalibrary {
+footer .footer-menu #appear-and-hide-menu div div div .hide-and-appear-datalibrary {
   border-radius: 10px 10px 0px 0px;
   text-align: center;
   visibility: hidden;
   background-color: #008080;
 }
 
-body footer .footer-menu #appear-and-hide-menu div div div .hide-and-appear-datalibrary.appear {
+footer .footer-menu #appear-and-hide-menu div div div .hide-and-appear-datalibrary.appear {
   visibility: visible;
   -webkit-transform: translateY(-100%);
           transform: translateY(-100%);
@@ -260,26 +272,26 @@ body footer .footer-menu #appear-and-hide-menu div div div .hide-and-appear-data
   transition: .3s;
 }
 
-body footer .footer-menu #appear-and-hide-menu div div div .hide-and-appear-datalibrary ul {
+footer .footer-menu #appear-and-hide-menu div div div .hide-and-appear-datalibrary ul {
   margin: 0 0 0;
   padding: 0 0 0;
   list-style-type: none;
 }
 
-body footer .footer-menu #appear-and-hide-menu div div div .hide-and-appear-datalibrary ul li {
+footer .footer-menu #appear-and-hide-menu div div div .hide-and-appear-datalibrary ul li {
   margin: 0 0 0;
   padding: 0 0 0;
   list-style-type: none;
 }
 
-body footer .footer-menu #appear-and-hide-menu div div div .hide-and-appear-profile {
+footer .footer-menu #appear-and-hide-menu div div div .hide-and-appear-profile {
   border-radius: 10px 10px 0px 0px;
   text-align: center;
   visibility: hidden;
   background-color: #008080;
 }
 
-body footer .footer-menu #appear-and-hide-menu div div div .hide-and-appear-profile.appear {
+footer .footer-menu #appear-and-hide-menu div div div .hide-and-appear-profile.appear {
   visibility: visible;
   -webkit-transform: translateY(-100%);
           transform: translateY(-100%);
@@ -287,26 +299,26 @@ body footer .footer-menu #appear-and-hide-menu div div div .hide-and-appear-prof
   transition: .3s;
 }
 
-body footer .footer-menu #appear-and-hide-menu div div div .hide-and-appear-profile ul {
+footer .footer-menu #appear-and-hide-menu div div div .hide-and-appear-profile ul {
   margin: 0 0 0;
   padding: 0 0 0;
   list-style-type: none;
 }
 
-body footer .footer-menu #appear-and-hide-menu div div div .hide-and-appear-profile ul li {
+footer .footer-menu #appear-and-hide-menu div div div .hide-and-appear-profile ul li {
   margin: 0 0 0;
   padding: 0 0 0;
   list-style-type: none;
 }
 
-body footer .footer-menu #appear-and-hide-menu div div div .hide-and-appear-question {
+footer .footer-menu #appear-and-hide-menu div div div .hide-and-appear-question {
   border-radius: 10px 10px 0px 0px;
   text-align: center;
   visibility: hidden;
   background-color: #008080;
 }
 
-body footer .footer-menu #appear-and-hide-menu div div div .hide-and-appear-question.appear {
+footer .footer-menu #appear-and-hide-menu div div div .hide-and-appear-question.appear {
   visibility: visible;
   -webkit-transform: translateY(-100%);
           transform: translateY(-100%);
@@ -314,30 +326,30 @@ body footer .footer-menu #appear-and-hide-menu div div div .hide-and-appear-ques
   transition: .3s;
 }
 
-body footer .footer-menu #appear-and-hide-menu div div div .hide-and-appear-question ul {
+footer .footer-menu #appear-and-hide-menu div div div .hide-and-appear-question ul {
   margin: 0 0 0;
   padding: 0 0 0;
   list-style-type: none;
 }
 
-body footer .footer-menu #appear-and-hide-menu div div div .hide-and-appear-question ul li {
+footer .footer-menu #appear-and-hide-menu div div div .hide-and-appear-question ul li {
   margin: 0 0 0;
   padding: 0 0 0;
   list-style-type: none;
 }
 
-body footer .footer-menu #appear-and-hide-menu div div div .hide-and-appear-question ul hr {
+footer .footer-menu #appear-and-hide-menu div div div .hide-and-appear-question ul hr {
   color: #e0ffff;
 }
 
-body footer .footer-menu #appear-and-hide-menu div div div .hide-and-appear-createarticle {
+footer .footer-menu #appear-and-hide-menu div div div .hide-and-appear-createarticle {
   border-radius: 10px 10px 0px 0px;
   text-align: center;
   visibility: hidden;
   background-color: #008080;
 }
 
-body footer .footer-menu #appear-and-hide-menu div div div .hide-and-appear-createarticle.appear {
+footer .footer-menu #appear-and-hide-menu div div div .hide-and-appear-createarticle.appear {
   visibility: visible;
   -webkit-transform: translateY(-100%);
           transform: translateY(-100%);
@@ -345,34 +357,34 @@ body footer .footer-menu #appear-and-hide-menu div div div .hide-and-appear-crea
   transition: .3s;
 }
 
-body footer .footer-menu #appear-and-hide-menu div div div .hide-and-appear-createarticle ul {
+footer .footer-menu #appear-and-hide-menu div div div .hide-and-appear-createarticle ul {
   margin: 0 0 0;
   padding: 0 0 0;
   list-style-type: none;
 }
 
-body footer .footer-menu #appear-and-hide-menu div div div .hide-and-appear-createarticle ul li {
+footer .footer-menu #appear-and-hide-menu div div div .hide-and-appear-createarticle ul li {
   margin: 0 0 0;
   padding: 0 0 0;
   list-style-type: none;
 }
 
-body footer .footer-menu .menu-class.hidden {
+footer .footer-menu .menu-class.hidden {
   visibility: hidden;
 }
 
-body footer .footer-menu #menu {
+footer .footer-menu #menu {
   background: -webkit-gradient(linear, left top, left bottom, from(#4682b4), to(#00bfff));
   background: linear-gradient(to bottom, #4682b4, #00bfff);
 }
 
-body footer .footer-menu #menu div .footer-links-names {
+footer .footer-menu #menu div .footer-links-names {
   text-align: center;
   color: #f8f8ff;
   font-size: 90%;
 }
 
-body footer .footer-menu #menu div .icon-links {
+footer .footer-menu #menu div .icon-links {
   -webkit-transform: translate(60%, 0%);
           transform: translate(60%, 0%);
   vertical-align: middle;
@@ -381,37 +393,37 @@ body footer .footer-menu #menu div .icon-links {
   cursor: pointer;
 }
 
-body footer .footer-menu #menu div #article-links {
+footer .footer-menu #menu div #article-links {
   border-left: solid 2px white;
   border-right: solid 2px white;
 }
 
-body footer .footer-menu #menu div #datalibrary-links {
+footer .footer-menu #menu div #datalibrary-links {
   border-left: solid 2px white;
   border-right: solid 2px white;
 }
 
-body footer .footer-menu #menu div #profile-links {
+footer .footer-menu #menu div #profile-links {
   border-left: solid 2px white;
   border-right: solid 2px white;
 }
 
-body footer .footer-menu #menu div #question-links {
+footer .footer-menu #menu div #question-links {
   border-left: solid 2px white;
   border-right: solid 2px white;
 }
 
-body footer .footer-menu #menu div #create-article-link {
+footer .footer-menu #menu div #create-article-link {
   border-left: solid 2px white;
   border-right: solid 2px white;
 }
 
-body #menu-hide-and-appear-button {
+#menu-hide-and-appear-button {
   z-index: 10;
   cursor: pointer;
 }
 
-body #menu-hide-and-appear-button .hide-and-appear-class {
+#menu-hide-and-appear-button .hide-and-appear-class {
   position: fixed;
   right: 1vh;
   bottom: 20vh;
@@ -419,7 +431,7 @@ body #menu-hide-and-appear-button .hide-and-appear-class {
   width: auto;
 }
 
-body #menu-hide-and-appear-button .hide-and-appear-class.up {
+#menu-hide-and-appear-button .hide-and-appear-class.up {
   -webkit-transform: rotateX(180deg);
           transform: rotateX(180deg);
   -webkit-transition: .3s;

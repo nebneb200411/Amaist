@@ -12,9 +12,9 @@
         <div class='row'>
             <div class='col-12 col-md-4 col-xl-4' id='icon-and-username'>
                 <img src="{{ MEDIA_URL }}{{object.icon}}" class="img-responsive user-icon">
-                <p class="username">{{ object.user.username }}</p>
             </div>
             <div class='col-12 col-md-8 col-xl-8' id='follow-and-follower'>
+                <p class="username"><i class="fas fa-user"></i><span class="mgr-10"/>{{ object.user.username }}</p>
                 <div class="follow-count">
                     <p class="follow-and-follower-p">フォロー数</p>
                     <p class="follow-and-follower-number">{{ login_user_follow_count }}</p>
@@ -27,6 +27,7 @@
         </div>  
 
         <!--display user's profile-->
+        <p class="introduction-title"><i class="far fa-user"></i><span class="mgr-10"/><i>-Introduction-</i></p>
         <div class="introduction-box">
             <p class="introduction-p">{{object.introduction}}</p>
         </div>
@@ -34,17 +35,17 @@
         <!--profile update button-->
         <div class="profile-update-box">
             <a href="{% url 'profiles:profile_update' profile.pk %}">
-                <button type="button" class="btn btn-outline-primary">プロフィールの更新</button>
+                <i class="far fa-edit fa-3x"></i>
             </a>
             <div class='password_change_link'>
-                <p><a href="{% url 'password_change' %}">パスワードの変更</a></p>
+                <p><a href="{% url 'password_change' %}"><i class="fas fa-key"></i>パスワードの変更</a></p>
             </div>
         </div>
     </div>
     <div class="container" id="user-article-question-box">
         <div class="row">
             <div class="col-12 col-md-6 col-xl-6" id="article-box">
-                <p>Articles</p>
+                <p class="title-p"><i class="far fa-newspaper"></i><span class="mgr-10"/>Articles</p>
                 <hr>
                 <div class="container">
                     <div class="row">
@@ -55,7 +56,7 @@
                                     <a href="{% url 'article:article_detail' article.pk %}">
                                         <h2 class="article-title">{{article.title}}</h2>
                                     </a>
-                                    <p class="post-meta">{{article.created_at}}</p>
+                                    <p class="post-meta date-p">{{article.created_at|date:"y/m/d"}}</p>
                                 </div>
                                 <hr>
                                 {% empty %}
@@ -96,12 +97,13 @@
             </div>
             <div class="col-12 col-md-6 col-xl-6" id="question-box">
                 <div class="questions">
-                    <p>questions</p>
+                    <p class="title-p"><i class="fas fa-question"></i><span class="mgr-10"/>Questions</p>
                     <hr>
                     {% for question in questions %}
                     <a href="{% url 'question:detail' question.pk %}">
                         <p>{{question.title}}</p>
                     </a>
+                    <p class="date-p">{{question.created_at|date:"y/m/d"}}</p>
                     <hr>
                     {% endfor %}
                 </div>

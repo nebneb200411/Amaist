@@ -19,6 +19,13 @@ main div div #main-box .question-page-title p span {
   margin-left: 10px;
 }
 
+main div div #main-box img {
+  width: 80%;
+  height: auto;
+  margin-left: 10%;
+  margin-top: 10%;
+}
+
 main div div #right-box {
   background-color: #fff0f5;
   border-left: solid 2px #191970;

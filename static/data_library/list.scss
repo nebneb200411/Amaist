@@ -5,6 +5,15 @@
 }
 
 //基本設定
+//common style
+.mgr-10 {
+    margin-left: 10px;
+}
+
+.data-element-title {
+    font-family: 'Bookman Old Style';
+    border-bottom: solid 2px #0000ff;
+}
 
 p {
     font-family: "Arial", "MS Pゴシック";
@@ -14,51 +23,77 @@ main {
     div {
         div {
             #left-box {
-                background-color: #afeeee;
+                background-color: #d3d3d3;
                 border-right: solid 2px #2e8b57;
             }
 
             #main-box {
 
                 .comment-box {
+                    margin-top: 5%;
                     background-color: #f5deb3;
 
                     p {
-                        text-align: center;
+                        color: #778899;
+                        font-size: 200%;
+                        padding-top: 2%;
+                        padding-bottom: 2%;
+                        border-bottom: solid 1px #0000cd;
+                        border-top: solid 1px #0000cd;
+                        padding-left: 2%;
                     }
                 }
 
                 .each-data-box {
                     width: 100%;
 
-                    .file-box {
-                        display: inline-block;
-                        width: 20%;
+                    .introduction-box {
+                        width: 100%;
+                        border-bottom: dotted 2px #a9a9a9;
 
-                        a {
-                            i {}
+                    }
+
+                    .poster-date-box {
+
+                        .posted-by-box {
+                            border-bottom: dotted 2px #a9a9a9;
+                            display: inline-block;
+                            width: 68%;
+
+                            #uploader-title {
+                                margin-top: 2%;
+                            }
+
+                            .uploader-name {
+                                margin-left: 5%;
+                                color: #0000cd;
+                            }
                         }
 
-                        .introduction-box {
+                        .date-box {
                             display: inline-block;
-                            width: 60%;
+                            width: 30%;
 
-                        }
-
-                        .poster-date-box {
-                            display: inline-block;
-                            width: 10%;
+                            p {
+                                text-align: center;
+                                color: #87ceeb;
+                            }
 
                         }
                     }
 
+                    .data-link-box {
+                        margin-top: 5%;
+                        padding-left: 80%;
+                    }
                 }
-            }
 
-            #right-box {
-                background-color: #afeeee;
-                border-left: solid 2px #2e8b57;
             }
+        }
+
+        #right-box {
+            background-color: #d3d3d3;
+            border-left: solid 2px #2e8b57;
         }
     }
 }

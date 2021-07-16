@@ -11,10 +11,10 @@
     <div class='container-fluid' id="user-icon-username-follow-follower">
         <div class='row'>
             <div class='col-12 col-md-4 col-xl-4' id='icon-and-username'>
-                <img src="{{ MEDIA_URL }}{{object.icon}}" class="img-responsive user-icon">
-                <p class="username">{{ object.user.username }}</p>
+                <img src="{{ MEDIA_URL }}{{object.icon}}" class="img-responsive user-icon"/>
             </div>
             <div class='col-12 col-md-8 col-xl-8' id='follow-and-follower'>
+                <p class="username">{{ object.user.username }}</p>
                 <div class="follow-count">
                     <p class="follow-and-follower-p">フォロー数</p>
                     <p class="follow-and-follower-number">{{ login_user_follow_count }}</p>
@@ -27,27 +27,27 @@
         </div>  
 
         <!--display user's profile-->
+        <p class="introduction-title"><i class="far fa-user"></i><span class="mgr-10"/><i>-Introduction-</i></p>
         <div class="introduction-box">
             <p class="introduction-p">{{object.introduction}}</p>
         </div>
 
         <!--follow unfollow button-->
-        <form method="POST" action="{% url 'profiles:follow_unfollow_view' %}">
+        <form method="POST" action="{% url 'profiles:follow_unfollow_view' %}" id="follow-unfollow-form">
             {% csrf_token %}
             {% if follow %}
                 <input type="hidden" name="profile_pk" value="{{object.pk}}"/>
                 <button type="submit" class="btn btn-outline-warning">－</button>
             {% else %}
                 <input type="hidden" name="profile_pk" value="{{object.pk}}"/>
-                <p>フォローする</p>
-                <button type="submit" class="btn btn-outline-primary">＋</button>
+                <p>フォローする<span class="mgr-10"/><button type="submit" class="btn btn-primary">＋</button></p>
             {% endif %}
         </form>
     </div>
     <div class="container" id="user-article-question-box">
         <div class="row">
             <div class="col-12 col-md-12 col-xl-12" id="article-box">
-                <p>Articles</p>
+                <p><i class="far fa-newspaper"></i><span class="mgr-10"/>Articles</p>
                 <hr>
                 <div class="container">
                     <div class="row">

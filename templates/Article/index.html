@@ -49,17 +49,15 @@
 
                         <div class="col-xl-9 col-md-9 col-12" id="author-name-created-at">
                             <div class="autor-name">
-                                <p>Author:</p>
-                                <h2 class="article-author">{{article.author}}</h2>
+                                <p><i class="fas fa-user"></i><span class="mgr-10"/><p class="article-author">{{article.author}}</p></p>
                             </div>
                             <div class="created-at">
-                                <p>created at:</p>
-                                <p class="font">{{article.created_at}}</p>
+                                <p class="font"><i class="far fa-calendar-alt"></i><span class="mgr-10"/>{{article.created_at|date:"y/m/d"}}</p>
                             </div>
                             
                             <div class="tag-box">
                                 {% for tag in article.tag.all %}
-                                <p><i class="fas fa-tags"></i>{{tag}}</p>
+                                <p><i class="fas fa-tags"></i><span class="mgr-10"/>{{tag}}</p>
                                 {% empty %}
                                 {% endfor %}
                             </div>
@@ -75,8 +73,7 @@
 
                         <div class="col-xl-12 col-md-12 col-12" id="good-number">
                             <div>
-                                <img class="good-img" src="{% static 'images/article/index/good.jpg' %}"/>
-                                <p>{{article.good_from.all|length}}</p>
+                                <p><i class="fas fa-thumbs-up"></i><span class="mgr-10"/>{{article.good_from.all|length}}</p>
                             </div>
                         </div>
                     </div>

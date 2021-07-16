@@ -17,8 +17,10 @@
 
                 <!--display comment in here-->
                 <div class="comment-box">
-                    <p>データ一覧</p>
+                    <p><i class="fas fa-database"></i><span class="mgr-10"></span>データ一覧</p>
                 </div>
+
+                <hr>
 
                 <!--display each user's data file-->
                 {% for data_library in object_list %}
@@ -26,16 +28,18 @@
 
                     <!--show data discription-->
                     <div class="introduction-box">
+                        <p class="data-element-title"><span class="mgr-10"/>-<i>About Data</i>-</p>
                         <p>{{data_library.introduction}}</p>
                     </div> 
 
                     <!--show posted date and person who post the data-->
                     <div class="poster-date-box">
                         <div class="posted-by-box">
-                            <p>uploaded by:{{data_library.uploader}}</p>
+                            <p class="data-element-title" id="uploader-title"><span class="mgr-10"/>-<i>Uploader</i>-</p>
+                            <p class="uploader-name"><i class="fas fa-user"></i><span class="mgr-10"/>{{data_library.uploader}}</p>
                         </div>
-                        <div class="data-box">
-                            <p>{{data_library.created_at|date:"y/m/d"}}</p>
+                        <div class="date-box">
+                            <p><i class="far fa-calendar-alt"></i><span class="mgr-10"/>{{data_library.created_at|date:"y/m/d"}}</p>
                         </div>
                     </div>
 

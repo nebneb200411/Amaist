@@ -27,7 +27,7 @@
 
             <!-- display author's information in here-->
             <div class="author-info-box">
-                <p>-Author-</p>
+                <p><i class="fas fa-user"></i><span class="mgr-10"/>Author</p>
                 <div class="author-icon-box">
                     <a href="{% url 'profiles:otheruser_profile' profile.pk %}" class="author-icon-link">
                         <img src="{{MEDIA_URL}}{{object.author.user.icon}}"/>
@@ -82,7 +82,7 @@
 
             <hr class="horizontal-line">
 
-            <p>コメント：</p>
+            <p><i class="fas fa-comment"></i><span class="mgr-10"/>コメント</p>
 
             <!--comment form-->
             <div class="comment-form">
@@ -91,7 +91,7 @@
                     <input type="hidden"  name="response_to" value="{{request.user}}"/>
                     <input type="hidden" name="article_pk" value="{{object.pk}}"/>
                     {{form.media}}
-                    {{form.as_p}}
+                    {{form.comment}}
                     <button type="submit" class="btn btn-primary">送信</button>
                 </form>
             </div>
