@@ -43,16 +43,7 @@ body {
                 height: 9vh;
                 width: 9vh;
                 background-color: transparent;
-                border-radius: 10px;
-                border: solid 2px white;
-
-                &.clicked {
-                    background-color: blue;
-                    transition: .3s;
-                    z-index: 100;
-                }
-
-
+                border: solid 3px #b0c4de;
 
                 .top-line {
                     position: absolute;
@@ -61,10 +52,25 @@ body {
                     display: block;
                     width: 70%;
                     height: 5%;
-                    border: solid 2px #b0c4de;
+                    border: solid 1px #b0c4de;
                     background-color: #b0c4de;
                     transform: translateX(-50%);
                     -webkit-transform: translateX(-50%);
+                    transition: .3s;
+
+                    &.clicked-top {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        display: block;
+                        width: 80%;
+                        height: 5%;
+                        border: solid 1px #b0c4de;
+                        background-color: #b0c4de;
+                        transform: translateX(-50%) rotate(45deg);
+                        -webkit-transform: translateX(-50%) rotate(45deg);
+                        transition: .3s;
+                    }
                 }
 
                 .middle-line {
@@ -74,10 +80,14 @@ body {
                     display: block;
                     width: 70%;
                     height: 5%;
-                    border: solid 2px #b0c4de;
+                    border: solid 1px #b0c4de;
                     background-color: #b0c4de;
                     transform: translateX(-50%);
                     -webkit-transform: translateX(-50%);
+
+                    &.clicked-middle {
+                        visibility: hidden;
+                    }
                 }
 
                 .bottom-line {
@@ -87,10 +97,26 @@ body {
                     display: block;
                     width: 70%;
                     height: 5%;
-                    border: solid 2px #b0c4de;
+                    border: solid 1px #b0c4de;
                     background-color: #b0c4de;
                     transform: translateX(-50%);
                     -webkit-transform: translateX(-50%);
+                    transition: .3s;
+
+                    &.clicked-bottom {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        display: block;
+                        width: 80%;
+                        height: 5%;
+                        border: solid 1px #b0c4de;
+                        background-color: #b0c4de;
+                        transform: translateX(-50%);
+                        transform: translateX(-50%) rotate(-45deg);
+                        -webkit-transform: translateX(-50%) rotate(-45deg);
+                        transition: .3s;
+                    }
                 }
             }
 
@@ -107,12 +133,14 @@ body {
             }
 
             .user-icon-box {
-                img {
-                    height: 12vh;
-                    width: auto;
-                    margin-right: 30px;
-                    border: solid 4px #b0c4de;
-                    border-radius: 5px;
+                a {
+                    img {
+                        height: 12vh;
+                        width: auto;
+                        margin-right: 30px;
+                        border: solid 4px #b0c4de;
+                        border-radius: 5px;
+                    }
                 }
             }
         }
@@ -144,19 +172,17 @@ body {
                 z-index: 100;
 
                 a {
-                    color: #f0f8ff;
+                    color: #b0c4de;
                     z-index: 100;
 
                     i {}
                 }
 
-                .second-menu {
-                    background-color: #a9a9a9;
-                }
+                .second-menu {}
 
                 #article-second-menu {
                     display: none;
-                    transition: .3s;
+                    opacity: 0;
                 }
 
                 #data-library-second-menu {
@@ -178,7 +204,8 @@ body {
 
                 #article-second-menu {
                     display: block;
-                    transition: .8s;
+                    opacity: 1;
+                    transition: .3s;
                 }
             }
 

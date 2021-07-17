@@ -1,33 +1,100 @@
-//ログインのオプションcssなのでメインはbase.cssに記載して
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+//common style
+.mgr-10 {
+    margin-left: 10px;
+}
+
+body {
+    background-color: #f0ffff;
+}
 
 .login_contents {
-    position:absolute;
-    width:100%;
-    height:100%;
-    z-index:10;
+    position: absolute;
+    width: 80%;
+    height: 50%;
+    margin-left: 10%;
+    margin-top: 10%;
+    border: solid 2px #1e90ff;
 
-    h2 {
-        position:absolute;
-        top:25%;
-        left:50%;
-        transform:translate(-50%, -50%);
-        -webkit-transform: translate(-50%, -50%);
+    .login-title {
+        font-family: 'Bookman Old Style';
+        color: #6495ed;
+        text-align: center;
+        margin-top: 5%;
+        font-size: 2rem;
+        border-bottom: dotted 2px #87ceeb;
     }
 
-    form {
-        position:absolute ;
-        top:50%;
-        left:50%;
-        transform:translate(-50%, -50%);
-        -webkit-transform: translate(-50%, -50%);
+    .login-username-box {
+        margin-top: 5%;
+
+        .login-username-text {
+            display: inline-block;
+            width: 30%;
+            font-family: 'Book Antiqua';
+            color: #808080;
+        }
+
         #id_username {
-            width:300px;
+            display: inline-block;
+            width: 60%;
+            outline: none;
+            border: solid 2px #afeeee;
         }
+
+        #id_username:focus {
+            box-shadow: 0 0 10px #a9a9a9;
+        }
+    }
+
+    .login-password-box {
+        margin-top: 5%;
+
+        .login-password-text {
+            display: inline-block;
+            width: 30%;
+            font-family: 'Book Antiqua';
+            color: #808080;
+        }
+
         #id_password {
-            width:300px;
+            display: inline-block;
+            width: 60%;
+            outline: none;
+            border: solid 2px #afeeee;
         }
-        #login_button {
-            margin-left:300px;
+
+        #id_password:focus {
+            box-shadow: 0 0 10px #a9a9a9;
+        }
+    }
+
+    hr {
+        background-color: #2e8b57;
+        width: 90%;
+    }
+
+    #login_button {
+        width: 80%;
+        margin-left: 10%;
+        margin-top: 2%;
+    }
+
+    .forget_password_link {
+        margin-top: 3%;
+
+        p {
+            text-align: right;
+            margin-right: 5%;
+
+            a {
+                color: #696969;
+            }
         }
     }
 }
