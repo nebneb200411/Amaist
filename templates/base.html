@@ -29,14 +29,9 @@
                 <p>App Icon</p>
             </div>
 
-            <!--register-->
-            <div class="register-box ml-auto p-2">
-                <a href="{% url 'sign_up'%}"><p>Register</p></a>
-            </div>
-
             <!--display login user's icon-->
             <div class="user-icon-box ml-auto p-2">
-                <a href="{% url 'profiles:profile_detail' request.user.user.pk %}"><img src="{{MEDIA_URL }}{{request.user.user.icon}}"/></a>
+                <a href="{% url 'profiles:found_or_not_found' %}"><img src="{{MEDIA_URL }}{{request.user.user.icon}}"/></a>
             </div>
         </div>
 
@@ -103,7 +98,6 @@
                     </ul>
                 </li>
                 {% endif %}
-                
             </ul>
         </div>
 

@@ -15,10 +15,10 @@ body {
 
 .login_contents {
   position: absolute;
-  width: 80%;
-  height: 50%;
-  margin-left: 10%;
+  width: 60%;
+  margin-left: 20%;
   margin-top: 10%;
+  margin-bottom: 10%;
   border: solid 2px #1e90ff;
 }
 
@@ -26,66 +26,86 @@ body {
   font-family: 'Bookman Old Style';
   color: #6495ed;
   text-align: center;
-  margin-top: 5%;
-  font-size: 2rem;
+  margin-top: 2%;
+  font-size: 4vw;
   border-bottom: dotted 2px #87ceeb;
 }
 
-.login_contents .login-username-box {
-  margin-top: 5%;
+.login_contents form {
+  height: 50%;
 }
 
-.login_contents .login-username-box .login-username-text {
+.login_contents form .login-username-box {
+  height: 20%;
+}
+
+.login_contents form .login-username-box .login-username-text {
+  position: relative;
   display: inline-block;
-  width: 30%;
+  width: 35%;
   font-family: 'Book Antiqua';
+  font-size: 2vw;
   color: #808080;
+  padding-left: 5%;
 }
 
-.login_contents .login-username-box #id_username {
+.login_contents form .login-username-box #id_username {
   display: inline-block;
-  width: 60%;
+  width: 50%;
+  height: 100%;
   outline: none;
   border: solid 2px #afeeee;
+  font-family: 'Book Antiqua';
 }
 
-.login_contents .login-username-box #id_username:focus {
+.login_contents form .login-username-box #id_username:focus {
   -webkit-box-shadow: 0 0 10px #a9a9a9;
           box-shadow: 0 0 10px #a9a9a9;
 }
 
-.login_contents .login-password-box {
+.login_contents form .login-password-box {
+  height: 20%;
   margin-top: 5%;
 }
 
-.login_contents .login-password-box .login-password-text {
+.login_contents form .login-password-box .login-password-text {
+  position: relative;
   display: inline-block;
-  width: 30%;
+  width: 35%;
   font-family: 'Book Antiqua';
+  font-size: 2vw;
   color: #808080;
+  padding-left: 5%;
 }
 
-.login_contents .login-password-box #id_password {
+.login_contents form .login-password-box #id_password {
+  position: relative;
   display: inline-block;
-  width: 60%;
+  width: 50%;
+  height: 100%;
   outline: none;
   border: solid 2px #afeeee;
+  font-family: 'Book Antiqua';
 }
 
-.login_contents .login-password-box #id_password:focus {
+.login_contents form .login-password-box #id_password:focus {
   -webkit-box-shadow: 0 0 10px #a9a9a9;
           box-shadow: 0 0 10px #a9a9a9;
 }
 
-.login_contents hr {
+.login_contents form hr {
+  position: relative;
   background-color: #2e8b57;
   width: 90%;
 }
 
-.login_contents #login_button {
+.login_contents form #login_button {
+  position: relative;
   width: 80%;
+  height: 25%;
   margin-left: 10%;
-  margin-top: 2%;
+  font-size: 2vw;
+  font-family: 'Meiryo';
 }
 
 .login_contents .forget_password_link {
@@ -93,6 +113,8 @@ body {
 }
 
 .login_contents .forget_password_link p {
+  font-size: 2vw;
+  font-family: 'Meiryo';
   text-align: right;
   margin-right: 5%;
 }

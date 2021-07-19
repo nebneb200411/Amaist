@@ -9,7 +9,7 @@ class DataLibraryCreateForm(forms.ModelForm):
         fields = ('data_file', 'introduction')
         widgets = {
             'data_file': forms.FileInput(attrs={'class': 'data_file'}),
-            'introduction': forms.TextInput(attrs={'class': 'introduction'})
+            'introduction': CKEditorWidget(),
         }
 
 

@@ -4,18 +4,6 @@
     <link rel="stylesheet" href="{% static 'article/list.css' %}"/>
 {% endblock stylesheet %}
 {% block contents %}
-    <!--
-    <div class="searching">
-        <form method="GET" action="{% url 'article:list' %}">
-            <input type="text" name="article_search" placeholder="記事検索"/>
-            <button type="submit" class="btn btn-success">記事検索</button>
-        </form>
-        <form method="GET">
-            <input type="text" name="tag_search" placeholder="タグ検索"/>
-            <button type="submit" class="btn btn-success">タグ検索</button>
-        </form>
-    </div>
-    -->
     <div class="container-fluid">
         <div class="row">
             <div class ="col-xl-3 col-md-3 col-12" id="left-grid">
@@ -78,7 +66,11 @@
                 </div>
                 {% endfor %}
             </div>
+
+            <!--about account link-->
             <div class="col-xl-3 col-md-3 col-12" id="right-grid">
+                <a href="{% url 'sign_up' %}"><p class="arround-account">Register</p></a>
+                <a href="{% url 'logout' %}"><p class="arround-account">Logout</p></a>
             </div>
             
         </div>

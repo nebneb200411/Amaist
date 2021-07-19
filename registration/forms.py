@@ -16,10 +16,6 @@ class SignUpForm(UserCreationForm):
         model = User
         fields = ('username', 'email', 'password1', 'password2')
 
-        widgets = {
-            'username': forms.TextInput(attrs={'class': 'form-control'})
-        }
-
     def save(self, commit=True):
         user = super().save(commit=False)
         user.email = self.cleaned_data['email']

@@ -1,3 +1,19 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+//動的な操作
+.mgr-10 {
+    margin-left: 10px;
+}
+
+.horizontal-line {
+    background-color: #afeeee;
+    height: 2px;
+}
+
 main {
     div {
         div {
@@ -11,16 +27,68 @@ main {
                 .question-page-title {
                     background-color: #ee82ee;
                     margin-top: 10px;
+                    border-bottom: solid 2px #191970;
+                    border-top: solid 2px #191970;
 
                     p {
-                        font-size: 200%;
+                        margin-top: 3%;
+                        margin-left: 5%;
+                        color: #ffffff;
+                        font-size: 4vh;
                         font-family: "arial", "Yu Gothic UI";
-                        border-bottom: solid 2px #191970;
-                        border-top: solid 2px #191970;
 
                         span {
                             margin-left: 10px;
                         }
+                    }
+                }
+
+                .form-box {
+                    form {
+                        .input-file-box {
+
+                            .input-file-p {
+                                margin-top: 5%;
+                                margin-left: 2%;
+                                color: #6495ed;
+                                font-size: 3vh;
+                                font-family: 'MS Gothic';
+                                border-bottom: solid 2px #191970;
+                            }
+
+                            #id_data_file {
+                                margin-left: 2%;
+                            }
+
+                            .errorlist {
+                                margin-top: 2%;
+                                list-style: none;
+
+                                li {
+                                    font-family: 'Times New Roman', 'ＭＳ 明朝';
+                                    color: #ff0000;
+                                }
+                            }
+                        }
+
+                        .input-introduction-box {
+                            .input-introduction-p {
+                                margin-top: 5%;
+                                margin-left: 2%;
+                                color: #6495ed;
+                                font-size: 3vh;
+                                font-family: 'MS Gothic';
+                                border-bottom: solid 2px #191970;
+                            }
+                        }
+
+                        #post-button {
+                            margin-top: 5%;
+                            margin-bottom: 5%;
+                            width: 80%;
+                            margin-left: 10%;
+                        }
+
                     }
                 }
 

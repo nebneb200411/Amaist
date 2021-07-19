@@ -1,4 +1,63 @@
 {% extends 'base.html' %}
+{% load static %}
+{% block stylesheet %}
+<link rel="stylesheet" href="{% static 'registration/registration.css' %}">
+{% endblock stylesheet %}
 {% block contents %}
-{{form.as_p}}
+
+<!--<span class="mgr-10"/>-->
+
+<div class="register-box">
+    <div class="regiter-page-title">
+        <p class="regiter-page-text"><i class="fas fa-address-card"></i><span class="mgr-10"></span>Registration</p>
+    </div>
+
+    <div class="register-form-box">
+        <form method="POST">
+            {% csrf_token %}
+            <!--users will input username in here-->
+            <div class="username-input-box">
+                <p class="user-input-text"><i class="fas fa-user"></i><span class="mgr-10"></span>Username{{form.username}}</p>
+                <!--display error message if there is somethig wrong with posted username-->
+                {% if form.username.errors %}
+                <p class="error-messages">{{form.username.errors}}</p>
+                {% endif %}
+            </div>
+
+            <hr class="horizontal-line">
+
+            <!--users will input email in here-->
+            <div class="email-input-box">
+                <p class="user-input-text"><i class="fas fa-envelope"></i><span class="mgr-10"></span>E-mail{{form.email}}</p>
+                {% if form.email.errors %}
+                <p class="error-messages">{{form.email.errors}}</p>
+                {% endif %}
+            </div>
+
+            <hr class="horizontal-line">
+
+            <!--Password1-->
+            <div class="password1-input-box">
+                <p class="user-input-text"><i class="fas fa-lock"></i><span class="mgr-10"></span>Password{{form.password1}}</p>
+                {% if form.password1.errors %}
+                <p class="error-messages">{{form.password1.errors}}</p>
+                {% endif %}
+            </div>
+
+            <hr class="horizontal-line">
+
+            <!--password2-->
+            <div class="password2-input-box">
+                <p class="user-input-text"><i class="fas fa-lock-open"></i><span class="mgr-10"></span>Password（確認用）{{form.password2}}</p>
+                {% if form.password2.errors %}
+                <p class="error-messages">{{form.password2.errors}}</p>
+                {% endif %}
+            </div>
+
+            <hr class="lastline">
+
+            <!--submit button-->
+            <input id="register-button" type="submit" class="btn btn-primary" value="ユーザー登録"/>
+        </form>
+    </div>
 {% endblock contents %}

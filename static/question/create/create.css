@@ -71,13 +71,14 @@ main div div #main-box .question-create-box form #tag-box .tag-input {
   font-style: normal;
   font-weight: normal;
   text-decoration: inherit;
+  outline: none;
 }
 
-main div div #main-box .question-create-box form .tag-inputo-box-add {
+main div div #main-box .question-create-box form .tag-input-box-add {
   width: 100%;
 }
 
-main div div #main-box .question-create-box form .tag-inputo-box-add #tag-add-button {
+main div div #main-box .question-create-box form .tag-input-box-add #tag-add-button {
   cursor: pointer;
 }
 

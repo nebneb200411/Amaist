@@ -46,7 +46,7 @@
 
             <!--comment input box-->
             <div class="comment-input-box">
-                <form method="POST" class="comment-form"><!--action="{% url 'question:comment' %}"-->
+                <form method="POST" class="comment-form">
                     {% csrf_token %}
                     <input type="hidden"  name="response_to" value="{{request.user}}"/>
                     <input type="hidden" name="question_pk" value="{{object.pk}}"/>

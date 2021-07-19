@@ -15,80 +15,105 @@ body {
 
 .login_contents {
     position: absolute;
-    width: 80%;
-    height: 50%;
-    margin-left: 10%;
+    width: 60%;
+    margin-left: 20%;
     margin-top: 10%;
+    margin-bottom: 10%;
     border: solid 2px #1e90ff;
 
     .login-title {
         font-family: 'Bookman Old Style';
         color: #6495ed;
         text-align: center;
-        margin-top: 5%;
-        font-size: 2rem;
+        margin-top: 2%;
+        font-size: 4vw;
         border-bottom: dotted 2px #87ceeb;
     }
 
-    .login-username-box {
-        margin-top: 5%;
+    form {
+        height: 50%;
 
-        .login-username-text {
-            display: inline-block;
-            width: 30%;
-            font-family: 'Book Antiqua';
-            color: #808080;
+        .login-username-box {
+            height: 20%;
+
+            .login-username-text {
+                position: relative;
+                display: inline-block;
+                width: 35%;
+                font-family: 'Book Antiqua';
+                font-size: 2vw;
+                color: #808080;
+                padding-left: 5%;
+            }
+
+            #id_username {
+                display: inline-block;
+                width: 50%;
+                height: 100%;
+                outline: none;
+                border: solid 2px #afeeee;
+                font-family: 'Book Antiqua';
+            }
+
+            #id_username:focus {
+                box-shadow: 0 0 10px #a9a9a9;
+            }
         }
 
-        #id_username {
-            display: inline-block;
-            width: 60%;
-            outline: none;
-            border: solid 2px #afeeee;
+        .login-password-box {
+            height: 20%;
+            margin-top: 5%;
+
+            .login-password-text {
+                position: relative;
+                display: inline-block;
+                width: 35%;
+                font-family: 'Book Antiqua';
+                font-size: 2vw;
+                color: #808080;
+                padding-left: 5%;
+            }
+
+            #id_password {
+                position: relative;
+                display: inline-block;
+                width: 50%;
+                height: 100%;
+                outline: none;
+                border: solid 2px #afeeee;
+                font-family: 'Book Antiqua';
+            }
+
+            #id_password:focus {
+                box-shadow: 0 0 10px #a9a9a9;
+            }
         }
 
-        #id_username:focus {
-            box-shadow: 0 0 10px #a9a9a9;
+        hr {
+            position: relative;
+            background-color: #2e8b57;
+            width: 90%;
         }
+
+        #login_button {
+            position: relative;
+            width: 80%;
+            height: 25%;
+            margin-left: 10%;
+            font-size: 2vw;
+            font-family: 'Meiryo';
+        }
+
     }
 
-    .login-password-box {
-        margin-top: 5%;
 
-        .login-password-text {
-            display: inline-block;
-            width: 30%;
-            font-family: 'Book Antiqua';
-            color: #808080;
-        }
-
-        #id_password {
-            display: inline-block;
-            width: 60%;
-            outline: none;
-            border: solid 2px #afeeee;
-        }
-
-        #id_password:focus {
-            box-shadow: 0 0 10px #a9a9a9;
-        }
-    }
-
-    hr {
-        background-color: #2e8b57;
-        width: 90%;
-    }
-
-    #login_button {
-        width: 80%;
-        margin-left: 10%;
-        margin-top: 2%;
-    }
 
     .forget_password_link {
         margin-top: 3%;
 
         p {
+            font-size: 2vw;
+            font-family: 'Meiryo';
             text-align: right;
             margin-right: 5%;
 

@@ -1,3 +1,20 @@
+@charset "UTF-8";
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.mgr-10 {
+  margin-left: 10px;
+}
+
+.horizontal-line {
+  background-color: #afeeee;
+  height: 2px;
+}
+
 main div div #left-box {
   background-color: #fff0f5;
   border-right: solid 2px #191970;
@@ -6,17 +23,59 @@ main div div #left-box {
 main div div #main-box .question-page-title {
   background-color: #ee82ee;
   margin-top: 10px;
-}
-
-main div div #main-box .question-page-title p {
-  font-size: 200%;
-  font-family: "arial", "Yu Gothic UI";
   border-bottom: solid 2px #191970;
   border-top: solid 2px #191970;
 }
 
+main div div #main-box .question-page-title p {
+  margin-top: 3%;
+  margin-left: 5%;
+  color: #ffffff;
+  font-size: 4vh;
+  font-family: "arial", "Yu Gothic UI";
+}
+
 main div div #main-box .question-page-title p span {
   margin-left: 10px;
+}
+
+main div div #main-box .form-box form .input-file-box .input-file-p {
+  margin-top: 5%;
+  margin-left: 2%;
+  color: #6495ed;
+  font-size: 3vh;
+  font-family: 'MS Gothic';
+  border-bottom: solid 2px #191970;
+}
+
+main div div #main-box .form-box form .input-file-box #id_data_file {
+  margin-left: 2%;
+}
+
+main div div #main-box .form-box form .input-file-box .errorlist {
+  margin-top: 2%;
+  list-style: none;
+}
+
+main div div #main-box .form-box form .input-file-box .errorlist li {
+  font-family: 'Times New Roman', 'ＭＳ 明朝';
+  color: #ff0000;
+}
+
+main div div #main-box .form-box form .input-introduction-box .input-introduction-p {
+  margin-top: 5%;
+  margin-left: 2%;
+  color: #6495ed;
+  font-size: 3vh;
+  font-family: 'MS Gothic';
+  border-bottom: solid 2px #191970;
+}
+
+main div div #main-box .form-box form #post-button {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  width: 80%;
+  margin-left: 10%;
 }
 
 main div div #main-box img {

@@ -17,10 +17,27 @@
             <div class="form-box">
                 <form method="POST" enctype="multipart/form-data">
                     {% csrf_token %}
-                    {{form.as_p}}
-                    <input type="submit" class="btn btn-success"></input>
+                    <div class="input-file-box">
+                        <p class="input-file-p"><i class="fas fa-mail-bulk"></i><span class="mgr-10"></span>データをポスト</p>
+                        {{form.data_file}}
+                        {% if form.data_file.errors %}
+                        {{form.data_file.errors}}
+                        {% endif %}
+                    </div>
+
+                    <div class="input-introduction-box">
+                        <p class="input-introduction-p"><i class="fas fa-sticky-note"></i><span class="mgr-10"></span>データについての説明</p>
+                        {{form.media}}
+                        {{form.introduction}}
+                    </div>
+
+                    <hr class="horizontal-line">
+
+                    <input id="post-button" type="submit" class="btn btn-success"></input>
                 </form>
             </div>
+
+            <hr class="horizontal-line">
 
             <img src="{% static 'images/base/datalibrary.png' %}" class="img-responsive"/>
         </div>

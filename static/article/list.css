@@ -92,4 +92,14 @@ body main div div #article-grid #good-number p {
 body main div div #right-grid {
   background-color: #dcdcdc;
 }
+
+body main div div #right-grid a {
+  color: #1e90ff;
+}
+
+body main div div #right-grid a p {
+  margin-top: 5%;
+  text-align: center;
+  font-family: 'Book Antiqua';
+}
 /*# sourceMappingURL=list.css.map */

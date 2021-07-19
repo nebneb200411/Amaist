@@ -1,13 +1,5 @@
 <form method='POST'>
     {% csrf_token %}
-    <div class="login-username-box">
-        <span class="mgr-10"/><p class="login-username-text"><i class="fas fa-envelope"></i><span class="mgr-10"/>Username</p>
-        {{form.username}}
-    </div>
-    <div class="login-password-box">
-        <span class="mgr-10"/><p class="login-password-text"><i class="fas fa-unlock-alt"></i><span class="mgr-10"/>Password</p>
-        {{form.password}}
-    </div>
-    <hr>
+    {{form.as_p}}
     <input class="btn btn-primary" type="submit" value="{{ submit_label }}" id="login_button"/>
 </form>

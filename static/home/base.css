@@ -133,7 +133,7 @@ body header .header-box .register-box a {
 }
 
 body header .header-box .register-box a p {
-  font-size: 1rem;
+  font-size: 2vh;
   font-family: 'Century';
   margin-top: 55%;
 }

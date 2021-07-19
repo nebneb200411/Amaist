@@ -8,7 +8,7 @@ from django.shortcuts import redirect
 from .forms import DataLibraryCreateForm, CommentForm
 
 
-class DataLibraryCreateView(CreateView, LoginRequiredMixin):
+class DataLibraryCreateView(LoginRequiredMixin, CreateView):
     form_class = DataLibraryCreateForm
     model = DataLibrary
     template_name = 'data_library/create.html'
@@ -21,14 +21,14 @@ class DataLibraryCreateView(CreateView, LoginRequiredMixin):
         return super().form_valid(form)
 
 
-class DataLibraryUpdateView(UpdateView, LoginRequiredMixin):
+class DataLibraryUpdateView(LoginRequiredMixin, UpdateView):
     form_class = DataLibraryCreateForm
     model = DataLibrary
     template_name = 'data_library/update.html'
     success_url = reverse_lazy('data_library:list')
 
 
-class DataLibraryListView(ListView, LoginRequiredMixin):
+class DataLibraryListView(ListView):
     model = DataLibrary
     template_name = 'data_library/list.html'
     pagenate_by = 20
@@ -38,7 +38,7 @@ class DataLibraryListView(ListView, LoginRequiredMixin):
         return data_libraries
 
 
-class DataLibraryDetailView(DetailView):
+class DataLibraryDetailView(LoginRequiredMixin, DetailView):
     model = DataLibrary
     template_name = 'data_library/detail.html'
 

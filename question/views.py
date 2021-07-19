@@ -6,7 +6,7 @@ from django.urls import reverse_lazy
 from .forms import QuestionCreateForm, CommentCreateForm
 
 
-class QuestionCreateView(CreateView, LoginRequiredMixin):
+class QuestionCreateView(LoginRequiredMixin, CreateView):
     model = Question
     form_class = QuestionCreateForm
     template_name = 'question/create.html'
@@ -38,7 +38,7 @@ class QuestionListView(ListView):
     order_by = '-created_at'
 
 
-class QuestionDetailView(DetailView, LoginRequiredMixin):
+class QuestionDetailView(LoginRequiredMixin, DetailView):
     model = Question
     template_name = 'question/detail.html'
 
