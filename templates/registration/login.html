@@ -5,16 +5,16 @@
 {% endblock %}
 {% block contents %}
     <div class="login_contents">
-        <p class="login-title"><i class="fas fa-sign-in-alt"></i><span class="mgr-10"/>Login</p>
+        <p class="login-title"><i class="fas fa-sign-in-alt"></i><span class="mgr-10"></span>Login</p>
         <form method='POST'>
             {% csrf_token %}
             <div class="login-username-box">
-                <span class="mgr-10"/><p class="login-username-text"><i class="fas fa-envelope"></i><span class="mgr-10"/>E-mail</p>
+                <span class="mgr-10"></span><p class="login-username-text"><i class="fas fa-envelope"></i><span class="mgr-10"></span>E-mail</p>
                 <!--ログインフォームのみemailをusernameで表示-->
                 {{form.username}}
             </div>
             <div class="login-password-box">
-                <span class="mgr-10"/><p class="login-password-text"><i class="fas fa-unlock-alt"></i><span class="mgr-10"/>Password</p>
+                <span class="mgr-10"></span><p class="login-password-text"><i class="fas fa-unlock-alt"></i><span class="mgr-10"></span>Password</p>
                 {{form.password}}
             </div>
             <hr>

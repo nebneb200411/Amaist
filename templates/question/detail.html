@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block stylesheet %}
+<link rel="stylesheet" href="{% static 'question/detail/detail.css' %}">
+{% endblock stylesheet %}
+
 {% block contents %}
 <div class="container-fluid">
     <div class="row">
@@ -8,18 +12,32 @@
 
             <!--display contributor's information-->
             <div class="contributor-info-box">
-                <div class="contributor-icon-box">
-                    <img src="{{MEDIA_URL}}{{object.contributor.user.icon}}"/>
+                <img src="{{MEDIA_URL}}{{object.contributor.user.icon}}"/>
+                <p><i class="fas fa-user"></i><span class="mgr-10"></span>{{object.contributor}}</p>
+            </div>
+
+            <!--display question's content-->
+            <div class="question-box">
+                <div class="question-title-box">
+                    <p><i class="fas fa-question-circle"></i><span class="mgr-10"></span>{{object.title}}</p>
                 </div>
-                <div class="contributor-name">
-                    <p>{{object.contributor}}</p>
+                <div class="question-created-date-box">
+                    <p><i class="far fa-calendar-alt"></i><span class="mgr-10"></span>{{object.created_at|date:"y/m/d"}}</p>
+                </div>
+
+                <hr class="horizontal-line">
+
+                <div class="question-content-box">
+                    {{object.content | safe }}
                 </div>
             </div>
+
+            <hr class="horizontal-line">
 
             <!--display good and good form-->
             <div class="good-box">
                 <div class="good-count-box">
-                    <p><i class="far fa-thumbs-up"></i>   {{good_number}}</p>
+                    <p><i class="far fa-thumbs-up"></i><span class="mgr-10"></span>{{good_number}}</p>
                 </div>
 
                 <div class="good-form-box">
@@ -31,37 +49,42 @@
                 </div>
             </div>
 
-            <!--display question's content-->
-            <div class="question-box">
-                <div class="question-created-date-box">
-                    <p>{{object.created_at}}</p>
-                </div>
-                <div class="question-title-box">
-                    <p>{{object.title}}</p>
-                </div>
-                <div class="question-content-box">
-                    {{object.content | safe }}
-                </div>
-            </div>
+            <hr class="horizontal-line">
 
             <!--comment input box-->
             <div class="comment-input-box">
+                <p class="comment-title"><i class="fas fa-comment-alt"></i><span class="mgr-10"></span>Post Comment</p>
                 <form method="POST" class="comment-form">
                     {% csrf_token %}
                     <input type="hidden"  name="response_to" value="{{request.user}}"/>
                     <input type="hidden" name="question_pk" value="{{object.pk}}"/>
                     {{form.media}}
-                    {{form.as_p}}
+                    {{form.content}}
+                    <hr class="horizontal-line">
                     <button type="submit" class="btn btn-success">送信</button>
+                    <hr class="horizontal-line">
                 </form>
             </div>
 
             <!--display comment in here-->
             <div class="comments-box">
-                <p>コメントの表示</p>
+                <p class="comments-title"><i class="fas fa-comment-alt"></i><span class="mgr-10"></span>Comments</p>
                 {% for comment_object in comment_objects %}
-                {{comment_object.comment_from}}
-                {{comment_object.content}}
+                <div class="each-comments">
+                    <div class="icon">
+                        <img src="{{MEDIA_URL}}{{comment_object.comment_from.user.icon}}"></img>
+                    </div>
+
+                    <div class="username">
+                        <p class="username-p"><i class="fas fa-user"></i><span class="mgr-10"></span>{{comment_object.comment_from}}</p>
+                    </div>
+
+                    <hr class="horizontal-line">
+
+                    <div class="content">
+                        {{comment_object.content|safe}}
+                    </div>
+                </div>
                 {% endfor %}
             </div>
             
