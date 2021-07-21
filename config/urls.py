@@ -39,6 +39,7 @@ urlpatterns = [
     path('data_library/', include('data_library.urls')),
     path('question/', include('question.urls')),
     path('ckeditor/', include('ckeditor_uploader.urls')),
+    path('notifications/', include('notifications.urls')),
 ]
 
 # 開発環境なので以下を設定

@@ -7,6 +7,7 @@ from .models import Article, Comment, Tag
 from django.contrib import messages
 from profiles.models import Profile
 from django.db.models import Q
+from notifications.models import Notifications
 
 
 class ArticleFormCreateView(LoginRequiredMixin, CreateView):
@@ -65,7 +66,8 @@ class ArticleListView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-
+        notifications = Notifications.objects.all()
+        context['notifications'] = notifications
         return context
 
 

@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block stylesheet %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/monokai.min.css">
+    <link rel="stylesheet" href="{% static 'notifications/detail/detail.css' %}">
+{% endblock stylesheet %}
+
+{% block contents %}
+    <div class="container-fluid">
+        <div class="row">
+            <div id="left-box" class="col-12 col-md-3 col-xl-3"></div>
+
+            <!--main contents-->
+            <div id="main-box" class="col-12 col-md-6 col-xl-6">
+
+                <!--display title in here-->
+                <div class="title-box">
+                    <p class="title-p">＜お知らせ＞{{object.title}}</p>
+                </div>
+
+                <!--display contents in here-->
+                <div class="contents-box">
+                    {{object.content|safe}}
+                </div>
+            </div>
+            <div id="right-box" class="col-12 col-md-3 col-xl-3"></div>
+        </div>
+    </div>
+{% endblock contents %}
+
+{% block script %}
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+{% endblock script %}

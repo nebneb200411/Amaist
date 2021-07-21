@@ -1,7 +1,18 @@
 body {
     main {
         .profile-search {
-            position: relative;
+            margin-top: 5%;
+
+            form {
+
+                input {
+                    margin-left: 10%;
+                    margin-bottom: 5%;
+                    outline: none;
+                    border: solid 2px #8fbc8f;
+                    font-family: 'Yu Gothic';
+                }
+            }
 
             form {
 

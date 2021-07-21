@@ -20,6 +20,21 @@
                     </form>
                     <hr class="searching-hr"/>
                 </div>
+
+                <!--display notification in here-->
+                <div class="notifications-box">
+                    {% for notification in notifications %}
+                    <div class="each-notifications">
+                        <a href="{% url 'notifications:detail' notification.pk %}">
+                            <p class="notification-title">
+                                {{notification.title}}
+                            </p>
+                        </a>
+
+                        <p class="created-date">{{notification.created_at}}</p>
+                    </div>
+                    {% endfor %}
+                </div>
             </div>
             <div class="col-xl-6 col-md-6 col-12" id="article-grid">
                 <!--作成記事単位-->
