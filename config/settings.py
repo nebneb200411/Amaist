@@ -15,8 +15,17 @@ SECRET_KEY = 'w08y2m@#&e!^wk_7su!_iu8ef8fp3&!#k&ivf9$4kff)+=dz8-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
+try:
+    from config.local_settings import *
+except ImportError:
+    pass
 
-ALLOWED_HOSTS = ['127.0.0.1', '.amaistapp.com']
+if not DEBUG:
+    import django_heroku
+    django_heroku.settings(locals())
+
+
+ALLOWED_HOSTS = ['127.0.0.1', 'amaist.herokuapp.com']
 
 
 # Application definition
