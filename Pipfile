@@ -12,6 +12,7 @@ django-toolbelt = "*"
 django-ckeditor = "*"
 django-cleanup = "*"
 pillow = "*"
+dj-database-url = "*"
 
 [dev-packages]
 
