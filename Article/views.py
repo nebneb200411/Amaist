@@ -26,7 +26,7 @@ class ArticleFormCreateView(LoginRequiredMixin, CreateView):
         article.save()
         pk = article.pk
         created_article = Article.objects.get(pk=pk)
-        """タグの作成"""
+        """create tag"""
         tags = self.request.POST.getlist('tags')
         tag_created = []
         for tag in tags:
