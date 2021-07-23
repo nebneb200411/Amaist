@@ -32,7 +32,7 @@ ALLOWED_HOSTS = ['127.0.0.1', 'amaist.herokuapp.com']
 # 上から順に読み込まれるので注意
 INSTALLED_APPS = [
     'notifications',
-    'ckeditor',
+    'django-ckeditor',
     'ckeditor_uploader',
     'question',
     'profiles',
