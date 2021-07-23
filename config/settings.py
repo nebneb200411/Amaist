@@ -32,7 +32,6 @@ ALLOWED_HOSTS = ['127.0.0.1', 'amaist.herokuapp.com']
 # 上から順に読み込まれるので注意
 INSTALLED_APPS = [
     'notifications',
-    'django-ckeditor',
     'ckeditor_uploader',
     'question',
     'profiles',
@@ -47,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'data_library.templatetags.filename',
     'django_cleanup',
+    'ckeditor',
 ]
 
 MIDDLEWARE = [
