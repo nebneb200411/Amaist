@@ -13,7 +13,7 @@ from notifications.models import Notifications
 class ArticleFormCreateView(LoginRequiredMixin, CreateView):
     form_class = ArticleForm
     template_name = "article/create_article.html"
-    success_url = reverse_lazy('profiles:profile_list')
+    success_url = reverse_lazy('article:list')
     model = Article
 
     def get_context_data(self, **kawargs):
@@ -55,13 +55,19 @@ class ArticleListView(ListView):
         tag_keyword = self.request.GET.get('tag_search')
         if article_keyword:
             queryset = Article.objects.filter(
-                Q(title__icontains=article_keyword) | Q(content__icontains=article_keyword))
+                Q(title__icontains=article_keyword) | Q(content__icontains=article_keyword)).order_by(
+                '-created_at'
+            )
 
         elif tag_keyword:
             queryset = Article.objects.filter(
-                Q(tag__tag_name__icontains=tag_keyword))
+                Q(tag__tag_name__icontains=tag_keyword)).order_by(
+                '-created_at'
+            )
         else:
-            queryset = Article.objects.all()
+            queryset = Article.objects.all().order_by(
+                '-created_at'
+            )
         return queryset
 
     def get_context_data(self, **kwargs):

@@ -35,7 +35,10 @@ class QuestionListView(ListView):
     model = Question
     template_name = 'question/list.html'
     pagenate_by = 20
-    order_by = '-created_at'
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        return queryset.order_by('-created_at')
 
 
 class QuestionDetailView(LoginRequiredMixin, DetailView):

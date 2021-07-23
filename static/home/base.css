@@ -128,6 +128,16 @@ body header .header-box .menu-button .bottom-line.clicked-bottom {
   transition: .3s;
 }
 
+body header .header-box .app-icon {
+  width: 50%;
+}
+
+body header .header-box .app-icon img {
+  margin-left: 40%;
+  height: 100%;
+  width: auto;
+}
+
 body header .header-box .register-box a {
   color: #b0c4de;
 }
@@ -139,9 +149,10 @@ body header .header-box .register-box a p {
 }
 
 body header .header-box .user-icon-box a img {
+  background-color: white;
   height: 12vh;
   width: auto;
-  margin-right: 30px;
+  margin-right: 0;
   border: solid 4px #b0c4de;
   border-radius: 5px;
 }
@@ -464,5 +475,45 @@ footer .footer-menu #menu div #create-article-link {
           transform: rotateX(180deg);
   -webkit-transition: .3s;
   transition: .3s;
+}
+
+footer {
+  background-color: #000000;
+}
+
+footer .app-icon-box {
+  display: inline-block;
+  margin-left: 2%;
+  margin-top: 2%;
+  width: 20%;
+  height: auto;
+}
+
+footer .app-icon-box img {
+  margin-top: 2%;
+  margin-left: 2%;
+  width: 100%;
+  height: auto;
+}
+
+footer .footer-contents {
+  display: inline-block;
+  margin-left: 5%;
+}
+
+footer .footer-contents .inquiry-p {
+  font-family: 'Book Antiqua', 'MS PMincho';
+  color: #b0c4de;
+}
+
+footer .footer-contents .inquiry-p a {
+  color: #8fbc8f;
+}
+
+footer .footer-contents .app-title {
+  font-size: 5vh;
+  font-family: 'Book Antiqua';
+  color: #b0c4de;
+  border-bottom: dotted 2px #b0c4de;
 }
 /*# sourceMappingURL=base.css.map */
