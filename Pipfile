@@ -11,6 +11,7 @@ whitenoise = "*"
 django-toolbelt = "*"
 django-ckeditor = "*"
 django-cleanup = "*"
+pillow = "*"
 
 [dev-packages]
 
