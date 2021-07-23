@@ -9,6 +9,8 @@ django-heroku = "*"
 gunicorn = "*"
 whitenoise = "*"
 django-toolbelt = "*"
+django-ckeditor = "*"
+django-cleanup = "*"
 
 [dev-packages]
 
