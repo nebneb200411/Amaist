@@ -32,7 +32,6 @@ ALLOWED_HOSTS = ['127.0.0.1', 'amaist.herokuapp.com']
 # 上から順に読み込まれるので注意
 INSTALLED_APPS = [
     'notifications',
-    'ckeditor_uploader',
     'question',
     'profiles',
     'data_library',
@@ -47,6 +46,7 @@ INSTALLED_APPS = [
     'data_library.templatetags.filename',
     'django_cleanup',
     'ckeditor',
+    'ckeditor_uploader',
 ]
 
 MIDDLEWARE = [
@@ -158,6 +158,8 @@ MEDIA_URL = '/media/'
 
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
+
+CKEDITOR_BASEPATH = "/static/ckeditor/"
 
 CKEDITOR_UPLOAD_PATH = "ckeditor/"
 
