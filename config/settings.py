@@ -46,7 +46,6 @@ INSTALLED_APPS = [
     'profiles',
     'data_library',
     'article',
-    'django_summernote',
     'registration',
     'django.contrib.admin',
     'django.contrib.auth',
