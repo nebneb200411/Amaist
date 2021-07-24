@@ -21,18 +21,12 @@ from registration import views
 from . import settings
 from django.conf.urls.static import static
 
-# admin.site.site_title = 'WebApp管理サイト'
-# admin.site.site_header = 'WebApp管理サイト'
-# admin.site.index_title = 'メニュー'
-# admin.site.disable_action('delete_selected')
-
 index_view = TemplateView.as_view(template_name='artcile/index.html')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('django.contrib.auth.urls')),
     path('registration/', views.SignUpView.as_view(), name='sign_up'),
-    path('summernote/', include('django_summernote.urls')),
     path('', include('article.urls')),
     path('profile/', include('registration.urls')),
     path('profiles/', include('profiles.urls')),
