@@ -36,6 +36,8 @@ class UserProfileDetailView(DetailView, LoginRequiredMixin):
     def get_object(self, **kwargs):
         pk = self.kwargs.get('pk')
         view_profile = Profile.objects.get(pk=pk)
+        if self.request.user.user.pk != pk:
+            return redirect('article:list')
         return view_profile
 
     def get_context_data(self, **kwargs):

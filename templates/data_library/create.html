@@ -18,7 +18,7 @@
                 <form method="POST" enctype="multipart/form-data">
                     {% csrf_token %}
                     <div class="input-file-box">
-                        <p class="input-file-p"><i class="fas fa-mail-bulk"></i><span class="mgr-10"></span>データをポスト</p>
+                        <p class="input-file-p"><i class="fas fa-mail-bulk"></i><span class="mgr-10"></span>データをポスト(.csc, .xlsx, .txt, .sqlite可</p>
                         {{form.data_file}}
                         {% if form.data_file.errors %}
                         {{form.data_file.errors}}

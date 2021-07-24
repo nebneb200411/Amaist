@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load custom_tags %}
 {% block stylesheet %}
     <link rel="stylesheet" href="{% static 'article/list.css' %}"/>
 {% endblock stylesheet %}
@@ -21,20 +22,7 @@
                     <hr class="searching-hr"/>
                 </div>
 
-                <!--display notification in here-->
-                <div class="notifications-box">
-                    {% for notification in notifications %}
-                    <div class="each-notifications">
-                        <a href="{% url 'notifications:detail' notification.pk %}">
-                            <p class="notification-title">
-                                {{notification.title}}
-                            </p>
-                        </a>
-
-                        <p class="created-date">{{notification.created_at}}</p>
-                    </div>
-                    {% endfor %}
-                </div>
+                
             </div>
             <div class="col-xl-6 col-md-6 col-12" id="article-grid">
                 <!--作成記事単位-->
@@ -46,7 +34,7 @@
                         <div class="col-xl-3 col-md-3 col-12" id="icon">
                             <div class="author-icon">
                             <!--もし画像を選択していないときのデフォルトの画像を表示させる(今のところmodelsでやればいかなーて思ってる)-->
-                                <img class="user-icon" src="{{ MEDIA_URL }}{{article.author.user.icon}}"/>
+                                <img class="user-icon" src="{{ MEDIA_URL }}{{article.author.user.icon|default:'images/user-icon-default.png'}}"/>
                             </div>
                         </div>
 
@@ -86,8 +74,21 @@
             <div class="col-xl-3 col-md-3 col-12" id="right-grid">
                 <a href="{% url 'sign_up' %}"><p class="arround-account">Register</p></a>
                 <a href="{% url 'logout' %}"><p class="arround-account">Logout</p></a>
+                <!--display notification in here-->
+                <div class="notifications-box">
+                    {% for notification in notifications %}
+                    <div class="each-notifications">
+                        <a href="{% url 'notifications:detail' notification.pk %}">
+                            <p class="notification-title">
+                                {{notification.title}}
+                            </p>
+                        </a>
+
+                        <p class="created-date">{{notification.created_at}}</p>
+                    </div>
+                    {% endfor %}
+                </div>
             </div>
-            
         </div>
     </div>
         

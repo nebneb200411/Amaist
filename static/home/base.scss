@@ -120,6 +120,16 @@ body {
                 }
             }
 
+            .app-icon {
+                width: 50%;
+
+                img {
+                    margin-left: 40%;
+                    height: 100%;
+                    width: auto;
+                }
+            }
+
             .register-box {
                 a {
                     color: #b0c4de;
@@ -135,9 +145,10 @@ body {
             .user-icon-box {
                 a {
                     img {
+                        background-color: white;
                         height: 12vh;
                         width: auto;
-                        margin-right: 30px;
+                        margin-right: 0;
                         border: solid 4px #b0c4de;
                         border-radius: 5px;
                     }
@@ -509,4 +520,44 @@ footer {
         }
     }
 
+}
+
+footer {
+    background-color: #000000;
+
+    .app-icon-box {
+        display: inline-block;
+        margin-left: 2%;
+        margin-top: 2%;
+        width: 20%;
+        height: auto;
+
+        img {
+            margin-top: 2%;
+            margin-left: 2%;
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .footer-contents {
+        display: inline-block;
+        margin-left: 5%;
+
+        .inquiry-p {
+            font-family: 'Book Antiqua', 'MS PMincho';
+            color: #b0c4de;
+
+            a {
+                color: #8fbc8f;
+            }
+        }
+
+        .app-title {
+            font-size: 5vh;
+            font-family: 'Book Antiqua';
+            color: #b0c4de;
+            border-bottom: dotted 2px #b0c4de;
+        }
+    }
 }

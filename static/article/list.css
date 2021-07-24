@@ -102,4 +102,16 @@ body main div div #right-grid a p {
   text-align: center;
   font-family: 'Book Antiqua';
 }
+
+body main div div #right-grid .notifications-box {
+  border: solid 2px #6495ed;
+}
+
+body main div div #right-grid .notifications-box .notifications-p {
+  margin-top: 2%;
+  margin-left: 2%;
+  font-family: 'Meiryo UI';
+  font-size: 3vh;
+  color: #6495ed;
+}
 /*# sourceMappingURL=list.css.map */

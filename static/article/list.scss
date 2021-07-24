@@ -118,6 +118,18 @@ body {
                             font-family: 'Book Antiqua';
                         }
                     }
+
+                    .notifications-box {
+                        border: solid 2px #6495ed;
+
+                        .notifications-p {
+                            margin-top: 2%;
+                            margin-left: 2%;
+                            font-family: 'Meiryo UI';
+                            font-size: 3vh;
+                            color: #6495ed;
+                        }
+                    }
                 }
             }
         }
