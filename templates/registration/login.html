@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block stylesheet %}
-<link rel="stylesheet" href="{% static 'login/login.css' %}"
+<link rel="stylesheet" href="{% static 'login/login.css' %}">
 {% endblock %}
 {% block contents %}
     <div class="login_contents">
@@ -24,6 +24,4 @@
             <p><a href = "{% url 'password_reset' %}"><i class="fas fa-question-circle"></i>パスワードを忘れた場合</a></p>
         </div>
     </div>
-
-    
 {% endblock contents%}
