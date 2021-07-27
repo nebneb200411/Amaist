@@ -7,8 +7,25 @@ from django.utils.encoding import force_bytes, force_text
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django import forms
 
-# ユーザーモデルの取得
+# get user model
 User = get_user_model()
+
+# register email
+subject = "登録の確認"
+
+message_template = """
+Amaistへようこそ！
+
+ご登録ありがとうございます．
+登録完了のメールをお送りします．
+以下のURLから登録を完了してください．
+"""
+
+
+def get_activate_url(user):
+    uid = urlsafe_base64_encode(force_bytes(user.pk))
+    token = default_token_generator.make_token(user)
+    return str(settings.BASE_DIR) + "/activate/{}/{}/".format(uid, token)
 
 
 class SignUpForm(UserCreationForm):
@@ -19,7 +36,12 @@ class SignUpForm(UserCreationForm):
     def save(self, commit=True):
         user = super().save(commit=False)
         user.email = self.cleaned_data['email']
-        user.save()
+        user.is_active = False
+        if commit:
+            user.save()
+            activate_url = get_activate_url(user)
+            message = message_template + activate_url
+            user.email_user(subject, message)
         return user
 
 # ユーザー有効化の設定
