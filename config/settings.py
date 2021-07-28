@@ -134,15 +134,15 @@ USE_L10N = True
 USE_TZ = True
 
 # Email-backend
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 # connect to emailsurver
-# メールサーバーへの接続設定
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'noreplyamaist@gmail.com'
-EMAIL_HOST_PASSWORD = 'Nyuki@0411'
+EMAIL_HOST_PASSWORD = 'afsvwgauzbvwylwa'
 EMAIL_USE_TLS = True
+DEFAUL_FROM_EMAIL = 'noreplyamaist@gmail.com'
 
 
 # Static files (CSS, JavaScript, Images)

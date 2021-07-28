@@ -5,6 +5,7 @@ from .forms import SignUpForm
 from django.views.generic import DeleteView
 from django.contrib.auth import get_user_model
 from .forms import activate_user
+from django.contrib.auth.views import PasswordResetView
 
 User = get_user_model()
 
@@ -26,3 +27,7 @@ class ActivateView(TemplateView):
     def get(self, request, uidb64, token, *args, **kwargs):
         result = activate_user(uidb64, token)
         return super().get(request, result=result, **kwargs)
+
+
+class MyPasswordResetView(PasswordResetView):
+    subject_template_name = 'registration/password_reset_subject.txt'

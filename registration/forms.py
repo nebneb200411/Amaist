@@ -6,20 +6,13 @@ from django.contrib.auth.tokens import default_token_generator
 from django.utils.encoding import force_bytes, force_text
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django import forms
+# load templates
+from django.template.loader import render_to_string
+# send email
+from django.core.mail import send_mail
 
 # get user model
 User = get_user_model()
-
-# register email
-subject = "登録の確認"
-
-message_template = """
-Amaistへようこそ！
-
-ご登録ありがとうございます．
-登録完了のメールをお送りします．
-以下のURLから登録を完了してください．
-"""
 
 
 def get_activate_url(user):
@@ -40,7 +33,13 @@ class SignUpForm(UserCreationForm):
         if commit:
             user.save()
             activate_url = get_activate_url(user)
-            message = message_template + activate_url
+            subject = "ユーザー登録について"
+            context = {
+                "username": user.username,
+                "email": user.email,
+                "register_link": activate_url,
+            }
+            message = render_to_string('email/register.txt', context)
             user.email_user(subject, message)
         return user
 
