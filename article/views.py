@@ -45,9 +45,8 @@ class ArticleFormCreateView(LoginRequiredMixin, CreateView):
 
 
 class ArticleListView(ListView):
-    template_name = 'article/index.html'
+    template_name = 'article/list.html'
     model = Article
-    order_by = '-created_at'
 
     def get_queryset(self):
         queryset = super().get_queryset()
@@ -149,7 +148,7 @@ def good_count(request):
         else:
             article.good_from.add(evaluator)
             return redirect(request.META.get('HTTP_REFERER'))
-    return redirect('index')
+    return redirect('article:list')
 
 
 # comment funvtion
@@ -177,4 +176,4 @@ def comment(request):
         return redirect(request.META.get('HTTP_REFERER'))
 
     else:
-        return redirect('index')
+        return redirect('article:list')

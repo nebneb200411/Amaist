@@ -1,315 +1,206 @@
 @charset "utf-8";
-* , *::before, *::after{
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
 a {
-  text-decoration:none;
+  text-decoration: none;
 }
 
-body {
-  height:200vh;
-  z-index: -1000;
-  display:block;
-  margin: 0;
-  background-color:rgb(102, 100, 105);
+//動的な操作
+.mgr-10 {
+  margin-left: 10px;
 }
 
-//メニュー関連
-//メニュー全体のブロック
-#all_menu_id {
-  height:90%;
-  width:200px;
-  position:fixed;
-  display: block;
-  left:0px;
-  bottom:0px;
-  z-index: 100;
+main {
+  div {
+    div {
+      #main-box {
+        background-color: #f8f8ff;
+        border-right: solid 2px #a9a9a9;
+
+        .amaist-description-box {
+          .amaist-description {
+            margin-top: 2%;
+
+            h1 {
+              font-family: 'arial', 'Meiryo';
+              font-size: 4vh;
+              border-top: dotted 2px #ffb6c1;
+              border-bottom: dotted 2px #ffb6c1;
+              border-left: solid 50px #ffb6c1;
+              color: #ffb6c1;
+            }
+
+            p {
+              font-family: 'arial', 'Meiryo';
+              font-size: 2vh;
+            }
+          }
+
+          .amaist-survice-box {
+            margin-top: 2%;
+
+            //common style
+            .survice-icon {
+              height: 15vh;
+              width: auto;
+            }
+
+            .survice-name {
+              text-align: center;
+              font-family: 'Book Antiqua';
+              font-size: 2vh;
+            }
+
+            .each-survice {}
+
+            .amaist-survice-article-box {
+
+              .survice-name {
+                border-right: solid 6px #008000;
+                color: #008000;
+              }
+
+              .about-article {
+                font-family: 'arial', 'Meiryo';
+                font-size: 2vh;
+                color: #008000;
+              }
+            }
+
+            .amaist-survice-question-box {
+              .survice-name {
+                border-right: solid 6px #9932cc;
+                color: #9932cc;
+              }
+
+              .about-question {
+                font-family: 'arial', 'Meiryo';
+                font-size: 2vh;
+                color: #9932cc;
+              }
+            }
+
+            .amaist-survice-datalibrary-box {
+              .survice-name {
+                border-right: solid 6px #4682b4;
+                color: #4682b4;
+              }
+
+              .about-datalibrary {
+                font-family: 'arial', 'Meiryo';
+                font-size: 2vh;
+                color: #4682b4;
+              }
+            }
+          }
+
+          .amaist-survice {
+            font-family: 'arial', 'Meiryo';
+            font-size: 4vh;
+            border-top: dotted 2px #ffb6c1;
+            border-bottom: dotted 2px #ffb6c1;
+            border-left: solid 50px #ffb6c1;
+            color: #ffb6c1;
+          }
+        }
+
+        .article-box {
+
+          .article-division-hr {
+            height: 8px;
+            background-image: repeating-linear-gradient(45deg, #00bfff 0, #00bfff 1px, transparent 0, transparent 50%), repeating-linear-gradient(135deg, #00bfff 0, #00bfff 1px, transparent 0, transparent 50%);
+            background-size: 8px 8px;
+          }
+
+          #icon {
+            .author-icon {
+              .user-icon {
+                height: 20vh;
+                width: auto;
+              }
+            }
+          }
+
+          #author-name-created-at {
+            border-left: solid 5px #b0c4de;
+
+            div {
+              p {
+                color: #4682b4;
+                display: inline-block;
+                border-bottom: dotted 2px #b0c4de;
+                font-size: 3vh;
+              }
+
+              h2 {
+                display: inline-block;
+              }
+            }
+
+            div {
+              p {
+                display: inline-block;
+              }
+
+              p {
+                display: inline-block;
+              }
+            }
+          }
+
+          #title {
+            a {
+              color: #5f9ea0;
+
+              h3 {
+                text-align: center;
+                font-size: 3vh;
+              }
+            }
+
+            .title-hr {
+              height: 1px;
+              background: linear-gradient(to right, #87ceeb, #000080, #87ceeb);
+            }
+          }
+
+          #good-number {
+            p {
+              color: #ff69b4;
+              margin-left: 80%;
+              font-size: 3vh;
+            }
+          }
+        }
+
+        .login-and-register-box {
+          border-top: dotted 2px #5f9ea0;
+          border-bottom: dotted 2px #5f9ea0;
+          border-left: solid 40px #5f9ea0;
+
+          //common style
+          .login-and-register {
+            color: #5f9ea0;
+            font-size: 3vh;
+            font-family: 'Book Antiqua', 'Meiryo';
+
+            a {
+              color: #5f9ea0;
+            }
+          }
+
+          #login-and-register-title {
+            color: black;
+          }
+        }
+      }
+
+      #right-box {}
+    }
+  }
 }
-
-.menu-open-button {
-  position:relative;
-  display:inline-block;
-  height:100%;
-  width:200px;
-}
-
-.menuButton {
-  display:block;
-  position:absolute;
-  width:50px;
-  height:50px;
-  top: 30px;
-  left: 30px;
-  background:gray;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px;
-}
-
-.menuButton div  {
-  display:block;
-  position: absolute;
-  background: black;
-  right:50%;
-  top:50%;
-  width:40px;
-  height:1px;
-  transform: translate(+50%, 0);
-}
-
-.menuButton div:nth-of-type(1) {
-  transform: translate(+50%, -10px)
-}
-
-.menuButton div:nth-of-type(3) {
-  transform: translate(+50%, +10px)
-}
-
-
-
-//.menuButton.active{
-
-//}
-
-nav {
-  opacity: 0;
-  visibility:hidden;
-  transition: .3s;
-}
-
-nav.active {
-  opacity:1;
-  visibility:visible;
-}
-
-//メニューの内容
-.Menu-buttons{
-  display:block;
-  opacity: 0;
-  position: absolute;
-  visibility: hidden;
-  transition: .3s;
-  bottom:20px;
-  left:20px;
-  transition: .3s;
-}
-
-.Menu-buttons.active{
-  opacity: 1;
-  visibility:visible;
-}
-
-$p_left: 0px;
-$p_top:0px;
-//profileボタンについての設定
-.profile-button {
-  display: block;
-  position: relative;
-  height:140px;
-  width:200px;
-}
-
-#profile {
-  position:absolute;
-  left: 10px;
-}
-
-//trainingボタンの設定
-.training-button {
-  display: block;
-  position: relative;
-  height:140px;
-  width:200px;
-}
-
-#training {
-  display:block;
-  position:absolute;
-  right: 10px;
-}
-
-//articleボタンについての設定
-.article-button {
-  display: block;
-  position: relative;
-  height:140px;
-  width:200px;
-}
-
-#article {
-  display:block;
-  position:absolute;
-  left: 10px;
-}
-
-//competitionボタンについての設定
-.competition-button {
-  display: block;
-  position: relative;
-  height:140px;
-  width:200px;
-}
-
-#competition{
-  display:block;
-  position:absolute;
-  right: 10px;
-}
-
-//topicsボタンについての設定
-.topics-button {
-  display: block;
-  position: relative;
-  height:140px;
-  width:200px;
-}
-
-#topics{
-  display:block;
-  position:absolute;
-  left: 10px;
-}
-
-
-
-//登録ボタンのプロパティ
-.register-button {
-  position:relative;
-  display:inline-block;
-  width:150px;
-  height: 110px;
-}
-
-#register_button {
-  position: absolute;
-  left:50%;
-  top:50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  font-size: 20px;
-  font-style: italic;
-  font-family: 'Droid Sans';
-  font-weight: bold;
-  color: white;
-}
-
-#login_button {
-  position: absolute;
-  left:50%;
-  top:50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  font-size: 20px;
-  font-style: italic;
-  font-family: 'Droid Sans';
-  font-weight: bold;
-  color: white;
-}
-
-//ログインボタンのプロパティ
-.login-button {
-  position:relative;
-  display:inline-block;
-  width:150px;
-  height: 110px;
-}
-
-
-//ログアウトボタンのプロパティ
-.logout-button {
-  position:relative;
-  display:inline-block;
-  width:150px;
-  height: 110px;
-}
-
-#logout_button {
-  position: absolute;
-  left:50%;
-  top:50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  font-size: 20px;
-  font-style: italic;
-  font-family: 'Droid Sans';
-  font-weight: bold;
-  color: white;
-}
-
-
-
-.register_login_logout {
-  position: absolute;
-  top:0px;
-  right: 0px;
-  width:500px;
-  height:110px;
-}
-
-
-
-
-#border_line{
-  position:absolute;
-  top:250px;
-  left:100px;
-  visibility: hidden;
-}
-
-#border_line::after {
-  content:"";
-  display:block;
-  height:3px;
-  background-image: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
-}
-
-.header-nav-box{
-  width:100%;
-  height:110px;
-  position:fixed;
-  background: linear-gradient(to bottom right, gray, black)
-}
-
-.lines {
-  z-index:100;
-  position:relative;
-}
-
-//profilelinkについての設定
-#profile-link{
-  color:black;
-}
-
-#profile-button {
-  z-index: 100;
-}
-
-//最初の線のプロパティ
-#line_28 {
-  z-index: -1;
-}
-
-.home-button {
-  position:relative;
-  display:inline-block;
-  width:10%;
-  height:100%;
-}
-
-.home-button > i{
-  position: absolute;
-  width:100%;
-  height:100%;
-}
-
-.fa-home {
-  font-size:30px;
-  color:white;
-  position: relative;
-  top:40%;
-  left:40%;
-}
-
-
