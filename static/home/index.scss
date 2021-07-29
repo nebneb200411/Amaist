@@ -42,7 +42,7 @@ main {
           }
 
           .amaist-survice-box {
-            margin-top: 2%;
+            margin-top: 3%;
 
             //common style
             .survice-icon {
@@ -59,6 +59,7 @@ main {
             .each-survice {}
 
             .amaist-survice-article-box {
+              box-shadow: 0 0 10px #c0c0c0;
 
               .survice-name {
                 border-right: solid 6px #008000;
@@ -73,6 +74,9 @@ main {
             }
 
             .amaist-survice-question-box {
+              margin-top: 3%;
+              box-shadow: 0 0 10px #c0c0c0;
+
               .survice-name {
                 border-right: solid 6px #9932cc;
                 color: #9932cc;
@@ -86,6 +90,10 @@ main {
             }
 
             .amaist-survice-datalibrary-box {
+              box-shadow: 0 0 10px #c0c0c0;
+              margin-top: 3%;
+              margin-bottom: 2%;
+
               .survice-name {
                 border-right: solid 6px #4682b4;
                 color: #4682b4;

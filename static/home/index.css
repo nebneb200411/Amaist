@@ -37,7 +37,7 @@ main div div #main-box .amaist-description-box .amaist-description p {
 }
 
 main div div #main-box .amaist-description-box .amaist-survice-box {
-  margin-top: 2%;
+  margin-top: 3%;
 }
 
 main div div #main-box .amaist-description-box .amaist-survice-box .survice-icon {
@@ -51,6 +51,11 @@ main div div #main-box .amaist-description-box .amaist-survice-box .survice-name
   font-size: 2vh;
 }
 
+main div div #main-box .amaist-description-box .amaist-survice-box .amaist-survice-article-box {
+  -webkit-box-shadow: 0 0 10px #c0c0c0;
+          box-shadow: 0 0 10px #c0c0c0;
+}
+
 main div div #main-box .amaist-description-box .amaist-survice-box .amaist-survice-article-box .survice-name {
   border-right: solid 6px #008000;
   color: #008000;
@@ -62,6 +67,12 @@ main div div #main-box .amaist-description-box .amaist-survice-box .amaist-survi
   color: #008000;
 }
 
+main div div #main-box .amaist-description-box .amaist-survice-box .amaist-survice-question-box {
+  margin-top: 3%;
+  -webkit-box-shadow: 0 0 10px #c0c0c0;
+          box-shadow: 0 0 10px #c0c0c0;
+}
+
 main div div #main-box .amaist-description-box .amaist-survice-box .amaist-survice-question-box .survice-name {
   border-right: solid 6px #9932cc;
   color: #9932cc;
@@ -71,6 +82,13 @@ main div div #main-box .amaist-description-box .amaist-survice-box .amaist-survi
   font-family: 'arial', 'Meiryo';
   font-size: 2vh;
   color: #9932cc;
+}
+
+main div div #main-box .amaist-description-box .amaist-survice-box .amaist-survice-datalibrary-box {
+  -webkit-box-shadow: 0 0 10px #c0c0c0;
+          box-shadow: 0 0 10px #c0c0c0;
+  margin-top: 3%;
+  margin-bottom: 2%;
 }
 
 main div div #main-box .amaist-description-box .amaist-survice-box .amaist-survice-datalibrary-box .survice-name {
