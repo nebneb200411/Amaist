@@ -5,54 +5,43 @@
 {% endblock stylesheet %}
 
 {% block contents %}
-    <div class="profile-search">
-        <form method="GET" action = "{% url 'profiles:profile_list' %}">
-            <input type="text" name="profile_search" placeholder="ユーザー検索"></input>
-            <button type="submit" class="btn btn-primary">ユーザー検索</button>
-        </form>
-    </div>
-    <p>ユーザーのプロフィール</p>
-    <div class="container-fluid user-profiles-class" id="user-profiles">
-        <div class="row">
+<div class="container-fluid">
+    <div class="row">
+        <div id="main-box" class="col-12 col-md-9 col-xl-9">
+            <div id="profile-search">
+                <form method="GET" action = "{% url 'profiles:profile_list' %}">
+                    <input type="text" name="profile_search" placeholder="ユーザー検索"></input>
+                    <button type="submit" class="btn btn-primary">ユーザー検索</button>
+                </form>
+            </div>
+
+            <p>ユーザーのプロフィール</p>
+
+            <!--display user profile in here-->
             {% for profile in profile_list %}
-            <div class="col-xl-6 col-xm-6 col-12" id="each-user-profile">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-xl-4 col-md-4 col-4 profile-element-size" id="user-icon-box">
-                            <div class="user-icon">
-                                <img src="{{MEDIA_URL}}{{profile.icon}}" class="img-responsive user-icon-img" alt="user-profile"/>
-                            </div>
-                        </div>
-                        <div class="col-xl-8 col-md-8 col-8 profile-element-size" id="user-username-box">
-                            <div class="user-username">
-                                <p class="username-p"><u>USERNAME</u></p>
-                                <p class="username-content">{{profile.user.username}}</p>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-md-4 col-4 profile-element-size"  id="user-profile-detail-box">
-                            <div class="user-profile-detail">
-                                <a href="{% url 'profiles:otheruser_profile' profile.pk %}">
-                                    <button type="submit" class="btn btn-outline-primary">詳細</button>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-xl-8 col-md-8 col-8 profile-element-size" id="user-introduction-box">
-                            <div class="user-introduction">
-                                <p class="introduction-p"><u>INTRODUCTION</u></p>
-                                <p class="introduction-content">{{profile.introduction| truncatechars:20}}</p>
-                            </div>
-                        </div>
-                    </div>
+            <div class="profile-box d-flex">
+                <div class="icon-box p-2">
+                    <img src="{{MEDIA_URL}}{{profile.icon}}"></img>
+                </div>
+                <div class="username-box p-2 d-flex">
+                    <p class="align-self-center"><a href="{% url 'profiles:otheruser_profile' profile.pk %}"><i class="fas fa-user"></i><span class="mgr-10"></span>{{profile.user.username}}</a></p>
+                </div>
+                <div class="introduction-box p-2 d-flex">
+                    <p class="align-self-center">{{profile.introduction}}</p>
                 </div>
             </div>
             {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <div id="right-box" class="col-12 col-md-3 col-xl-3">
         </div>
     </div>
+</div>
 {% endblock contents %}
 
 {% block script %}
-    <script type="text/javascript" src={% static 'javascript/jquery.matchHeight.js' %}></script>
-    <script type="text/javascript" src="{% static 'profile/profile_list/profile_list.js' %}"></script>
 {% endblock script %}
 
 
