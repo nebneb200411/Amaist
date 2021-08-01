@@ -18,7 +18,7 @@
                 <form method="POST" enctype="multipart/form-data">
                     {% csrf_token %}
                     <div class="input-file-box">
-                        <p class="input-file-p"><i class="fas fa-mail-bulk"></i><span class="mgr-10"></span>データをポスト(.csc, .xlsx, .txt, .sqlite可</p>
+                        <p class="input-file-p"><i class="fas fa-mail-bulk"></i><span class="mgr-10"></span>データをポスト(.csc, .xlsx, .txt, .sqlite可）</p>
                         {{form.data_file}}
                         {% if form.data_file.errors %}
                         {{form.data_file.errors}}
@@ -39,7 +39,7 @@
 
             <hr class="horizontal-line">
 
-            <img src="{% static 'images/base/datalibrary.png' %}" class="img-responsive"/>
+            <img src="{% static 'images/base/datalibrary.png' %}" class="img-responsive"></img>
         </div>
         <div class="col-12 col-md-3 col-xl-3" id="right-box"></div>
     </div>

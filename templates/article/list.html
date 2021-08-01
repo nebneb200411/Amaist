@@ -10,12 +10,12 @@
             <div class ="col-xl-3 col-md-3 col-12" id="left-grid">
                 <div class="searching">
                     <hr class="searching-hr"/>
-                    <form method="GET" action="{% url 'article:list' %}" id="article-search">
+                    <form class="flex-column" method="GET" action="{% url 'article:list' %}" id="article-search">
                         <input type="text" name="article_search" placeholder="記事検索"/>
                         <button type="submit" class="btn btn-success">記事検索</button>
                     </form>
                     <hr class="searching-hr"/>
-                    <form method="GET" id="tag-search">
+                    <form class="flex-column" method="GET" id="tag-search">
                         <input type="text" name="tag_search" placeholder="タグ検索"/>
                         <button type="submit" class="btn btn-success">タグ検索</button>
                     </form>

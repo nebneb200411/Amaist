@@ -9,6 +9,10 @@
   margin-left: 10px;
 }
 
+input {
+  -webkit-appearance: none;
+}
+
 .horizontal-line {
   background-color: #008b8b;
 }

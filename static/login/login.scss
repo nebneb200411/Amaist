@@ -13,6 +13,10 @@ body {
     background-color: #f0ffff;
 }
 
+input {
+    -webkit-appearance: none;
+}
+
 .login_contents {
     width: 60%;
     margin-left: 20%;

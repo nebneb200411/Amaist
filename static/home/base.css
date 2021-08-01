@@ -128,12 +128,7 @@ body header .header-box .menu-button .bottom-line.clicked-bottom {
   transition: .3s;
 }
 
-body header .header-box .app-icon {
-  width: 50%;
-}
-
 body header .header-box .app-icon img {
-  margin-left: 40%;
   height: 100%;
   width: auto;
 }

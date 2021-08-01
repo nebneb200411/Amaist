@@ -15,6 +15,10 @@ a {
   margin-left: 10px;
 }
 
+input {
+  -webkit-appearance: none;
+}
+
 main {
   div {
     div {
@@ -189,10 +193,10 @@ main {
         .login-and-register-box {
           border-top: dotted 2px #5f9ea0;
           border-bottom: dotted 2px #5f9ea0;
-          border-left: solid 40px #5f9ea0;
 
           //common style
           .login-and-register {
+            text-align: center;
             color: #5f9ea0;
             font-size: 3vh;
             font-family: 'Book Antiqua', 'Meiryo';
@@ -203,6 +207,8 @@ main {
           }
 
           #login-and-register-title {
+            margin-top: 2%;
+            text-align: center;
             color: black;
           }
         }

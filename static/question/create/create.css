@@ -10,6 +10,10 @@
   margin-left: 10px;
 }
 
+input {
+  -webkit-appearance: none;
+}
+
 main div div #left-box {
   background-color: #e9967a;
   border-right: solid 2px #ff7f50;

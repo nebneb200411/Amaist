@@ -29,20 +29,33 @@ body {
                         }
 
                         #article-search {
+
                             input {
+                                width: 100%;
+                                outline: none;
                                 border-radius: 5%;
                                 border: 2px solid #f5deb3;
                                 box-sizing: border-box;
                             }
 
-                            button {}
+                            button {
+                                margin-top: 5%;
+                                width: 100%;
+                            }
                         }
 
                         #tag-search {
                             input {
+                                width: 100%;
+                                outline: none;
                                 border-radius: 5%;
                                 border: 2px solid #f5deb3;
                                 box-sizing: border-box;
+                            }
+
+                            button {
+                                margin-top: 5%;
+                                width: 100%;
                             }
                         }
                     }

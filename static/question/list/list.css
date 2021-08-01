@@ -5,6 +5,10 @@
           box-sizing: border-box;
 }
 
+input {
+  -webkit-appearance: none;
+}
+
 main div div #left-box {
   border-right: 2px solid #ba55d3;
 }

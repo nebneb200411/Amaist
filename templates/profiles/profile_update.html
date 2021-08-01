@@ -1,9 +1,34 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block stylesheet %}
+<link rel="stylesheet" href="{% static 'profile/create/create.css' %}"
+{% endblock stylesheet %}
 {% block contents %}
-<form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit"/>
-</form>
-{% endblock contents %}
+
+<p class="profile-create-page-title">プロフィールの変更</p>
+
+<div class="profile-create-box">
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="profile-create-title-box">
+            <p class="profile-create-title-p"><i class="fas fa-id-card"></i><span class="mgr-10"></span>Profile</p>
+        </div> 
+
+        <div class="icon-input-box">
+            <p class="input-text"><i class="fas fa-image"></i><span class="mgr-10"></span>Icon</p>
+            {{form.icon}}
+        </div>
+
+        <hr class="horizontal-line">
+
+        <div class="introduction-input-box">
+            <p class="input-text"><i class="fas fa-user-edit"></i><span class="mgr-10"></span>Introduction</p>
+            {{form.introduction}}
+        </div>
+
+        <hr class="horizontal-line">
+
+        <input id="profile-post-button" class="btn btn-primary" type="submit" value="プロフィール作成"/>
+    </form>
+</div>
+{% endblock %}
