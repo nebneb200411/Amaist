@@ -9,6 +9,10 @@
   margin-left: 10px;
 }
 
+input {
+  -webkit-appearance: none;
+}
+
 main div div #main-box {
   margin-top: 5%;
   border: solid 2px #d3d3d3;

@@ -9,6 +9,10 @@
   margin-left: 10px;
 }
 
+input {
+  -webkit-appearance: none;
+}
+
 main .profile-create-page-title {
   text-align: center;
   margin-top: 5%;

@@ -11,6 +11,10 @@
   text-align: right;
 }
 
+input {
+  -webkit-appearance: none;
+}
+
 main #user-icon-username-follow-follower {
   padding: 3% 0 3% 0;
   background-color: #f08080;
