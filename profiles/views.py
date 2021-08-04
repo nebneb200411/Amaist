@@ -29,7 +29,7 @@ class ProfileListView(LoginRequiredMixin, ListView):
         return queryset
 
 
-class UserProfileDetailView(DetailView, LoginRequiredMixin):
+class UserProfileDetailView(LoginRequiredMixin, DetailView):
     model = Profile
     template_name = 'profiles/profile_detail.html'
 
@@ -90,7 +90,7 @@ class OtherUserProfileView(DetailView):
         return context
 
 
-class UserProfileCreateView(CreateView, LoginRequiredMixin):
+class UserProfileCreateView(LoginRequiredMixin, CreateView):
     model = Profile
     form_class = ProfileForm
     template_name = 'profiles/create_userprofile.html'
@@ -110,7 +110,7 @@ class UserProfileCreateView(CreateView, LoginRequiredMixin):
         return reverse_lazy('article:list')
 
 
-class UserProfileUpdateView(UpdateView, LoginRequiredMixin):
+class UserProfileUpdateView(LoginRequiredMixin, UpdateView):
     model = Profile
     template_name = 'profiles/profile_update.html'
     form_class = ProfileForm

@@ -143,6 +143,10 @@ body header .header-box .register-box a p {
   margin-top: 55%;
 }
 
+body header .header-box .user-icon-box {
+  max-width: 25%;
+}
+
 body header .header-box .user-icon-box a img {
   background-color: white;
   height: 12vh;

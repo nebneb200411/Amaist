@@ -2,8 +2,8 @@
 {% block contents%}
 {% if result %}
     <p>認証に成功しました</p>
-    <p>5秒後に会員専用ページに移動します．</p>
-    <META http-equiv="Refresh" content="5;URL={% url 'profiles:profile_create' %}">
+    <p>3秒後にログインページに移動します．</p>
+    <META http-equiv="Refresh" content="3;URL={% url 'profiles:profile_create' %}">
 {% else %}
     <p>無効なリンクです</p>
 {% endif %}
