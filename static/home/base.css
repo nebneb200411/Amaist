@@ -129,7 +129,7 @@ body header .header-box .menu-button .bottom-line.clicked-bottom {
 }
 
 body header .header-box .app-icon img {
-  height: 100%;
+  height: 15vh;
   width: auto;
 }
 
