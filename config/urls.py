@@ -12,6 +12,8 @@ index_view = TemplateView.as_view(template_name='index.html')
 
 urlpatterns = [
     path('', include('index.urls')),
+    path('registration/<username>/',
+         views.SignUpConfirmationView.as_view(), name="sign_up_confirm"),
     path('admin/', admin.site.urls),
     path('', include('django.contrib.auth.urls')),
     path('registration/', views.SignUpView.as_view(), name='sign_up'),
