@@ -130,7 +130,7 @@ body header .header-box .menu-button .bottom-line.clicked-bottom {
 
 body header .header-box .app-icon img {
   height: 100%;
-  width: 100%;
+  width: auto;
 }
 
 body header .header-box .register-box a {
