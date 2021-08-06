@@ -10,7 +10,7 @@ from django.contrib.auth.views import PasswordResetView
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.utils.encoding import force_bytes, force_text
 from django.contrib.auth.tokens import default_token_generator
-from django.shortcuts import redirect
+from django.shortcuts import render
 # load templates
 # send email
 
@@ -30,6 +30,7 @@ class SignUpConfirmationView(TemplateView):
 class SignUpView(CreateView):
     form_class = SignUpForm
     template_name = 'registration/signup.html'
+    success_url = reverse_lazy('sign_up_confirm')
 
     def form_valid(self, form, commit=True):
         user = form.save(commit=False)
@@ -46,7 +47,7 @@ class SignUpView(CreateView):
             }
             message = render_to_string('email/register.txt', context)
             user.email_user(subject, message)
-        return redirect('sign_up_confirm', {'user': user})
+        return render(self.request, 'registration/signup_confirmation.html', {'registered_user': user})
 
 
 class UserDeleteView(DeleteView):

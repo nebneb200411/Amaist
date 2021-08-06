@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth import get_user_model
 from ckeditor_uploader.fields import RichTextUploadingField
+import uuid
 
 # ユーザー名取得
 User = get_user_model()
@@ -14,6 +15,7 @@ class Tag(models.Model):
 
 
 class Article(models.Model):
+    id = models.UUIDField(default=uuid.uuid4, primary_key=True, editable=False)
     author = models.ForeignKey(
         User, related_name="author", on_delete=models.CASCADE)
     content = RichTextUploadingField('テキスト', null=False, blank=False)

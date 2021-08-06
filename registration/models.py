@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser, UserManager
 from django.utils.translation import gettext_lazy as _
 from django.contrib.auth.validators import UnicodeUsernameValidator
+import uuid
 
 
 class UserManager(UserManager):
@@ -32,6 +33,8 @@ class UserManager(UserManager):
 class User(AbstractUser):
 
     username_validator = UnicodeUsernameValidator()
+
+    id = models.UUIDField(default=uuid.uuid4, primary_key=True, editable=False)
 
     email = models.EmailField('メールアドレス',
                               unique=True,

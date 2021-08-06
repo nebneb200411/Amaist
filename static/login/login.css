@@ -55,7 +55,6 @@ input {
 .login_contents form .login-username-box #id_username {
   display: inline-block;
   width: 50%;
-  height: 100%;
   outline: none;
   border: solid 2px #afeeee;
   font-family: 'Book Antiqua';
@@ -85,7 +84,6 @@ input {
   position: relative;
   display: inline-block;
   width: 50%;
-  height: 100%;
   outline: none;
   border: solid 2px #afeeee;
   font-family: 'Book Antiqua';

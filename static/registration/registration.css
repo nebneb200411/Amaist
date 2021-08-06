@@ -17,6 +17,7 @@ main .register-box {
   width: 60%;
   margin-left: 20%;
   margin-top: 5%;
+  margin-bottom: 5%;
   border: solid 2px #ee82ee;
   -webkit-box-shadow: 0 0 5px #808080;
           box-shadow: 0 0 5px #808080;
@@ -140,7 +141,6 @@ main .register-form-box form #register-button {
           box-shadow: 0 0 5px #808080;
   font-size: 2vh;
   font-family: 'Meiryo';
-  border: solid 3px #696969;
 }
 
 main .register-form-box form #register-button:focus {

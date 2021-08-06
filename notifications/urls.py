@@ -4,5 +4,5 @@ from . import views
 app_name = 'notifications'
 
 urlpatterns = [
-    path('detail/<int:pk>', views.NotificationDetailView.as_view(), name="detail"),
+    path('detail/<uuid:pk>', views.NotificationDetailView.as_view(), name="detail"),
 ]

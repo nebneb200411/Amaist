@@ -3,6 +3,7 @@ from django.contrib.auth import get_user_model
 from article.models import Article
 from data_library.models import DataLibrary
 from question.models import Question
+import uuid
 
 User = get_user_model()
 
@@ -12,6 +13,8 @@ def icon_path(instance, filename):
 
 
 class Profile(models.Model):
+    id = models.UUIDField(default=uuid.uuid4,
+                          primary_key=True, editable=False)
     user = models.OneToOneField(
         User, related_name="user", on_delete=models.CASCADE)
     following = models.ManyToManyField(
