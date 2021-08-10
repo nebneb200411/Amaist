@@ -1,0 +1,125 @@
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.mgr-10 {
+  margin-left: 10px;
+}
+
+input {
+  -webkit-appearance: none;
+}
+
+.horizontal-line {
+  background-color: #008b8b;
+}
+
+main div div #main-box {
+  margin-top: 2%;
+  border: solid 2px white;
+  -webkit-box-shadow: 0 0 10px #c0c0c0;
+          box-shadow: 0 0 10px #c0c0c0;
+}
+
+main div div #main-box .contributor-info-box {
+  margin-top: 10px;
+  border: solid 2px #8fbc8f;
+  border-radius: 10px;
+}
+
+main div div #main-box .contributor-info-box img {
+  margin-left: 5%;
+  display: inline-block;
+  width: 20%;
+  height: auto;
+}
+
+main div div #main-box .contributor-info-box p {
+  margin-left: 20%;
+  display: inline-block;
+  width: 30%;
+  font-size: 4vh;
+  font-family: "arial", "Yu Gothic UI";
+  color: #8fbc8f;
+}
+
+main div div #main-box .question-box {
+  margin-top: 5%;
+}
+
+main div div #main-box .question-box .question-title-box p {
+  margin-left: 5%;
+  font-size: 3vh;
+  color: #d2b48c;
+  font-family: "arial", "Yu Gothic UI";
+  border-bottom: solid 2px #8fbc8f;
+}
+
+main div div #main-box .question-box .question-created-date-box p {
+  text-align: right;
+  color: #b8860b;
+  font-family: 'Book Antiqua';
+}
+
+main div div #main-box .good-box .good-count-box {
+  margin-left: 20%;
+  display: inline-block;
+  width: 30%;
+}
+
+main div div #main-box .good-box .good-form-box {
+  display: inline-block;
+  width: 30%;
+}
+
+main div div #main-box .comment-input-box .comment-title {
+  margin-left: 5%;
+  font-family: 'Book Antiqua';
+  color: #008080;
+}
+
+main div div #main-box .comment-input-box form button {
+  margin-left: 10%;
+  width: 80%;
+}
+
+main div div #main-box .comments-box .comments-title {
+  margin-left: 5%;
+  font-family: 'Book Antiqua';
+  color: #008080;
+  border-bottom: solid 2px #8fbc8f;
+}
+
+main div div #main-box .comments-box .each-comments {
+  margin-bottom: 5%;
+  background-color: #dcdcdc;
+  border: solid 2px #778899;
+  border-radius: 10px;
+}
+
+main div div #main-box .comments-box .each-comments .icon {
+  margin-top: 2%;
+  margin-left: 10%;
+  display: inline-block;
+  width: 30%;
+}
+
+main div div #main-box .comments-box .each-comments .icon img {
+  width: 50%;
+  height: auto;
+}
+
+main div div #main-box .comments-box .each-comments .username {
+  margin-top: 2%;
+  display: inline-block;
+  width: 30%;
+}
+
+main div div #main-box .comments-box .each-comments .username p {
+  font-size: 3vh;
+  color: #bdb76b;
+}
+/*# sourceMappingURL=detail.css.map */

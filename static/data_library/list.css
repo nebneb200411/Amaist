@@ -1,0 +1,85 @@
+@charset "UTF-8";
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.mgr-10 {
+  margin-left: 10px;
+}
+
+.data-element-title {
+  font-family: 'Bookman Old Style';
+  border-bottom: solid 2px #0000ff;
+}
+
+p {
+  font-family: "Arial", "MS Pゴシック";
+}
+
+main div div #left-box {
+  background-color: #d3d3d3;
+  border-right: solid 2px #2e8b57;
+}
+
+main div div #main-box .comment-box {
+  margin-top: 5%;
+  background-color: #f5deb3;
+}
+
+main div div #main-box .comment-box p {
+  color: #778899;
+  font-size: 200%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  border-bottom: solid 1px #0000cd;
+  border-top: solid 1px #0000cd;
+  padding-left: 2%;
+}
+
+main div div #main-box .each-data-box {
+  width: 100%;
+}
+
+main div div #main-box .each-data-box .introduction-box {
+  width: 100%;
+  border-bottom: dotted 2px #a9a9a9;
+}
+
+main div div #main-box .each-data-box .poster-date-box .posted-by-box {
+  border-bottom: dotted 2px #a9a9a9;
+  display: inline-block;
+  width: 68%;
+}
+
+main div div #main-box .each-data-box .poster-date-box .posted-by-box #uploader-title {
+  margin-top: 2%;
+}
+
+main div div #main-box .each-data-box .poster-date-box .posted-by-box .uploader-name {
+  margin-left: 5%;
+  color: #0000cd;
+}
+
+main div div #main-box .each-data-box .poster-date-box .date-box {
+  display: inline-block;
+  width: 30%;
+}
+
+main div div #main-box .each-data-box .poster-date-box .date-box p {
+  text-align: center;
+  color: #87ceeb;
+}
+
+main div div #main-box .each-data-box .data-link-box {
+  margin-top: 5%;
+  padding-left: 80%;
+}
+
+main div #right-box {
+  background-color: #d3d3d3;
+  border-left: solid 2px #2e8b57;
+}
+/*# sourceMappingURL=list.css.map */

@@ -1,0 +1,194 @@
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+.mgr-10 {
+  margin-left: 10px;
+}
+
+input {
+  -webkit-appearance: none;
+}
+
+main div div #main-box {
+  background-color: #f8f8ff;
+  border-right: solid 2px #a9a9a9;
+}
+
+main div div #main-box .amaist-description-box .amaist-description {
+  margin-top: 2%;
+}
+
+main div div #main-box .amaist-description-box .amaist-description h1 {
+  font-family: 'arial', 'Meiryo';
+  font-size: 4vh;
+  border-top: dotted 2px #ffb6c1;
+  border-bottom: dotted 2px #ffb6c1;
+  border-left: solid 50px #ffb6c1;
+  color: #ffb6c1;
+}
+
+main div div #main-box .amaist-description-box .amaist-description p {
+  font-family: 'arial', 'Meiryo';
+  font-size: 2vh;
+}
+
+main div div #main-box .amaist-description-box .amaist-survice-box {
+  margin-top: 3%;
+}
+
+main div div #main-box .amaist-description-box .amaist-survice-box .survice-icon {
+  height: 15vh;
+  width: auto;
+}
+
+main div div #main-box .amaist-description-box .amaist-survice-box .survice-name {
+  text-align: center;
+  font-family: 'Book Antiqua';
+  font-size: 2vh;
+}
+
+main div div #main-box .amaist-description-box .amaist-survice-box .amaist-survice-article-box {
+  -webkit-box-shadow: 0 0 10px #c0c0c0;
+          box-shadow: 0 0 10px #c0c0c0;
+}
+
+main div div #main-box .amaist-description-box .amaist-survice-box .amaist-survice-article-box .survice-name {
+  border-right: solid 6px #008000;
+  color: #008000;
+}
+
+main div div #main-box .amaist-description-box .amaist-survice-box .amaist-survice-article-box .about-article {
+  font-family: 'arial', 'Meiryo';
+  font-size: 2vh;
+  color: #008000;
+}
+
+main div div #main-box .amaist-description-box .amaist-survice-box .amaist-survice-question-box {
+  margin-top: 3%;
+  -webkit-box-shadow: 0 0 10px #c0c0c0;
+          box-shadow: 0 0 10px #c0c0c0;
+}
+
+main div div #main-box .amaist-description-box .amaist-survice-box .amaist-survice-question-box .survice-name {
+  border-right: solid 6px #9932cc;
+  color: #9932cc;
+}
+
+main div div #main-box .amaist-description-box .amaist-survice-box .amaist-survice-question-box .about-question {
+  font-family: 'arial', 'Meiryo';
+  font-size: 2vh;
+  color: #9932cc;
+}
+
+main div div #main-box .amaist-description-box .amaist-survice-box .amaist-survice-datalibrary-box {
+  -webkit-box-shadow: 0 0 10px #c0c0c0;
+          box-shadow: 0 0 10px #c0c0c0;
+  margin-top: 3%;
+  margin-bottom: 2%;
+}
+
+main div div #main-box .amaist-description-box .amaist-survice-box .amaist-survice-datalibrary-box .survice-name {
+  border-right: solid 6px #4682b4;
+  color: #4682b4;
+}
+
+main div div #main-box .amaist-description-box .amaist-survice-box .amaist-survice-datalibrary-box .about-datalibrary {
+  font-family: 'arial', 'Meiryo';
+  font-size: 2vh;
+  color: #4682b4;
+}
+
+main div div #main-box .amaist-description-box .amaist-survice {
+  font-family: 'arial', 'Meiryo';
+  font-size: 4vh;
+  border-top: dotted 2px #ffb6c1;
+  border-bottom: dotted 2px #ffb6c1;
+  border-left: solid 50px #ffb6c1;
+  color: #ffb6c1;
+}
+
+main div div #main-box .article-box .article-division-hr {
+  height: 8px;
+  background-image: repeating-linear-gradient(45deg, #00bfff 0, #00bfff 1px, transparent 0, transparent 50%), repeating-linear-gradient(135deg, #00bfff 0, #00bfff 1px, transparent 0, transparent 50%);
+  background-size: 8px 8px;
+}
+
+main div div #main-box .article-box #icon .author-icon .user-icon {
+  height: 20vh;
+  width: auto;
+}
+
+main div div #main-box .article-box #author-name-created-at {
+  border-left: solid 5px #b0c4de;
+}
+
+main div div #main-box .article-box #author-name-created-at div p {
+  color: #4682b4;
+  display: inline-block;
+  border-bottom: dotted 2px #b0c4de;
+  font-size: 3vh;
+}
+
+main div div #main-box .article-box #author-name-created-at div h2 {
+  display: inline-block;
+}
+
+main div div #main-box .article-box #author-name-created-at div p {
+  display: inline-block;
+}
+
+main div div #main-box .article-box #author-name-created-at div p {
+  display: inline-block;
+}
+
+main div div #main-box .article-box #title a {
+  color: #5f9ea0;
+}
+
+main div div #main-box .article-box #title a h3 {
+  text-align: center;
+  font-size: 3vh;
+}
+
+main div div #main-box .article-box #title .title-hr {
+  height: 1px;
+  background: -webkit-gradient(linear, left top, right top, from(#87ceeb), color-stop(#000080), to(#87ceeb));
+  background: linear-gradient(to right, #87ceeb, #000080, #87ceeb);
+}
+
+main div div #main-box .article-box #good-number p {
+  color: #ff69b4;
+  margin-left: 80%;
+  font-size: 3vh;
+}
+
+main div div #main-box .login-and-register-box {
+  border-top: dotted 2px #5f9ea0;
+  border-bottom: dotted 2px #5f9ea0;
+}
+
+main div div #main-box .login-and-register-box .login-and-register {
+  text-align: center;
+  color: #5f9ea0;
+  font-size: 3vh;
+  font-family: 'Book Antiqua', 'Meiryo';
+}
+
+main div div #main-box .login-and-register-box .login-and-register a {
+  color: #5f9ea0;
+}
+
+main div div #main-box .login-and-register-box #login-and-register-title {
+  margin-top: 2%;
+  text-align: center;
+  color: black;
+}
+/*# sourceMappingURL=index.css.map */
