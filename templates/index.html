@@ -4,98 +4,115 @@
 <link rel="stylesheet" href="{% static 'home/index.css' %}">
 {% endblock stylesheet %}
 {% block contents %}
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-12 col-md-9 col-xl-9" id="main-box">
-                <div class="amaist-description-box">
-                    <div class="amaist-description">
-                        <h1 class="about-amaist"><span class="mgr-10"></span><i class="fas fa-question-circle"></i><span class="mgr-10"></span>Amaistとは？</h1>
-                        <p class="amaist-content">
-                            　近年，機械学習，統計学，データ収集の発達により，データ解析の需要，必要性が増しつつあります．きっとAmaistに興味を持ってくれた方々も，データ分析に関しての興味をお持ちなのではないのでしょうか？
-                            <br>　しかし，いざデータ分析に興味を持てど，実際に<b>データ解析を行える場は少ない</b>とAmaistは考えております．<br>
-                            　そこでAmaistでは，<b>データ解析に興味を持つ方に，データ解析の表現の場を提供</b>しています．
-                            もちろん，Amaistを体験してもらうえでデータ解析の経験は一切問いません！
-                            Amaistは<b>初心者～上級者まで幅広い方の，データの分析，学習の場</b>でありたいです！
-                            分析する内容はあなたの想いのままです！
-                            Amaistで<b>些細な事，面白可笑しいこと，はたまた壮大なことまで色々分析</b>しましょう！
-                            そんなわけで，Amaistでは以下のようなサービスを実装しています．
-                        </p>
-                    </div>
-                    <h1 class="amaist-survice"><span class="mgr-10"></span><i class="fab fa-battle-net"></i><span class="mgr-10"></span>Amaistのサービス</h1>
-                    <div class="amaist-survice-box">
-                        <div class="amaist-survice-article-box">
-                            <div class="amaist-survice-article d-flex">
-                                <p class="survice-name ml-auto p-2 each-survice"><img class="survice-icon" src="{% static 'images/index/amaist_survice_article.png' %}"></img>Article</p>
-                                <p class="about-article ml-auto p-2 align-self-center">データ分析の結果を記事にして表現する場所です．データ分析に関係することなら，内容は問いません！自由にあなただけの記事を作りましょう！</p>
-                            </div>
-                        </div>
-                        <div class="amaist-survice-question-box">
-                            <div class="amaist-survice-question d-flex">
-                                <p class="survice-name ml-auto p-2 each-survice"><img class="survice-icon" src="{% static 'images/index/amaist_survice_question.png' %}"></img>Question</p>
-                                <p class="about-question ml-auto p-2 align-self-center">わからないことを質問する場所です．あなたの悩みを共有しましょう！誰かが教えてくるかもしれません．同じ悩みを抱えてる方の力になるかも...</p>
-                            </div>
-                        </div>
-                        <div class="amaist-survice-datalibrary-box">
-                            <div class="amaist-survice-datalibrary d-flex">
-                                <p class="survice-name ml-auto p-2 each-survice"><img class="survice-icon" src="{% static 'images/index/amaist_survice_datalibrary.png' %}"></img>DataLibrary</p>
-                                <p class="about-datalibrary ml-auto p-2 align-self-center">データの図書館です．集めたデータをここに寄付してください！！データは共有され，Amaistユーザー皆さんがダウンロードできます．ここで得られたデータを使って分析しましょう！！</p>
-                            </div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 col-md-9 col-xl-9" id="main-box">
+            <div class="amaist-description-box">
+                <div class="amaist-description">
+                    <h1 class="about-amaist"><span class="mgr-10"></span><i class="fas fa-question-circle"></i><span
+                            class="mgr-10"></span>Amaistとは？</h1>
+                    <p class="amaist-content">
+                        　近年，機械学習，統計学，データ収集の発達により，データ解析の需要，必要性が増しつつあります．きっとAmaistに興味を持ってくれた方々も，データ分析に関しての興味をお持ちなのではないのでしょうか？
+                        <br>　しかし，いざデータ分析に興味を持てど，実際に<b>データ解析を行える場は少ない</b>とAmaistは考えております．<br>
+                        　そこでAmaistでは，<b>データ解析に興味を持つ方に，データ解析の表現の場を提供</b>しています．
+                        もちろん，Amaistを体験してもらうえでデータ解析の経験は一切問いません！
+                        Amaistは<b>初心者～上級者まで幅広い方の，データの分析，学習の場</b>でありたいです！
+                        分析する内容はあなたの想いのままです！
+                        Amaistで<b>些細な事，面白可笑しいこと，はたまた壮大なことまで色々分析</b>しましょう！
+                        そんなわけで，Amaistでは以下のようなサービスを実装しています．
+                    </p>
+                </div>
+                <h1 class="amaist-survice"><span class="mgr-10"></span><i class="fab fa-battle-net"></i><span
+                        class="mgr-10"></span>Amaistのサービス</h1>
+                <div class="amaist-survice-box">
+                    <div class="amaist-survice-article-box">
+                        <div class="amaist-survice-article d-flex">
+                            <p class="survice-name ml-auto p-2 each-survice"><img class="survice-icon"
+                                    src="{% static 'images/index/amaist_survice_article.png' %}"></img>Article</p>
+                            <p class="about-article ml-auto p-2 align-self-center">
+                                データ分析の結果を記事にして表現する場所です．データ分析に関係することなら，内容は問いません！自由にあなただけの記事を作りましょう！</p>
                         </div>
                     </div>
-                </div>
-
-                <div class="login-and-register-box">
-                    <p class="login-and-register" id="login-and-register-title">～登録，ログインはこちら～</p>
-                    <p class="login-and-register"><i class="fas fa-user-plus"></i><span class="mgr-10"></span><a class="link-to-login-and-register" href={% url 'sign_up' %}>Register</a></p>
-                    <p class="login-and-register"><i class="fas fa-sign-in-alt"></i><span class="mgr-10"><a class="link-to-login-and-register" href={% url 'login' %}></span>Login</a></p>
-                </div>
-
-                <div class="article-box">
-                    {% for object in object_list %}
-                        <hr class="object-division-hr"/>
-                        <div class="contaner-fluid">
-                            <div class="row">
-                                <div class="col-xl-3 col-md-3 col-12" id="icon">
-                                    <div class="author-icon">
-                                    <!--もし画像を選択していないときのデフォルトの画像を表示させる(今のところmodelsでやればいかなーて思ってる)-->
-                                        <img class="user-icon" src="{{ MEDIA_URL }}{{object.author.user.icon|default:'images/user-icon-default.png'}}"/>
-                                    </div>
-                                </div>
-
-                                <div class="col-xl-9 col-md-9 col-12" id="author-name-created-at">
-                                    <div class="autor-name">
-                                        <p><i class="fas fa-user"></i><span class="mgr-10"></span><p class="object-author">{{object.author}}</p></p>
-                                    </div>
-                                    <div class="created-at">
-                                        <p class="font"><i class="far fa-calendar-alt"></i><span class="mgr-10"></span>{{object.created_at|date:"y/m/d"}}</p>
-                                    </div>
-                                    
-                                    
-                                    <div class="tag-box">
-                                        {% for tag in object.tag.all %}
-                                        <p><i class="fas fa-tags"></i><span class="mgr-10"></span>{{tag}}</p>
-                                        {% empty %}
-                                        {% endfor %}
-                                    </div>
-                                </div>
-
-                                <div class="col-xl-12 col-md-12 col-12" id="title">
-                                    <hr class="title-hr"/>
-                                    <a href="{% url 'article:article_detail' object.pk %}">
-                                        <h3 class-"object-title">{{object.title}}</h3>
-                                    </a>
-                                    <hr class="title-hr"/>
-                                </div>
-
-                                <div class="col-xl-12 col-md-12 col-12" id="good-number">
-                                    <p><i class="fas fa-thumbs-up"></i><span class="mgr-10"></span>{{object.good_from.all|length}}</p>
-                                </div>
-                            </div>
+                    <div class="amaist-survice-question-box">
+                        <div class="amaist-survice-question d-flex">
+                            <p class="survice-name ml-auto p-2 each-survice"><img class="survice-icon"
+                                    src="{% static 'images/index/amaist_survice_question.png' %}"></img>Question</p>
+                            <p class="about-question ml-auto p-2 align-self-center">
+                                わからないことを質問する場所です．あなたの悩みを共有しましょう！誰かが教えてくるかもしれません．同じ悩みを抱えてる方の力になるかも...</p>
                         </div>
-                    {% endfor %}
+                    </div>
+                    <div class="amaist-survice-datalibrary-box">
+                        <div class="amaist-survice-datalibrary d-flex">
+                            <p class="survice-name ml-auto p-2 each-survice"><img class="survice-icon"
+                                    src="{% static 'images/index/amaist_survice_datalibrary.png' %}"></img>DataLibrary
+                            </p>
+                            <p class="about-datalibrary ml-auto p-2 align-self-center">
+                                データの図書館です．集めたデータをここに寄付してください！！データは共有され，Amaistユーザー皆さんがダウンロードできます．ここで得られたデータを使って分析しましょう！！
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-12 col-md-3 col-xl-3" id="right-box"></div>
+
+            <div class="login-and-register-box">
+                <p class="login-and-register" id="login-and-register-title">～登録，ログインはこちら～</p>
+                <p class="login-and-register"><i class="fas fa-user-plus"></i><span class="mgr-10"></span><a
+                        class="link-to-login-and-register" href={% url 'sign_up' %}>Register</a></p>
+                <p class="login-and-register"><i class="fas fa-sign-in-alt"></i><span class="mgr-10"><a
+                            class="link-to-login-and-register" href={% url 'login' %}></span>Login</a></p>
+            </div>
+
+            <div class="article-box">
+                {% for object in object_list %}
+                <hr class="object-division-hr" />
+                <div class="contaner-fluid">
+                    <div class="row">
+                        <div class="col-xl-3 col-md-3 col-12" id="icon">
+                            <div class="author-icon">
+                                <!--もし画像を選択していないときのデフォルトの画像を表示させる(今のところmodelsでやればいかなーて思ってる)-->
+                                <img class="user-icon"
+                                    src="{{ MEDIA_URL }}{{object.author.user.icon|default:'images/user-icon-default.png'}}" />
+                            </div>
+                        </div>
+
+                        <div class="col-xl-9 col-md-9 col-12" id="author-name-created-at">
+                            <div class="autor-name">
+                                <p><i class="fas fa-user"></i><span class="mgr-10"></span>
+                                <p class="object-author">{{object.author}}</p>
+                                </p>
+                            </div>
+                            <div class="created-at">
+                                <p class="font"><i class="far fa-calendar-alt"></i><span
+                                        class="mgr-10"></span>{{object.created_at|date:"y/m/d"}}</p>
+                            </div>
+
+
+                            <div class="tag-box">
+                                {% for tag in object.tag.all %}
+                                <p><i class="fas fa-tags"></i><span class="mgr-10"></span>{{tag}}</p>
+                                {% empty %}
+                                {% endfor %}
+                            </div>
+                        </div>
+
+                        <div class="col-xl-12 col-md-12 col-12" id="title">
+                            <hr class="title-hr" />
+                            <a href="{% url 'article:article_detail' object.pk %}">
+                                <h3 class-"object-title">{{object.title}}</h3>
+                            </a>
+                            <hr class="title-hr" />
+                        </div>
+
+                        <div class="col-xl-12 col-md-12 col-12" id="good-number">
+                            <p><i class="fas fa-thumbs-up"></i><span
+                                    class="mgr-10"></span>{{object.good_from.all|length}}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
         </div>
+        <div class="col-12 col-md-3 col-xl-3" id="right-box"></div>
     </div>
+</div>
 {% endblock contents %}

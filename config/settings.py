@@ -10,27 +10,36 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
-import dj_database_url
 import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+#BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
+# メディアの設定
+MEDIA_URL = '/media/'
+
+# staticファイルの読み込み
+STATIC_URL = '/static/'
+
+STATIC_ROOT = '/usr/share/nginx/html/static'
+MEDIA_ROOT = '/usr/share/nginx/html/media'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+#ALLOWED_HOSTS = ['66.42.44.44', 'amaist-service.com']
 
 try:
     from .local_settings import *
 except ImportError:
     pass
+
 
 if not DEBUG:
     import environ
@@ -44,16 +53,11 @@ if not DEBUG:
     EMAIL_HOST = 'smtp.gmail.com'
     EMAIL_PORT = 587
     EMAIL_HOST_USER = env('EMAIL_HOST_USER')
-    EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
+    EMAIL_HOST_PASSWORD = 'afsvwgauzbvwylwa'
     EMAIL_USE_TLS = True
 
     STATIC_ROOT = '/usr/share/nginx/html/static'
     MEDIA_ROOT = '/usr/share/nginx/html/media'
-
-    """
-    import django_heroku
-    django_heroku.settings(locals())
-    """
 
 # Application definition
 # 上から順に読み込まれるので注意
@@ -92,7 +96,7 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')], #os.path.join(BASE_DIR, 'templates')
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -167,12 +171,6 @@ DEFAUL_FROM_EMAIL = 'noreplyamaist@gmail.com'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-# staticファイルの読み込み
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-]
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
 # 本プロジェクトで用いるユーザーモデル
@@ -183,12 +181,10 @@ LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/login/'
 
-# メディアの設定
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
 
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
+
 
 CKEDITOR_UPLOAD_PATH = "ckeditor/"
 
@@ -267,11 +263,3 @@ CKEDITOR_CONFIGS = {
         ]),
     }
 }
-
-db_from_env = dj_database_url.config(conn_max_age=600, ssl_require=True)
-DATABASES['default'].update(db_from_env)
-
-if not DEBUG:
-    SECRET_KEY = os.environ['SECRET_KEY']
-    import django_heroku
-    django_heroku.settings(locals())
