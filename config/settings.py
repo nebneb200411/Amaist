@@ -78,6 +78,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'data_library.templatetags.filename',
     'django_cleanup',
+    'django_environ',
 ]
 
 MIDDLEWARE = [
@@ -96,7 +97,8 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')], #os.path.join(BASE_DIR, 'templates')
+        # os.path.join(BASE_DIR, 'templates')
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -172,7 +174,6 @@ DEFAUL_FROM_EMAIL = 'noreplyamaist@gmail.com'
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 
-
 # 本プロジェクトで用いるユーザーモデル
 AUTH_USER_MODEL = 'registration.User'
 
@@ -180,7 +181,6 @@ AUTH_USER_MODEL = 'registration.User'
 LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/login/'
-
 
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
