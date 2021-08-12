@@ -6,4 +6,3 @@ local_settings.py
 media
 *.scss
 *.css.map
-myvenv
