@@ -1,5 +1,5 @@
 # import template view from django
-from django.views.generic import ListView
+from django.views.generic import ListView, TemplateView
 # import model
 from article.models import Article
 
@@ -12,3 +12,7 @@ class IndexView(ListView):
         queryset = super().get_queryset()
         queryset = Article.objects.all().order_by('-created_at')
         return queryset
+
+
+class TermsView(TemplateView):
+    template_name = 'terms.html'

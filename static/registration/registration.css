@@ -9,10 +9,6 @@
   margin-left: 10px;
 }
 
-input {
-  -webkit-appearance: none;
-}
-
 main .register-box {
   width: 60%;
   margin-left: 20%;
@@ -133,6 +129,11 @@ main .register-form-box form .lastline {
   border: dotted 3px #d8bfd8;
 }
 
+main .register-form-box form div .service-term {
+  margin-left: 40%;
+  margin-top: 1%;
+}
+
 main .register-form-box form #register-button {
   margin-bottom: 2%;
   margin-left: 10%;
@@ -141,6 +142,10 @@ main .register-form-box form #register-button {
           box-shadow: 0 0 5px #808080;
   font-size: 2vh;
   font-family: 'Meiryo';
+}
+
+main .register-form-box form #register-button[type="submit"]disabled {
+  background-color: #a9a9a9;
 }
 
 main .register-form-box form #register-button:focus {
