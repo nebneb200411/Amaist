@@ -1,7 +1,3 @@
-*.pyc
-db.sqlite3
-__pycache__
-migrations
 local_settings.py
 media
 *.scss
