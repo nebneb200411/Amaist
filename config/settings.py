@@ -56,6 +56,10 @@ if not DEBUG:
     STATIC_ROOT = '/usr/share/nginx/html/static'
     MEDIA_ROOT = '/usr/share/nginx/html/media'
 
+    STATICFILES_DIRS = (
+        os.path.join(BASE_DIR, 'static'),
+    )
+
 # Application definition
 # 上から順に読み込まれるので注意
 INSTALLED_APPS = [
