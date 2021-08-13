@@ -2,6 +2,7 @@
 {% load static %}
 {% load filename %}
 {% block stylesheet %}
+<title>{{object.data_file|get_filename}}</title>
 <link rel="stylesheet" href="{% static 'data_library/detail/detail.css' %}">
 {% endblock stylesheet %}
 

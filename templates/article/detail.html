@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block stylesheet %}
+    <title>{{object.title}}</title>
     <link rel="stylesheet" href="{% static 'article/detail/detail.css' %}"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/monokai.min.css">
 {% endblock stylesheet %}
