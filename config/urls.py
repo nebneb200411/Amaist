@@ -13,7 +13,7 @@ urlpatterns = [
     path('', include('index.urls')),
     path('registration/<username>/',
          views.SignUpConfirmationView.as_view(), name="sign_up_confirm"),
-    path('admin/', admin.site.urls),
+    path('AmaistStaffAdminSite/', admin.site.urls),
     path('', include('django.contrib.auth.urls')),
     path('registration/', views.SignUpView.as_view(), name='sign_up'),
     path('password_reset/', views.MyPasswordResetView.as_view(),
@@ -34,4 +34,5 @@ urlpatterns = [
 
 # 開発環境なので以下を設定
 if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(settings.MEDIA_URL,
+                          document_root=settings.MEDIA_ROOT)
