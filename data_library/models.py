@@ -3,13 +3,11 @@ from django.contrib.auth import get_user_model
 from ckeditor_uploader.fields import RichTextUploadingField
 import os
 from .validators import validate_file
-import uuid
 
 User = get_user_model()
 
 
 class DataLibrary(models.Model):
-    id = models.UUIDField(default=uuid.uuid4, primary_key=True, editable=False)
     data_file = models.FileField(
         upload_to='data_library', null=False, validators=[validate_file])
     uploader = models.ForeignKey(User, on_delete=models.CASCADE)
