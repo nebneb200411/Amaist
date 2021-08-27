@@ -56,8 +56,14 @@ class UserProfileDetailView(LoginRequiredMixin, DetailView):
         context["login_user_follower_count"] = login_user_follower_count
         questions = Question.objects.filter(contributor=self.request.user)
         context['questions'] = questions
-        articles = Article.objects.filter(author=self.request.user)
-        context['articles'] = articles
+        # filter published article
+        published_articles = Article.objects.filter(
+            author=self.request.user, is_published=True)
+        context['published_articles'] = published_articles
+        draft_articles = Article.objects.filter(
+            author=self.request.user, is_published=False)
+        context['draft_articles'] = draft_articles
+
         return context
 
 

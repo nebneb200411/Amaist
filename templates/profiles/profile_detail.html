@@ -51,12 +51,12 @@
                     <div class="row">
                         <div class="my-div-style w-100">
                             <div class="col-lg-8 col-md-10 mx-auto">
-                                {% for article in articles %}
+                                {% for published_article in published_articles %}
                                 <div class='articles'>
-                                    <a href="{% url 'article:article_detail' article.pk %}">
-                                        <h2 class="article-title">{{article.title}}</h2>
+                                    <a href="{% url 'article:article_detail' published_article.pk %}">
+                                        <h2 class="article-title">{{published_article.title}}</h2>
                                     </a>
-                                    <p class="post-meta date-p">{{article.created_at|date:"y/m/d"}}</p>
+                                    <p class="post-meta date-p">{{published_article.created_at|date:"y/m/d"}}</p>
                                 </div>
                                 <hr>
                                 {% empty %}
@@ -109,6 +109,16 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <div class="draft-articles">
+        {% for draft_article in draft_articles %}
+        <div class="draft-article-list">
+            <a href={% url 'article:update' draft_article.pk %}>
+                <p>{{draft_article.title}}</p>
+            </a>
+        </div>
+        {% endfor %}
     </div>
 
 {% endblock contents %}

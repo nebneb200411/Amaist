@@ -194,10 +194,15 @@ CKEDITOR_RESTRICT_BY_USER = True
 
 CKEDITOR_BROWSE_SHOW_DIRS = True
 
+CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
+
 CKEDITOR_CONFIGS = {
     'default': {
+        # css path
+        'contentsCss': '/static/ckeditor/ckeditor.css',
         'width': '100%',
         'skin': 'moono',
+        'codeSnippet_theme': 'ir_black',
         # 'skin': 'office2013',
         'toolbar_Basic': [
             ['Source', '-', 'Bold', 'Italic']
@@ -220,10 +225,10 @@ CKEDITOR_CONFIGS = {
                        'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'BidiLtr', 'BidiRtl', ]},
             {'name': 'links', 'items': ['Link', 'Unlink', 'Anchor']},
             {'name': 'insert',
-             'items': ['Image', 'Flash', 'Table', 'HorizontalRule', 'Smiley', 'SpecialChar', 'PageBreak', 'Iframe']},
+             'items': ['Image', 'Flash', 'Table', 'HorizontalRule', 'Smiley', 'SpecialChar', 'PageBreak', 'Iframe', 'Mathjax', ]},
             '/',
             {'name': 'styles', 'items': [
-                'Styles', 'Format', 'Font', 'FontSize', 'CodeSnippet', ]},
+                'Styles', 'Format', 'Font', 'FontSize', 'CodeSnippet', 'lineheight', ]},
             {'name': 'colors', 'items': ['TextColor', 'BGColor']},
             {'name': 'tools', 'items': ['Maximize', 'ShowBlocks']},
             {'name': 'about', 'items': ['About']},
@@ -232,6 +237,7 @@ CKEDITOR_CONFIGS = {
                 # put the name of your editor.ui.addButton here
                 'Preview',
                 'Maximize',
+                'UIColor',
 
             ]},
         ],
@@ -260,6 +266,9 @@ CKEDITOR_CONFIGS = {
             'dialogui',
             'elementspath',
             'codesnippet',
+            'mathjax',
+            'uicolor',
+            'lineheight',
         ]),
     }
 }

@@ -2,7 +2,7 @@ from django.views.generic import CreateView, ListView, DetailView, UpdateView
 from .forms import ArticleForm, ArticleCommentForm
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.shortcuts import render, redirect
+from django.shortcuts import redirect
 from .models import Article, Comment, Tag
 from django.contrib import messages
 from profiles.models import Profile
@@ -53,18 +53,18 @@ class ArticleListView(ListView):
         article_keyword = self.request.GET.get('article_search')
         tag_keyword = self.request.GET.get('tag_search')
         if article_keyword:
-            queryset = Article.objects.filter(
+            queryset = Article.objects.filter(is_published=True)
+            queryset = queryset.filter(
                 Q(title__icontains=article_keyword) | Q(content__icontains=article_keyword)).order_by(
                 '-created_at'
             )
 
         elif tag_keyword:
+            queryset = Article.objects.filter(is_published=True)
             queryset = Article.objects.filter(
-                Q(tag__tag_name__icontains=tag_keyword)).order_by(
-                '-created_at'
-            )
+                Q(tag__tag_name__icontains=tag_keyword)).order_by('-created_at')
         else:
-            queryset = Article.objects.all().order_by(
+            queryset = Article.objects.filter(is_published=True).order_by(
                 '-created_at'
             )
         return queryset
@@ -129,9 +129,12 @@ class ArticleDetailView(DetailView):
             return redirect(request.META.get('HTTP_REFERER'))
 
 
-class ArticleModifyView(UpdateView):
-    template_name = 'article/modify.html'
+class ArticleUpdateView(LoginRequiredMixin, UpdateView):
+    template_name = 'article/update.html'
     model = Article
+    form_class = ArticleForm
+    success_url = reverse_lazy('article:list')
+
 
 # good_counter
 

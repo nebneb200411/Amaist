@@ -10,4 +10,5 @@ urlpatterns = [
          views.ArticleDetailView.as_view(), name='article_detail'),
     path('good_count/', views.good_count, name='good_count'),
     path('comment/', views.comment, name='comment'),
+    path('update/<int:pk>', views.ArticleUpdateView.as_view(), name='update'),
 ]

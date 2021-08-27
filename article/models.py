@@ -23,6 +23,7 @@ class Article(models.Model):
     good_from = models.ManyToManyField(
         User, related_name="good_from", default=None)
     tag = models.ManyToManyField(Tag, related_name="tag")
+    is_published = models.BooleanField(default=True)
 
     def __str__(self):
         return self.title
