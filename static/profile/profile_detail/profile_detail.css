@@ -171,4 +171,31 @@ main #user-article-question-box #question-box .questions a p {
   font-size: 200%;
   text-align: center;
 }
+
+main .draft-article-box {
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 5%;
+  border: solid 2px #28487c;
+  -webkit-box-shadow: 0 0 10px gray;
+          box-shadow: 0 0 10px gray;
+}
+
+main .draft-article-box .draft-title {
+  text-align: center;
+  font-size: 5vh;
+  font-family: 'ＭＳ Ｐゴシック';
+  color: #28727b;
+  border-bottom: solid 2px #28487b;
+}
+
+main .draft-article-box .now-on-draft {
+  border-left: solid 10px #28487b;
+  border-bottom: solid 1px #28487b;
+  background-color: #c6e8ec;
+}
+
+main .draft-article-box .now-on-draft a p {
+  font-family: 'arial', 'ＭＳ Ｐゴシック';
+}
 /*# sourceMappingURL=profile_detail.css.map */

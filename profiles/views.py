@@ -9,6 +9,7 @@ from django.urls import reverse_lazy
 from django.contrib import messages
 from django.shortcuts import redirect
 from django.db.models import Q
+from PIL import Image
 
 User = get_user_model()
 
@@ -105,6 +106,13 @@ class UserProfileCreateView(LoginRequiredMixin, CreateView):
         profile = form.save(commit=False)
         profile.user = self.request.user
         profile.save()
+        # crop image
+        cropping_image = Image.open(profile.icon)
+        width, height = cropping_image.size
+        crop_size = height
+        cropped_image = cropping_image.crop(
+            ((width - crop_size) // 2, (height - crop_size) // 2, (width + crop_size) // 2, (height + crop_size) // 2))
+        cropped_image.save(profile.icon.path)
         messages.success(self.request, "プロフィールの作成に成功しました")
         return super().form_valid(form)
 
@@ -125,6 +133,15 @@ class UserProfileUpdateView(LoginRequiredMixin, UpdateView):
         return reverse_lazy('article:list')
 
     def form_valid(self, form):
+        profile = form.save(commit=False)
+        profile.save()
+        # crop image
+        cropping_image = Image.open(profile.icon)
+        width, height = cropping_image.size
+        crop_size = height
+        cropped_image = cropping_image.crop(
+            ((width - crop_size) // 2, (height - crop_size) // 2, (width + crop_size) // 2, (height + crop_size) // 2))
+        cropped_image.save(profile.icon.path)
         messages.success(self.request, 'プロフィールの編集に成功しました．')
         return super().form_valid(form)
 

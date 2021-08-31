@@ -111,12 +111,15 @@
         </div>
     </div>
 
-    <div class="draft-articles">
+    <div class="draft-article-box">
+        <p class="draft-title"><i class="fas fa-pen-square"></i>下書き</p>
         {% for draft_article in draft_articles %}
-        <div class="draft-article-list">
+        <div class="now-on-draft d-flex justify-content-between">
             <a href={% url 'article:update' draft_article.pk %}>
-                <p>{{draft_article.title}}</p>
+                <p class="title-p">{{draft_article.title}}</p>
             </a>
+
+            <p class="date-p">{{draft_article.created_at|date:"y/m/d"}}
         </div>
         {% endfor %}
     </div>
