@@ -35,9 +35,9 @@
         <!--profile update button-->
         <div class="profile-update-box">
             <a href="{% url 'profiles:profile_update' profile.pk %}">
-                <i class="far fa-edit fa-3x"></i>
+                <i id="edit-icon" class="far fa-edit fa-3x d-flex justify-content-end"></i>
             </a>
-            <div class='password_change_link'>
+            <div class='password_change_link d-flex justify-content-end'>
                 <p><a href="{% url 'password_change' %}"><i class="fas fa-key"></i>パスワードの変更</a></p>
             </div>
         </div>

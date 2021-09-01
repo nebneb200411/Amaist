@@ -27,21 +27,23 @@ h6 {
 }
 
 main {
-  background-color: #f0fff0;
+  background-color: #bbccdd;
 }
 
 main div div #left-box {
   border-right: solid 3px #dcdcdc;
 }
 
+main div div #article-content {
+  background-color: white;
+}
+
 main div div #article-content .title-box {
-  background: radial-gradient(#20b2aa, #1e90ff);
-  border: solid 2px #1e90ff;
-  -webkit-box-shadow: 0 0 10px #00bfff;
-          box-shadow: 0 0 10px #00bfff;
   display: inline-block;
   width: 100%;
   margin: auto;
+  margin-top: 2%;
+  background-color: #e5f5fb;
 }
 
 main div div #article-content .title-box p {
@@ -49,6 +51,8 @@ main div div #article-content .title-box p {
   font-family: "Times New Roman", "MS Pゴシック";
   text-align: center;
   margin: auto;
+  border-bottom: solid 2px #8cb4c4;
+  border-top: solid 2px #8cb4c4;
 }
 
 main div div #article-content .author-info-box p {
@@ -129,15 +133,9 @@ main div div #article-content .tags-and-good-box .good-box .good-post-box {
 
 main div div #article-content .horizontal-line {
   background-color: #1e90ff;
-  size: 2px;
+  size: 3px;
   -webkit-box-shadow: 0px 10px 10px -5px #7fffd4;
           box-shadow: 0px 10px 10px -5px #7fffd4;
-}
-
-main div div #article-content .article-content-box {
-  border: solid 2px #afeeee;
-  -webkit-box-shadow: 0 0 8px #48d1cc;
-          box-shadow: 0 0 8px #48d1cc;
 }
 
 main div div #article-content .comment-form form #input-comment {

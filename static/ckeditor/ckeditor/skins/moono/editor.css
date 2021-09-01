@@ -111,7 +111,7 @@ For licensing, see LICENSE.md or http://ckeditor.com/license
     padding: 6px 8px 2px;
     white-space: normal;
     box-shadow: 0 1px 0 #fff inset;
-    background: #00264d;
+    background: #001133;
     filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#f5f5f5', endColorstr='#00264d')
 }
 
@@ -125,7 +125,7 @@ For licensing, see LICENSE.md or http://ckeditor.com/license
     position: relative;
     border-top: 1px solid #bfbfbf;
     box-shadow: 0 1px 0 #fff inset;
-    background: #00264d;
+    background: #1a244d;
     filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#ebebeb', endColorstr='#00264d')
 }
 

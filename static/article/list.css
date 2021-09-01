@@ -118,7 +118,15 @@ body main div div #right-grid a p {
 }
 
 body main div div #right-grid .notifications-box {
-  border: solid 2px #6495ed;
+  border: solid 2px #1a244d;
+  background-color: white;
+}
+
+body main div div #right-grid .notifications-box .notification {
+  text-align: center;
+  font-family: "arial";
+  color: #7d9ad4;
+  border-bottom: solid 2px #77aacc;
 }
 
 body main div div #right-grid .notifications-box .notifications-p {

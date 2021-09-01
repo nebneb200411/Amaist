@@ -1,0 +1,25 @@
+@charset "UTF-8";
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.mgr-10 {
+  margin-left: 10px;
+}
+
+body main p {
+  font-family: "arial", "メイリオ";
+  font-size: 3vh;
+}
+
+body main .username {
+  margin-top: 20%;
+}
+
+body main .content {
+  margin-top: 10%;
+}
+/*# sourceMappingURL=signup_confirmation.css.map */

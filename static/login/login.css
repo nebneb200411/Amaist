@@ -13,9 +13,13 @@ body {
   background-color: #f0ffff;
 }
 
+input {
+  -webkit-appearance: none;
+}
+
 .login_contents {
-  width: 60%;
-  margin-left: 20%;
+  width: 80%;
+  margin-left: 10%;
   margin-top: 10%;
   margin-bottom: 10%;
   border: solid 2px #1e90ff;
@@ -41,7 +45,7 @@ body {
 .login_contents form .login-username-box .login-username-text {
   position: relative;
   display: inline-block;
-  width: 35%;
+  width: 100%;
   font-family: 'Book Antiqua';
   font-size: 2vw;
   color: #808080;
@@ -50,10 +54,12 @@ body {
 
 .login_contents form .login-username-box #id_username {
   display: inline-block;
-  width: 50%;
+  width: 90%;
+  height: 6vh;
   outline: none;
   border: solid 2px #afeeee;
   font-family: 'Book Antiqua';
+  margin-left: 5%;
 }
 
 .login_contents form .login-username-box #id_username:focus {
@@ -69,7 +75,7 @@ body {
 .login_contents form .login-password-box .login-password-text {
   position: relative;
   display: inline-block;
-  width: 35%;
+  width: 100%;
   font-family: 'Book Antiqua';
   font-size: 2vw;
   color: #808080;
@@ -79,10 +85,12 @@ body {
 .login_contents form .login-password-box #id_password {
   position: relative;
   display: inline-block;
-  width: 50%;
+  width: 90%;
+  height: 6vh;
   outline: none;
   border: solid 2px #afeeee;
   font-family: 'Book Antiqua';
+  margin-left: 5%;
 }
 
 .login_contents form .login-password-box #id_password:focus {
@@ -90,17 +98,12 @@ body {
           box-shadow: 0 0 10px #a9a9a9;
 }
 
-.login_contents form hr {
-  position: relative;
-  background-color: #2e8b57;
-  width: 90%;
-}
-
 .login_contents form #login_button {
   position: relative;
   width: 80%;
   height: 25%;
   margin-left: 10%;
+  margin-top: 5%;
   font-size: 2vw;
   font-family: 'Meiryo';
 }

@@ -117,13 +117,21 @@ main #follow-unfollow-form p {
   color: #ffdead;
 }
 
+main .profile-update-box {
+  margin-top: 5%;
+}
+
 main .profile-update-box a {
   color: #006400;
 }
 
-main .profile-update-box a i {
-  margin-top: 5%;
-  margin-left: 80%;
+main .profile-update-box a #edit-icon {
+  margin-right: 3%;
+}
+
+main .profile-update-box .password_change_link {
+  margin-right: 3%;
+  margin-top: 3%;
 }
 
 main #user-article-question-box {

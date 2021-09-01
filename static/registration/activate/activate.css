@@ -1,0 +1,18 @@
+@charset "UTF-8";
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.mgr-10 {
+  margin-left: 10px;
+}
+
+body main p {
+  margin-top: 30%;
+  font-family: "arial", "メイリオ";
+  font-size: 3vh;
+}
+/*# sourceMappingURL=activate.css.map */
