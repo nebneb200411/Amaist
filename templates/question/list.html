@@ -7,12 +7,12 @@
 {% block contents %}
 <div class="container-fluid">
     <div class="row">
-        <div class="col-12 col-md-3 col-xl-3" id="left-box"></div>
+        <div class="col-12 col-md-2 col-xl-2" id="left-box"></div>
 
         <!--quetion list will display in here-->
-        <div class="col-12 col-md-6 col-xl-6" id="main-box">
+        <div class="col-12 col-md-8 col-xl-8" id="main-box">
             <div class="question-description">
-                <p>-Questions-</p>
+                <p><span class="mgr-10"></span><i>New</i></p>
             </div>
             {% for question in object_list %}
             <div class="each-questions d-inline-flex justify-content-between">
@@ -34,7 +34,7 @@
             <hr>
             {% endfor %}
         </div>
-        <div class"col-12 col-md-3 col-xl-3" id="right-box"></div>
+        <div class"col-12 col-md-2 col-xl-2" id="right-box"></div>
     </div>
 </div>
 <!--

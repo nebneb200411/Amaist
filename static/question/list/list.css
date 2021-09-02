@@ -9,23 +9,19 @@ input {
   -webkit-appearance: none;
 }
 
-main div div #left-box {
-  border-right: 2px solid #ba55d3;
+.mgr-10 {
+  margin-left: 10px;
 }
 
 main div div #main-box {
   background-color: #f8f8ff;
-}
-
-main div div #main-box .question-description {
-  margin-top: 5%;
+  border-right: 2px solid #87ceeb;
+  border-left: 2px solid #87ceeb;
 }
 
 main div div #main-box .question-description p {
-  text-align: center;
   font-family: sans-serif;
-  font-size: 300%;
-  border-left: solid 30px #87ceeb;
+  font-size: 5vh;
   border-bottom: solid 2px #87ceeb;
 }
 
@@ -57,9 +53,5 @@ main div div #main-box .each-questions .question-title a p {
 
 main div div #main-box .each-questions .question-created-at p {
   font-family: sans-serif;
-}
-
-main div div #right-box {
-  border-left: 2px solid #ba55d3;
 }
 /*# sourceMappingURL=list.css.map */

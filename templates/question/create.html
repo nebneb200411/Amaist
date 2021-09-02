@@ -7,12 +7,12 @@
 {% block contents %}
 <div class="container-fluid">
     <div class="row">
-        <div class="col-12 col-md-3 col-xl-3" id="left-box">
+        <div class="col-12 col-md-2 col-xl-2" id="left-box">
         </div>
-        <div class="col-12 col-md-6 col-xl-6" id="main-box">
+        <div class="col-12 col-md-8 col-xl-8" id="main-box">
             <!--question-create session-->
             <div class="page-title-box">
-                <p><span class="mgr-10"/><img src="{% static 'images/base/question.png' %}" class="img-responsive"/><span class="mgr-10"/>質問作成</p>
+                <p><span class="mgr-10"></span>質問作成</p>
             </div>
 
             <div class="question-create-box">
@@ -20,10 +20,14 @@
                     {% csrf_token %}
                     {% autoescape off %}
                     {{form.media}}
+                    <p class="title-input"><span class="mgr-10"></span>TITLE</p>
                     {{form.title}}
                     <hr>
-                    <p id="content-p">-CONTENT-</p>
+                    <p id="content-p"><span class="mgr-10"></span>CONTENT</p>
                     {{form.content}}
+
+                    <hr>
+
                     <div id="tag-box">
                         <!--display this area is to add tags-->
                         <p><i class="fas fa-tags"></i>タグ</p>
@@ -39,7 +43,7 @@
                 </form>
             </div>
         </div>
-        <div class="col-12 col-md-3 col-xl-3" id="right-box">
+        <div class="col-12 col-md-2 col-xl-2" id="right-box">
         </div>
     </div>
 </div>
