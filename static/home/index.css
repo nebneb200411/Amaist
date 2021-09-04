@@ -23,21 +23,49 @@ main div div #main-box {
 }
 
 main div div #main-box .amaist-description-box .amaist-description {
-  margin-top: 2%;
+  position: relative;
+  width: 100%;
+  height: 420px;
+  background-image: url("/static/images/index/data_analysis.jpg");
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: contain;
 }
 
-main div div #main-box .amaist-description-box .amaist-description h1 {
-  font-family: 'arial', 'Meiryo';
-  font-size: 4vh;
-  border-top: dotted 2px #ffb6c1;
-  border-bottom: dotted 2px #ffb6c1;
-  border-left: solid 50px #ffb6c1;
-  color: #ffb6c1;
+main div div #main-box .amaist-description-box .amaist-description .amaist-description-text {
+  width: 100%;
+  height: 40%;
+  position: relative;
+  top: 60%;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
-main div div #main-box .amaist-description-box .amaist-description p {
+main div div #main-box .amaist-description-box .amaist-description .amaist-description-text .about-amaist {
+  text-align: center;
+  font-family: 'arial';
+  font-size: 5vh;
+  font-weight: 600;
+  color: white;
+  border-bottom: solid 2px white;
+}
+
+main div div #main-box .amaist-description-box .amaist-description .amaist-description-text p {
+  text-align: center;
   font-family: 'arial', 'Meiryo';
-  font-size: 2vh;
+  font-size: 3vh;
+  color: white;
+  border-bottom: solid 2px white;
+}
+
+main div div #main-box .amaist-description-box .amaist-description::before {
+  content: '';
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 main div div #main-box .amaist-description-box .amaist-survice-box {
@@ -61,7 +89,6 @@ main div div #main-box .amaist-description-box .amaist-survice-box .amaist-survi
 }
 
 main div div #main-box .amaist-description-box .amaist-survice-box .amaist-survice-article-box .survice-name {
-  border-right: solid 6px #008000;
   color: #008000;
 }
 
@@ -78,7 +105,6 @@ main div div #main-box .amaist-description-box .amaist-survice-box .amaist-survi
 }
 
 main div div #main-box .amaist-description-box .amaist-survice-box .amaist-survice-question-box .survice-name {
-  border-right: solid 6px #9932cc;
   color: #9932cc;
 }
 
@@ -96,7 +122,6 @@ main div div #main-box .amaist-description-box .amaist-survice-box .amaist-survi
 }
 
 main div div #main-box .amaist-description-box .amaist-survice-box .amaist-survice-datalibrary-box .survice-name {
-  border-right: solid 6px #4682b4;
   color: #4682b4;
 }
 
@@ -107,12 +132,13 @@ main div div #main-box .amaist-description-box .amaist-survice-box .amaist-survi
 }
 
 main div div #main-box .amaist-description-box .amaist-survice {
+  margin-top: 2%;
   font-family: 'arial', 'Meiryo';
   font-size: 4vh;
-  border-top: dotted 2px #ffb6c1;
-  border-bottom: dotted 2px #ffb6c1;
-  border-left: solid 50px #ffb6c1;
-  color: #ffb6c1;
+  color: #366ba1;
+  font-weight: 600;
+  text-shadow: 1px 1px 1px #5782c7;
+  border-bottom: solid 2px #366ba1;
 }
 
 main div div #main-box .article-box .article-division-hr {
@@ -171,24 +197,38 @@ main div div #main-box .article-box #good-number p {
 }
 
 main div div #main-box .login-and-register-box {
-  border-top: dotted 2px #5f9ea0;
-  border-bottom: dotted 2px #5f9ea0;
+  width: 100%;
+  height: 320px;
+  background-image: url("/static/images/index/register-login.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 50%;
 }
 
-main div div #main-box .login-and-register-box .login-and-register {
+main div div #main-box .login-and-register-box .login-and-register-text {
+  position: relative;
+  height: 40%;
+  top: 30%;
+}
+
+main div div #main-box .login-and-register-box .login-and-register-text .login-and-register {
   text-align: center;
-  color: #5f9ea0;
+  color: #a7ae29;
   font-size: 3vh;
   font-family: 'Book Antiqua', 'Meiryo';
 }
 
-main div div #main-box .login-and-register-box .login-and-register a {
-  color: #5f9ea0;
+main div div #main-box .login-and-register-box .login-and-register-text .login-and-register a {
+  color: #a7ae29;
 }
 
-main div div #main-box .login-and-register-box #login-and-register-title {
-  margin-top: 2%;
+main div div #main-box .login-and-register-box .login-and-register-text #login-and-register-title {
   text-align: center;
-  color: black;
+  color: white;
+  font-weight: 600;
+}
+
+main div div #main-box .login-and-register-box .login-and-register-text #login-and-register-title span {
+  border-bottom: solid 2px white;
 }
 /*# sourceMappingURL=index.css.map */

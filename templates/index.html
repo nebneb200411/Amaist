@@ -10,22 +10,15 @@
         <div class="col-12 col-md-9 col-xl-9" id="main-box">
             <div class="amaist-description-box">
                 <div class="amaist-description">
-                    <h1 class="about-amaist"><span class="mgr-10"></span><i class="fas fa-question-circle"></i><span
-                            class="mgr-10"></span>Amaist</h1>
-                    <p class="amaist-content">
-                        　Amaistはデータ分析の表現の場所です．
-                        　近年，機械学習，統計学，データ収集の発達により，データ解析の需要，必要性が増しつつあります．きっとAmaistに興味を持ってくれた方々も，データ分析に関しての興味をお持ちなのではないのでしょうか？
-                        <br>　しかし，いざデータ分析に興味を持てど，実際に<b>データ解析を行える場は少ない</b>とAmaistは考えております．<br>
-                        　そこでAmaistでは，<b>データ解析に興味を持つ方に，データ解析の表現の場を提供</b>しています．
-                        もちろん，Amaistを体験してもらうえでデータ解析の経験は一切問いません！
-                        Amaistは<b>初心者～上級者まで幅広い方の，データの分析，学習の場</b>でありたいです！
-                        分析する内容はあなたの想いのままです！
-                        Amaistで<b>些細な事，面白可笑しいこと，はたまた壮大なことまで色々分析</b>しましょう！
-                        そんなわけで，Amaistでは以下のようなサービスを実装しています．
-                    </p>
+                    <div class="amaist-description-text">
+                        <h1 class="about-amaist"><span class="amaist">Amaist</span></h1>
+                        <p class="amaist-content">
+                            <span class="amaist">データ分析の学習プラットフォームが新登場しました．<br>
+                            Amaistは，データ分析に関する記事を作成し，あなたの解析結果を表現する場所です．</span>
+                        </p>
+                    </div>
                 </div>
-                <h1 class="amaist-survice"><span class="mgr-10"></span><i class="fab fa-battle-net"></i><span
-                        class="mgr-10"></span>Amaistのサービス</h1>
+                <h1 class="amaist-survice">Amaistのサービス</h1>
                 <div class="amaist-survice-box">
                     <div class="amaist-survice-article-box">
                         <div class="amaist-survice-article d-flex">
@@ -57,11 +50,13 @@
             </div>
 
             <div class="login-and-register-box">
-                <p class="login-and-register" id="login-and-register-title">～登録，ログインはこちら～</p>
-                <p class="login-and-register"><i class="fas fa-user-plus"></i><span class="mgr-10"></span><a
-                        class="link-to-login-and-register" href={% url 'sign_up' %}>Register</a></p>
-                <p class="login-and-register"><i class="fas fa-sign-in-alt"></i><span class="mgr-10"><a
-                            class="link-to-login-and-register" href={% url 'login' %}></span>Login</a></p>
+                <div class="login-and-register-text">
+                    <p class="login-and-register" id="login-and-register-title"><span>登録，ログインはこちら</span></p>
+                    <p class="login-and-register"><i class="fas fa-user-plus"></i><span class="mgr-10"></span><a
+                            class="link-to-login-and-register" href={% url 'sign_up' %}>Register</a></p>
+                    <p class="login-and-register"><i class="fas fa-sign-in-alt"></i><span class="mgr-10"><a
+                                class="link-to-login-and-register" href={% url 'login' %}></span>Login</a></p>
+                </div>
             </div>
 
             <div class="article-box">
