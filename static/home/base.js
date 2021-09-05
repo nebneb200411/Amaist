@@ -80,5 +80,7 @@ $('#hide-and-appear').click(function () {
 // adjust footer-icon
 $(function () {
     var footer_icon = $('#footer-icon');
-    footer_icon.height(footer_icon.width());
+    var app_title = $('.app-title');
+    footer_icon.height(app_title.height());
+    footer_icon.width(footer_icon.height());
 })
