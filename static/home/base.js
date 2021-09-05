@@ -76,3 +76,9 @@ $('#hide-and-appear').click(function () {
     $('.menu-class').toggleClass('hidden');
     $('.hide-and-appear-class').toggleClass('up');
 });
+
+// adjust footer-icon
+$(function () {
+    var footer_icon = $('#footer-icon');
+    footer_icon.height(footer_icon.width());
+})

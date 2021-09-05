@@ -25,11 +25,10 @@ main div div #main-box {
 main div div #main-box .amaist-description-box .amaist-description {
   position: relative;
   width: 100%;
-  height: 420px;
   background-image: url("/static/images/index/data_analysis.jpg");
+  background-size: contain;
   background-repeat: no-repeat;
   background-position: 50%;
-  background-size: contain;
 }
 
 main div div #main-box .amaist-description-box .amaist-description .amaist-description-text {
@@ -43,7 +42,7 @@ main div div #main-box .amaist-description-box .amaist-description .amaist-descr
 main div div #main-box .amaist-description-box .amaist-description .amaist-description-text .about-amaist {
   text-align: center;
   font-family: 'arial';
-  font-size: 5vh;
+  font-size: 250%;
   font-weight: 600;
   color: white;
   border-bottom: solid 2px white;
@@ -52,7 +51,7 @@ main div div #main-box .amaist-description-box .amaist-description .amaist-descr
 main div div #main-box .amaist-description-box .amaist-description .amaist-description-text p {
   text-align: center;
   font-family: 'arial', 'Meiryo';
-  font-size: 3vh;
+  font-size: 100%;
   color: white;
   border-bottom: solid 2px white;
 }
@@ -84,6 +83,7 @@ main div div #main-box .amaist-description-box .amaist-survice-box .survice-name
 }
 
 main div div #main-box .amaist-description-box .amaist-survice-box .amaist-survice-article-box {
+  border: solid 2px #008000;
   -webkit-box-shadow: 0 0 10px #c0c0c0;
           box-shadow: 0 0 10px #c0c0c0;
 }
@@ -99,6 +99,7 @@ main div div #main-box .amaist-description-box .amaist-survice-box .amaist-survi
 }
 
 main div div #main-box .amaist-description-box .amaist-survice-box .amaist-survice-question-box {
+  border: solid 2px #9932cc;
   margin-top: 3%;
   -webkit-box-shadow: 0 0 10px #c0c0c0;
           box-shadow: 0 0 10px #c0c0c0;
@@ -115,6 +116,7 @@ main div div #main-box .amaist-description-box .amaist-survice-box .amaist-survi
 }
 
 main div div #main-box .amaist-description-box .amaist-survice-box .amaist-survice-datalibrary-box {
+  border: solid 2px #4682b4;
   -webkit-box-shadow: 0 0 10px #c0c0c0;
           box-shadow: 0 0 10px #c0c0c0;
   margin-top: 3%;

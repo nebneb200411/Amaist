@@ -113,12 +113,14 @@
     </main>
 
     <footer>
-        <div class="app-icon-box">
-            <img src="{% static 'images/base/logo4.png' %}"></img>
+        <div class="app-box d-flex">
+            <img id="footer-icon" src="{% static 'images/base/icon.png' %}"></img>
+            <div><p class="app-title"><span class="app-subtitle"><span class="app-title-emphasize">データ分析愛好家</span>のための記事作成サービス</span><br><span class="app-maintitle">Amaist</span></p></div>
+            
         </div>
         <div class="footer-contents">
-            <p class="app-title">Amaist</p>
             <p class="inquiry-p"><i class="fas fa-envelope"></i><span class="mgr-10"></span>お問い合わせ先:<span class="mgr-10"></span><a href="mailto:amaizingstrange&#64;gmail.com">amaizingstrange@gmail.com</a></p>
+            <p class="term"><i class="fas fa-atlas"></i><span class="mgr-10"></span><a href="{% url 'index:terms' %}">利用規約</a>
         </div>
     </footer>
 

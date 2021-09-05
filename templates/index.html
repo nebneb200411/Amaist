@@ -9,7 +9,7 @@
     <div class="row">
         <div class="col-12 col-md-9 col-xl-9" id="main-box">
             <div class="amaist-description-box">
-                <div class="amaist-description">
+                <div class="amaist-description" id="amaist-title-box">
                     <div class="amaist-description-text">
                         <h1 class="about-amaist"><span class="amaist">Amaist</span></h1>
                         <p class="amaist-content">
@@ -113,3 +113,7 @@
     </div>
 </div>
 {% endblock contents %}
+
+{% block script %}
+    <script type="text/javascript" src="{% static 'home/index.js' %}"></script>
+{% endblock script %}

@@ -245,41 +245,62 @@ main .nothing {
 
 footer {
   background-color: #000000;
+  border-top: solid 2px #b0c4de;
 }
 
-footer .app-icon-box {
-  display: inline-block;
-  margin-left: 2%;
-  margin-top: 2%;
-  width: 20%;
-  height: auto;
+footer .app-box {
+  border-bottom: solid 2px #b0c4de;
 }
 
-footer .app-icon-box img {
-  margin-top: 2%;
+footer .app-box img {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  width: 10%;
+}
+
+footer .app-box div {
+  display: table;
   margin-left: 2%;
-  width: 100%;
-  height: auto;
+}
+
+footer .app-box div .app-title {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  font-family: 'Book Antiqua', 'MS PMincho';
+}
+
+footer .app-box div .app-title .app-subtitle {
+  font-size: 1rem;
+  color: #bad0e9;
+}
+
+footer .app-box div .app-title .app-subtitle .app-title-emphasize {
+  font-size: 1.8rem;
+}
+
+footer .app-box div .app-title .app-maintitle {
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: #74a2d2;
 }
 
 footer .footer-contents {
-  display: inline-block;
-  margin-left: 5%;
+  margin-top: 10px;
+  padding-bottom: 10px;
+}
+
+footer .footer-contents p {
+  margin-left: 10px;
+  color: #b0c4de;
+}
+
+footer .footer-contents a {
+  color: #8fbc8f;
 }
 
 footer .footer-contents .inquiry-p {
   font-family: 'Book Antiqua', 'MS PMincho';
-  color: #b0c4de;
-}
-
-footer .footer-contents .inquiry-p a {
-  color: #8fbc8f;
-}
-
-footer .footer-contents .app-title {
-  font-size: 5vh;
-  font-family: 'Book Antiqua';
-  color: #b0c4de;
-  border-bottom: dotted 2px #b0c4de;
 }
 /*# sourceMappingURL=base.css.map */
