@@ -200,6 +200,7 @@ main div div #main-box .article-box #good-number p {
 }
 
 main div div #main-box .login-and-register-box {
+  display: table;
   width: 100%;
   height: 320px;
   background-image: url("/static/images/index/register-login.jpg");
@@ -209,9 +210,10 @@ main div div #main-box .login-and-register-box {
 }
 
 main div div #main-box .login-and-register-box .login-and-register-text {
+  display: table-cell;
+  vertical-align: middle;
   position: relative;
-  height: 40%;
-  top: 30%;
+  height: 80%;
 }
 
 main div div #main-box .login-and-register-box .login-and-register-text .login-and-register {
