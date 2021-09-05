@@ -29,17 +29,12 @@ input {
   font-family: 'Bookman Old Style';
   color: #6495ed;
   text-align: center;
-  margin-top: 2%;
-  font-size: 4vw;
+  font-size: 2rem;
   border-bottom: dotted 2px #87ceeb;
 }
 
 .login_contents form {
-  height: 50%;
-}
-
-.login_contents form .login-username-box {
-  height: 20%;
+  height: 280px;
 }
 
 .login_contents form .login-username-box .login-username-text {
@@ -47,7 +42,7 @@ input {
   display: inline-block;
   width: 100%;
   font-family: 'Book Antiqua';
-  font-size: 2vw;
+  font-size: 1.2rem;
   color: #808080;
   padding-left: 5%;
 }
@@ -55,7 +50,7 @@ input {
 .login_contents form .login-username-box #id_username {
   display: inline-block;
   width: 90%;
-  height: 6vh;
+  height: 40px;
   outline: none;
   border: solid 2px #afeeee;
   font-family: 'Book Antiqua';
@@ -68,8 +63,7 @@ input {
 }
 
 .login_contents form .login-password-box {
-  height: 20%;
-  margin-top: 5%;
+  margin-top: 2%;
 }
 
 .login_contents form .login-password-box .login-password-text {
@@ -77,7 +71,7 @@ input {
   display: inline-block;
   width: 100%;
   font-family: 'Book Antiqua';
-  font-size: 2vw;
+  font-size: 1.2rem;
   color: #808080;
   padding-left: 5%;
 }
@@ -86,7 +80,7 @@ input {
   position: relative;
   display: inline-block;
   width: 90%;
-  height: 6vh;
+  height: 40px;
   outline: none;
   border: solid 2px #afeeee;
   font-family: 'Book Antiqua';
@@ -101,19 +95,18 @@ input {
 .login_contents form #login_button {
   position: relative;
   width: 80%;
-  height: 25%;
   margin-left: 10%;
   margin-top: 5%;
-  font-size: 2vw;
+  font-size: 1.2rem;
   font-family: 'Meiryo';
 }
 
 .login_contents .forget_password_link {
-  margin-top: 3%;
+  margin-top: 5%;
 }
 
 .login_contents .forget_password_link p {
-  font-size: 2vw;
+  font-size: 1.2rem;
   font-family: 'Meiryo';
   text-align: right;
   margin-right: 5%;

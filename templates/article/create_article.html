@@ -13,9 +13,10 @@
     <div class="row">
         <div id="left-box" class="col-12 col-md-2 col-xl-2"></div>
         <div id="main-box" class="col-12 col-md-8 col-xl-8">
-            <div class="page-title-box">
-                <p class="page-title">記事作成ページ</p>
-                <img src="{% static 'images/base/create_article.png'%}" class="img-responsive"/>
+            <div id="page-title-box">
+                <div>
+                    <p class="page-title">記事作成ページ</p>
+                </div>
             </div>
             <form method="POST">
                 {% csrf_token %}
@@ -23,12 +24,12 @@
                 {{form.media}}
                 <hr>
                 <div class="title-input-box">
-                    <p><i class="fas fa-signature"></i><span class="mgr-10"/><i>-Title-</i></p>
+                    <p class="content-p"><i class="fas fa-signature"></i><span class="mgr-10"/>Title</p>
                     {{form.title}}
                 </div>
                 <hr>
                 <div class="content-input-box">
-                    <p><i class="far fa-newspaper"></i><span class="mgr-10"/><i>-Content-</i></p>
+                    <p class="content-p"><i class="far fa-newspaper"></i><span class="mgr-10"/>Content</p>
                     {{form.content}}
                 </div>
 
@@ -36,7 +37,7 @@
 
                 <div id="tag-box">
                     <!--display this area is to add tags-->
-                    <p><i class="fas fa-tags"></i><span class="mgr-10"/><i>-Tags-</i></p>
+                    <p class="content-p"><i class="fas fa-tags"></i><span class="mgr-10"/>Tags</p>
                     <input type="text" multiple name="tags" class="tag-input" placeholder="&#xf02b; tag（任意）"/>
                 </div>
 
