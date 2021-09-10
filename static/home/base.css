@@ -47,6 +47,8 @@ body header .header-box .menu-button {
   width: 9vh;
   background-color: transparent;
   border: solid 3px #b0c4de;
+  -webkit-perspective: 1000;
+          perspective: 1000;
 }
 
 body header .header-box .menu-button .top-line {
@@ -62,6 +64,8 @@ body header .header-box .menu-button .top-line {
   -webkit-transform: translateX(-50%);
   -webkit-transition: .3s;
   transition: .3s;
+  -webkit-perspective: 1000;
+          perspective: 1000;
 }
 
 body header .header-box .menu-button .top-line.clicked-top {
@@ -77,6 +81,8 @@ body header .header-box .menu-button .top-line.clicked-top {
   -webkit-transform: translateX(-50%) rotate(45deg);
   -webkit-transition: .3s;
   transition: .3s;
+  -webkit-perspective: 1000;
+          perspective: 1000;
 }
 
 body header .header-box .menu-button .middle-line {
@@ -90,10 +96,14 @@ body header .header-box .menu-button .middle-line {
   background-color: #b0c4de;
   transform: translateX(-50%);
   -webkit-transform: translateX(-50%);
+  -webkit-perspective: 1000;
+          perspective: 1000;
 }
 
 body header .header-box .menu-button .middle-line.clicked-middle {
   visibility: hidden;
+  -webkit-perspective: 1000;
+          perspective: 1000;
 }
 
 body header .header-box .menu-button .bottom-line {
@@ -109,6 +119,8 @@ body header .header-box .menu-button .bottom-line {
   -webkit-transform: translateX(-50%);
   -webkit-transition: .3s;
   transition: .3s;
+  -webkit-perspective: 1000;
+          perspective: 1000;
 }
 
 body header .header-box .menu-button .bottom-line.clicked-bottom {
@@ -126,6 +138,8 @@ body header .header-box .menu-button .bottom-line.clicked-bottom {
   -webkit-transform: translateX(-50%) rotate(-45deg);
   -webkit-transition: .3s;
   transition: .3s;
+  -webkit-perspective: 1000;
+          perspective: 1000;
 }
 
 body header .header-box .app-icon img {
