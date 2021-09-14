@@ -2,7 +2,8 @@
 {% load static %}
 {% block stylesheet %}
 <title>記事作成</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/monokai.min.css">
+<link rel="stylesheet" href="{% static 'ckeditor/plugins/codesnippet/lib/highlight/styles/mono-blue.css' %}">
+<script src="{% static 'ckeditor/plugins/codesnippet/lib/highlight/highlight.pack.js' %}"></script>
 <link rel="stylesheet" href="{% static 'article/create/create.css' %}"/>
 {% endblock stylesheet %}
 
@@ -11,9 +12,10 @@
     <div class="row">
         <div id="left-box" class="col-12 col-md-2 col-xl-2"></div>
         <div id="main-box" class="col-12 col-md-8 col-xl-8">
-            <div class="page-title-box">
-                <p class="page-title">記事作成ページ</p>
-                <img src="{% static 'images/base/create_article.png'%}" class="img-responsive"/>
+            <div id="page-title-box">
+                <div>
+                    <p class="page-title">記事作成ページ</p>
+                </div>
             </div>
             <form method="POST">
                 {% csrf_token %}
@@ -21,12 +23,12 @@
                 {{form.media}}
                 <hr>
                 <div class="title-input-box">
-                    <p><i class="fas fa-signature"></i><span class="mgr-10"/><i>-Title-</i></p>
+                    <p class="content-p"><i class="fas fa-signature"></i><span class="mgr-10"/>Title</p>
                     {{form.title}}
                 </div>
                 <hr>
                 <div class="content-input-box">
-                    <p><i class="far fa-newspaper"></i><span class="mgr-10"/><i>-Content-</i></p>
+                    <p class="content-p"><i class="far fa-newspaper"></i><span class="mgr-10"/>Content</p>
                     {{form.content}}
                 </div>
 
@@ -34,7 +36,7 @@
 
                 <div id="tag-box">
                     <!--display this area is to add tags-->
-                    <p><i class="fas fa-tags"></i><span class="mgr-10"/><i>-Tags-</i></p>
+                    <p class="content-p"><i class="fas fa-tags"></i><span class="mgr-10"/>Tags</p>
                     <input type="text" multiple name="tags" class="tag-input" placeholder="&#xf02b; tag（任意）"/>
                 </div>
 
@@ -53,9 +55,10 @@
         <div id="right-box" class="col-12 col-md-2 col-xl-2"></div>
     </div>
 </div>
+<script>hljs.initHighlightingOnLoad();</script>
 {% endblock contents %}
 {% block script %}
     <script type="text/javascript" src="{% static 'django-summernote-options/django_summernote_option.js' %}"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <script type="text/javascript" src="{% static 'article/create/create.js' %}"></script>
 {% endblock script %}
