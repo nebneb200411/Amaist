@@ -30,43 +30,41 @@
                 <h1><i>New!!</i></h1>
                 {% for article in article_list %}
                 <hr class="article-division-hr"/>
-                <div class="contaner-fluid">
-                    <div class="row">
-                        <div class="col-xl-3 col-md-3 col-12" id="icon">
-                            <div class="author-icon">
-                            <!--もし画像を選択していないときのデフォルトの画像を表示させる(今のところmodelsでやればいかなーて思ってる)-->
-                                <img class="user-icon" src="{{ MEDIA_URL }}{{article.author.user.icon|default:'images/user-icon-default.png'}}"/>
-                            </div>
-                        </div>
-
-                        <div class="col-xl-9 col-md-9 col-12" id="author-name-created-at">
-                            <div class="autor-name">
-                                <p><i class="fas fa-user"></i><span class="mgr-10"/><p class="article-author">{{article.author}}</p></p>
-                            </div>
-                            <div class="created-at">
-                                <p class="font"><i class="far fa-calendar-alt"></i><span class="mgr-10"/>{{article.created_at|date:"y/m/d"}}</p>
-                            </div>
-                            
-                            <div class="tag-box">
-                                {% for tag in article.tag.all %}
-                                <p><i class="fas fa-tags"></i><span class="mgr-10"/>{{tag}}</p>
-                                {% empty %}
-                                {% endfor %}
-                            </div>
-                        </div>
-
-                        <div class="col-xl-12 col-md-12 col-12" id="title">
-                            <hr class="title-hr"/>
-                            <a href="{% url 'article:article_detail' article.pk %}">
-                                <h3 class-"article-title">{{article.title}}</h3>
-                            </a>
-                            <hr class="title-hr"/>
-                        </div>
-
-                        <div class="col-xl-12 col-md-12 col-12" id="good-number">
-                            <p><i class="fas fa-thumbs-up"></i><span class="mgr-10"/>{{article.good_from.all|length}}</p>
+                <div id="article-header" class="d-flex">
+                    <div id="icon">
+                        <div class="author-icon">
+                        <!--もし画像を選択していないときのデフォルトの画像を表示させる(今のところmodelsでやればいかなーて思ってる)-->
+                            <img class="user-icon" src="{{ MEDIA_URL }}{{article.author.user.icon|default:'images/user-icon-default.png'}}"/>
                         </div>
                     </div>
+
+                    <div id="author-name-created-at">
+                        <div class="autor-name">
+                            <p><i class="fas fa-user"></i><span class="mgr-10"/><p class="article-author">{{article.author}}</p></p>
+                        </div>
+                        <div class="created-at">
+                            <p class="font"><i class="far fa-calendar-alt"></i><span class="mgr-10"/>{{article.created_at|date:"y/m/d"}}</p>
+                        </div>
+                        
+                        <div class="tag-box">
+                            {% for tag in article.tag.all %}
+                            <p><i class="fas fa-tags"></i><span class="mgr-10"/>{{tag}}</p>
+                            {% empty %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+
+                <div id="title">
+                    <hr class="title-hr"/>
+                    <a href="{% url 'article:article_detail' article.pk %}">
+                        <h3 class-"article-title">{{article.title}}</h3>
+                    </a>
+                    <hr class="title-hr"/>
+                </div>
+
+                <div id="good-number">
+                    <p><i class="fas fa-thumbs-up"></i><span class="mgr-10"/>{{article.good_from.all|length}}</p>
                 </div>
                 {% endfor %}
             </div>

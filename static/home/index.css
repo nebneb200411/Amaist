@@ -151,8 +151,8 @@ main div div #main-box .article-box .article-division-hr {
 }
 
 main div div #main-box .article-box #icon .author-icon .user-icon {
-  height: 20vh;
-  width: auto;
+  width: 15vh;
+  height: auto;
 }
 
 main div div #main-box .article-box #author-name-created-at {
@@ -163,7 +163,7 @@ main div div #main-box .article-box #author-name-created-at div p {
   color: #4682b4;
   display: inline-block;
   border-bottom: dotted 2px #b0c4de;
-  font-size: 3vh;
+  font-size: 1rem;
 }
 
 main div div #main-box .article-box #author-name-created-at div h2 {
