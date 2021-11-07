@@ -6,8 +6,7 @@ from .validators import validate_file
 
 User = get_user_model()
 
-# 2回目以降はこれをはずす
-"""
+
 class Files(models.Model):
     datalibrary_file = models.FileField(
         upload_to='data_library', null=False, validators=[validate_file])
@@ -17,7 +16,6 @@ class Files(models.Model):
 
     def __str__(self):
         return str(self.datalibrary_file.name)
-"""
 
 
 class DataLibrary(models.Model):

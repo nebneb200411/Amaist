@@ -1,5 +1,5 @@
 from django import forms
-from .models import DataLibrary, CommentToDataLibrary  # Files
+from .models import DataLibrary, CommentToDataLibrary
 from ckeditor.widgets import CKEditorWidget
 
 
