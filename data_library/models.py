@@ -6,20 +6,32 @@ from .validators import validate_file
 
 User = get_user_model()
 
+# 2回目以降はこれをはずす
+"""
+class Files(models.Model):
+    datalibrary_file = models.FileField(
+        upload_to='data_library', null=False, validators=[validate_file])
+
+    def filename(self):
+        return os.path.basename(self.datalibrary_file.name)
+
+    def __str__(self):
+        return str(self.datalibrary_file.name)
+"""
+
 
 class DataLibrary(models.Model):
-    data_file = models.FileField(
-        upload_to='data_library', null=False, validators=[validate_file])
+    # data_file = models.ManyToManyField(Files, related_name='file') 2回目以降に外す
     uploader = models.ForeignKey(User, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     introduction = RichTextUploadingField()
     good = models.ManyToManyField(User, related_name="good", default=None)
 
     def filename(self):
-        return os.path.basename(self.data_file.name)
+        return os.path.basename(self.uploader)
 
     def __str__(self):
-        return str(self.data_file)
+        return str(self.uploader)
 
 
 class CommentToDataLibrary(models.Model):

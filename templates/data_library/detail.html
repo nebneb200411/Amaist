@@ -2,7 +2,7 @@
 {% load static %}
 {% load filename %}
 {% block stylesheet %}
-<title>{{object.data_file|get_filename}}</title>
+<title>Data Library</title>
 <link rel="stylesheet" href="{% static 'data_library/detail/detail.css' %}">
 {% endblock stylesheet %}
 
@@ -36,14 +36,22 @@
             <!-- file can download from here -->
             <div class="file-box">
                 <h1 class="contents-titles">-Download File-</h1>
-                <div class=" d-inline-flex">
-                    <div clas="file-name-box">
-                        <p><i class="fas fa-file-invoice"></i>    {{object.data_file|get_filename}}      </p>
-                    </div>
+                <div>
+                    <table class="file-name-box">
+                        {% for data_file in object.data_file.all %}
+                        <tr>
+                            <th>
+                                <p><i class="fas fa-file-invoice"></i><span class="mgr-10"></span>{{data_file.datalibrary_file|get_filename}}</p>
+                            </th>
+                            <th>
+                                <a href="{{MEDIA_URL}}{{data_file.datalibrary_file}}" download={{MEDIA_URL}}{{data_file.datalibrary_file}}>
+                                    <i class="fas fa-download"></i>
+                                </a>
+                            </th>
+                        </tr>
+                        {% endfor %}
+                    </table>
                     <div class="file-download-box">
-                        <a href="{{MEDIA_URL}}{{object.data_file}}" download={{MEDIA_URL}}{{object.data_file}}>
-                            <i class="fas fa-download"></i>
-                        </a>
                     </div>
                 </div>
             </div> 
@@ -63,7 +71,7 @@
                 <!--display good and post good from here-->
                 <div class="good-number-box d-inline-flex">
                     <div class="good-number-box">
-                        <p class="good-number"><i class="far fa-thumbs-up"></i>   {{good_number}}</p>
+                        <p class="good-number"><i class="far fa-thumbs-up"></i>{{good_number}}</p>
                     </div>
 
                     <!--post good to this article-->

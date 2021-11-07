@@ -18,13 +18,15 @@
             <div class="form-box">
                 <form method="POST" enctype="multipart/form-data">
                     {% csrf_token %}
-                    <div class="input-file-box">
+                    <div class="input-file-box" id="file-box">
                         <p class="input-file-p"><i class="fas fa-mail-bulk"></i><span class="mgr-10"></span>データをポスト(.csc, .xlsx, .txt, .sqlite可）</p>
-                        {{form.data_file}}
-                        {% if form.data_file.errors %}
-                        {{form.data_file.errors}}
-                        {% endif %}
+                        <input type="file" multiple name="data_file" class="data_file" id="id_data_file"></input>
                     </div>
+
+                    <div class="table-box" id="file-add-table-box">
+                        <i class="far fa-plus-square fa-3x" id="add-file-button"></i>
+                    </div>
+                    
 
                     <div class="input-introduction-box">
                         <p class="input-introduction-p"><i class="fas fa-sticky-note"></i><span class="mgr-10"></span>データについての説明</p>

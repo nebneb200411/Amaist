@@ -15,6 +15,10 @@
   height: 2px;
 }
 
+.table-box {
+  display: table;
+}
+
 main div div #left-box {
   background-color: #0c74b0;
   border-right: solid 2px #191970;
@@ -60,6 +64,11 @@ main div div #main-box .form-box form .input-file-box .errorlist {
 main div div #main-box .form-box form .input-file-box .errorlist li {
   font-family: 'Times New Roman', 'ＭＳ 明朝';
   color: #ff0000;
+}
+
+main div div #main-box .form-box form #file-add-table-box #add-file-button {
+  margin-top: 10%;
+  margin-left: 20%;
 }
 
 main div div #main-box .form-box form .input-introduction-box .input-introduction-p {

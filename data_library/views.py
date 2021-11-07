@@ -1,7 +1,5 @@
-from django.shortcuts import render
 from django.views.generic import ListView, DetailView, CreateView, UpdateView
-from .models import DataLibrary, CommentToDataLibrary
-from profiles.models import Profile
+from .models import DataLibrary, CommentToDataLibrary,  # Files
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from django.shortcuts import redirect
@@ -18,6 +16,20 @@ class DataLibraryCreateView(LoginRequiredMixin, CreateView):
         data_library = form.save(commit=False)
         data_library.uploader = self.request.user
         data_library.save()
+        # upload file 2回目以降はこれをはずす
+        """
+        pk = data_library.pk
+        created_datalibrary = DataLibrary.objects.get(pk=pk)
+        files = self.request.FILES.getlist('data_file')
+        file_list = []
+        for f in files:
+            created_file = Files.objects.create(datalibrary_file=f)
+            created_file.save()
+            file_list.append(created_file)
+        for obj in file_list:
+            created_datalibrary.data_file.add(obj)
+            created_datalibrary.save()
+        """
         return super().form_valid(form)
 
 
