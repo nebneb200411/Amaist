@@ -19,7 +19,7 @@ class Files(models.Model):
 
 
 class DataLibrary(models.Model):
-    # data_file = models.ManyToManyField(Files, related_name='file') 2回目以降に外す
+    data_file = models.ManyToManyField(Files, related_name='file') 2回目以降に外す
     uploader = models.ForeignKey(User, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     introduction = RichTextUploadingField()
