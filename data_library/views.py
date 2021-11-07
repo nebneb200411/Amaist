@@ -1,5 +1,5 @@
 from django.views.generic import ListView, DetailView, CreateView, UpdateView
-from .models import DataLibrary, CommentToDataLibrary,  # Files
+from .models import DataLibrary, CommentToDataLibrary  # Files
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from django.shortcuts import redirect
