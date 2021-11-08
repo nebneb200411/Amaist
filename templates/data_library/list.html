@@ -6,35 +6,97 @@
 {% endblock stylesheet %}
 
 {% block contents %}
+    <div class="container">
+        <div class="row">
+            <!--search box-->
+            <div id="search-box" class="col-xl-4 col-md-4 col-12">
+                <table id="search">
+                    <tr id="search-title">
+                        <th>
+                            <p>データ検索</p>
+                        </th>
+                    </tr>
+                    <tr id="search-content">
+                        <th>
+                            <form class="flex-column" method="GET" action="{% url 'article:list' %}" id="article-search">
+                                <p>
+                                    <input class="search-input" type="text" name="data-search" placeholder="  本文検索"></input>
+                                    <a class="search-button" type="submit"><i class="fas fa-search"></i></a>
+                                </p>
+                            </form>
+                        </th>
+                    </tr>
+                </table>
+            </div>
+            <!--list box-->
+            <div id="data-list-box" class="col-xl-8 col-md-8 col-12">
+                {% for data_library in object_list %}
+                <table class="each-data">
+                    <tr class="uploader">
+                        <th class="uploader-name">
+                            <p>
+                                Uploaded by<span class="mgr-10"></span>{{data_library.uploader}}
+                            </p>
+                        </th>
+                        <th class="uploader-icon"><img src="{{ MEDIA_URL }}{{data_library.uploader.user.icon|default:'images/user-icon-default.png'}}"></img></th>
+                    </tr>
+                    <tr class="about-data">
+                        <th>
+                            <div class="data-introduction">{{data_library.introduction|safe}}</div>
+                        </th>
+                    </tr>
+                    <tr class="upload-date-and-send">
+                        <th class="upload-date">
+                            <p><i class="far fa-calendar-alt"></i><span class="mgr-10"></span>{{data_library.created_at|date:"y/m/d"}}</p>
+                        </th>
+                        <th class="detail-button">
+                            <a class="button" href="{% url 'data_library:detail' data_library.pk %}">
+                                <span class="mgr-10"></span><i class="fas fa-arrow-right"></i><span class="mgr-10"></span>詳細へ<span class="mgr-10"></span>
+                            </a>
+                        </th>
+                    </tr>
+                </table>
+                </table>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <!--
     <div class="container-fluid">
         <div class="row">
-
+    -->
             <!--left side display-->
+            <!--
             <div class="col-12 col-md-2 col-xl-2" id="left-box">
             </div>
+            -->
 
             <!--main contents-->
+            <!--
             <div class="col-12 col-md-8 col-xl-8" id="main-box">
+            -->
 
                 <!--display comment in here-->
+                <!--
                 <div class="comment-box">
                     <p><i class="fas fa-database"></i><span class="mgr-10"></span>データ一覧</p>
                 </div>
+                -->
 
-                <hr>
+                <!--<hr>-->
 
                 <!--display each user's data file-->
-                {% for data_library in object_list %}
-                <div class="each-data-box">
+                <!--{% for data_library in object_list %}
+                <div class="each-data-box">-->
 
                     <!--show data discription-->
-                    <div class="introduction-box">
+                    <!--<div class="introduction-box">
                         <p class="data-element-title"><span class="mgr-10"/>-<i>About Data</i>-</p>
                         <p>{{data_library.introduction|safe}}</p>
-                    </div> 
+                    </div>-->
 
                     <!--show posted date and person who post the data-->
-                    <div class="poster-date-box">
+                    <!--<div class="poster-date-box">
                         <div class="posted-by-box">
                             <p class="data-element-title" id="uploader-title"><span class="mgr-10"/>-<i>Uploader</i>-</p>
                             <p class="uploader-name"><i class="fas fa-user"></i><span class="mgr-10"/>{{data_library.uploader}}</p>
@@ -42,10 +104,10 @@
                         <div class="date-box">
                             <p><i class="far fa-calendar-alt"></i><span class="mgr-10"/>{{data_library.created_at|date:"y/m/d"}}</p>
                         </div>
-                    </div>
+                    </div>-->
 
                     <!--jump to data file from here-->
-                    <div class="data-link-box">
+                    <!--<div class="data-link-box">
                         <a href="{% url 'data_library:detail' data_library.pk %}">
                             <button type="submit" class="btn btn-primary">詳細</button>
                         </a>
@@ -55,14 +117,14 @@
 
                 </div>
                 {% endfor %}
-            </div>
+            </div>-->
 
             <!--right side display-->
-            <div class="col-12 col-md-2 col-xl-2" id="right-box">
+            <!--<div class="col-12 col-md-2 col-xl-2" id="right-box">
             </div>
 
         </div>
-    </div>
+    </div>-->
 <!--{% for data_object in object_list %}
     <a href="{% url 'data_library:detail' data_object.pk %}">
     {{data_object.data_file}}
@@ -71,3 +133,6 @@
     </a>
     {% endfor %}-->
 {% endblock contents %}
+{% block script %}
+<script type="text/javascript" src="{% static 'data_library/list.js' %}"></script>
+{% endblock script %}

@@ -24,66 +24,106 @@ hr {
   height: 2px;
 }
 
-main div div #left-box {
-  background-color: #031c2b;
-  border-right: solid 2px #1aa24e;
+main {
+  position: relative;
+  background-image: url("/static/images/datalibrary/datalibrary_background.jpg");
+  background-repeat: repeat;
+  background-size: contain;
+  background-position: center;
 }
 
-main div div #main-box {
-  background-color: white;
-}
-
-main div div #main-box .comment-box {
-  margin-top: 2%;
-}
-
-main div div #main-box .comment-box p {
-  color: #778899;
-  font-size: 6vh;
-  padding-left: 2%;
-}
-
-main div div #main-box .each-data-box {
+main div div #search-box #search {
+  height: 200px;
   width: 100%;
+  margin-top: 50px;
+  background: linear-gradient(-135deg, #3656a1, #2C2C54, #31333E);
+  border-radius: 20px;
 }
 
-main div div #main-box .each-data-box .introduction-box {
+main div div #search-box #search #search-title th p {
   width: 100%;
-  border-bottom: dotted 2px #a9a9a9;
-}
-
-main div div #main-box .each-data-box .poster-date-box .posted-by-box {
-  border-bottom: dotted 2px #a9a9a9;
-  display: inline-block;
-  width: 68%;
-}
-
-main div div #main-box .each-data-box .poster-date-box .posted-by-box #uploader-title {
-  margin-top: 2%;
-}
-
-main div div #main-box .each-data-box .poster-date-box .posted-by-box .uploader-name {
-  margin-left: 5%;
-  color: #0000cd;
-}
-
-main div div #main-box .each-data-box .poster-date-box .date-box {
-  display: inline-block;
-  width: 30%;
-}
-
-main div div #main-box .each-data-box .poster-date-box .date-box p {
   text-align: center;
-  color: #87ceeb;
+  color: white;
 }
 
-main div div #main-box .each-data-box .data-link-box {
-  margin-top: 5%;
-  padding-left: 80%;
+main div div #search-box #search #search-content th form p {
+  text-align: center;
+  width: 90%;
+  margin-left: 5%;
 }
 
-main div #right-box {
-  background-color: #031c2b;
-  border-left: solid 2px #1aa24e;
+main div div #search-box #search #search-content th form p .search-input {
+  border: none;
+  border-radius: 5px;
+}
+
+main div div #search-box #search #search-content th form p :focus {
+  outline: none;
+  border: solid 1px yellowgreen;
+}
+
+main div div #search-box #search #search-content th form p .search-button {
+  color: white;
+}
+
+main div div #data-list-box .each-data {
+  background-color: black;
+  opacity: 0.95;
+  margin-top: 50px;
+  width: 100%;
+  height: 200px;
+}
+
+main div div #data-list-box .each-data .uploader .uploader-name p {
+  margin-left: 10%;
+  color: #f5f5f5;
+}
+
+main div div #data-list-box .each-data .uploader .uploader-icon img {
+  display: table-cell;
+  width: 100px;
+  height: auto;
+  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+main div div #data-list-box .each-data .about-data th .data-introduction {
+  width: 80%;
+  height: 100%;
+  margin-left: 10%;
+  padding-left: 30px;
+  color: #f5f5f5;
+  border-left: solid 10px #f5f5f5;
+}
+
+main div div #data-list-box .each-data .upload-date-and-send .upload-date p {
+  margin-left: 10%;
+  color: #f5f5f5;
+}
+
+main div div #data-list-box .each-data .upload-date-and-send .detail-button {
+  text-align: center;
+}
+
+main div div #data-list-box .each-data .upload-date-and-send .detail-button a {
+  display: inline-block;
+  border-radius: 100vh;
+  cursor: pointer;
+  background-color: #f5f5f5;
+  border: none;
+  color: #202020;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+main::before {
+  content: '';
+  background-color: rgba(255, 255, 255, 0.2);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 /*# sourceMappingURL=list.css.map */

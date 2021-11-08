@@ -8,17 +8,32 @@
 
 
 {% block contents %}
+    <div id="data-description-box">
+        <table id="data-description-table">
+            <tr id="uploader">
+                Uploader
+                <th id="uploader-image">
+                    <p><img src="{{MEDIA_URL}}{{object.uploader.user.icon}}"></img>{{object.uploader.user}}</p>
+                </th>
+                <td id="page-title">
+                    About Data
+                </td>
+            </tr>
+            <tr id="about-data">
+            </tr>
+            <tr id="data-file">
+            </tr>
+        </table>
+    </div>
+<!--
 <div class="container-fluid">
     <div class="row">
 
         <div class="col-12 col-md-3 col-xl-3" id="left-box">
         </div>
+        
 
-
-        <!--Main content article will discribe in here-->
         <div class="col-12 col-md-6 col-xl-6" id="datalibrary-content">
-
-            <!-- display uploader's information in here-->
             <div class="uploader-info-box">
                 <h1 class="contents-titles">-Uploader-</h1>
                 <div class="uploader-icon-box">
@@ -32,8 +47,6 @@
                     </a>
                 </div>
             </div>
-
-            <!-- file can download from here -->
             <div class="file-box">
                 <h1 class="contents-titles">-Download File-</h1>
                 <div>
@@ -55,8 +68,6 @@
                     </div>
                 </div>
             </div> 
-
-            <!--display file's discription in here-->
             <div class="introduction-box">
                 <h1 class="contents-titles">-About File-</h1>
                 <div class="introduction">
@@ -66,15 +77,12 @@
 
             <hr>
 
-            <!--good-->
             <div class="good-box">
-                <!--display good and post good from here-->
                 <div class="good-number-box d-inline-flex">
                     <div class="good-number-box">
                         <p class="good-number"><i class="far fa-thumbs-up"></i>{{good_number}}</p>
                     </div>
 
-                    <!--post good to this article-->
                     <div class="good-post-box">
                         <form method="POST" action="{% url 'data_library:good_count' %}">
                             {% csrf_token %}
@@ -90,8 +98,6 @@
             <hr class="horizontal-line">
 
             <p>コメント：</p>
-
-            <!--comment form-->
             <div class="comment-form">
                 <form method="POST">
                     {% csrf_token %}
@@ -104,8 +110,6 @@
             </div>
 
             <hr class="horizontal-line">
-
-            <!--display comments-->
             <div class="comment-display-box">
                 {% for comment_object in comment_list %}
                     <div class="each-user-comment-box">
@@ -132,7 +136,7 @@
         </div>
     </div>
 </div>
-
+-->
 
 <!--
     {{object.introduction}}
