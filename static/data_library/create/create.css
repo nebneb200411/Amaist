@@ -1,4 +1,3 @@
-@charset "UTF-8";
 *,
 *::before,
 *::after {
@@ -10,92 +9,86 @@
   margin-left: 10px;
 }
 
-.horizontal-line {
-  background-color: #afeeee;
-  height: 2px;
-}
-
 .table-box {
   display: table;
 }
 
-main div div #left-box {
-  background-color: #0c74b0;
-  border-right: solid 2px #191970;
+main {
+  font-family: "arial", "MS Gothic";
 }
 
-main div div #main-box .question-page-title {
-  background-color: #ee82ee;
+main #form-box {
+  background: -webkit-gradient(linear, left top, right top, from(#3A82A7), color-stop(#B7BD99), to(#ECA6BE));
+  background: linear-gradient(to right, #3A82A7, #B7BD99, #ECA6BE);
+}
+
+main #form-box h1 {
+  padding-top: 10px;
+  text-align: center;
+  color: white;
+  font-size: 3rem;
+}
+
+main #form-box form .description {
   margin-top: 10px;
-  border-bottom: solid 2px #191970;
-  border-top: solid 2px #191970;
-}
-
-main div div #main-box .question-page-title p {
-  margin-top: 3%;
-  margin-left: 5%;
-  color: #ffffff;
-  font-size: 4vh;
-  font-family: "arial", "Yu Gothic UI";
-}
-
-main div div #main-box .question-page-title p span {
   margin-left: 10px;
+  color: white;
+  font-size: 1.1rem;
 }
 
-main div div #main-box .form-box form .input-file-box .input-file-p {
-  margin-top: 5%;
-  margin-left: 2%;
-  color: #6495ed;
-  font-size: 3vh;
-  font-family: 'MS Gothic';
-  border-bottom: solid 2px #191970;
-}
-
-main div div #main-box .form-box form .input-file-box #id_data_file {
-  margin-left: 2%;
-}
-
-main div div #main-box .form-box form .input-file-box .errorlist {
-  margin-top: 2%;
-  list-style: none;
-}
-
-main div div #main-box .form-box form .input-file-box .errorlist li {
-  font-family: 'Times New Roman', 'ＭＳ 明朝';
-  color: #ff0000;
-}
-
-main div div #main-box .form-box form #file-add-table-box #add-file-button {
-  margin-top: 10%;
-  margin-left: 20%;
-}
-
-main div div #main-box .form-box form .input-introduction-box .input-introduction-p {
-  margin-top: 5%;
-  margin-left: 2%;
-  color: #6495ed;
-  font-size: 3vh;
-  font-family: 'MS Gothic';
-  border-bottom: solid 2px #191970;
-}
-
-main div div #main-box .form-box form #post-button {
-  margin-top: 5%;
-  margin-bottom: 5%;
+main #form-box form .boxes {
   width: 80%;
   margin-left: 10%;
+  position: relative;
+  border: solid 3px #4E5590;
 }
 
-main div div #main-box img {
-  width: 80%;
-  height: auto;
-  margin-left: 10%;
-  margin-top: 10%;
+main #form-box form .boxes .numbering {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  top: -3px;
+  left: -70px;
+  text-align: center;
+  padding-top: 22px;
+  background-color: #4E5590;
+  color: white;
 }
 
-main div div #right-box {
-  background-color: #0c74b0;
-  border-left: solid 2px #191970;
+main #form-box form #data-upload-box {
+  margin-bottom: 40px;
+}
+
+main #form-box form #data-upload-box #file-input-box {
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+main #form-box form #data-upload-box #add-file-button-p {
+  text-align: right;
+  padding-right: 10px;
+}
+
+main #form-box form #data-upload-box #add-file-button-p #add-file-button {
+  color: #dcdcdc;
+  cursor: pointer;
+}
+
+main #form-box form #post {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 0px;
+  text-align: right;
+}
+
+main #form-box form #post #post-button {
+  margin-right: 10%;
+  height: 40px;
+  width: 64px;
+  border-radius: 5px;
+  color: white;
+  background-color: #4E5590;
+  border: solid 2px #4E5590;
+  cursor: pointer;
 }
 /*# sourceMappingURL=create.css.map */

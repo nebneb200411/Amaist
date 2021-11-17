@@ -3,5 +3,5 @@ $('#tag-add-button').click(function () {
 })
 
 $('#add-file-button').click(function () {
-    $('#file-box').append('<input type="file" multiple name="data_file" class="data_file" id="id_data_file"></input>')
+    $('#file-input-box').append('<input type="file" multiple name="data_file" class="data_file" id="id_data_file"></input>')
 })

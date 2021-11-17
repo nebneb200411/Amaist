@@ -8,166 +8,63 @@
 
 
 {% block contents %}
-    <div id="data-description-box">
-        <table id="data-description-table">
-            <tr id="uploader">
-                Uploader
-                <th id="uploader-image">
-                    <p><img src="{{MEDIA_URL}}{{object.uploader.user.icon}}"></img>{{object.uploader.user}}</p>
-                </th>
-                <td id="page-title">
-                    About Data
+    <div id="data-description">
+        <div id="uploader-box" class="d-flex justify-content-between">
+            <img src="{{MEDIA_URL}}{{object.uploader.user.icon}}"></img>
+            <div class="align-self-center">
+                <p><i class="fas fa-user"></i><span class="mgr-10"></span>{{object.uploader.user}}</p>
+                <p><i class="fas fa-clock"></i><span class="mgr-10"></span>{{object.created_at}}</p>
+            </div>
+            <p id="page-title" class="align-self-center">About Data</p>
+        </div>
+        <table id="data-table">
+            {% for data_file in object.data_file.all %}
+            <tr class="data">
+                <td class="data-name">
+                    <span class="mgr-10"></span><i class="fas fa-file-invoice"></i><span class="mgr-10"></span>{{data_file.datalibrary_file|get_filename}}
+                </td>
+                <td class="download-link">
+                    <a href="{{MEDIA_URL}}{{data_file.datalibrary_file}}" download={{MEDIA_URL}}{{data_file.datalibrary_file}}>
+                        <i class="fas fa-download"></i>
+                    </a>
                 </td>
             </tr>
-            <tr id="about-data">
-            </tr>
-            <tr id="data-file">
-            </tr>
+            <tr class="blank-cell"></tr>
+            {% endfor %}
         </table>
     </div>
-<!--
-<div class="container-fluid">
-    <div class="row">
 
-        <div class="col-12 col-md-3 col-xl-3" id="left-box">
+    <div id="comment-box">
+        <div id="comment-form-box">
+            <p id="comment-title">コメント</p>
+            <form method="POST">
+                {% csrf_token %}
+                <input type="hidden"  name="response_to" value="{{request.user}}"></input>
+                <input type="hidden" name="data_object_pk" value="{{object.pk}}"></input>
+                {{form.media}}
+                {{form.as_p}}
+                <button type="submit">送信</button>
+            </form>
         </div>
-        
-
-        <div class="col-12 col-md-6 col-xl-6" id="datalibrary-content">
-            <div class="uploader-info-box">
-                <h1 class="contents-titles">-Uploader-</h1>
-                <div class="uploader-icon-box">
-                    <a href="{% url 'profiles:otheruser_profile' object.uploader.user.pk %}" class="author-icon-link">
-                        <img src="{{MEDIA_URL}}{{object.uploader.user.icon}}" class="img-responsive"/>
-                    </a>
+        <div id="comment-list-box">
+            <div class="blank-box"></div>
+            {% for comment_object in comment_list %}
+            <div class="comment">
+                <div class="commentor-name">
+                    <i class="fas fa-user"></i><span class="mgr-10"></span>
+                    <a class="user-link" href="{% url 'profiles:otheruser_profile' object.uploader.user.pk %}">{{comment_object.comment_from}}</a>
                 </div>
-                <div class="uploader-name-box">
-                    <a href="{% url 'profiles:otheruser_profile' object.uploader.user.pk %}" class="author-icon-link">
-                        <p class="author-name">{{object.uploader}}</p>
-                    </a>
-                </div>
-            </div>
-            <div class="file-box">
-                <h1 class="contents-titles">-Download File-</h1>
-                <div>
-                    <table class="file-name-box">
-                        {% for data_file in object.data_file.all %}
-                        <tr>
-                            <th>
-                                <p><i class="fas fa-file-invoice"></i><span class="mgr-10"></span>{{data_file.datalibrary_file|get_filename}}</p>
-                            </th>
-                            <th>
-                                <a href="{{MEDIA_URL}}{{data_file.datalibrary_file}}" download={{MEDIA_URL}}{{data_file.datalibrary_file}}>
-                                    <i class="fas fa-download"></i>
-                                </a>
-                            </th>
-                        </tr>
-                        {% endfor %}
-                    </table>
-                    <div class="file-download-box">
-                    </div>
-                </div>
-            </div> 
-            <div class="introduction-box">
-                <h1 class="contents-titles">-About File-</h1>
-                <div class="introduction">
-                    <p class="introduction-p">{{object.introduction|safe}}</p>
+                <p class="created-at">
+                    <i class="fas fa-clock"></i><span class="mgr-10">{{comment_object.created_at}}
+                </p>
+                <div class="content">
+                    {{comment_object.content|safe}}
                 </div>
             </div>
-
-            <hr>
-
-            <div class="good-box">
-                <div class="good-number-box d-inline-flex">
-                    <div class="good-number-box">
-                        <p class="good-number"><i class="far fa-thumbs-up"></i>{{good_number}}</p>
-                    </div>
-
-                    <div class="good-post-box">
-                        <form method="POST" action="{% url 'data_library:good_count' %}">
-                            {% csrf_token %}
-                            <input type="hidden" name="good_count" value="{{object.pk}}"/>
-                            <button type="submit" class="btn btn-primary">いいね！</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-
-            <hr class="horizontal-line content-start-hr" data-content="Content">
-
-            <hr class="horizontal-line">
-
-            <p>コメント：</p>
-            <div class="comment-form">
-                <form method="POST">
-                    {% csrf_token %}
-                    <input type="hidden"  name="response_to" value="{{request.user}}"/>
-                    <input type="hidden" name="data_object_pk" value="{{object.pk}}"/>
-                    {{form.media}}
-                    {{form.as_p}}
-                    <button type="submit" class="btn btn-primary">送信</button>
-                </form>
-            </div>
-
-            <hr class="horizontal-line">
-            <div class="comment-display-box">
-                {% for comment_object in comment_list %}
-                    <div class="each-user-comment-box">
-                        <div class="commentor-icon">
-                            <a href="{% url 'profiles:otheruser_profile' comment_object.comment_from.user.pk%}">
-                                <img src="{{MEDIA_URL}}{{comment_object.comment_from.user.icon}}" class="img-responsive"/>
-                            </a>
-                        </div>
-                        <div class="commentor-name">
-                            <p>{{comment_object.comment_from}}</p>
-                        </div>
-                        <div class="comment-posted-date">
-                            <p>作成日:{{comment_object.created_at|date:"y/m/d"}}</p>
-                        </div>
-                        <div class="comment-content">
-                            <p>{{comment_object.content|safe}}</p>
-                        </div>
-                        <hr>
-                    </div>
-                {% endfor %}
-            </div>
-        </div>
-        <div class="col-12 col-md-3 col-xl-3" id="right-box">
+            <div class="blank-box"></div>
+            {% endfor %}
         </div>
     </div>
-</div>
--->
 
-<!--
-    {{object.introduction}}
-    {{object.uploader}}
-    {{object.created_at}}
-    {{object.data_file}}
-
-    <form method="POST" class="comment-form" action="{% url 'data_library:comment' %}">
-        {% csrf_token %}
-        <input type="hidden" name="data_object_pk" value="{{object.pk}}"/>
-        <input type="text" name="comment"/>
-        <button type-"submit" class="btn btn-success">送信</button>
-    </form>
-
-    <form method="POST" class="good_count" action="{% url 'data_library:good_count' %}">
-        {% csrf_token %}
-        <input type="hidden" name="good_count" value="{{object.pk}}"/>
-        <button type="submit" class="btn btn-primary">いいね！</button>
-    </form>
-
-    <div class="good-display">
-        <p>いいね</p>
-        {{good_number}}
-    </div>
-
-    <div class="comment-display">
-        <p>コメントの表示</p>
-        {% for comment_object in comment_list %}
-        {{comment_object.comment_from}}
-        {{comment_object.content}}
-        {% endfor %}
-    </div>
--->
 {% endblock contents %}
+

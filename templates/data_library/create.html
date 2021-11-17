@@ -5,48 +5,28 @@
 <link rel="stylesheet" href="{% static 'data_library/create/create.css' %}">
 {% endblock stylesheet %}
 {% block contents %}
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-12 col-md-2 col-xl-2" id="left-box">
-        </div>
-        <div class="col-12 col-md-8 col-xl-8" id="main-box">
-
-            <!--discribe what page this is-->
-            <div class="question-page-title">
-                <p><span class="mgn-10"></span><i class="fas fa-file-invoice"></i><span class="mgn-10"></span>データ投函</p>
+    <div id="form-box">
+        <h1 id="page-title" class="title">Post Data</h1>
+        <hr>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div id="data-upload-box" class="boxes">
+                <div class="numbering">Step1</div>
+                <p class="description">データをポスト(.csc, .xlsx, .txt, .sqlite可）</p>
+                <div id="file-input-box">
+                    <input type="file" multiple name="data_file" class="data_file" id="id_data_file"></input>
+                </div>
+                <p id="add-file-button-p"><i class="far fa-plus-square fa-3x" id="add-file-button"></i></p>
             </div>
-            <div class="form-box">
-                <form method="POST" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    <div class="input-file-box" id="file-box">
-                        <p class="input-file-p"><i class="fas fa-mail-bulk"></i><span class="mgr-10"></span>データをポスト(.csc, .xlsx, .txt, .sqlite可）</p>
-                        <input type="file" multiple name="data_file" class="data_file" id="id_data_file"></input>
-                    </div>
-
-                    <div class="table-box" id="file-add-table-box">
-                        <i class="far fa-plus-square fa-3x" id="add-file-button"></i>
-                    </div>
-                    
-
-                    <div class="input-introduction-box">
-                        <p class="input-introduction-p"><i class="fas fa-sticky-note"></i><span class="mgr-10"></span>データについての説明</p>
-                        {{form.media}}
-                        {{form.introduction}}
-                    </div>
-
-                    <hr class="horizontal-line">
-
-                    <input id="post-button" type="submit" class="btn btn-success"></input>
-                </form>
+            <div id="data-description-box" class="boxes">
+                <div class="numbering">Step2</div>
+                <p class="description">データについて</p>
+                {{form.media}}
+                {{form.introduction}}
             </div>
-
-            <hr class="horizontal-line">
-
-            <img src="{% static 'images/base/datalibrary.png' %}" class="img-responsive"></img>
-        </div>
-        <div class="col-12 col-md-2 col-xl-2" id="right-box"></div>
+            <p id="post"><input id="post-button" type="submit"></input></p>
+        </form>
     </div>
-</div> 
 {% endblock contents %}
 
 {% block script %}

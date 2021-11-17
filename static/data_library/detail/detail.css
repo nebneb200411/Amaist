@@ -16,45 +16,148 @@
   margin-left: 10px;
 }
 
-main #data-description-box {
-  position: relative;
-  background-image: url(/static/images/datalibrary/detail_backgroud.jpg);
-  background-repeat: repeat;
-  background-size: contain;
-  background-position: center;
-  z-index: -2;
+.blank-box {
+  height: 50px;
+  width: 100vh;
 }
 
-main #data-description-box ::before {
-  content: '';
-  background-color: rgba(255, 255, 255, 0.1);
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: -1;
+main {
+  font-family: "arial", "MS Gothic";
 }
 
-main #data-description-box #data-description-table {
-  width: 100%;
+main #data-description {
+  background: radial-gradient(#667895, black);
+  padding-top: 50px;
 }
 
-main #data-description-box #data-description-table #uploader {
+main #data-description #uploader-box {
+  background-color: #667895;
+  border: solid 3px #203448;
   width: 80%;
   margin-left: 10%;
+  margin-bottom: 50px;
+  border-radius: 10px;
 }
 
-main #data-description-box #data-description-table #uploader #uploader-image {
-  width: 30%;
-}
-
-main #data-description-box #data-description-table #uploader #uploader-image img {
-  height: 50px;
+main #data-description #uploader-box img {
+  height: 100px;
   width: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
 }
 
-main #data-description-box #data-description-table #uploader #page-title {
+main #data-description #uploader-box div p {
+  margin-top: 10px;
+  color: black;
+}
+
+main #data-description #uploader-box #page-title {
+  padding-right: 30px;
+  font-size: 3rem;
+  color: black;
+}
+
+main #data-description #data-table {
   width: 70%;
+  margin-left: 15%;
+}
+
+main #data-description #data-table .data {
+  background-color: #a1a194;
+  margin-top: 100px;
+  border: solid 2px #667895;
+}
+
+main #data-description #data-table .data .data-name {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+main #data-description #data-table .data .download-link a {
+  color: #00849c;
+}
+
+main #data-description #data-table .blank-cell {
+  height: 20px;
+}
+
+main #comment-box {
+  background: -webkit-gradient(linear, left top, left bottom, from(black), to(#12527d));
+  background: linear-gradient(black, #12527d);
+}
+
+main #comment-box #comment-form-box {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+main #comment-box #comment-form-box #comment-title {
+  margin-left: 20px;
+  padding-left: 10px;
+  color: white;
+  font-size: 2rem;
+  border-left: solid 8px white;
+}
+
+main #comment-box #comment-form-box form button {
+  width: 100px;
+  height: 40px;
+  margin-left: 10px;
+  border-radius: 5px;
+  border: solid 2px white;
+  background: linear-gradient(-135deg, yellow, #008b8b);
+  color: white;
+  cursor: pointer;
+}
+
+main #comment-box #comment-form-box form p label {
+  display: none;
+}
+
+main #comment-list-box {
+  position: relative;
+  background-image: url("/static/images/datalibrary/comment_background.jpg");
+  background-repeat: repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+main #comment-list-box .comment {
+  width: 80%;
+  margin-left: 10%;
+  padding-bottom: 10px;
+  background-color: white;
+  color: black;
+  opacity: 1;
+  border-radius: 10px;
+}
+
+main #comment-list-box .comment .commentor-name {
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+main #comment-list-box .comment .commentor-name .user-link {
+  color: #121d7d;
+}
+
+main #comment-list-box .comment .commentor-name .user-name:focus {
+  color: white;
+}
+
+main #comment-list-box .comment .commentor-name .user-name::before {
+  z-index: 1;
+}
+
+main #comment-list-box .comment .created-at {
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+main #comment-list-box .comment .content {
+  margin-left: 20px;
+  padding-left: 5px;
+  border-left: solid 8px #2d2d2d;
 }
 /*# sourceMappingURL=detail.css.map */
