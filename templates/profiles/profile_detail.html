@@ -42,6 +42,97 @@
             </div>
         </div>
     </div>
+
+    <div id="user-works">
+        <input id="article-tab-button" class="tab-button" type="radio" name="tab-btn" checked>
+        <input id="draft-tab-button" class="tab-button" type="radio" name="tab-btn">
+        <input id="question-tab-button" class="tab-button" type="radio" name="tab-btn">
+        <input id="data-tab-button" class="tab-button" type="radio" name="tab-btn">
+        <div id="tab-box" class="d-flex">
+            <label id="article-tab" class="flex-fill" for="article-tab-button">記事</label>
+            <label id="draft-tab" class="flex-fill" for="draft-tab-button">下書き</label>
+            <label id="question-tab" class="flex-fill" for="question-tab-button">質問</label>
+            <label id="data-tab" class="flex-fill" for="data-tab-button">データ</label>
+        </div>
+        <div id="user-tab-box" class="panel-area">
+            <table id="article-works" class="tab-panel">
+                {% for published_article in published_articles %}
+                <tr class="article work-cell">
+                    <th class="blank-cell"></th>
+                    <th class="title">
+                        <a href="{% url 'article:article_detail' published_article.pk %}">
+                            <h2 class="article-title">{{published_article.title}}</h2>
+                        </a>
+                        {% if empty %}
+                        <p>記事を作りましょう！</p>
+                        {% endif %}
+                    </th>
+                    <th class="blank-cell"></th>
+                    <th class="created-at">
+                        {{published_article.created_at|date:"y/m/d"}}
+                    </th>
+                </tr>
+                {% endfor %}
+            </table>
+            <table id="draft-works" class="tab-panel">
+                {% for draft_article in draft_articles %}
+                <tr class="draft work-cell">
+                    <th class="blank-cell"></th>
+                    <th class="title">
+                        <a href={% url 'article:update' draft_article.pk %}>
+                            <h2 class="title-p">{{draft_article.title}}</h2>
+                        </a>
+                        {% if empty %}
+                        <p>記事を作りましょう！</p>
+                        {% endif %}
+                    </th>
+                    <th class="blank-cell"></th>
+                    <th class="created-at">
+                        {{draft_article.created_at|date:"y/m/d"}}
+                    </th>
+                </tr>
+                {% endfor %}
+            </table>
+            <table id="question-works" class="tab-panel">
+                {% for question in questions %}
+                <tr class="question work-cell">
+                    <th class="blank-cell"></th>
+                    <th class="title">
+                        <a href="{% url 'question:detail' question.pk %}">
+                            <h2>{{question.title}}</h2>
+                        </a>
+                        {% if empty %}
+                        <p>質問を投稿しませんか？</p>
+                        {% endif %}
+                    </th>
+                    <th class="blank-cell"></th>
+                    <th class="created-at">
+                        {{question.created_at|date:"y/m/d"}}
+                    </th>
+                </tr>
+                {% endfor %}
+            </table>
+            <table id="data-works" class="tab-panel">
+                {% for datalibrary in posted_data %}
+                <tr class="data work-cell">
+                    <th class="blank-cell"></th>
+                    <th class="title">
+                        <h2>{{datalibrary.introduction|safe}}</h2>
+                        {% if empty %}
+                            <p>データの寄付をお願いします！</p>
+                        {% endif %}
+                    </th>
+                    <th class="blank-cell"></th>
+                    <th class="created-at">
+                        {{datalibrary.created_at|date:"y/m/d"}}
+                    </th>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+
+    <!--
     <div class="container" id="user-article-question-box">
         <div class="row">
             <div class="col-12 col-md-6 col-xl-6" id="article-box">
@@ -123,5 +214,6 @@
         </div>
         {% endfor %}
     </div>
+    -->
 
 {% endblock contents %}

@@ -1,9 +1,11 @@
 from django.views.generic import UpdateView, DetailView, ListView, CreateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth import get_user_model
+# import model
 from .models import Profile
 from question.models import Question
 from article.models import Article
+from data_library.models import DataLibrary
 from .forms import ProfileForm
 from django.urls import reverse_lazy
 from django.contrib import messages
@@ -64,7 +66,9 @@ class UserProfileDetailView(LoginRequiredMixin, DetailView):
         draft_articles = Article.objects.filter(
             author=self.request.user, is_published=False)
         context['draft_articles'] = draft_articles
-
+        # get datalibrary's data user posted
+        posted_data = DataLibrary.objects.filter(uploader=self.request.user)
+        context['data_libraries'] = posted_data
         return context
 
 
