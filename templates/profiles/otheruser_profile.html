@@ -8,96 +8,128 @@
 {% endblock stylesheet %}
 
 {% block contents %}
-    <div class='container-fluid' id="user-icon-username-follow-follower">
-        <div class='row'>
-            <div class='col-12 col-md-4 col-xl-4' id='icon-and-username'>
-                <img src="{{ MEDIA_URL }}{{object.icon}}" class="img-responsive user-icon"/>
+    <div id="user-profile" class="container-fluid">
+        <div id="user-info-box" class="row">
+            <div id="edit-box" class="col-xl-3 col-md-3 col-12"> 
+                <form method="POST" action="{% url 'profiles:follow_unfollow_view' %}" id="follow-unfollow-form">
+                    {% csrf_token %}
+                    {% if follow %}
+                    <input type="hidden" name="profile_pk" value="{{object.pk}}"/>
+                    <p>フォローを外す<span class="mgr-10"></span><button id="unfollow" type="submit">－</button></p>
+                    {% else %}
+                    <input type="hidden" name="profile_pk" value="{{object.pk}}"/>
+                    <p>フォローする<span class="mgr-10"></span><button id="follow" type="submit">＋</button></p>
+                    {% endif %}
+                </form>
             </div>
-            <div class='col-12 col-md-8 col-xl-8' id='follow-and-follower'>
-                <p class="username">{{ object.user.username }}</p>
-                <div class="follow-count">
-                    <p class="follow-and-follower-p">フォロー数</p>
-                    <p class="follow-and-follower-number">{{ login_user_follow_count }}</p>
+            <div id="user-profile" class="col-xl-9 col-md-9 col-12">
+                <div id="profile">
+                    <img src="{{ MEDIA_URL }}{{object.icon}}"></img>
+                    <hr class="line">
+                    <table id="user-info">
+                        <tr class="info">
+                            <td class="blank-cell"></td>
+                            <td class="info-contents"><i class="fas fa-user"></i></td>
+                            <td class="blank-cell"></td>
+                            <td>{{ object.user.username }}</td>
+                        </tr>
+                        <tr class="info">
+                            <td class="blank-cell"></td>
+                            <td class="info-contents">フォロー</td>
+                            <td class="blank-cell"></td>
+                            <td>{{ login_user_follow_count }}　人</td>
+                        </tr>
+                        <tr class="info">
+                            <td class="blank-cell"></td>
+                            <td class="info-contents">フォロワー</td>
+                            <td class="blank-cell"></td>
+                            <td>{{ login_user_follower_count }}　人</td>
+                        </tr>
+                    </table>
+                    <hr class="line">
                 </div>
-                <div class="follower-count">
-                    <p class="follow-and-follower-p">フォロワー数</p>
-                    <p class="follow-and-follower-number">{{ login_user_follower_count }}</p>
-                </div>
-            </div>
-        </div>  
-
-        <!--display user's profile-->
-        <p class="introduction-title"><i class="far fa-user"></i><span class="mgr-10"/><i>-Introduction-</i></p>
-        <div class="introduction-box">
-            <p class="introduction-p">{{object.introduction}}</p>
-        </div>
-
-        <!--follow unfollow button-->
-        <form method="POST" action="{% url 'profiles:follow_unfollow_view' %}" id="follow-unfollow-form">
-            {% csrf_token %}
-            {% if follow %}
-                <input type="hidden" name="profile_pk" value="{{object.pk}}"/>
-                <button type="submit" class="btn btn-outline-warning">－</button>
-            {% else %}
-                <input type="hidden" name="profile_pk" value="{{object.pk}}"/>
-                <p>フォローする<span class="mgr-10"/><button type="submit" class="btn btn-primary">＋</button></p>
-            {% endif %}
-        </form>
-    </div>
-    <div class="container" id="user-article-question-box">
-        <div class="row">
-            <div class="col-12 col-md-12 col-xl-12" id="article-box">
-                <p><i class="far fa-newspaper"></i><span class="mgr-10"/>Articles</p>
-                <hr>
-                <div class="container">
-                    <div class="row">
-                        <div class="my-div-style w-100">
-                            <div class="col-lg-8 col-md-10 mx-auto">
-                                {% for article in articles %}
-                                <div class='articles'>
-                                    <a href="{% url 'article:article_detail' article.pk %}">
-                                        <h2 class="article-title">{{article.title}}</h2>
-                                    </a>
-                                    <p class="post-meta">{{article.created_at}}</p>
-                                </div>
-                                <hr>
-                                {% empty %}
-                                    <p>記事無し</p>
-                                {% endfor %}
-
-                            {% if is_paginated %}
-                                <ul class="pagination">
-                                    {% if page_obj.has_previous %}
-                                        <li class="page-item">
-                                            <a class="page-link" href="?page={{ page_obj.previous_page_number }}">
-                                                <span aria-hidden="true">&laquo;<span>
-                                            </a>
-                                        </li>
-                                    {% endif %}
-
-                                    {% for page_num in page_obj.paginator.page_range %}
-                                        {% if page_obj.number == page_num %}
-                                            <li class="page-item active"><a class-"page-link" href="#">{{page_num}}</a></li>
-                                        {% else %}
-                                            <li class="page-item"><a class="page-link" href="{{page_num}}">{{page_num}}</a></li>
-                                        {% endif %}
-                                    {% endfor %}
-
-                                    {% if page_obj.has_next %}
-                                        <li class="page-item">
-                                            <a class="page-link" href="?page={{page_obj.next_page_number}}">
-                                                <span aria-hidden="true">&raquo;</span>
-                                            </a>
-                                        </li>
-                                    {% endif %}
-                                </ul>
-                            {% endif %}
-                            </div>
-                        </div>
-                    </div>
+                <div id="introduction-box">
+                    <div id="introduction-title">自己紹介</div>
+                    <div id="introduction">{{object.introduction}}</div>
                 </div>
             </div>
         </div>
     </div>
 
+    <div id="user-works">
+        <input id="article-tab-button" class="tab-button" type="radio" name="tab-btn" checked>
+        <input id="draft-tab-button" class="tab-button" type="radio" name="tab-btn">
+        <input id="question-tab-button" class="tab-button" type="radio" name="tab-btn">
+        <input id="data-tab-button" class="tab-button" type="radio" name="tab-btn">
+        <div id="tab-box" class="d-flex">
+            <label id="article-tab" class="flex-fill" for="article-tab-button">記事</label>
+            <label id="draft-tab" class="flex-fill" for="draft-tab-button">下書き</label>
+            <label id="question-tab" class="flex-fill" for="question-tab-button">質問</label>
+            <label id="data-tab" class="flex-fill" for="data-tab-button">データ</label>
+        </div>
+        <div id="user-tab-box" class="panel-area">
+            <table id="article-works" class="tab-panel">
+                {% for published_article in articles %}
+                <tr class="article work-cell">
+                    <td class="blank-cell"></td>
+                    <td class="title">
+                        <a href="{% url 'article:article_detail' published_article.pk %}">
+                            <h2 class="article-title">{{published_article.title}}</h2>
+                        </a>
+                    </td>
+                    <td class="blank-cell"></td>
+                    <td class="created-at">
+                        {{published_article.created_at|date:"y/m/d"}}
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+            <table id="draft-works" class="tab-panel">
+                {% for draft_article in draft_articles %}
+                <tr class="draft work-cell">
+                    <td class="blank-cell"></td>
+                    <td class="title">
+                        <a href={% url 'article:update' draft_article.pk %}>
+                            <h2 class="title-p">{{draft_article.title}}</h2>
+                        </a>
+                    </td>
+                    <td class="blank-cell"></td>
+                    <td class="created-at">
+                        {{draft_article.created_at|date:"y/m/d"}}
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+            <table id="question-works" class="tab-panel">
+                {% for question in questions %}
+                <tr class="question work-cell">
+                    <td class="blank-cell"></td>
+                    <td class="title">
+                        <a href="{% url 'question:detail' question.pk %}">
+                            <h2>{{question.title}}</h2>
+                        </a>
+                    </td>
+                    <td class="blank-cell"></td>
+                    <td class="created-at">
+                        {{question.created_at|date:"y/m/d"}}
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+            <table id="data-works" class="tab-panel">
+                {% for datalibrary in data_libraries %}
+                <tr class="data work-cell">
+                    <td class="blank-cell"></td>
+                    <td class="title">
+                        <h2>{{datalibrary.introduction|safe}}</h2>
+                    </td>
+                    <td class="blank-cell"></td>
+                    <td class="created-at">
+                        {{datalibrary.created_at|date:"y/m/d"}}
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
 {% endblock contents %}

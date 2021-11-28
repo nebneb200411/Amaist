@@ -96,8 +96,15 @@ class OtherUserProfileView(DetailView):
         context["login_user_follow_count"] = login_user_follow_count
         context["login_user_follower_count"] = login_user_follower_count
         # Get viewing profile's article
-        article_object = Article.objects.filter(author=view_profile.user)
+        article_object = Article.objects.filter(
+            author=view_profile.user, is_published=True)
         context['articles'] = article_object
+        draft_articles = Article.objects.filter(
+            author=view_profile.user, is_published=False)
+        context['draft_articles'] = draft_articles
+        # get datalibrary's data user posted
+        posted_data = DataLibrary.objects.filter(uploader=view_profile.user)
+        context['data_libraries'] = posted_data
         return context
 
 

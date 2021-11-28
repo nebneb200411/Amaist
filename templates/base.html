@@ -13,97 +13,72 @@
     {% endblock stylesheet %}
 </head>
 <body>
-
-<!--以下ににヘッダーを表示-->
     <header>
-
         <div class="header-box d-flex">
-
-            <!--メニューを開くボタン-->
             <div class = 'menu-button'>
                 <div class="top-line"></div>
                 <div class="middle-line"></div>
                 <div class="bottom-line"></div>
             </div>
-
             <div class="app-icon ml-auto">
                 <img src="{% static 'images/base/logo3.png' %}"></img>
             </div>
-
-            <!--display login user's icon-->
             <div class="user-icon-box ml-auto p-2">
                 <a href="{% url 'profiles:found_or_not_found' %}"><img src="{{MEDIA_URL}}{{request.user.user.icon|default:"images/user-icon-default.png"}}"/></a>
             </div>
         </div>
-
-
-
         <div class="header-nav">
             <ul class="header-menu">
-
-                <!--home button-->
                 <li><a href="{% url 'index:index' %}"><i class="fas fa-home"></i><span class="mgr-10"></span>Home</a></li>
-
-                <!--article menu-->
                 <li id="article-first-menu">
                     <a href="{% url 'article:CreateArticle' %}"><i class="fas fa-book"></i><span class="mgr-10"></span>Article</a>
                     <ul class="second-menu" id="article-second-menu">
                         <li>
-                            <a href="{% url 'article:list' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>Watch Articles</a>
+                            <a href="{% url 'article:list' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>記事一覧</a>
                         </li>
                         <li>
-                            <a href="{% url 'article:CreateArticle' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>Create Article</a>
+                            <a href="{% url 'article:CreateArticle' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>記事作成</a>
                         </li>
                     </ul>
                 </li>
-
-                <!--data library button-->
                 <li id="data-library-first-menu">
-                    <a href="{% url 'data_library:list' %}"><i class="fas fa-database"></i><span class="mgr-10"></span>Data Library</a>
+                    <a href="{% url 'data_library:list' %}"><i class="fas fa-database"></i><span class="mgr-10"></span>DataLibrary</a>
                     <ul class="second-menu" id="data-library-second-menu">
                         <li>
-                            <a href="{% url 'data_library:create' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>Create DataLibrary</a>
+                            <a href="{% url 'data_library:create' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>データの投稿</a>
                         </li>
                         <li>
-                            <a href="{% url 'data_library:list' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>Watch DataLibrary</a>
+                            <a href="{% url 'data_library:list' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>データ一覧</a>
                         </li>
                     </ul>
                 </li>
-
-                <!--question-menu-->
                 <li id="question-first-menu">
                     <a href="{% url 'question:list' %}"><i class="fas fa-question"></i></i><span class="mgr-10"></span>Questions</a>
                     <ul class="second-menu" id="question-second-menu">
                         <li>
-                            <a href="{% url 'question:create' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>Create Question</a>
+                            <a href="{% url 'question:create' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>質問作成</a>
                         </li>
                         <li>
-                            <a href="{% url 'question:list' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>Watch Question</a>
+                            <a href="{% url 'question:list' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>質問一覧</a>
                         </li>
                     </ul>
                 </li>
-
-                <!--profile-->
                 {% if request.user.is_authenticated %}    
                 <li id="profile-first-menu"><a href="{% url 'profiles:found_or_not_found' %}"><i class="fas fa-user-circle"></i><span class="mgr-10"></span>Profile</a>
                     <ul class="second-menu" id="profile-second-menu">
                         <li>
-                            <a href="{% url 'profiles:found_or_not_found' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>Your Profile</a>
+                            <a href="{% url 'profiles:found_or_not_found' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>プロフィール</a>
                         </li>
                         <li>
-                            <a href="{% url 'profiles:profile_list' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>Watch Profiles</a>
+                            <a href="{% url 'profiles:profile_list' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>プロフィール一覧</a>
                         </li>
                     </ul>
                 </li>
                 {% endif %}
-                <!--login-->
                 <li><a href="{% url 'login' %}"><i class="fas fa-sign-in-alt"></i><span class="mgr-10"></span>Login</a></li>
-
-                <!--Inquiry link-->
                 <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdg-QjlojQ0CANiupGAnulT2Uf3jEumpPrdVNwFCZ8OqRzDrQ/viewform?usp=sf_link"><i class="fas fa-info-circle"></i><span class="mgr-10"></span>Inquiry</a></li>
             </ul>
         </div>
-
     </header>
 
 

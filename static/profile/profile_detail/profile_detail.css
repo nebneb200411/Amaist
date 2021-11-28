@@ -1,4 +1,3 @@
-@charset "UTF-8";
 .mgr-10 {
   margin-left: 10px;
 }
@@ -15,123 +14,93 @@ input {
   -webkit-appearance: none;
 }
 
-main #user-icon-username-follow-follower {
-  padding: 3% 0 3% 0;
-  background-color: #f08080;
-  -webkit-box-shadow: 0 0 20px #808080;
-          box-shadow: 0 0 20px #808080;
+.blank-cell {
+  width: 40px;
 }
 
-main #user-icon-username-follow-follower div #icon-and-username {
-  margin-bottom: 5%;
+.blank-box {
+  width: 40px;
 }
 
-main #user-icon-username-follow-follower div #icon-and-username .user-icon {
-  border: solid 5px #a52a2a;
-  border-radius: 5px;
-  margin-left: 10%;
-  width: 80%;
+.line {
+  height: 3px;
+  background-color: gray;
+}
+
+main #user-profile {
+  padding: 0px 20px;
+  font-family: "arial", "MS Gothic";
+}
+
+main #user-profile #page-title {
+  border-left: 10px solid #5757ff;
+  font-size: 2.0rem;
+}
+
+main #user-profile #user-info-box #edit-box {
+  padding-top: 20px;
+  background-color: #73a6b0;
+}
+
+main #user-profile #user-info-box #edit-box p {
+  margin-left: 20px;
+  border-left: 10px solid white;
+}
+
+main #user-profile #user-info-box #edit-box p a {
+  color: #7488b0;
+}
+
+main #user-profile #user-info-box #edit-box form #unfollow {
+  border: none;
+  background-color: #7d1247;
+  border-radius: 2px;
+  color: white;
+  cursor: pointer;
+}
+
+main #user-profile #user-info-box #edit-box form #follow {
+  border: none;
+  background-color: #12277d;
+  border-radius: 2px;
+  color: white;
+  cursor: pointer;
+}
+
+main #user-profile #user-info-box #user-profile {
+  padding-top: 20px;
+  padding-left: 40px;
+}
+
+main #user-profile #user-info-box #user-profile #profile img {
+  width: 100px;
   height: auto;
-  -webkit-box-shadow: 0 0 40px #ffc0cb;
-          box-shadow: 0 0 40px #ffc0cb;
+  border-radius: 50%;
 }
 
-main #user-icon-username-follow-follower div #follow-and-follower .username {
-  width: 40%;
-  text-align: center;
-  border-bottom: solid 2px #a52a2a;
-  margin-left: 30%;
-  margin-top: 5%;
-  font-family: 'arial', 'HiraKakuPro-W6';
-  font-size: 200%;
+main #user-profile #user-info-box #user-profile #profile #user-info {
+  margin-top: 20px;
+  table-layout: auto;
 }
 
-main #user-icon-username-follow-follower div #follow-and-follower .username i::before {
-  color: #2e8b57;
+main #user-profile #user-info-box #user-profile #profile #user-info .info .blank-cell {
+  width: 20px;
 }
 
-main #user-icon-username-follow-follower div #follow-and-follower .follow-count {
-  display: inline-block;
-  width: 49%;
-  border-left: solid 3px #5f9ea0;
-  border-right: solid 3px #5f9ea0;
-  border-bottom: solid 3px #5f9ea0;
+main #user-profile #user-info-box #user-profile #introduction-box {
+  margin-top: 20px;
+  padding: 10px 10px;
 }
 
-main #user-icon-username-follow-follower div #follow-and-follower .follow-count p {
-  color: #ffdead;
-  text-align: center;
+main #user-profile #user-info-box #user-profile #introduction-box #introduction-title {
+  padding-left: 20px;
 }
 
-main #user-icon-username-follow-follower div #follow-and-follower .follow-count .follow-and-follower-p {
-  font-family: 'HiraKakuPro-W6';
-}
-
-main #user-icon-username-follow-follower div #follow-and-follower .follower-count {
-  display: inline-block;
-  width: 49%;
-  border-right: solid 3px #5f9ea0;
-  border-bottom: solid 3px #5f9ea0;
-}
-
-main #user-icon-username-follow-follower div #follow-and-follower .follower-count p {
-  color: #ffdead;
-  text-align: center;
-}
-
-main .introduction-title {
-  margin-left: 5%;
-  font-family: 'Book Antiqua';
-  font-size: 150%;
-  color: #ffe4e1;
-}
-
-main .introduction-title i::before {
-  color: #e0ffff;
-}
-
-main .introduction-box {
-  width: 90%;
-  padding: 2% 0 2% 0;
-  margin: auto;
-  border-bottom: solid 2px #2e8b57;
-  border-right: solid 2px #2e8b57;
-  border-left: solid 2px #2e8b57;
-  border-top: solid 2px #2e8b57;
-  -webkit-box-shadow: 0 0 10px #d2691e;
-          box-shadow: 0 0 10px #d2691e;
-}
-
-main .introduction-box .introduction-p {
-  text-align: center;
-  font-family: 'ＭＳ Ｐゴシック';
-}
-
-main #follow-unfollow-form {
-  margin-top: 5%;
-  margin-right: 5%;
-  text-align: right;
-}
-
-main #follow-unfollow-form p {
-  color: #ffdead;
-}
-
-main .profile-update-box {
-  margin-top: 5%;
-}
-
-main .profile-update-box a {
-  color: #006400;
-}
-
-main .profile-update-box a #edit-icon {
-  margin-right: 3%;
-}
-
-main .profile-update-box .password_change_link {
-  margin-right: 3%;
-  margin-top: 3%;
+main #user-profile #user-info-box #user-profile #introduction-box #introduction {
+  padding: 20px 20px;
+  background-color: #7488b0;
+  color: white;
+  border-radius: 8px;
 }
 
 main #user-works {
