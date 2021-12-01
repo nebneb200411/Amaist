@@ -8,7 +8,6 @@
 {% block contents %}
     <div class="container">
         <div class="row">
-            <!--search box-->
             <div id="search-box" class="col-xl-4 col-md-4 col-12">
                 <table id="search">
                     <tr id="search-title">
@@ -28,7 +27,6 @@
                     </tr>
                 </table>
             </div>
-            <!--list box-->
             <div id="data-list-box" class="col-xl-8 col-md-8 col-12">
                 {% for data_library in object_list %}
                 <table class="each-data">
@@ -42,7 +40,7 @@
                     </tr>
                     <tr class="about-data">
                         <th>
-                            <div class="data-introduction">{{data_library.introduction|safe}}</div>
+                            <div class="data-introduction">{{data_library.title}}</div>
                         </th>
                     </tr>
                     <tr class="upload-date-and-send">

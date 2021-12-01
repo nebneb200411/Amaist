@@ -17,12 +17,15 @@ class Files(models.Model):
     def __str__(self):
         return str(self.datalibrary_file.name)
 
+# 2021.12.01タイトルを追加
+
 
 class DataLibrary(models.Model):
     data_file = models.ManyToManyField(Files, related_name='file')
     uploader = models.ForeignKey(User, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     introduction = RichTextUploadingField()
+    title = models.TextField(blank=False, max_length=250, default="タイトル未設定")
     good = models.ManyToManyField(User, related_name="good", default=None)
 
     def filename(self):

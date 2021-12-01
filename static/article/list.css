@@ -5,135 +5,74 @@
           box-sizing: border-box;
 }
 
-.good-img {
-  height: 50px;
-  width: 50px;
+body {
+  background: linear-gradient(45deg, #2E38F6, #0E294E, #415C55, #528A4C);
+  font-family: "arial", "MS Gothic";
 }
 
-body main div div #left-grid {
-  background-color: #dcdcdc;
+body main #contents {
+  position: relative;
+  background-image: url(/static/images/article/list/article_bg.png);
+  background-repeat: repeat;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.7;
 }
 
-body main div div #left-grid .searching .searching-hr {
-  background-color: #5f9ea0;
-  height: 1px;
+body main #contents #contents-row #search-box {
+  background-color: #556b2f;
+  margin: 20px 0px;
+  border-radius: 5px;
 }
 
-body main div div #left-grid .searching #article-search input {
-  width: 100%;
+body main #contents #contents-row #search-box #search-title {
+  color: white;
+  text-align: center;
+  padding: 20px 0px;
+}
+
+body main #contents #contents-row #search-box .search-btn {
+  border: 1px solid gray;
+  border-radius: 2px;
+  background-color: #0E294E;
+  margin-left: 10px;
+}
+
+body main #contents #contents-row #search-box .search-p {
+  text-align: center;
+}
+
+body main #contents #contents-row #search-box .search-input {
   outline: none;
-  border-radius: 5%;
-  border: 2px solid #f5deb3;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  border-radius: 2px;
+  border: none;
 }
 
-body main div div #left-grid .searching #article-search button {
-  margin-top: 5%;
-  width: 100%;
+body main #contents #contents-row #article-list-box .articles {
+  margin: 20px 20px;
+  border-radius: 5px;
+  background: rgba(40, 40, 40, 0.98);
 }
 
-body main div div #left-grid .searching #tag-search input {
-  width: 100%;
-  outline: none;
-  border-radius: 5%;
-  border: 2px solid #f5deb3;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+body main #contents #contents-row #article-list-box .articles .author-icon {
+  height: 40px;
+  width: auto;
+  border-radius: 50%;
+  margin: 0px 10px;
 }
 
-body main div div #left-grid .searching #tag-search button {
-  margin-top: 5%;
-  width: 100%;
-}
-
-body main div div #article-grid {
-  border: 3px solid #5f9ea0;
-}
-
-body main div div #article-grid .article-division-hr {
-  height: 8px;
-  background-image: repeating-linear-gradient(45deg, #00bfff 0, #00bfff 1px, transparent 0, transparent 50%), repeating-linear-gradient(135deg, #00bfff 0, #00bfff 1px, transparent 0, transparent 50%);
-  background-size: 8px 8px;
-}
-
-body main div div #article-grid #article-header #icon .author-icon .user-icon {
-  width: 100px;
-  height: auto;
-}
-
-body main div div #article-grid #article-header #author-name-created-at {
-  border-left: solid 5px #b0c4de;
-}
-
-body main div div #article-grid #article-header #author-name-created-at div p {
-  color: #4682b4;
-  display: inline-block;
-  border-bottom: dotted 2px #b0c4de;
-}
-
-body main div div #article-grid #article-header #author-name-created-at div h2 {
-  display: inline-block;
-}
-
-body main div div #article-grid #article-header #author-name-created-at div p {
-  display: inline-block;
-}
-
-body main div div #article-grid #article-header #author-name-created-at div p {
-  display: inline-block;
-}
-
-body main div div #article-grid #title a {
-  color: #5f9ea0;
-}
-
-body main div div #article-grid #title a h3 {
+body main #contents #contents-row #article-list-box .articles .article-info {
   text-align: center;
+  color: white;
+  padding: 0px 20px;
 }
 
-body main div div #article-grid #title .title-hr {
-  height: 1px;
-  background: -webkit-gradient(linear, left top, right top, from(#87ceeb), color-stop(#000080), to(#87ceeb));
-  background: linear-gradient(to right, #87ceeb, #000080, #87ceeb);
-}
-
-body main div div #article-grid #good-number p {
-  color: #ff69b4;
-  margin-left: 90%;
-}
-
-body main div div #right-grid {
-  background-color: #dcdcdc;
-}
-
-body main div div #right-grid a {
-  color: #1e90ff;
-}
-
-body main div div #right-grid a p {
-  margin-top: 5%;
+body main #contents #contents-row #article-list-box .articles .title {
   text-align: center;
-  font-family: 'Book Antiqua';
+  padding: 0px 20px;
 }
 
-body main div div #right-grid .notifications-box {
-  border: solid 2px #1a244d;
-  background-color: white;
-}
-
-body main div div #right-grid .notifications-box .notification {
-  text-align: center;
-  font-family: "arial";
-  color: #7d9ad4;
-  border-bottom: solid 2px #77aacc;
-}
-
-body main div div #right-grid .notifications-box .notifications-p {
-  margin-top: 2%;
-  margin-left: 2%;
-  font-family: 'Meiryo UI';
-  font-size: 3vh;
-  color: #6495ed;
+body main #contents #contents-row #article-list-box .articles .title a {
+  color: #87ceeb;
 }
 /*# sourceMappingURL=list.css.map */

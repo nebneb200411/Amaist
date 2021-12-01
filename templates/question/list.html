@@ -7,44 +7,23 @@
 {% block contents %}
 <div class="container-fluid">
     <div class="row">
-        <div class="col-12 col-md-2 col-xl-2" id="left-box"></div>
-
-        <!--quetion list will display in here-->
-        <div class="col-12 col-md-8 col-xl-8" id="main-box">
-            <div class="question-description">
-                <p><span class="mgr-10"></span><i>New</i></p>
-            </div>
+        <div id="search-box" class="col-xl-5 col-md-5 col-12">
+            <p><input type="text"></p>
+            <p><input type="text"></p>
+        </div>
+        <div id="question-list-box" class="col-xl-7 col-md-7 col-12">
             {% for question in object_list %}
-            <div class="each-questions d-inline-flex justify-content-between">
-                <div class="contributor-icon">
-                    <img src="{{ MEDIA_URL }}{{question.contributor.user.icon}}" class="img-responsive"/>
-                </div>
-                <div class="contributor-name align-self-center">
-                    <p>{{question.contributor}}</p>
-                </div>
-                <div class="quetion-title align-self-center">
-                    <a href="{% url 'question:detail' question.pk %}">
-                        <p>{{question.title}}</p>
-                    </a>
-                </div>
-                <div class="question-created-at align-self-center">
-                    <p>{{question.created_at|date:"y/m/d"}}</p>
+            <div class="question-div">
+                <div class="question-card">
+                    <p class="icon-p"><img class="author-icon" src="{{ MEDIA_URL }}{{question.contributor.user.icon|default:'images/user-icon-default.png'}}"></p>
+                    <p class="author-name"><i class="fas fa-user"></i><span class="mgr-10"></span>{{question.contributor}}</p>
+                    <hr class="horizontal-line">
+                    <p class="title"><a href="{% url 'question:detail' question.pk %}">{{question.title}}</a></p>
+                    <p class="created-at">{{question.created_at|date:"y/m/d"}}</p>
                 </div>
             </div>
-            <hr>
             {% endfor %}
         </div>
-        <div class"col-12 col-md-2 col-xl-2" id="right-box"></div>
     </div>
 </div>
-<!--
-    {% for question_object in object_list %}
-    <a href="{% url 'question:detail' question_object.pk %}">
-    <img src="{{ MEDIA_URL }}{{question_object.contributor.user.icon}}"/>
-    {{question_object.contributor}}
-    {{question_object.title}}
-    {{question_object.created_at}}
-    </a>
-    {% endfor %}
-    -->
 {% endblock contents %}

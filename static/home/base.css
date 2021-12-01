@@ -261,37 +261,35 @@ footer {
   border-top: solid 2px #b0c4de;
 }
 
-footer .app-box {
+footer #app-box {
   border-bottom: solid 2px #b0c4de;
 }
 
-footer .app-box div div img {
+footer #app-box #footer-icon {
+  width: 10px;
+  height: auto;
   margin-top: 5px;
   margin-bottom: 5px;
   margin-left: 5px;
 }
 
-footer .app-box div div {
-  display: table;
-}
-
-footer .app-box div div .app-title {
+footer #app-box .app-title {
   display: table-cell;
   vertical-align: middle;
   text-align: center;
   font-family: 'Book Antiqua', 'MS PMincho';
 }
 
-footer .app-box div div .app-title .app-subtitle {
+footer #app-box .app-title .app-subtitle {
   font-size: 1rem;
   color: #bad0e9;
 }
 
-footer .app-box div div .app-title .app-subtitle .app-title-emphasize {
+footer #app-box .app-title .app-subtitle .app-title-emphasize {
   font-size: 1.8rem;
 }
 
-footer .app-box div div .app-title .app-maintitle {
+footer #app-box .app-title .app-maintitle {
   font-size: 2.5rem;
   font-weight: 500;
   color: #74a2d2;

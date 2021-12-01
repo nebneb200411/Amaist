@@ -13,45 +13,54 @@ input {
   margin-left: 10px;
 }
 
-main div div #main-box {
-  background-color: #f8f8ff;
-  border-right: 2px solid #87ceeb;
-  border-left: 2px solid #87ceeb;
+body {
+  font-family: "arial", "MS Gothic";
 }
 
-main div div #main-box .question-description p {
-  font-family: sans-serif;
-  font-size: 5vh;
-  border-bottom: solid 2px #87ceeb;
+body main {
+  background: linear-gradient(45deg, #98e7cb, #fffacd);
 }
 
-main div div #main-box .each-questions .contributor-icon {
-  width: 20%;
-  height: auto;
+#search-box {
+  background-color: #dcdcdc;
 }
 
-main div div #main-box .each-questions .contributor-icon img {
-  width: 100%;
-  height: auto;
+#question-list-box .question-div {
+  display: inline-block;
+  width: 49%;
+  background-color: #ff9888;
 }
 
-main div div #main-box .each-questions .contributor-name {
-  width: 20%;
+#question-list-box .question-div .question-card {
+  margin: 20px 20px;
+  padding: 10px 10px;
+  background-color: #ffd59f;
+  border-radius: 10px;
 }
 
-main div div #main-box .each-questions .contributor-name p {
-  font-family: sans-serif;
+#question-list-box .question-div .question-card .icon-p {
+  text-align: center;
 }
 
-main div div #main-box .each-questions .question-title {
-  width: 50%;
+#question-list-box .question-div .question-card .icon-p .author-icon {
+  height: 80px;
+  width: auto;
+  border-radius: 50%;
 }
 
-main div div #main-box .each-questions .question-title a p {
-  font-family: sans-serif;
+#question-list-box .question-div .question-card .author-name {
+  text-align: center;
 }
 
-main div div #main-box .each-questions .question-created-at p {
-  font-family: sans-serif;
+#question-list-box .question-div .question-card .title {
+  text-align: center;
+}
+
+#question-list-box .question-div .question-card .created-at {
+  text-align: right;
+}
+
+#question-list-box .question-div .question-card .horizontal-line {
+  background-color: gray;
 }
 /*# sourceMappingURL=list.css.map */
