@@ -5,48 +5,34 @@
 <link rel="stylesheet" href="{% static 'question/create/create.css' %}">
 {% endblock stylesheet %}
 {% block contents %}
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-12 col-md-2 col-xl-2" id="left-box">
-        </div>
-        <div class="col-12 col-md-8 col-xl-8" id="main-box">
-            <!--question-create session-->
-            <div class="page-title-box">
-                <p><span class="mgr-10"></span>質問作成</p>
-            </div>
-
-            <div class="question-create-box">
-                <form method="POST">
-                    {% csrf_token %}
-                    {% autoescape off %}
-                    {{form.media}}
+<form method="POST">
+    {% csrf_token %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-md-5 col-xl-5" id="left-box">
+                <div id="title-box">
                     <p class="title-input"><span class="mgr-10"></span>TITLE</p>
                     {{form.title}}
-                    <hr>
-                    <p id="content-p"><span class="mgr-10"></span>CONTENT</p>
-                    {{form.content}}
-
-                    <hr>
-
-                    <div id="tag-box">
-                        <!--display this area is to add tags-->
-                        <p><i class="fas fa-tags"></i>タグ</p>
-                        <input type="text" multiple name="tags" class="tag-input" placeholder="&#xf02b;tag"/>
-                    </div>
-
-                    <div class="tag-input-box-add">
-                        <i class="fas fa-plus-circle fa-2x" id="tag-add-button"></i>
-                    </div>
-                    <hr>
-                    <input type="submit" label='記事を作成' class="btn btn-success" id="submit-button"></input>
-                    {% endautoescape %}
-                </form>
+                </div>
+                <div id="tag-box">
+                    <p>Tag</p>
+                    <i class="fas fa-plus-circle fa-2x" id="tag-add-button"></i>
+                    <input type="text" multiple name="tags" class="tag-input" placeholder="&#xf02b;">
+                </div>
+            </div>
+            <div class="col-12 col-md-7 col-xl-7" id="main-box">
+                <div class="question-create-box">
+                        {% autoescape off %}
+                        {{form.media}}
+                        <p id="content-p"><span class="mgr-10"></span>CONTENT</p>
+                        {{form.content}}
+                        {% endautoescape %}
+                </div>
+                <input type="submit" label='記事を作成' id="submit-button">
             </div>
         </div>
-        <div class="col-12 col-md-2 col-xl-2" id="right-box">
-        </div>
     </div>
-</div>
+</form>
 
 {% block script %}
 <script type="text/javascript" src="{% static 'question/create/create.js' %}"></script>

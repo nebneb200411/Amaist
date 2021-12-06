@@ -77,6 +77,12 @@
                     <td class="created-at">
                         {{published_article.created_at|date:"y/m/d"}}
                     </td>
+                    <td class="blank-cell"></td>
+                    <td class="update">
+                        <a href={% url 'article:update' published_article.pk %}>
+                            編集
+                        </a>
+                    </td>
                 </tr>
                 {% endfor %}
             </table>
@@ -117,7 +123,7 @@
                 <tr class="data work-cell">
                     <td class="blank-cell"></td>
                     <td class="title">
-                        <h2>{{datalibrary.introduction|safe}}</h2>
+                        <h2>{{datalibrary.title}}</h2>
                     </td>
                     <td class="blank-cell"></td>
                     <td class="created-at">
