@@ -5,6 +5,9 @@ from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from .forms import QuestionCreateForm, CommentCreateForm
 
+# search
+from django.db.models import Q
+
 
 class QuestionCreateView(LoginRequiredMixin, CreateView):
     model = Question
@@ -38,6 +41,23 @@ class QuestionListView(ListView):
 
     def get_queryset(self):
         queryset = super().get_queryset()
+        question_keyword = self.request.GET.get('question_search')
+        tag_keyword = self.request.GET.get('tag_search')
+        if question_keyword:
+            queryset = Question.objects.filter()
+            queryset = queryset.filter(
+                Q(title__icontains=question_keyword) | Q(content__icontains=question_keyword)).order_by(
+                '-created_at'
+            )
+
+        elif tag_keyword:
+            queryset = Question.objects.filter()
+            queryset = Question.objects.filter(
+                Q(tag__tag_name__icontains=tag_keyword)).order_by('-created_at')
+        else:
+            queryset = Question.objects.filter().order_by(
+                '-created_at'
+            )
         return queryset.order_by('-created_at')
 
 

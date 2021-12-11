@@ -8,16 +8,84 @@
 {% block contents %}
 <div class="container-fluid">
     <div class="row">
+        <div class="col-12 col-md-9 col-xl-9" id="question-content">
+            <div id="user-info" class="d-flex">
+                <a href="{% url 'profiles:otheruser_profile' object.contributor.user.pk %}" class="align-self-center">
+                    <img src="{{MEDIA_URL}}{{object.contributor.user.icon}}">
+                </a>
+                <a href="{% url 'profiles:otheruser_profile' object.contributor.user.pk %}" class="align-self-center">
+                    {{object.contributor}}
+                </a>
+            </div>
+            <div id="question-info" class="d-flex">
+                <div id="tag-box">
+                    {% for tag in tags %}
+                    <div class="each-tag-box">
+                        <i class="fas fa-tags"></i>
+                        {{tag}}
+                    </div>
+                    {% endfor %}
+                </div>
+                <div id="good-box">
+                    <div id="good-post">
+                        <form method="POST" action="{% url 'question:good_count' %}">
+                            {% csrf_token %}
+                            <input type="hidden" name="good_count" value="{{object.pk}}"/>
+                            <button type="submit" id="good-button"><i class="fas fa-thumbs-up"></i></button>
+                        </form>
+                    </div>
+                    <div id="good-number">{{good_number}}</div>
+                </div>
+            </div>
+            <div id="question-content-box">
+                <p id="title">{{object.title}}</p>
+                {{object.content|safe}}
+            </div>
+            <hr class="horizontal-line">
+            <p><i class="fas fa-comment"></i><span class="mgr-10"/>コメント</p>
+            <div class="comment-form">
+                <form method="POST">
+                    {% csrf_token %}
+                    <input type="hidden"  name="response_to" value="{{request.user}}">
+                    <input type="hidden" name="question_pk" value="{{object.pk}}">
+                    {{form.media}}
+                    {{form.content}}
+                    <button type="submit" class="btn btn-primary">送信</button>
+                </form>
+            </div>
+            <hr class="hr-line">
+            <div id="comment-display-box">
+                {% for comment_object in comment_objects %}
+                <div class="each-user-comment-box">
+                    <div class="d-flex commentor-info">
+                        <a href="{% url 'profiles:otheruser_profile' comment_object.comment_from.user.pk%}">
+                            <img src="{{MEDIA_URL}}{{comment_object.comment_from.user.icon}}">
+                        </a>
+                        <a href="{% url 'profiles:otheruser_profile' comment_object.comment_from.user.pk%}" class="align-self-center">
+                            {{comment_object.comment_from}}
+                        </a>
+                        <p class="align-self-center ml-auto">{{comment_object.created_at}}</p>
+                    </div>
+                    <div class="comment-content">
+                        {{comment_object.content|safe}}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="col-12 col-md-3 col-xl-3" id="subcontents-box">
+        </div>
+    </div>
+</div>
+<!--
+<div class="container-fluid">
+    <div class="row">
         <div class="col-12 col-md-3 col-xl-3" id="left-box"></div>
         <div class="col-12 col-md-6 col-xl-6" id="main-box">
-
-            <!--display contributor's information-->
             <div class="contributor-info-box">
                 <img src="{{MEDIA_URL}}{{object.contributor.user.icon}}"/>
                 <p><i class="fas fa-user"></i><span class="mgr-10"></span>{{object.contributor}}</p>
             </div>
-
-            <!--display question's content-->
             <div class="question-box">
                 <div class="question-title-box">
                     <p><i class="fas fa-question-circle"></i><span class="mgr-10"></span>{{object.title}}</p>
@@ -25,22 +93,16 @@
                 <div class="question-created-date-box">
                     <p><i class="far fa-calendar-alt"></i><span class="mgr-10"></span>{{object.created_at|date:"y/m/d"}}</p>
                 </div>
-
                 <hr class="horizontal-line">
-
                 <div class="question-content-box">
                     {{object.content | safe }}
                 </div>
             </div>
-
             <hr class="horizontal-line">
-
-            <!--display good and good form-->
             <div class="good-box">
                 <div class="good-count-box">
                     <p><i class="far fa-thumbs-up"></i><span class="mgr-10"></span>{{good_number}}</p>
                 </div>
-
                 <div class="good-form-box">
                     <form method="POST" class="good_count" action="{% url 'question:good_count' %}">
                         {% csrf_token %}
@@ -49,10 +111,7 @@
                     </form>
                 </div>
             </div>
-
             <hr class="horizontal-line">
-
-            <!--comment input box-->
             <div class="comment-input-box">
                 <p class="comment-title"><i class="fas fa-comment-alt"></i><span class="mgr-10"></span>Post Comment</p>
                 <form method="POST" class="comment-form">
@@ -66,8 +125,6 @@
                     <hr class="horizontal-line">
                 </form>
             </div>
-
-            <!--display comment in here-->
             <div class="comments-box">
                 <p class="comments-title"><i class="fas fa-comment-alt"></i><span class="mgr-10"></span>Comments</p>
                 {% for comment_object in comment_objects %}
@@ -75,22 +132,19 @@
                     <div class="icon">
                         <img src="{{MEDIA_URL}}{{comment_object.comment_from.user.icon}}"></img>
                     </div>
-
                     <div class="username">
                         <p class="username-p"><i class="fas fa-user"></i><span class="mgr-10"></span>{{comment_object.comment_from}}</p>
                     </div>
-
                     <hr class="horizontal-line">
-
                     <div class="content">
                         {{comment_object.content|safe}}
                     </div>
                 </div>
                 {% endfor %}
             </div>
-            
         </div>
         <div class="col-12 col-md-3 col-xl-3" id="right-box"></div>
     </div>
 </div>
+-->
 {% endblock contents %}

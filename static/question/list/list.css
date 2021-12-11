@@ -13,54 +13,76 @@ input {
   margin-left: 10px;
 }
 
+.blank-box {
+  width: 20px;
+}
+
+.hr-line {
+  background-color: #a8a8a8;
+}
+
 body {
   font-family: "arial", "MS Gothic";
 }
 
-body main {
-  background: linear-gradient(45deg, #98e7cb, #fffacd);
-}
-
 #search-box {
-  background-color: #dcdcdc;
+  position: relative;
+  background-image: url(/static/images/question/list_background.jpg);
+  background-repeat: repeat;
+  background-size: cover;
+  background-position: center;
 }
 
-#question-list-box .question-div {
-  display: inline-block;
-  width: 49%;
-  background-color: #ff9888;
+#search-box #search {
+  margin: 20px 0px;
+  padding: 20px 0px;
 }
 
-#question-list-box .question-div .question-card {
-  margin: 20px 20px;
-  padding: 10px 10px;
-  background-color: #ffd59f;
-  border-radius: 10px;
+#search-box #search .search-input {
+  outline: none;
+  border: solid 2px #1a244d;
+  border-radius: 2px;
+  -webkit-box-shadow: 0 4px 6px #7e8183e6;
+          box-shadow: 0 4px 6px #7e8183e6;
 }
 
-#question-list-box .question-div .question-card .icon-p {
+#search-box #search .search-btn {
+  border: none;
+  background-color: #1a244d;
+  color: white;
+}
+
+#search-box #search .search-p {
   text-align: center;
+  color: white;
 }
 
-#question-list-box .question-div .question-card .icon-p .author-icon {
-  height: 80px;
+#search-box #search h1 {
+  text-shadow: 2px 2px 1px black, -2px 2px 1px black, 2px -2px 1px black, -2px -2px 1px black, 2px 0px 1px black, 0px 2px 1px black, -2px 0px 1px black, 0px -2px 1px black;
+}
+
+#question-list-box {
+  background-color: #f4f4f4;
+}
+
+#question-list-box .questions {
+  border-left: solid 4px #991133;
+  margin: 20px 20px;
+}
+
+#question-list-box .questions .user-info {
+  font-size: 0.5rem;
+}
+
+#question-list-box .questions .user-info .author-icon {
+  height: 30px;
   width: auto;
   border-radius: 50%;
 }
 
-#question-list-box .question-div .question-card .author-name {
-  text-align: center;
-}
-
-#question-list-box .question-div .question-card .title {
-  text-align: center;
-}
-
-#question-list-box .question-div .question-card .created-at {
-  text-align: right;
-}
-
-#question-list-box .question-div .question-card .horizontal-line {
-  background-color: gray;
+#question-list-box .questions .author-icon {
+  height: 60px;
+  width: auto;
+  border-radius: 50%;
 }
 /*# sourceMappingURL=list.css.map */

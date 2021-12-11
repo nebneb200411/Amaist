@@ -8,20 +8,30 @@
 <div class="container-fluid">
     <div class="row">
         <div id="search-box" class="col-xl-5 col-md-5 col-12">
-            <p><input type="text"></p>
-            <p><input type="text"></p>
+            <div id="search">
+                <h1 class="search-p">質問検索</h1>
+                <form id="question-title-search-form" method="GET" action="{% url 'question:list' %}">
+                    <p class="search-p"><input class="search-input" type="text" name="question_search" placeholder="タイトル検索"></input><button class="search-btn" type="submit"><i class="fas fa-search"></i></button></p>
+                </form>
+                <form id="tag-search" method="GET" action="{% url 'question:list' %}">
+                    <p class="search-p"><input class="search-input" type="text" name="tag_search" placeholder="タグ検索"></input><button class="search-btn" type="submit"><i class="fas fa-search"></i></button></p>
+                </form>
+            </div>
         </div>
         <div id="question-list-box" class="col-xl-7 col-md-7 col-12">
             {% for question in object_list %}
-            <div class="question-div">
-                <div class="question-card">
-                    <p class="icon-p"><img class="author-icon" src="{{ MEDIA_URL }}{{question.contributor.user.icon|default:'images/user-icon-default.png'}}"></p>
-                    <p class="author-name"><i class="fas fa-user"></i><span class="mgr-10"></span>{{question.contributor}}</p>
-                    <hr class="horizontal-line">
-                    <p class="title"><a href="{% url 'question:detail' question.pk %}">{{question.title}}</a></p>
-                    <p class="created-at">{{question.created_at|date:"y/m/d"}}</p>
+            <div class="questions d-flex justify-content-between">
+                <div class="blank-box"></div>
+                <a class="align-self-center" href="{% url 'question:detail' question.pk %}">{{question.title}}</a>
+                <img class="author-icon ml-auto" src="{{ MEDIA_URL }}{{question.contributor.user.icon|default:'images/user-icon-default.png'}}">
+                <div class="user-info">
+                    <div class="author-name-created-at">
+                        <p class="author-name"><i class="fas fa-user"></i><span class="mgr-10"></span>{{question.contributor}}</p>
+                        <p class="created-at"><i class="fas fa-clock"></i><span class="mgr-10"></span>{{question.created_at|date:"y/m/d"}}</p>
+                    </div>
                 </div>
             </div>
+            <hr class="hr-line">
             {% endfor %}
         </div>
     </div>

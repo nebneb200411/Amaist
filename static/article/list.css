@@ -48,6 +48,10 @@ body main #contents #contents-row #search-box .search-input {
   border: none;
 }
 
+body main #contents #contents-row #article-list-box {
+  font-size: 0.6rem;
+}
+
 body main #contents #contents-row #article-list-box .articles {
   margin: 20px 20px;
   border-radius: 5px;
@@ -68,6 +72,7 @@ body main #contents #contents-row #article-list-box .articles .article-info {
 }
 
 body main #contents #contents-row #article-list-box .articles .title {
+  font-size: 1.0rem;
   text-align: center;
   padding: 0px 20px;
 }
