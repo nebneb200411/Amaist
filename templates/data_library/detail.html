@@ -11,6 +11,7 @@
     <div id="data-description">
         <div id="uploader-box" class="d-flex justify-content-between">
             <img src="{{MEDIA_URL}}{{object.uploader.user.icon}}"></img>
+            <p id="data-title" class="align-self-center">{{object.title}}</p>
             <div class="align-self-center">
                 <p><i class="fas fa-user"></i><span class="mgr-10"></span>{{object.uploader.user}}</p>
                 <p><i class="fas fa-clock"></i><span class="mgr-10"></span>{{object.created_at}}</p>
@@ -31,6 +32,9 @@
             <tr class="blank-cell"></tr>
             {% endfor %}
         </table>
+        <div id="introduction">
+            {{object.introduction|safe}}
+        </div>
     </div>
 
     <div id="comment-box">

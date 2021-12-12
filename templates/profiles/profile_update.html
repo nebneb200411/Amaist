@@ -5,58 +5,26 @@
 <link rel="stylesheet" href="{% static 'profile/create/create.css' %}">
 {% endblock stylesheet %}
 {% block contents %}
-
-<p class="profile-create-page-title">プロフィールの変更</p>
-
 <div class="profile-create-box">
+    <h1 class="profile-create-page-title"><span>プロフィールの変更</span></h1>
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
-        <div class="profile-create-title-box">
-            <p class="profile-create-title-p"><i class="fas fa-id-card"></i><span class="mgr-10"></span>Profile</p>
-        </div> 
-
-        <div class="icon-input-box">
-            <p class="input-text"><i class="fas fa-image"></i><span class="mgr-10"></span>Icon</p>
-            {{form.icon}}
-            <div id="uploaded_image"></div>
-            <div id="uploadimageModal" class="modal" role="dialog">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">Upload & Crop Image</h4>
-                        </div>
-                        <div class="modal-body">
-                            <div class="row">
-                                <div class="col-md-8 text-center">
-                                    <div id="image_demo" style="width:350px; margin-top:30px"></div>
-                                </div>
-                                <div class="col-md-4" style="padding-top:30px;">
-                                    <br/>
-                                    <br/>
-                                    <br/>
-                                    <button class="btn btn-success crop_image">Crop & Upload Image</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-                </div>
+        <div class="icon-input-box profile-background">
+            <div class="description">
+                <h2 class="step">Step 1</h2>
+                <p class="intro">好きな画像をプロフィールにしましょう</p>
             </div>
+            {{form.icon}}
         </div>
-
         <hr class="horizontal-line">
-
-        <div class="introduction-input-box">
-            <p class="input-text"><i class="fas fa-user-edit"></i><span class="mgr-10"></span>Introduction</p>
-            {{form.introduction}}
+        <div class="introduction-input-box profile-background">
+            <div class="description">
+                <h2 class="step">Step 2</h2>
+                <p class="intro">自己紹文を書いてください</p>
+            </div>
+            <div id="intro-input-box">{{form.introduction}}</div>
         </div>
-
-        <hr class="horizontal-line">
-
-        <input id="profile-post-button" class="btn btn-primary" type="submit" value="プロフィール作成"/>
+        <input id="profile-post-button" type="submit" value="プロフィール作成"/>
     </form>
 </div>
 {% endblock %}

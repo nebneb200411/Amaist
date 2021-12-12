@@ -5,6 +5,14 @@
           box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: inherit;
+}
+
 body {
   background: linear-gradient(45deg, #2E38F6, #0E294E, #415C55, #528A4C);
   font-family: "arial", "MS Gothic";
@@ -35,7 +43,6 @@ body main #contents #contents-row #search-box .search-btn {
   border: 1px solid gray;
   border-radius: 2px;
   background-color: #0E294E;
-  margin-left: 10px;
 }
 
 body main #contents #contents-row #search-box .search-p {
@@ -52,6 +59,10 @@ body main #contents #contents-row #article-list-box {
   font-size: 0.6rem;
 }
 
+body main #contents #contents-row #article-list-box .article-link {
+  text-decoration: none;
+}
+
 body main #contents #contents-row #article-list-box .articles {
   margin: 20px 20px;
   border-radius: 5px;
@@ -66,18 +77,17 @@ body main #contents #contents-row #article-list-box .articles .author-icon {
 }
 
 body main #contents #contents-row #article-list-box .articles .article-info {
-  text-align: center;
   color: white;
   padding: 0px 20px;
 }
 
-body main #contents #contents-row #article-list-box .articles .title {
-  font-size: 1.0rem;
-  text-align: center;
-  padding: 0px 20px;
+body main #contents #contents-row #article-list-box .articles .article-info .info {
+  margin: 5px 5px;
 }
 
-body main #contents #contents-row #article-list-box .articles .title a {
-  color: #87ceeb;
+body main #contents #contents-row #article-list-box .articles .article-title {
+  font-size: 1.5rem;
+  color: white;
+  margin: 0px 0px;
 }
 /*# sourceMappingURL=list.css.map */

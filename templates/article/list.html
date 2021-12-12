@@ -19,10 +19,11 @@
         </div>
         <div id="article-list-box" class="col-12 col-md-9 col-xl-9">
             {% for article in article_list %}
+            <a class="article-link" href="{% url 'article:article_detail' article.pk %}">
             <div class="d-xl-flex d-md-flex articles">
                 <img class="author-icon align-self-center" src="{{ MEDIA_URL }}{{article.author.user.icon|default:'images/user-icon-default.png'}}">
                 <div class="article-info align-self-center">
-                    <p class="info"><i class="fas fa-user"></i><span class="mgr-10"></i><span class="mgr-10"></span>{{article.author}}</p>
+                    <p class="info"><i class="fas fa-user"></i><span class="mgr-10"></i>{{article.author}}</p>
                     <p class="info"><i class="far fa-calendar-alt"></i><span class="mgr-10"></span>{{article.created_at|date:"y/m/d"}}</p>
                     <p class="info">
                         {% for tag in article.tag.all %}
@@ -31,12 +32,9 @@
                         {% endfor %}
                     </p>
                 </div>
-                <div class="title align-self-center">
-                    <a href="{% url 'article:article_detail' article.pk %}">
-                        <p class="article-title">{{article.title}}</p>
-                    </a>
-                </div>
+                <p class="article-title align-self-center">{{article.title}}</p>
             </div>
+            </a>
             {% endfor %}
         </div>
     </div>

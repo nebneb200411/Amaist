@@ -69,7 +69,7 @@
                 <tr class="article work-cell">
                     <td class="blank-cell"></td>
                     <td class="title">
-                        <a href="{% url 'article:article_detail' published_article.pk %}">
+                        <a id="link-to" href="{% url 'article:article_detail' published_article.pk %}">
                             <h2 class="article-title">{{published_article.title}}</h2>
                         </a>
                     </td>
@@ -79,7 +79,7 @@
                     </td>
                     <td class="blank-cell"></td>
                     <td class="update">
-                        <a href={% url 'article:update' published_article.pk %}>
+                        <a class="link-to" href={% url 'article:update' published_article.pk %}>
                             編集
                         </a>
                     </td>
@@ -99,6 +99,11 @@
                     <td class="created-at">
                         {{draft_article.created_at|date:"y/m/d"}}
                     </td>
+                    <td class="update">
+                        <a class="link-to" href={% url 'article:update' draft_article.pk %}>
+                            編集
+                        </a>
+                    </td>
                 </tr>
                 {% endfor %}
             </table>
@@ -115,6 +120,11 @@
                     <td class="created-at">
                         {{question.created_at|date:"y/m/d"}}
                     </td>
+                    <td class="update">
+                        <a class="link-to" href="{% url 'question:detail' question.pk %}">
+                            詳細
+                        </a>
+                    </td>
                 </tr>
                 {% endfor %}
             </table>
@@ -128,6 +138,11 @@
                     <td class="blank-cell"></td>
                     <td class="created-at">
                         {{datalibrary.created_at|date:"y/m/d"}}
+                    </td>
+                    <td class="update">
+                        <a class="link-to" href={% url 'data_library:detail' datalibrary.pk %}>
+                            詳細
+                        </a>
                     </td>
                 </tr>
                 {% endfor %}

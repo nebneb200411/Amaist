@@ -181,6 +181,15 @@ main #user-works #data-tab-button:checked ~ .panel-area #data-works {
   background-color: #ccddff;
 }
 
+main #user-works #user-tab-box .link-to {
+  padding: 5px 5px;
+  background-color: #008080;
+  color: white;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
 main #user-works #user-tab-box .tab-panel {
   display: none;
   padding-top: 10px;
