@@ -59,10 +59,13 @@ main div div #search-box #search #search-content th form p .search-input {
 
 main div div #search-box #search #search-content th form p :focus {
   outline: none;
-  border: solid 1px yellowgreen;
+  border: solid 1px gray;
 }
 
 main div div #search-box #search #search-content th form p .search-button {
+  cursor: pointer;
+  background: none;
+  border: none;
   color: white;
 }
 

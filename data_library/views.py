@@ -4,6 +4,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from django.shortcuts import redirect
 from .forms import DataLibraryCreateForm, CommentForm
+from django.db.models import Q
 
 
 class DataLibraryCreateView(LoginRequiredMixin, CreateView):
@@ -45,6 +46,12 @@ class DataLibraryListView(ListView):
 
     def get_queryset(self):
         data_libraries = DataLibrary.objects.all().order_by('-created_at')
+        dl_title_keyword = self.request.GET.get('dl-title-search')
+        if dl_title_keyword:
+            data_libraries = DataLibrary.objects.filter(
+                Q(title__icontains=dl_title_keyword))
+        else:
+            data_libraries = DataLibrary.objects.all()
         return data_libraries
 
 

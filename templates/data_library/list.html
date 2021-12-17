@@ -17,10 +17,10 @@
                     </tr>
                     <tr id="search-content">
                         <th>
-                            <form class="flex-column" method="GET" action="{% url 'article:list' %}" id="article-search">
+                            <form class="flex-column" method="GET" action="{% url 'data_library:list' %}" id="dl-search">
                                 <p>
-                                    <input class="search-input" type="text" name="data-search" placeholder="  本文検索"></input>
-                                    <a class="search-button" type="submit"><i class="fas fa-search"></i></a>
+                                    <input class="search-input" type="text" name="dl-title-search" placeholder="  本文検索"></input>
+                                    <button class="search-button" type="submit"><i class="fas fa-search"></i></button>
                                 </p>
                             </form>
                         </th>
