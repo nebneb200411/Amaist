@@ -1,0 +1,29 @@
+main {
+    background-color: #f5f5f5;
+
+    .term-box {
+        width: 80%;
+        margin-left: 10%;
+        margin-top: 2%;
+
+        h1 {
+            border-bottom: 2px solid #778899;
+            color: #778899;
+            font-family: 'Yu Gothic', 'arial';
+        }
+
+        h2 {
+            border-bottom: 2px solid #778899;
+            color: #778899;
+            font-family: 'Yu Gothic', 'arial';
+        }
+
+        .content {
+            font-family: 'Yu Gothic', 'arial';
+        }
+
+        .indent {
+            margin-left: 20px;
+        }
+    }
+}

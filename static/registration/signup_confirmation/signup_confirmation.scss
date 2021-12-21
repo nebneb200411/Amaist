@@ -1,0 +1,27 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+//common style 
+.mgr-10 {
+    margin-left: 10px;
+}
+
+body {
+    main {
+        p {
+            font-family: "arial", "メイリオ";
+            font-size: 3vh;
+        }
+
+        .username {
+            margin-top: 20%;
+        }
+
+        .content {
+            margin-top: 10%;
+        }
+    }
+}

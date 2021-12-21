@@ -1,0 +1,111 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+//common style 
+.mgr-10 {
+    margin-left: 10px;
+}
+
+.hr-line {
+    height: 2px;
+    background-color: gray;
+}
+
+h1 {
+    color: black;
+    border-left: 10px solid #58845f;
+}
+
+
+main {
+    background-color: #dfdbc8;
+
+    div {
+        div {
+            #question-content {
+                background-color: white;
+                margin: 20px 20px;
+
+                #user-info {
+                    margin: 10px 10px;
+
+                    a {
+                        margin: 0px 10px;
+
+                        img {
+                            height: 80px;
+                            width: auto;
+                            border-radius: 50%;
+                        }
+                    }
+                }
+
+                #question-info {
+                    padding: 50px 50px;
+
+                    #tag-box {
+                        width: 50%;
+                    }
+
+                    #good-box {
+                        width: 50%;
+
+                        #good-number {
+                            display: inline-block;
+                        }
+
+                        #good-post {
+                            display: inline-block;
+
+                            form {
+                                button {
+                                    border: none;
+                                    border-radius: 2px;
+                                    background-color: #58845f;
+                                    color: white;
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                #question-content-box {
+
+                    #title {
+                        padding: 20px;
+                        font-size: 1.5rem;
+                        background-color: #58845f;
+                        border-radius: 5px;
+                        color: white;
+                    }
+                }
+
+                #comment-display-box {
+                    font-family: "arial", "MS Gothic";
+
+                    .each-user-comment-box {
+                        margin: 10px 0px;
+
+                        .commentor-info {
+                            a {
+                                img {
+                                    height: 40px;
+                                    width: auto;
+                                    border-radius: 50%;
+                                }
+                            }
+                        }
+
+                        .comment-content {
+                            margin-top: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

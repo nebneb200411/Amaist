@@ -1,0 +1,87 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+//common style
+.mgr-10 {
+    margin-left: 10px;
+}
+
+input {
+    -webkit-appearance: none;
+}
+
+main {
+    font-family: "arial", "MS Gothic";
+
+    .profile-create-page-title {
+        padding: 50px 50px;
+
+        span {
+            padding-bottom: 10px;
+            border-bottom: solid 2px black;
+        }
+    }
+
+    .profile-create-box {
+        position: relative;
+        background-image: url("/static/images/profile/create_background.jpg");
+        background-repeat: repeat;
+        background-size: contain;
+        background-position: center;
+
+        //common style
+
+        form {
+            padding: 50px 50px;
+
+            .profile-background {
+                background: rgba(255, 160, 122, 0.8);
+            }
+
+            .description {
+                padding: 10px 10px;
+                background: rgba(255, 255, 255, 0.7);
+
+                .step {}
+
+                .intro {}
+            }
+
+            .icon-input-box {
+                #id_icon {
+                    padding: 50px 50px;
+                }
+            }
+
+            .introduction-input-box {
+
+                #intro-input-box {
+                    padding: 30px 30px;
+
+                    #id_introduction {
+                        width: 80%;
+                        border: solid 2px #a9a9a9;
+                        border-radius: 5px;
+                        outline: none;
+                    }
+
+                    #id_introduction:focus {
+                        box-shadow: 0 0 10px #a9a9a9;
+                    }
+                }
+            }
+
+            #profile-post-button {
+                margin-top: 50px;
+                padding: 10px 10px;
+                border: none;
+                background-color: #6495ed;
+                color: white;
+                cursor: pointer;
+            }
+        }
+    }
+}

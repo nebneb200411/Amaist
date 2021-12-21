@@ -1,0 +1,95 @@
+@charset "utf-8";
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+//動的な操作
+.mgr-10 {
+    margin-left: 10px;
+}
+
+input {
+    -webkit-appearance: none;
+}
+
+body {
+    main {
+        position: relative;
+        background-image: url("/static/images/profile/list_background.jpg");
+        background-repeat: repeat;
+        background-size: contain;
+        background-position: center;
+        font-family: "arial", "MS Gothic";
+
+        #profile-list {
+            padding: 20px 20px;
+
+            #list-box {
+                #user-search-box {
+                    background-color: #282829;
+                    border-radius: 5px;
+                    margin-bottom: 20px;
+
+                    p {
+                        padding-top: 20px;
+                        text-align: center;
+                        color: white;
+                    }
+
+                    form {
+                        margin-bottom: 20px;
+
+                        input {
+                            width: 70%;
+                            display: inline-block;
+                            border: none;
+                            outline: none;
+                        }
+
+                        button {
+                            display: inline-table;
+                            cursor: pointer;
+                            border: none;
+                        }
+                    }
+                }
+
+                #user-list-box {
+                    padding: 30px 30px;
+                    background-color: #444446;
+                    border-radius: 5px;
+
+                    .each-user {
+                        padding: 20px 20px;
+                        margin-bottom: 30px;
+                        background-color: white;
+
+                        img {
+                            height: 100px;
+                            width: auto;
+                            border-radius: 50%;
+                            background-color: black;
+                        }
+
+                        #info {
+                            padding-left: 15px;
+                        }
+
+                        a {
+                            i {
+                                color: black;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

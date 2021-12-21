@@ -4,5 +4,5 @@ __pycache__
 migrations
 local_settings.py
 media
-*.scss
-*.css.map
+#*.scss
+#*.css.map

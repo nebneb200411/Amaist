@@ -1,0 +1,68 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+//common style
+.mgr-10 {
+    margin-left: 10px;
+}
+
+input {
+    -webkit-appearance: none;
+}
+
+main {
+    background-color: #c8cacb;
+
+    form {
+        font-family: 'Century Gothic', 'ＭＳ 明朝';
+
+        div {
+            div {
+                #left-box {
+                    #title-box {
+                        background-color: white;
+                        margin: 20px 20px;
+                        padding: 20px 20px;
+
+                        #id_title {
+                            border: 1px solid gray;
+                            outline: none;
+                            width: 100%;
+                        }
+                    }
+
+                    #tag-box {
+                        background-color: white;
+                        margin: 20px 20px;
+                        padding: 20px 20px;
+
+                        .tag-input {
+                            border: 1px solid gray;
+                            outline: none;
+                            width: 100%;
+                            margin: 10px 0px;
+                        }
+                    }
+                }
+
+                #main-box {
+                    background-color: white;
+                    margin: 20px 0px;
+                    padding: 20px 20px;
+
+                    #submit-button {
+                        border: none;
+                        border-radius: 2px;
+                        color: white;
+                        background-color: #2f3132;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}

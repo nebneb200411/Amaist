@@ -1,0 +1,96 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+//動的な操作
+.mgr-10 {
+    margin-left: 10px;
+}
+
+.table-box {
+    display: table;
+}
+
+main {
+    font-family: "arial", "MS Gothic";
+
+    #form-box {
+        background: linear-gradient(to right, #3A82A7, #B7BD99, #ECA6BE);
+
+        h1 {
+            padding-top: 10px;
+            text-align: center;
+            color: white;
+            font-size: 3rem;
+        }
+
+        hr {}
+
+        form {
+            .description {
+                margin-top: 10px;
+                margin-left: 10px;
+                color: white;
+                font-size: 1.1rem;
+            }
+
+            .boxes {
+                width: 80%;
+                margin-left: 10%;
+                position: relative;
+                border: solid 3px #4E5590;
+
+                .numbering {
+                    position: absolute;
+                    width: 70px;
+                    height: 70px;
+                    top: -3px;
+                    left: -70px;
+                    text-align: center;
+                    padding-top: 22px;
+                    background-color: #4E5590;
+                    color: white;
+                }
+            }
+
+            #data-upload-box {
+                margin-bottom: 40px;
+
+                #file-input-box {
+                    margin-left: 10px;
+                    margin-bottom: 10px;
+                }
+
+                #add-file-button-p {
+                    text-align: right;
+                    padding-right: 10px;
+
+                    #add-file-button {
+                        color: #dcdcdc;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            #post {
+                padding-top: 20px;
+                padding-bottom: 20px;
+                margin-bottom: 0px;
+                text-align: right;
+
+                #post-button {
+                    margin-right: 10%;
+                    height: 40px;
+                    width: 64px;
+                    border-radius: 5px;
+                    color: white;
+                    background-color: #4E5590;
+                    border: solid 2px #4E5590;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

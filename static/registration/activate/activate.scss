@@ -1,0 +1,20 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+//common style 
+.mgr-10 {
+    margin-left: 10px;
+}
+
+body {
+    main {
+        p {
+            margin-top: 30%;
+            font-family: "arial", "メイリオ";
+            font-size: 3vh;
+        }
+    }
+}

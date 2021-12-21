@@ -1,0 +1,330 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+//動的な操作
+.mgr-10 {
+    margin-left: 10px;
+}
+
+//動的な操作終了
+html {
+    -webkit-text-size-adjust: 100%;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background-color: gray;
+
+    header {
+        position: fixed;
+        height: 50px;
+        width: 100%;
+        z-index: 100;
+        background-color: black;
+
+        .menu-button closed {
+            visibility: hidden;
+        }
+
+        .header-box {
+            height: 100%;
+
+            .menu-button {
+                position: relative;
+                margin-top: 5px;
+                margin-left: 5px;
+                height: 40px;
+                width: 40px;
+                background-color: transparent;
+                border: solid 2px #b0c4de;
+                perspective: 1000;
+
+                .top-line {
+                    position: absolute;
+                    top: 25%;
+                    left: 50%;
+                    display: block;
+                    width: 70%;
+                    height: 5%;
+                    border: solid 1px #b0c4de;
+                    background-color: #b0c4de;
+                    transform: translateX(-50%);
+                    -webkit-transform: translateX(-50%);
+                    transition: .3s;
+                    perspective: 1000;
+
+                    &.clicked-top {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        display: block;
+                        width: 80%;
+                        height: 5%;
+                        border: solid 1px #b0c4de;
+                        background-color: #b0c4de;
+                        transform: translateX(-50%) rotate(45deg);
+                        -webkit-transform: translateX(-50%) rotate(45deg);
+                        transition: .3s;
+                        perspective: 1000;
+                    }
+                }
+
+                .middle-line {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    display: block;
+                    width: 70%;
+                    height: 5%;
+                    border: solid 1px #b0c4de;
+                    background-color: #b0c4de;
+                    transform: translateX(-50%);
+                    -webkit-transform: translateX(-50%);
+                    perspective: 1000;
+
+                    &.clicked-middle {
+                        visibility: hidden;
+                        perspective: 1000;
+                    }
+                }
+
+                .bottom-line {
+                    position: absolute;
+                    top: 75%;
+                    left: 50%;
+                    display: block;
+                    width: 70%;
+                    height: 5%;
+                    border: solid 1px #b0c4de;
+                    background-color: #b0c4de;
+                    transform: translateX(-50%);
+                    -webkit-transform: translateX(-50%);
+                    transition: .3s;
+                    perspective: 1000;
+
+                    &.clicked-bottom {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        display: block;
+                        width: 80%;
+                        height: 5%;
+                        border: solid 1px #b0c4de;
+                        background-color: #b0c4de;
+                        transform: translateX(-50%);
+                        transform: translateX(-50%) rotate(-45deg);
+                        -webkit-transform: translateX(-50%) rotate(-45deg);
+                        transition: .3s;
+                        perspective: 1000;
+                    }
+                }
+            }
+
+            .app-icon {
+
+                img {
+                    height: 50px;
+                    width: auto;
+                }
+            }
+
+            .register-box {
+                a {
+                    color: #b0c4de;
+
+                    p {
+                        font-size: 2vh;
+                        font-family: 'Century';
+                        margin-top: 55%;
+                    }
+                }
+            }
+
+            .user-icon-box {
+                max-width: 25%;
+
+                a {
+                    img {
+                        background-color: white;
+                        height: 40px;
+                        width: auto;
+                        margin-right: 0;
+                        border-radius: 50%;
+                    }
+                }
+            }
+        }
+    }
+
+
+    .header-nav {
+        visibility: hidden;
+        position: relative;
+        width: 100%;
+        top: 0px;
+        background-color: black;
+        transform: translateX(-100%);
+        transition: .3s;
+        z-index: 100;
+
+
+        &.slide-in {
+            visibility: visible;
+            transform: translateX(0px);
+            transition: .3s;
+        }
+
+
+        .header-menu {
+            z-index: 100;
+
+            li {
+                z-index: 100;
+
+                a {
+                    color: #b0c4de;
+                    z-index: 100;
+
+                    i {}
+                }
+
+                .second-menu {}
+
+                #article-second-menu {
+                    display: none;
+                    opacity: 0;
+                }
+
+                #data-library-second-menu {
+                    display: none;
+                }
+
+                #question-second-menu {
+                    display: none;
+                }
+
+                #profile-second-menu {
+                    display: none;
+                }
+            }
+        }
+
+        .header-menu {
+            #article-first-menu:hover {
+
+                #article-second-menu {
+                    display: block;
+                    opacity: 1;
+                    transition: .3s;
+                }
+            }
+
+            #data-library-first-menu:hover {
+
+                #data-library-second-menu {
+                    display: block;
+                    transition: .3s;
+                }
+            }
+
+            #question-first-menu:hover {
+
+                #question-second-menu {
+                    display: block;
+                    transition: .3s;
+                }
+            }
+
+            #profile-first-menu:hover {
+
+                #profile-second-menu {
+                    display: block;
+                    transition: .3s;
+                }
+            }
+        }
+
+
+
+
+        li {
+            padding: 10px;
+            border-bottom: solid 1px white;
+            list-style: none;
+        }
+
+    }
+}
+
+main {
+    .nothing {
+        height: 50px;
+        width: 100%;
+    }
+}
+
+
+footer {
+    background-color: #000000;
+    border-top: solid 2px #b0c4de;
+
+    #app-box {
+        border-bottom: solid 2px #b0c4de;
+
+        #footer-icon {
+            width: 10px;
+            height: auto;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            margin-left: 5px;
+        }
+
+        .app-title {
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+            font-family: 'Book Antiqua', 'MS PMincho';
+
+            .app-subtitle {
+                font-size: 1rem;
+                color: #bad0e9;
+
+                .app-title-emphasize {
+                    font-size: 1.8rem;
+                }
+            }
+
+            .app-maintitle {
+                font-size: 2.5rem;
+                font-weight: 500;
+                color: #74a2d2;
+            }
+        }
+    }
+
+    .footer-contents {
+        margin-top: 10px;
+        padding-bottom: 10px;
+
+        //common style 
+        p {
+            margin-left: 10px;
+            color: #b0c4de;
+        }
+
+        a {
+            color: #8fbc8f;
+        }
+
+        .inquiry-p {
+            font-family: 'Book Antiqua', 'MS PMincho';
+        }
+    }
+}

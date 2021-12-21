@@ -1,0 +1,248 @@
+//common styles
+.mgr-10 {
+    margin-left: 10px;
+}
+
+.empty-box-10 {
+    height: 10px;
+}
+
+.date-p {
+    text-align: right;
+}
+
+input {
+    -webkit-appearance: none;
+}
+
+.blank-cell {
+    width: 40px;
+}
+
+.blank-box {
+    width: 40px;
+}
+
+.line {
+    height: 3px;
+    background-color: gray;
+}
+
+main {
+    #user-profile {
+        padding: 0px 20px;
+        font-family: "arial", "MS Gothic";
+
+        #page-title {
+            border-left: 10px solid #5757ff;
+            font-size: 2.0rem;
+        }
+
+        #user-info-box {
+
+            #edit-box {
+                padding-top: 20px;
+                background-color: #73a6b0;
+
+                p {
+                    margin-left: 10px;
+                    border-left: 10px solid white;
+
+                    a {
+                        color: #7488b0;
+                    }
+                }
+
+                form {
+                    #unfollow {
+                        border: none;
+                        background-color: #7d1247;
+                        border-radius: 2px;
+                        color: white;
+                        cursor: pointer;
+                    }
+
+                    #follow {
+                        border: none;
+                        background-color: #12277d;
+                        border-radius: 2px;
+                        color: white;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            #user-profile {
+                padding-top: 20px;
+                padding-left: 40px;
+
+                #profile {
+                    img {
+                        width: 100px;
+                        height: auto;
+                        border-radius: 50%;
+                    }
+
+                    #user-info {
+                        margin-top: 20px;
+                        table-layout: auto;
+
+                        .info {
+
+                            .info-contents {}
+
+                            .blank-cell {
+                                width: 20px;
+                            }
+                        }
+                    }
+                }
+
+                #introduction-box {
+                    margin-top: 20px;
+                    padding: 10px 10px;
+
+                    #introduction-title {
+                        padding-left: 20px;
+                    }
+
+                    #introduction {
+                        padding: 20px 20px;
+                        background-color: #7488b0;
+                        color: white;
+                        border-radius: 8px;
+                    }
+                }
+            }
+        }
+    }
+
+    #user-works {
+        font-family: "arial", "MS Gothic";
+        width: 90%;
+        margin-left: 5%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+
+        input[type="radio"] {
+            display: none;
+        }
+
+        #tab-box {
+            label {
+                color: white;
+                background-color: #366ba1;
+                font-size: 1.3rem;
+                padding: 12px 0px;
+                margin-bottom: 0;
+                text-align: center;
+                cursor: pointer;
+            }
+
+            label:hover {
+                opacity: 0.5;
+            }
+
+            #article-tab {}
+
+            #draft-tab {}
+
+            #question-tab {}
+
+            #data-tab {}
+        }
+
+        #article-tab-button:checked~#tab-box #article-tab {
+            border-top: solid 2px #366ba1;
+            border-right: solid 2px #366ba1;
+            border-left: solid 2px #366ba1;
+            background-color: #ccddff;
+            color: #366ba1;
+        }
+
+        #article-tab-button:checked~.panel-area #article-works {
+            display: block;
+            background-color: #ccddff;
+        }
+
+        #draft-tab-button:checked~#tab-box #draft-tab {
+            border-top: solid 2px #366ba1;
+            border-right: solid 2px #366ba1;
+            border-left: solid 2px #366ba1;
+            background-color: #ccddff;
+            color: #366ba1;
+        }
+
+        #draft-tab-button:checked~.panel-area #draft-works {
+            display: block;
+            background-color: #ccddff;
+        }
+
+        #question-tab-button:checked~#tab-box #question-tab {
+            border-top: solid 2px #366ba1;
+            border-right: solid 2px #366ba1;
+            border-left: solid 2px #366ba1;
+            background-color: #ccddff;
+            color: #366ba1;
+        }
+
+        #question-tab-button:checked~.panel-area #question-works {
+            display: block;
+            background-color: #ccddff;
+        }
+
+        #data-tab-button:checked~#tab-box #data-tab {
+            border-top: solid 2px #366ba1;
+            border-right: solid 2px #366ba1;
+            border-left: solid 2px #366ba1;
+            background-color: #ccddff;
+            color: #366ba1;
+        }
+
+        #data-tab-button:checked~.panel-area #data-works {
+            display: block;
+            background-color: #ccddff;
+        }
+
+        #user-tab-box {
+
+            .link-to {
+                padding: 5px 5px;
+                background-color: #008080;
+                color: white;
+                border: none;
+                border-radius: 2px;
+                cursor: pointer;
+            }
+
+            .tab-panel {
+                display: none;
+                padding-top: 10px;
+                border-bottom: solid 2px #366ba1;
+                border-right: solid 2px #366ba1;
+                border-left: solid 2px #366ba1;
+
+                .work-cell {
+
+                    .title {
+
+                        h2 {
+                            font-size: 1.3rem;
+                        }
+                    }
+
+                    .created-at {}
+
+                    .blank-cell {
+                        width: 10px;
+                    }
+                }
+            }
+
+            #article-works {
+
+                .article {}
+            }
+        }
+    }
+}
