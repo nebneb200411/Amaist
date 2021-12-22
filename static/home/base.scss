@@ -196,67 +196,98 @@ body {
                 }
 
                 .second-menu {}
-
-                #article-second-menu {
-                    display: none;
-                    opacity: 0;
-                }
-
-                #data-library-second-menu {
-                    display: none;
-                }
-
-                #question-second-menu {
-                    display: none;
-                }
-
-                #profile-second-menu {
-                    display: none;
-                }
             }
         }
 
         .header-menu {
-            #article-first-menu:hover {
+            color: #b0c4de;
 
+            ul {
+                padding-inline-start: 0;
+            }
+
+            .link-to-contents {
+                height: 0;
+                overflow: hidden;
+                transition: .3s;
+            }
+
+            .first-menu {
+                padding: 10px 0;
+            }
+
+            #article-first-menu {
                 #article-second-menu {
-                    display: block;
-                    opacity: 1;
-                    transition: .3s;
+                    #article-menu {
+                        cursor: pointer;
+                    }
+                }
+                #article-second-menu:hover {
+                    .link-to-contents {
+                        height: 2rem;
+                        overflow: visible;
+                        padding: 10px 30px;
+                    }
                 }
             }
-
-            #data-library-first-menu:hover {
-
-                #data-library-second-menu {
-                    display: block;
-                    transition: .3s;
+            #datalibrary-first-menu {
+                #datalibrary-second-menu {
+                    #datalibrary-menu {
+                        cursor: pointer;
+                    }
+                }
+                #datalibrary-second-menu:hover {
+                    .link-to-contents {
+                        height: 2rem;
+                        overflow: visible;
+                        padding: 10px 30px;
+                    }
                 }
             }
-
-            #question-first-menu:hover {
-
+            #question-first-menu {
                 #question-second-menu {
-                    display: block;
-                    transition: .3s;
+                    #question-menu {
+                        cursor: pointer;
+                    }
+                }
+                #question-second-menu:hover {
+                    .link-to-contents {
+                        height: 2rem;
+                        overflow: visible;
+                        padding: 10px 30px;
+                    }
                 }
             }
-
-            #profile-first-menu:hover {
-
+            #profile-first-menu {
                 #profile-second-menu {
-                    display: block;
-                    transition: .3s;
+                    #profile-menu {
+                        cursor: pointer;
+                    }
+                }
+                #profile-second-menu:hover {
+                    .link-to-contents {
+                        height: 2rem;
+                        overflow: visible;
+                        padding: 10px 30px;
+                    }
+                }
+            }
+            #noauth-first-menu {
+                #noauth-second-menu {
+                    #noauth-menu {
+                        cursor: pointer;
+                    }
+                }
+                #noauth-second-menu:hover {
+                    .link-to-contents {
+                        height: 2rem;
+                        overflow: visible;
+                        padding: 10px 30px;
+                    }
                 }
             }
         }
-
-
-
-
         li {
-            padding: 10px;
-            border-bottom: solid 1px white;
             list-style: none;
         }
 

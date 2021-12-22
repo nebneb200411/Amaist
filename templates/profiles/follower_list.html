@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block stylesheet %}
+<title>フォロワー一覧</title>
+<link rel="stylesheet" href="{% static 'profile/follower/follower.css' %}">
+{% endblock stylesheet %}
+{% block contents %}
+{% for follower in follower_list %}
+<div class="each-follower d-flex">
+    <img class="follower-icon align-self-center" src="{{MEDIA_URL}}{{follower.icon}}">
+    <div class="follower-name flex-fill align-self-center">{{follower.user.username}}</div>
+    <div class="introduction flex-fill align-self-center">{{follower.introduction}}</div>
+    <a class="follower-detail align-self-center" href="{% url 'profiles:otheruser_profile' follower.pk %}">詳細へ</a>
+</div>
+{% endfor %}
+{% endblock %}

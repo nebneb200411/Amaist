@@ -203,51 +203,77 @@ body .header-nav .header-menu li a {
   z-index: 100;
 }
 
-body .header-nav .header-menu li #article-second-menu {
-  display: none;
-  opacity: 0;
+body .header-nav .header-menu {
+  color: #b0c4de;
 }
 
-body .header-nav .header-menu li #data-library-second-menu {
-  display: none;
+body .header-nav .header-menu ul {
+  -webkit-padding-start: 0;
+          padding-inline-start: 0;
 }
 
-body .header-nav .header-menu li #question-second-menu {
-  display: none;
-}
-
-body .header-nav .header-menu li #profile-second-menu {
-  display: none;
-}
-
-body .header-nav .header-menu #article-first-menu:hover #article-second-menu {
-  display: block;
-  opacity: 1;
+body .header-nav .header-menu .link-to-contents {
+  height: 0;
+  overflow: hidden;
   -webkit-transition: .3s;
   transition: .3s;
 }
 
-body .header-nav .header-menu #data-library-first-menu:hover #data-library-second-menu {
-  display: block;
-  -webkit-transition: .3s;
-  transition: .3s;
+body .header-nav .header-menu .first-menu {
+  padding: 10px 0;
 }
 
-body .header-nav .header-menu #question-first-menu:hover #question-second-menu {
-  display: block;
-  -webkit-transition: .3s;
-  transition: .3s;
+body .header-nav .header-menu #article-first-menu #article-second-menu #article-menu {
+  cursor: pointer;
 }
 
-body .header-nav .header-menu #profile-first-menu:hover #profile-second-menu {
-  display: block;
-  -webkit-transition: .3s;
-  transition: .3s;
+body .header-nav .header-menu #article-first-menu #article-second-menu:hover .link-to-contents {
+  height: 2rem;
+  overflow: visible;
+  padding: 10px 30px;
+}
+
+body .header-nav .header-menu #datalibrary-first-menu #datalibrary-second-menu #datalibrary-menu {
+  cursor: pointer;
+}
+
+body .header-nav .header-menu #datalibrary-first-menu #datalibrary-second-menu:hover .link-to-contents {
+  height: 2rem;
+  overflow: visible;
+  padding: 10px 30px;
+}
+
+body .header-nav .header-menu #question-first-menu #question-second-menu #question-menu {
+  cursor: pointer;
+}
+
+body .header-nav .header-menu #question-first-menu #question-second-menu:hover .link-to-contents {
+  height: 2rem;
+  overflow: visible;
+  padding: 10px 30px;
+}
+
+body .header-nav .header-menu #profile-first-menu #profile-second-menu #profile-menu {
+  cursor: pointer;
+}
+
+body .header-nav .header-menu #profile-first-menu #profile-second-menu:hover .link-to-contents {
+  height: 2rem;
+  overflow: visible;
+  padding: 10px 30px;
+}
+
+body .header-nav .header-menu #noauth-first-menu #noauth-second-menu #noauth-menu {
+  cursor: pointer;
+}
+
+body .header-nav .header-menu #noauth-first-menu #noauth-second-menu:hover .link-to-contents {
+  height: 2rem;
+  overflow: visible;
+  padding: 10px 30px;
 }
 
 body .header-nav li {
-  padding: 10px;
-  border-bottom: solid 1px white;
   list-style: none;
 }
 

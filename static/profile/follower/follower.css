@@ -1,0 +1,30 @@
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.mgr-10 {
+  margin-left: 10px;
+}
+
+main .each-follower {
+  font-family: "arial", "MS Gothic";
+  border-top: solid 1px gray;
+  border-bottom: solid 1px gray;
+}
+
+main .each-follower .follower-icon {
+  height: 80px;
+  width: auto;
+  border-radius: 50%;
+}
+
+main .each-follower .follower-detail {
+  border: none;
+  background-color: #6495ed;
+  color: white;
+  cursor: pointer;
+}
+/*# sourceMappingURL=follower.css.map */

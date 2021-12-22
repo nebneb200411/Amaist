@@ -37,7 +37,7 @@
                         </tr>
                         <tr class="info">
                             <td class="blank-cell"></td>
-                            <td class="info-contents">フォロワー</td>
+                            <td class="info-contents"><a href="{% url 'profiles:follower_list' profile.pk %}">フォロワー</a></td>
                             <td class="blank-cell"></td>
                             <td>{{ login_user_follower_count }}　人</td>
                         </tr>

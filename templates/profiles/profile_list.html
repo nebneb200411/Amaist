@@ -31,37 +31,6 @@
         </div>
     </div>
 </div>
-
-<!--<div class="container-fluid">
-    <div class="row">
-        <div id="main-box" class="col-12 col-md-9 col-xl-9">
-            <div id="profile-search">
-                <form method="GET" action = "{% url 'profiles:profile_list' %}">
-                    <input type="text" name="profile_search" placeholder="ユーザー検索"></input>
-                    <button type="submit" class="btn btn-primary">ユーザー検索</button>
-                </form>
-            </div>
-            <p>ユーザーのプロフィール</p>
-            {% for profile in profile_list %}
-            <div class="profile-box d-flex">
-                <div class="icon-box p-2">
-                    <img src="{{MEDIA_URL}}{{profile.icon}}"></img>
-                </div>
-                <div class="username-box p-2 d-flex">
-                    <p class="align-self-center"><a href="{% url 'profiles:otheruser_profile' profile.pk %}"><i class="fas fa-user"></i><span class="mgr-10"></span>{{profile.user.username}}</a></p>
-                </div>
-                <div class="introduction-box p-2 d-flex">
-                    <p class="align-self-center">{{profile.introduction}}</p>
-                </div>
-            </div>
-            {% endfor %}
-                </div>
-            </div>
-        </div>
-        <div id="right-box" class="col-12 col-md-3 col-xl-3">
-        </div>
-    </div>
-</div>-->
 {% endblock contents %}
 
 {% block script %}

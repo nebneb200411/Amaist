@@ -2,34 +2,29 @@
 {% load static %}
 {% block stylesheet %}
 <title>プロフィール作成</title>
-<link rel="stylesheet" href="{% static 'profile/create/create.css' %}"
+<link rel="stylesheet" href="{% static 'profile/create/create.css' %}">
 {% endblock stylesheet %}
 {% block contents %}
-
-<p class="profile-create-page-title">ようこそ！{{ user.username }}さん．プロフィールを作成しましょう</p>
-
 <div class="profile-create-box">
+    <h1 class="profile-create-page-title"><span>プロフィールの作成</span></h1>
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
-        <div class="profile-create-title-box">
-            <p class="profile-create-title-p"><i class="fas fa-id-card"></i><span class="mgr-10"></span>Profile</p>
-        </div> 
-
-        <div class="icon-input-box">
-            <p class="input-text"><i class="fas fa-image"></i><span class="mgr-10"></span>Icon</p>
+        <div class="icon-input-box profile-background">
+            <div class="description">
+                <h2 class="step">Step 1</h2>
+                <p class="intro">好きな画像をプロフィールにしましょう</p>
+            </div>
             {{form.icon}}
         </div>
-
         <hr class="horizontal-line">
-
-        <div class="introduction-input-box">
-            <p class="input-text"><i class="fas fa-user-edit"></i><span class="mgr-10"></span>Introduction</p>
-            {{form.introduction}}
+        <div class="introduction-input-box profile-background">
+            <div class="description">
+                <h2 class="step">Step 2</h2>
+                <p class="intro">自己紹文を書いてください</p>
+            </div>
+            <div id="intro-input-box">{{form.introduction}}</div>
         </div>
-
-        <hr class="horizontal-line">
-
-        <input id="profile-post-button" class="btn btn-primary" type="submit" value="プロフィール作成"/>
+        <input id="profile-post-button" type="submit" value="プロフィール作成"/>
     </form>
 </div>
 {% endblock %}

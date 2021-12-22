@@ -1,6 +1,7 @@
 from django.views.generic import UpdateView, DetailView, ListView, CreateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth import get_user_model
+from django.views.generic.base import TemplateView
 # import model
 from .models import Profile
 from question.models import Question
@@ -194,3 +195,23 @@ def profile_not_found(request):
             redirect('profiles:profile_create')
 
     return redirect('profiles:profile_create')
+
+"""
+we will display follower and following user
+
+FollowerListView -> display who you are follow
+FollowingListView -> display who you are following
+
+we are going to make the system to see another user's follower
+"""
+
+class FollowerListView(LoginRequiredMixin, ListView): 
+    model = Profile
+    template_name = "profiles/follower_list.html"
+    pagenate_by = 20
+    context_object_name = 'follower_list'
+
+    def get_queryset(self):
+        queryset = super().get_queryset() 
+        queryset = Profile.objects.filter(following = self.request.user)
+        return queryset

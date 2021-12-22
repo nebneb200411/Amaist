@@ -29,54 +29,72 @@
         </div>
         <div class="header-nav">
             <ul class="header-menu">
-                <li><a href="{% url 'index:index' %}"><i class="fas fa-home"></i><span class="mgr-10"></span>Home</a></li>
-                <li id="article-first-menu">
-                    <a href="{% url 'article:CreateArticle' %}"><i class="fas fa-book"></i><span class="mgr-10"></span>Article</a>
+                <li id="home-menu" class="first-menu"><a href="{% url 'index:index' %}"><i class="fas fa-home"></i><span class="mgr-10"></span>Home</a></li>
+                <li id="article-first-menu" class="first-menu">
                     <ul class="second-menu" id="article-second-menu">
-                        <li>
+                        <li id="article-menu"><i class="fas fa-book"></i><span class="mgr-10"></span>Article</li>
+                        <li class="link-to-contents">
                             <a href="{% url 'article:list' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>記事一覧</a>
                         </li>
-                        <li>
+                        <li class="link-to-contents">
                             <a href="{% url 'article:CreateArticle' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>記事作成</a>
                         </li>
                     </ul>
                 </li>
-                <li id="data-library-first-menu">
-                    <a href="{% url 'data_library:list' %}"><i class="fas fa-database"></i><span class="mgr-10"></span>DataLibrary</a>
-                    <ul class="second-menu" id="data-library-second-menu">
-                        <li>
-                            <a href="{% url 'data_library:create' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>データの投稿</a>
-                        </li>
-                        <li>
+                <li id="datalibrary-first-menu" class="first-menu">
+                    <ul class="second-menu" id="datalibrary-second-menu">
+                        <li id="datalibrary-menu"><i class="fas fa-database"></i><span class="mgr-10"></span>DataLibrary</li>
+                        <li class="link-to-contents">
                             <a href="{% url 'data_library:list' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>データ一覧</a>
                         </li>
+                        <li class="link-to-contents">
+                            <a href="{% url 'data_library:create' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>データの投稿</a>
+                        </li>
                     </ul>
                 </li>
-                <li id="question-first-menu">
-                    <a href="{% url 'question:list' %}"><i class="fas fa-question"></i></i><span class="mgr-10"></span>Questions</a>
+                <li id="question-first-menu" class="first-menu">
                     <ul class="second-menu" id="question-second-menu">
-                        <li>
-                            <a href="{% url 'question:create' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>質問作成</a>
-                        </li>
-                        <li>
+                        <li id="question-menu"><i class="fas fa-question"></i></i><span class="mgr-10"></span>Questions</li>
+                        <li class="link-to-contents">
                             <a href="{% url 'question:list' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>質問一覧</a>
                         </li>
+                        <li class="link-to-contents">
+                            <a href="{% url 'question:create' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>質問作成</a>
+                        </li>
                     </ul>
                 </li>
-                {% if request.user.is_authenticated %}    
-                <li id="profile-first-menu"><a href="{% url 'profiles:found_or_not_found' %}"><i class="fas fa-user-circle"></i><span class="mgr-10"></span>Profile</a>
+                {% if request.user.is_authenticated %}
+                <li id="profile-first-menu" class="first-menu">
                     <ul class="second-menu" id="profile-second-menu">
-                        <li>
-                            <a href="{% url 'profiles:found_or_not_found' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>プロフィール</a>
+                        <li id="profile-menu"><i class="fas fa-user-circle"></i><span class="mgr-10"></span>Profile</li>
+                        <li class="link-to-contents">
+                            <a href="{% url 'profiles:found_or_not_found' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>{{request.user.username}}さんのプロフィール</a>
                         </li>
-                        <li>
+                        <li class="link-to-contents">
                             <a href="{% url 'profiles:profile_list' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>プロフィール一覧</a>
+                        </li>
+                        <li class="link-to-contents"><a href="{% url 'login' %}"><i class="fas fa-sign-in-alt"></i><span class="mgr-10"></span>Login</a></li>
+                        <li class="link-to-contents">
+                            <a href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i><span class="mgr-10"></span>Logout</a>
+                        </li>
+                    </ul>
+                </li>
+                {% else %}
+                <li id="noauth-first-menu" class="first-menu">
+                    <ul class="second-menu" id="noauth-second-menu">
+                        <li id="noauth-menu">
+                            <i class="fas fa-exclamation"></i><span class="mgr-10"></span>ユーザー登録もしくはログインしましょう！
+                        </li>
+                        <li class="link-to-contents">
+                            <a href="{% url 'login' %}"><i class="fas fa-sign-in-alt"></i><span class="mgr-10"></span>Login</a>
+                        </li>
+                        <li class="link-to-contents">
+                            <a href="{% url 'sign_up' %}"><i class="fas fa-sign-out-alt"></i><span class="mgr-10"></span>Register</a>
                         </li>
                     </ul>
                 </li>
                 {% endif %}
-                <li><a href="{% url 'login' %}"><i class="fas fa-sign-in-alt"></i><span class="mgr-10"></span>Login</a></li>
-                <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdg-QjlojQ0CANiupGAnulT2Uf3jEumpPrdVNwFCZ8OqRzDrQ/viewform?usp=sf_link"><i class="fas fa-info-circle"></i><span class="mgr-10"></span>Inquiry</a></li>
+                <li class="first-menu"><a href="https://docs.google.com/forms/d/e/1FAIpQLSdg-QjlojQ0CANiupGAnulT2Uf3jEumpPrdVNwFCZ8OqRzDrQ/viewform?usp=sf_link"><i class="fas fa-info-circle"></i><span class="mgr-10"></span>Inquiry</a></li>
             </ul>
         </div>
     </header>
