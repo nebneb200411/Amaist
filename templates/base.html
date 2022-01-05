@@ -94,7 +94,19 @@
                     </ul>
                 </li>
                 {% endif %}
-                <li class="first-menu"><a href="https://docs.google.com/forms/d/e/1FAIpQLSdg-QjlojQ0CANiupGAnulT2Uf3jEumpPrdVNwFCZ8OqRzDrQ/viewform?usp=sf_link"><i class="fas fa-info-circle"></i><span class="mgr-10"></span>Inquiry</a></li>
+                <li id="inq-first-menu" class="first-menu">
+                    <ul class="second-menu" id="inq-second-menu">
+                        <li id="inq-menu">
+                            <i class="fas fa-mail-bulk"></i><span class="mgr-10"></span>Inquiry
+                        </li>
+                        <li class="link-to-contents">
+                            <a href="{% url 'notifications:list' %}"><i class="fas fa-bell"></i><span class="mgr-10"></span>お知らせ</a>
+                        </li>
+                        <li class="link-to-contents">
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdg-QjlojQ0CANiupGAnulT2Uf3jEumpPrdVNwFCZ8OqRzDrQ/viewform?usp=sf_link"><i class="fas fa-info-circle"></i><span class="mgr-10"></span>お問合せ</a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </header>

@@ -28,7 +28,6 @@ body header {
   height: 50px;
   width: 100%;
   z-index: 100;
-  background-color: black;
 }
 
 body header .menu-button closed {
@@ -37,6 +36,7 @@ body header .menu-button closed {
 
 body header .header-box {
   height: 100%;
+  background-color: black;
 }
 
 body header .header-box .menu-button {
@@ -174,12 +174,13 @@ body .header-nav {
   position: relative;
   width: 100%;
   top: 0px;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.9);
   -webkit-transform: translateX(-100%);
           transform: translateX(-100%);
   -webkit-transition: .3s;
   transition: .3s;
   z-index: 100;
+  font-family: "arial", "MS Gothic";
 }
 
 body .header-nav.slide-in {
@@ -199,6 +200,7 @@ body .header-nav .header-menu li {
 }
 
 body .header-nav .header-menu li a {
+  text-decoration: none;
   color: #b0c4de;
   z-index: 100;
 }
@@ -268,6 +270,16 @@ body .header-nav .header-menu #noauth-first-menu #noauth-second-menu #noauth-men
 }
 
 body .header-nav .header-menu #noauth-first-menu #noauth-second-menu:hover .link-to-contents {
+  height: 2rem;
+  overflow: visible;
+  padding: 10px 30px;
+}
+
+body .header-nav .header-menu #inq-first-menu #inq-second-menu #inq-menu {
+  cursor: pointer;
+}
+
+body .header-nav .header-menu #inq-first-menu #inq-second-menu:hover .link-to-contents {
   height: 2rem;
   overflow: visible;
   padding: 10px 30px;

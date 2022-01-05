@@ -215,3 +215,15 @@ class FollowerListView(LoginRequiredMixin, ListView):
         queryset = super().get_queryset() 
         queryset = Profile.objects.filter(following = self.request.user)
         return queryset
+
+class FollowingListView(LoginRequiredMixin, ListView):
+    model = Profile
+    template_name = "profiles/following_list.html"
+    pagenate_by = 20
+    context_object_name = 'following_list'
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        queryset = Profile.objects.filter(follower = self.request.user)
+        return queryset
+        

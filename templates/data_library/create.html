@@ -18,8 +18,13 @@
                 </div>
                 <p id="add-file-button-p"><i class="far fa-plus-square fa-3x" id="add-file-button"></i></p>
             </div>
-            <div id="data-description-box" class="boxes">
+            <div id="data-title-box" class="boxes">
                 <div class="numbering">Step2</div>
+                <p class="description">タイトルを入力してください</p>
+                {{form.title}}
+            </div>
+            <div id="data-description-box" class="boxes">
+                <div class="numbering">Step3</div>
                 <p class="description">データについて</p>
                 {{form.media}}
                 {{form.introduction}}

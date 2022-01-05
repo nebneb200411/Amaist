@@ -39,6 +39,7 @@ main #form-box form .description {
 main #form-box form .boxes {
   width: 80%;
   margin-left: 10%;
+  margin-bottom: 40px;
   position: relative;
   border: solid 3px #4E5590;
 }
@@ -53,10 +54,6 @@ main #form-box form .boxes .numbering {
   padding-top: 22px;
   background-color: #4E5590;
   color: white;
-}
-
-main #form-box form #data-upload-box {
-  margin-bottom: 40px;
 }
 
 main #form-box form #data-upload-box #file-input-box {

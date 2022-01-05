@@ -31,13 +31,13 @@
                         </tr>
                         <tr class="info">
                             <td class="blank-cell"></td>
-                            <td class="info-contents">フォロー</td>
+                            <td class="info-contents"><a href="{% url 'profiles:following_list' profile.pk %}" class="f-f-link">フォロー</a></td>
                             <td class="blank-cell"></td>
                             <td>{{ login_user_follow_count }}　人</td>
                         </tr>
                         <tr class="info">
                             <td class="blank-cell"></td>
-                            <td class="info-contents"><a href="{% url 'profiles:follower_list' profile.pk %}">フォロワー</a></td>
+                            <td class="info-contents"><a href="{% url 'profiles:follower_list' profile.pk %}" class="f-f-link">フォロワー</a></td>
                             <td class="blank-cell"></td>
                             <td>{{ login_user_follower_count }}　人</td>
                         </tr>
@@ -142,6 +142,11 @@
                     <td class="update">
                         <a class="link-to" href={% url 'data_library:detail' datalibrary.pk %}>
                             詳細
+                        </a>
+                    </td>
+                    <td class="update">
+                        <a class="link-to" href={% url 'data_library:update' datalibrary.pk %}>
+                            編集
                         </a>
                     </td>
                 </tr>

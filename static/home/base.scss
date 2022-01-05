@@ -27,7 +27,6 @@ body {
         height: 50px;
         width: 100%;
         z-index: 100;
-        background-color: black;
 
         .menu-button closed {
             visibility: hidden;
@@ -35,6 +34,7 @@ body {
 
         .header-box {
             height: 100%;
+            background-color: black;
 
             .menu-button {
                 position: relative;
@@ -169,10 +169,11 @@ body {
         position: relative;
         width: 100%;
         top: 0px;
-        background-color: black;
+        background-color: rgba(0, 0, 0, 0.9);
         transform: translateX(-100%);
         transition: .3s;
         z-index: 100;
+        font-family: "arial", "MS Gothic";
 
 
         &.slide-in {
@@ -189,6 +190,7 @@ body {
                 z-index: 100;
 
                 a {
+                    text-decoration: none;
                     color: #b0c4de;
                     z-index: 100;
 
@@ -279,6 +281,20 @@ body {
                     }
                 }
                 #noauth-second-menu:hover {
+                    .link-to-contents {
+                        height: 2rem;
+                        overflow: visible;
+                        padding: 10px 30px;
+                    }
+                }
+            }
+            #inq-first-menu {
+                #inq-second-menu {
+                    #inq-menu {
+                        cursor: pointer;
+                    }
+                }
+                #inq-second-menu:hover {
                     .link-to-contents {
                         height: 2rem;
                         overflow: visible;

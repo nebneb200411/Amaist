@@ -1,0 +1,68 @@
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.mgr-10 {
+  margin-left: 10px;
+}
+
+input {
+  -webkit-appearance: none;
+}
+
+#notif-box {
+  background-color: #f7f7f7;
+}
+
+#notif-box #contents-box {
+  display: inline-block;
+  width: 100vw;
+  margin-top: 20px;
+  border-left: solid 2px #c6e0ec;
+}
+
+#notif-box #contents-box #title-box {
+  border-bottom: solid 2px #c6e0ec;
+}
+
+#notif-box #contents-box #title-box .note-border {
+  border-bottom: dotted 1px #c6e0ec;
+}
+
+#notif-box #contents-box #title-box #page-title {
+  font-family: 'Book Antiqua', 'MS Mincho';
+  font-size: 1.2rem;
+  margin-left: 60px;
+}
+
+#notif-box #contents-box #title-box #page-inform {
+  font-size: 0.8rem;
+  margin-right: 10px;
+}
+
+#notif-box #contents-box #notif-contents .link-to-notif {
+  margin: 0px 10px;
+  text-decoration: none;
+  color: #71d0aa;
+  border-bottom: solid 1px #ecf6f9;
+}
+
+#notif-box #contents-box #notif-contents .link-to-notif i {
+  margin-left: 10px;
+}
+
+#notif-box #contents-box #notif-contents .link-to-notif .each-notif .created-at {
+  margin: 0px 10px;
+}
+
+#notif-box #contents-box #notif-contents .link-to-notif .each-notif .holl {
+  height: 20px;
+  width: 20px;
+  margin: 20px 20px;
+  border-radius: 50%;
+  background-color: #080808;
+}
+/*# sourceMappingURL=list.css.map */

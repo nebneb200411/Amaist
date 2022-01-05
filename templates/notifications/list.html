@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block stylesheet %}
+    <title>お知らせ一覧</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/monokai.min.css">
+    <link rel="stylesheet" href="{% static 'notifications/list/list.css' %}">
+{% endblock stylesheet %}
+{% block contents %}
+<div id="notif-box">
+    <div id="contents-box">
+        <div id="title-box" class="d-flex justify-content-between">
+            <span id="page-title" class="align-self-center">Amaistからのお知らせ</span>
+            <div id="page-inform">
+                <p class="p-info note-border">Page: 1</p>
+                <p class="p-info note-border">To: {{request.user.username}}様</p>
+            </div>
+        </div>
+        <div id="notif-contents">
+            {% for notification in notifications %}
+            <a class="link-to-notif" href="{% url 'notifications:detail' notification.pk %}">
+                <div class="each-notif d-flex">
+                    <div class="holl"></div>
+                    <i class="fas fa-chevron-right align-self-center"></i>
+                    <span class="mgr-10"></span>
+                    <span class="created-at align-self-center">{{notification.created_at}}</span>
+                    <span class="notif-title align-self-center">{{notification.title}}</span>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock contents %}

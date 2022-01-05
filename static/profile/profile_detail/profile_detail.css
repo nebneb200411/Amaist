@@ -87,6 +87,10 @@ main #user-profile #user-info-box #user-profile #profile #user-info .info .blank
   width: 20px;
 }
 
+main #user-profile #user-info-box #user-profile #profile #user-info .info .f-f-link {
+  color: black;
+}
+
 main #user-profile #user-info-box #user-profile #introduction-box {
   margin-top: 20px;
   padding: 10px 10px;

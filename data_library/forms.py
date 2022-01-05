@@ -1,15 +1,25 @@
 from django import forms
-from .models import DataLibrary, CommentToDataLibrary
+from .models import DataLibrary, CommentToDataLibrary, Files
 from ckeditor.widgets import CKEditorWidget
 
 
 class DataLibraryCreateForm(forms.ModelForm):
     class Meta:
         model = DataLibrary
-        fields = ('introduction', )
+        fields = ('title', 'introduction', )
 
         widgets = {
-            'introduction': CKEditorWidget(),
+            'title':forms.TextInput(),
+            'introduction': CKEditorWidget(), 
+        }
+
+class DataForm(forms.ModelForm):
+    class Meta:
+        model = Files
+        fields = ('datalibrary_file', )
+
+        widgets = {
+            'datalibrary_file':forms.FileInput(), 
         }
 
 

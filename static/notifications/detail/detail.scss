@@ -36,22 +36,22 @@ main {
             #left-box {}
 
             #main-box {
-                margin-top: 5%;
+                margin: 20px 0px;
                 border: solid 2px #d3d3d3;
                 box-shadow: 0 0 10px #d3d3d3;
 
                 .title-box {
-                    margin-top: 5%;
+                    margin-top: 40px;
                     border-bottom: solid 2px #4682b4;
                     border-top: solid 2px #4682b4;
 
                     .title-p {
-                        margin-left: 5%;
-                        margin-top: 2%;
-                        margin-bottom: 2%;
+                        margin-left: 10px;
+                        margin-top: 10px;
+                        margin-bottom: 10px;
                         font-family: 'arila', 'Yu Gothic';
                         color: #4682b4;
-                        font-size: 3vh;
+                        font-size: 1.2rem;
                     }
                 }
 

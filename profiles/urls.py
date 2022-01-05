@@ -20,5 +20,5 @@ urlpatterns = [
      path('otheruser_profile/<uuid:pk>/', views.OtherUserProfileView.as_view(),
           name='otheruser_profile'),
      path('follower_list/<uuid:pk>/', views.FollowerListView.as_view(), name = "follower_list"), 
-
+     path('follwing_list/<uuid:pk>/', views.FollowingListView.as_view(), name = "following_list"), 
 ]
