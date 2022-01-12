@@ -1,8 +1,31 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block stylesheet %}
+<title>データ編集</title>
+<link rel="stylesheet" href="{% static 'data_library/create/create.css' %}">
+{% endblock stylesheet %}
 {% block contents %}
-<form method="POST" enctype="multipart/form-data">
-    {{form.as_p}}
-    <input type="submit" muti label='DataLibraryの更新' class="btn btn-success"></input>
-</form>
+    <div id="form-box">
+        <h1 id="page-title" class="title">Edit Data</h1>
+        <hr>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div id="data-title-box" class="boxes">
+                <div class="numbering">Step1</div>
+                <p class="description">タイトルを入力してください</p>
+                <p id="title-p">{{form.title}}</p>
+            </div>
+            <div id="data-description-box" class="boxes">
+                <div class="numbering">Step2</div>
+                <p class="description">データについて</p>
+                {{form.media}}
+                {{form.introduction}}
+            </div>
+            <p id="post"><input id="post-button" type="submit"></input></p>
+        </form>
+    </div>
 {% endblock contents %}
+
+{% block script %}
+<script type="text/javascript" src="{% static 'data_library/create/create.js' %}"></script>
+{% endblock script %}

@@ -121,11 +121,16 @@
                 <tr class="data work-cell">
                     <td class="blank-cell"></td>
                     <td class="title">
-                        <h2>{{datalibrary.introduction|safe}}</h2>
+                        <h2>{{datalibrary.title}}</h2>
                     </td>
                     <td class="blank-cell"></td>
                     <td class="created-at">
                         {{datalibrary.created_at|date:"y/m/d"}}
+                    </td>
+                    <td class="update">
+                        <a class="link-to" href={% url 'data_library:detail' datalibrary.pk %}>
+                            詳細
+                        </a>
                     </td>
                 </tr>
                 {% endfor %}

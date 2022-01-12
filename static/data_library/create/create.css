@@ -71,6 +71,11 @@ main #form-box form #data-upload-box #add-file-button-p #add-file-button {
   cursor: pointer;
 }
 
+main #form-box form #data-title-box #title-p #id_title {
+  margin-left: 5%;
+  width: 90%;
+}
+
 main #form-box form #post {
   padding-top: 20px;
   padding-bottom: 20px;

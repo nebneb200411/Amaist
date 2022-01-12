@@ -180,21 +180,25 @@ def follow_unfollow_view(request):
         else:
             obj.follower.add(my_profile.user)
 
-        # request.META.get('HTTP_REFERER')
         return redirect('profiles:profile_list')
     return redirect('profiles:profile_list')
 
-
+"""
+if user have an account but haven't made profile -> profile_make
+if user haven't accout -> registration create
+"""
 def profile_not_found(request):
-    if request.method == 'GET':
+    try:
         if Profile.objects.filter(user=request.user).exists():
-            my_profile = Profile.objects.get(user=request.user)
-            pk = my_profile.pk
+            user = Profile.objects.get(user=request.user)
+            pk = user.pk
             return redirect('profiles:profile_detail', pk=pk)
+        
         else:
-            redirect('profiles:profile_create')
-
-    return redirect('profiles:profile_create')
+            return redirect('profiles:profile_create')
+    
+    except:
+        return redirect('registration:sign_up')
 
 """
 we will display follower and following user
@@ -204,7 +208,6 @@ FollowingListView -> display who you are following
 
 we are going to make the system to see another user's follower
 """
-
 class FollowerListView(LoginRequiredMixin, ListView): 
     model = Profile
     template_name = "profiles/follower_list.html"
@@ -226,4 +229,3 @@ class FollowingListView(LoginRequiredMixin, ListView):
         queryset = super().get_queryset()
         queryset = Profile.objects.filter(follower = self.request.user)
         return queryset
-        

@@ -21,9 +21,11 @@ main .each-following .following-icon {
   border-radius: 50%;
 }
 
-main .each-following .follwing-detail {
+main .each-following .following-detail {
   border: none;
   background-color: #6495ed;
+  border-radius: 2px;
+  padding: 10px 5px;
   color: white;
   cursor: pointer;
 }

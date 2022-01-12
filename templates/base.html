@@ -24,7 +24,7 @@
                 <img src="{% static 'images/base/logo3.png' %}"></img>
             </div>
             <div class="user-icon-box ml-auto p-2">
-                <a href="{% url 'profiles:found_or_not_found' %}"><img src="{{MEDIA_URL}}{{request.user.user.icon|default:"images/user-icon-default.png"}}"/></a>
+                <a href="{% url 'profiles:found_or_not_found' %}"><img src="{{MEDIA_URL}}{{request.user.user.icon|default:"images/user-icon-default.png"}}"></a>
             </div>
         </div>
         <div class="header-nav">
