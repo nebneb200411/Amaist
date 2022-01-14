@@ -50,7 +50,7 @@ if not DEBUG:
     EMAIL_HOST = 'smtp.gmail.com'
     EMAIL_PORT = 587
     EMAIL_HOST_USER = env('EMAIL_HOST_USER')
-    EMAIL_HOST_PASSWORD = 'afsvwgauzbvwylwa'
+    EMAIL_HOST_PASSWORD = 'rhxkwasvmumhnutc'
     EMAIL_USE_TLS = True
 
     STATIC_ROOT = '/usr/share/nginx/html/static'
@@ -164,10 +164,10 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 # connect to emailsurver
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'noreplyamaist@gmail.com'
-EMAIL_HOST_PASSWORD = 'afsvwgauzbvwylwa'
+EMAIL_HOST_USER = 'noreply.datalabo@gmail.com'
+EMAIL_HOST_PASSWORD = 'rhxkwasvmumhnutc'
 EMAIL_USE_TLS = True
-DEFAUL_FROM_EMAIL = 'noreplyamaist@gmail.com'
+DEFAUL_FROM_EMAIL = 'noreply.datalabo@gmail.com'
 
 
 # Static files (CSS, JavaScript, Images)
