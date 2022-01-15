@@ -5,4 +5,6 @@
 
 CKEDITOR.editorConfig = function (config) {
 	config.language = 'ja';
+	config.mathJaxLib = '//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_HTML';
+
 };
