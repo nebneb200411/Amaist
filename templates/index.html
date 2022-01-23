@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block stylesheet %}
-<title>index</title>
+<title>Dataラボ</title>
 <link rel="stylesheet" href="{% static 'home/index.css' %}">
 {% endblock stylesheet %}
 {% block contents %}
@@ -42,7 +42,7 @@
                                     src="{% static 'images/index/amaist_survice_datalibrary.png' %}"></img>DataLibrary
                             </p>
                             <p class="about-datalibrary ml-auto p-2 align-self-center">
-                                データの図書館です．集めたデータをここに寄付してください！！データは共有され，Amaistユーザー皆さんがダウンロードできます．ここで得られたデータを使って分析しましょう！！
+                                データの図書館です．集めたデータをここに寄付してください！！データは共有され，Dataラボユーザー皆さんがダウンロードできます．ここで得られたデータを使って分析しましょう！！
                             </p>
                         </div>
                     </div>
@@ -61,7 +61,7 @@
 
             <div class="article-box">
                 {% for object in object_list %}
-                <hr class="object-division-hr" />
+                <hr class="object-division-hr">
                     <div id="article-header" class="d-flex">
                         <div id="icon">
                             <div class="author-icon">
