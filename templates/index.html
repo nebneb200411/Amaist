@@ -2,7 +2,7 @@
 {% load static %}
 {% block stylesheet %}
 <title>Dataラボ</title>
-<link rel="stylesheet" href="{% static 'home/index.css' %}">
+<link rel="stylesheet" href="{% static 'base/index.css' %}">
 {% endblock stylesheet %}
 {% block contents %}
 <div class="container-fluid">
@@ -58,60 +58,10 @@
                                 class="link-to-login-and-register" href={% url 'login' %}></span>Login</a></p>
                 </div>
             </div>
-
-            <div class="article-box">
-                {% for object in object_list %}
-                <hr class="object-division-hr">
-                    <div id="article-header" class="d-flex">
-                        <div id="icon">
-                            <div class="author-icon">
-                                <!--もし画像を選択していないときのデフォルトの画像を表示させる(今のところmodelsでやればいかなーて思ってる)-->
-                                <img class="user-icon"
-                                    src="{{ MEDIA_URL }}{{object.author.user.icon|default:'images/user-icon-default.png'}}"></img>
-                            </div>
-                        </div>
-
-                        <div id="author-name-created-at">
-                            <div class="autor-name">
-                                <p><i class="fas fa-user"></i><span class="mgr-10"></span>
-                                <p class="object-author">{{object.author}}</p>
-                                </p>
-                            </div>
-                            <div class="created-at">
-                                <p class="font"><i class="far fa-calendar-alt"></i><span
-                                        class="mgr-10"></span>{{object.created_at|date:"y/m/d"}}</p>
-                            </div>
-
-
-                            <div class="tag-box">
-                                {% for tag in object.tag.all %}
-                                <p><i class="fas fa-tags"></i><span class="mgr-10"></span>{{tag}}</p>
-                                {% empty %}
-                                {% endfor %}
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-xl-12 col-md-12 col-12" id="title">
-                        <hr class="title-hr" />
-                        <a href="{% url 'article:article_detail' object.pk %}">
-                            <h3 class-"object-title">{{object.title}}</h3>
-                        </a>
-                        <hr class="title-hr" />
-                    </div>
-
-                    <div class="col-xl-12 col-md-12 col-12" id="good-number">
-                        <p><i class="fas fa-thumbs-up"></i><span
-                                class="mgr-10"></span>{{object.good_from.all|length}}</p>
-                    </div>
-                {% endfor %}
-            </div>
-        </div>
-        <div class="col-12 col-md-3 col-xl-3" id="right-box"></div>
     </div>
 </div>
 {% endblock contents %}
 
 {% block script %}
-    <script type="text/javascript" src="{% static 'home/index.js' %}"></script>
+    <script type="text/javascript" src="{% static 'base/index.js' %}"></script>
 {% endblock script %}

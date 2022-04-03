@@ -18,6 +18,8 @@ class Article(models.Model):
         User, related_name="author", on_delete=models.CASCADE)
     content = RichTextUploadingField('テキスト', null=False, blank=False)
     title = models.TextField('タイトル', max_length=50)
+    genre = models.TextField('genre', max_length=50,
+                             default='その他', blank=False, null=False)
     created_at = models.DateTimeField('作成日', auto_now_add=True)
     updated_at = models.DateTimeField('更新日', auto_now=True)
     good_from = models.ManyToManyField(

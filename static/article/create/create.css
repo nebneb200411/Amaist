@@ -9,17 +9,15 @@
   margin-left: 10px;
 }
 
-main div div #left-box {
-  background-color: #d8d9d9;
+.emphasize-text {
+  font-size: 2.5rem;
 }
 
-main div div #main-box {
-  border-right: solid 2px #508686;
-  border-left: solid 2px #508686;
-  background-color: white;
+.text-family {
+  font-family: 'arial', 'MS Gothic';
 }
 
-main div div #main-box #page-title-box {
+main #page-title-box {
   display: table;
   position: relative;
   background-image: url(/static/images/article/create/create_article.jpg);
@@ -27,24 +25,21 @@ main div div #main-box #page-title-box {
   background-size: cover;
   background-position: center;
   width: 100%;
-  margin-top: 5%;
 }
 
-main div div #main-box #page-title-box div {
-  display: table-cell;
-  position: relative;
-  vertical-align: middle;
-}
-
-main div div #main-box #page-title-box div .page-title {
+main #page-title-box #page-discription {
+  padding: 100px 0px;
+  list-style: none;
   color: white;
-  text-align: center;
-  font-family: 'MS PMincho';
-  font-size: 3rem;
-  font-weight: 600;
 }
 
-main div div #main-box #page-title-box::before {
+main #page-title-box #page-discription li {
+  font-family: 'MS Gothic';
+  size: 1.5rem;
+  text-align: center;
+}
+
+main #page-title-box::before {
   content: '';
   background-color: rgba(0, 0, 0, 0.4);
   position: absolute;
@@ -55,70 +50,45 @@ main div div #main-box #page-title-box::before {
   display: block;
 }
 
-main div div #main-box form .content-p {
-  font-family: 'Book Antiqua';
-  color: #008080;
-  border-bottom: solid 2px #008080;
+main form {
+  margin: 20px 0px 0px 0px;
+}
+
+main form .form-text {
   font-size: 1.5rem;
+  margin: 0px;
+  color: white;
+  padding: 10px 0px;
+  text-align: center;
 }
 
-main div div #main-box form .content-p i:before {
-  color: #008080;
+main form #title {
+  background-color: #36a136;
 }
 
-main div div #main-box form .title-input-box input {
-  width: 100%;
-  height: 40px;
-  outline: none;
-  border-bottom: solid 2px #006400;
-}
-
-main div div #main-box form .title-input-box input:focus {
-  -webkit-box-shadow: 0px 10px 10px 0px #90ee90;
-          box-shadow: 0px 10px 10px 0px #90ee90;
-}
-
-main div div #main-box form .title-input-box input:focus ::-webkit-input-placeholder {
-  content: "";
-}
-
-main div div #main-box form .title-input-box input:focus :-ms-input-placeholder {
-  content: "";
-}
-
-main div div #main-box form .title-input-box input:focus ::-ms-input-placeholder {
-  content: "";
-}
-
-main div div #main-box form .title-input-box input:focus ::placeholder {
-  content: "";
-}
-
-main div div #main-box form #tag-box .tag-input {
-  width: 30%;
-  margin-bottom: 2%;
-  margin-right: 2%;
-  outline: none;
-  border-top: solid 2px #d8bfd8;
-  border-right: solid 2px #ffc0cb;
-  border-left: solid 2px #ffc0cb;
-  font-family: FontAwesome;
-  font-style: normal;
-  font-weight: normal;
-  text-decoration: inherit;
-}
-
-main div div #main-box form .tag-input-box-add i {
-  cursor: pointer;
-}
-
-main div div #main-box form #submit-button {
+main form #title input {
+  margin: 0px 0px 10px 20%;
   width: 60%;
-  margin-left: 20%;
-  margin-bottom: 10%;
+  border: none;
+  outline: none;
+  height: 30px;
+  border-radius: 3px;
 }
 
-main div div #right-box {
-  background-color: #d8d9d9;
+main form #tags {
+  background-color: #36a136;
+}
+
+main form #publish {
+  margin: 20px 0 0 0;
+  background-color: #36a136;
+}
+
+main form #publish input {
+  content: '';
+  width: 20px;
+  height: 20px;
+  border: 1px solid #6cc0e5;
+  background-color: none;
 }
 /*# sourceMappingURL=create.css.map */
