@@ -75,8 +75,31 @@ main form #title input {
   border-radius: 3px;
 }
 
+main form #genre {
+  background-color: #36a136;
+  margin: 20px 0 0 0;
+}
+
+main form #genre select {
+  width: 60%;
+  margin: 0 0 10px 20%;
+}
+
 main form #tags {
   background-color: #36a136;
+}
+
+main form #tags .tag-input input {
+  width: 30%;
+  margin: 0 0 0 35%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+main form #tags .tag-input label {
+  background-color: #cfd9e2;
+  border: solid 1px gray;
+  height: 30px;
 }
 
 main form #publish {
@@ -91,22 +114,43 @@ main form #publish label div {
 }
 
 main form #publish label div #check-icon {
+  background-color: transparent;
   display: block;
+  opacity: 1;
   content: '';
-  width: 10px;
-  height: 5px;
+  width: 20px;
+  height: 10px;
   border-left: 2px solid #25AF01;
   border-bottom: 2px solid #25AF01;
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
 }
 
-main form #publish label div .visible {
-  display: none;
+main form #publish label div #check-icon.visible {
+  opacity: 0;
 }
 
 main form #publish span {
-  color: white;
   margin: 0 0 0 10px;
+  color: white;
+}
+
+main form #publish input {
+  display: none;
+}
+
+main #content-box {
+  margin: 20px 0 0 0;
+}
+
+main button {
+  margin: 10px 0 10px 15px;
+  width: 50px;
+  height: 30px;
+  border: none;
+  background-color: #0088ff;
+  color: white;
+  border-radius: 3px;
+  cursor: pointer;
 }
 /*# sourceMappingURL=create.css.map */
