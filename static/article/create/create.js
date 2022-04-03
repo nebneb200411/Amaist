@@ -5,4 +5,8 @@ $('#tag-add-button').click(function () {
 $(function () {
     var page_title_image = $('#page-title-box');
     page_title_image.height(page_title_image.width() * 0.4);
+
+    $('#check-box').on('click', function () {
+        $('#check-icon').toggleClass('visible');
+    });
 })

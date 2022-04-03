@@ -84,11 +84,29 @@ main form #publish {
   background-color: #36a136;
 }
 
-main form #publish input {
-  content: '';
+main form #publish label div {
+  background-color: white;
   width: 20px;
   height: 20px;
-  border: 1px solid #6cc0e5;
-  background-color: none;
+}
+
+main form #publish label div #check-icon {
+  display: block;
+  content: '';
+  width: 10px;
+  height: 5px;
+  border-left: 2px solid #25AF01;
+  border-bottom: 2px solid #25AF01;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+main form #publish label div .visible {
+  display: none;
+}
+
+main form #publish span {
+  color: white;
+  margin: 0 0 0 10px;
 }
 /*# sourceMappingURL=create.css.map */
