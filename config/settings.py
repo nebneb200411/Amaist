@@ -197,11 +197,13 @@ CKEDITOR_BROWSE_SHOW_DIRS = True
 CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
 
 CKEDITOR_CONFIGS = {
+
     'default': {
+        'allowedContent': True,
         # css path
         'contentsCss': '/static/ckeditor/ckeditor.css',
         'width': '100%',
-        'skin': 'moono',
+        'skin': 'moono-lisa',
         'codeSnippet_theme': 'ir_black',
         # 'skin': 'office2013',
         'toolbar_Basic': [
@@ -244,7 +246,7 @@ CKEDITOR_CONFIGS = {
         'toolbar': 'YourCustomToolbarConfig',  # put selected toolbar config here
         # 'toolbarGroups': [{ 'name': 'document', 'groups': [ 'mode', 'document', 'doctools' ] }],
         # 'height': 291,
-        # 'width': '100%',
+        'width': '100%',
         'filebrowserWindowHeight': 725,
         'filebrowserWindowWidth': '100%',
         # 'toolbarCanCollapse': True,

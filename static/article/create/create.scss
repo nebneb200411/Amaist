@@ -18,6 +18,7 @@
 }
 
 main {
+    background-color: #d8d9d9;
     #page-title-box {
         display: table;
         position: relative;
@@ -28,14 +29,14 @@ main {
         width: 100%;
 
         #page-discription {
-            padding: 100px 0px;
+            position: absolute;
+            padding: 100px 20px;
             list-style: none;
             color: white;
 
             li {
                 font-family: 'MS Gothic';
-                size: 1.5rem;
-                text-align: center;
+                size: 2rem;
             }
         }
     }

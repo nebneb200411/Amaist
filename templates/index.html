@@ -7,6 +7,35 @@
 {% block contents %}
 <div class="container-fluid">
     <div class="row">
+        <div id="site-discription-box" class="col-12 col-md-7 col-xl-7">
+            <div id="site-discriptions">
+                <h1 class="font">Dataラボ</h1>
+                <h4 class="font">Dataラボは，データ分析愛好家のための記事作成サービスです</h4>
+                <h2 class="font">・記事作成</h2>    
+                <h3 class="font">テキストエディターを使って記事の投稿が可能です</h3>
+                <h2 class="font">・質問投稿</h2>
+                <h3 class="font">議論の場所として使えます</h3>
+                <h2 class="font">・データ投稿</h2>
+                <h3 class="font">データを共有できます</h3>
+            </div>
+            <div id="site-images">
+                <img id="article-icon" src="{% static 'images/index/amaist_survice_article.png' %}">
+                <img id="question-icon" src="{% static 'images/index/amaist_survice_question.png' %}">
+                <img id="datalibrary-icon" src="{% static 'images/index/amaist_survice_datalibrary.png' %}">
+            </div>
+        </div>
+        <div id="site-top-image" class="col-12 col-md-5 col-xl-5">
+        </div>
+        <div class="login-and-register-box">
+            <div class="login-and-register-text">
+                <p class="login-and-register" id="login-and-register-title"><span>登録，ログインはこちら</span></p>
+                <p class="login-and-register"><i class="fas fa-user-plus"></i><span class="mgr-10"></span><a
+                        class="link-to-login-and-register" href={% url 'sign_up' %}>Register</a></p>
+                <p class="login-and-register"><i class="fas fa-sign-in-alt"></i><span class="mgr-10"><a
+                            class="link-to-login-and-register" href={% url 'login' %}></span>Login</a></p>
+            </div>
+        </div>
+        <!--
         <div class="col-12 col-md-9 col-xl-9" id="main-box">
             <div class="amaist-description-box">
                 <div class="amaist-description" id="amaist-title-box">
@@ -58,6 +87,7 @@
                                 class="link-to-login-and-register" href={% url 'login' %}></span>Login</a></p>
                 </div>
             </div>
+        -->
     </div>
 </div>
 {% endblock contents %}

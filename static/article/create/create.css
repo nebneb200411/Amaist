@@ -17,6 +17,10 @@
   font-family: 'arial', 'MS Gothic';
 }
 
+main {
+  background-color: #d8d9d9;
+}
+
 main #page-title-box {
   display: table;
   position: relative;
@@ -28,15 +32,15 @@ main #page-title-box {
 }
 
 main #page-title-box #page-discription {
-  padding: 100px 0px;
+  position: absolute;
+  padding: 100px 20px;
   list-style: none;
   color: white;
 }
 
 main #page-title-box #page-discription li {
   font-family: 'MS Gothic';
-  size: 1.5rem;
-  text-align: center;
+  size: 2rem;
 }
 
 main #page-title-box::before {

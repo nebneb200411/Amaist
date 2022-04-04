@@ -19,3 +19,6 @@ CKEDITOR.editorConfig = function (config) {
 	};
 
 };
+
+//CKEDITOR.config.extraPlugins = "toc";
+//CKEDITOR.config.format_tags = 'div';
