@@ -16,6 +16,18 @@
             <form method="GET" id="tag-search">
                 <p class="search-p"><input class="search-input" type="text" name="tag_search" placeholder="タグ検索"></input><button class="search-btn" type="submit"><i class="fas fa-search"></i></button></p>
             </form>
+            <form method="GET" id="genre-search">
+                <p class="search-p">
+                    <input type="text" list="genre-list" name="genre_search" class="list-seacrh"/>
+                    <datalist id="genre-list">
+                        <option class="selection">機械学習</option>
+                        <option class="selection">確率統計</option>
+                        <option class="selection">AI</option>
+                        <option class="selection">その他</option>
+                    </datalist>
+                    <button class="search-btn" type="submit"><i class="fas fa-search"></i></button>
+                </p>
+            </form>
         </div>
         <div id="article-list-box" class="col-12 col-md-9 col-xl-9">
             {% for article in article_list %}
@@ -31,6 +43,7 @@
                         {% empty %}
                         {% endfor %}
                     </p>
+                    <p class="info"><i class="fas fa-hashtag"></i>{{article.genre}}</p>
                 </div>
                 <p class="article-title align-self-center">{{article.title}}</p>
             </div>

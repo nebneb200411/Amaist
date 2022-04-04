@@ -52,6 +52,7 @@ class ArticleListView(ListView):
         queryset = super().get_queryset()
         article_keyword = self.request.GET.get('article_search')
         tag_keyword = self.request.GET.get('tag_search')
+        genre = self.request.GET.get('genre_search')
         if article_keyword:
             queryset = Article.objects.filter(is_published=True)
             queryset = queryset.filter(
@@ -63,6 +64,11 @@ class ArticleListView(ListView):
             queryset = Article.objects.filter(is_published=True)
             queryset = Article.objects.filter(
                 Q(tag__tag_name__icontains=tag_keyword)).order_by('-created_at')
+        
+        elif genre:
+            queryset = Article.objects.filter(is_published=True)
+            queryset = queryset.filter(genre=genre)
+            
         else:
             queryset = Article.objects.filter(is_published=True).order_by(
                 '-created_at'
