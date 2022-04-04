@@ -67,7 +67,7 @@ class ArticleListView(ListView):
         
         elif genre:
             queryset = Article.objects.filter(is_published=True)
-            queryset = queryset.filter(genre=genre)
+            queryset = queryset.filter(genre=genre).order_by('-created_at')
             
         else:
             queryset = Article.objects.filter(is_published=True).order_by(

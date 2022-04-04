@@ -228,7 +228,7 @@ CKEDITOR_CONFIGS = {
              'items': ['Image', 'Flash', 'Table', 'HorizontalRule', 'Smiley', 'SpecialChar', 'PageBreak', 'Iframe', 'Mathjax', ]},
             '/',
             {'name': 'styles', 'items': [
-                'Styles', 'Format', 'Font', 'FontSize', 'CodeSnippet', 'lineheight', ]},
+                'Styles', 'Format', 'Font', 'FontSize', 'CodeSnippet', 'lineheight', 'Contents']},
             {'name': 'colors', 'items': ['TextColor', 'BGColor']},
             {'name': 'tools', 'items': ['Maximize', 'ShowBlocks']},
             {'name': 'about', 'items': ['About']},
@@ -269,6 +269,7 @@ CKEDITOR_CONFIGS = {
             'mathjax',
             'uicolor',
             'lineheight',
+            'contents',
         ]),
     }
 }
