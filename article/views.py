@@ -148,6 +148,32 @@ class ArticleUpdateView(LoginRequiredMixin, UpdateView):
     form_class = ArticleForm
     success_url = reverse_lazy('article:list')
 
+    def form_valid(self, form):
+        article = form.save(commit=False)
+        article.author = self.request.user
+        genre_selected = self.request.POST.getlist('genre')
+        genre_choices = settings.ARTICLE_GENRE_CHOICES
+        item_number = genre_selected[0]
+        item_number = int(item_number) - 1
+        genre = genre_choices[item_number][1]
+        article.genre = genre
+        article.save()
+        pk = article.pk
+        created_article = Article.objects.get(pk=pk)
+        """タグの作成"""
+        tags = self.request.POST.getlist('tags')
+        tag_created = []
+        for tag in tags:
+            created_tag = Tag.objects.create(tag_name=tag)
+            created_tag.save()
+            tag_created.append(created_tag)
+        for tags in tag_created:
+            created_article.tag.add(tags)
+            created_article.save()
+        messages.success(self.request, '記事を作成しました')
+        return super().form_valid(form)
+
+
 
 # good_counter
 
