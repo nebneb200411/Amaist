@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth import get_user_model
 from ckeditor_uploader.fields import RichTextUploadingField
-
+from django.conf import settings
 # ユーザー名取得
 User = get_user_model()
 

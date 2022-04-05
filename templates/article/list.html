@@ -39,11 +39,13 @@
                     <p class="info"><i class="far fa-calendar-alt"></i><span class="mgr-10"></span>{{article.created_at|date:"y/m/d"}}</p>
                     <p class="info">
                         {% for tag in article.tag.all %}
-                        <i class="fas fa-tags"></i><span class="mgr-10"/>{{tag}}
+                        <i class="fas fa-tags"></i><span class="mgr-10"></span>{{tag}}
                         {% empty %}
                         {% endfor %}
                     </p>
-                    <p class="info"><i class="fas fa-hashtag"></i>{{article.genre}}</p>
+                    <p class="info">
+                        <i class="fas fa-hashtag"></i><span class="mgr-10"></span>{{article.genre}}
+                    </p>
                 </div>
                 <p class="article-title align-self-center">{{article.title}}</p>
             </div>

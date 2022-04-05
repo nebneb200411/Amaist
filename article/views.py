@@ -8,6 +8,7 @@ from django.contrib import messages
 from profiles.models import Profile
 from django.db.models import Q
 from notifications.models import Notifications
+from django.conf import settings
 
 
 class ArticleFormCreateView(LoginRequiredMixin, CreateView):
@@ -23,6 +24,12 @@ class ArticleFormCreateView(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         article = form.save(commit=False)
         article.author = self.request.user
+        genre_selected = self.request.POST.getlist('genre')
+        genre_choices = settings.ARTICLE_GENRE_CHOICES
+        item_number = genre_selected[0]
+        item_number = int(item_number) - 1
+        genre = genre_choices[item_number][1]
+        article.genre = genre
         article.save()
         pk = article.pk
         created_article = Article.objects.get(pk=pk)

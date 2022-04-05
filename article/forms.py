@@ -1,15 +1,13 @@
 from django import forms
 from .models import Article, Comment
 from ckeditor.widgets import CKEditorWidget
+from django.conf import settings
 
-GENRE_CHOICES = (
-    ('1', '機械学習'), ('2', '確率統計'), ('3', 'AI'), ('4', 'その他')
-)
 
 
 class ArticleForm(forms.ModelForm):
     is_published = forms.BooleanField(initial=True, required=False)
-    genre = forms.MultipleChoiceField(choices=GENRE_CHOICES)
+    genre = forms.MultipleChoiceField(choices=settings.ARTICLE_GENRE_CHOICES)
 
     class Meta:
         model = Article
