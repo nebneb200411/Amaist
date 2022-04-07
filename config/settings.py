@@ -79,7 +79,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'data_library.templatetags.filename',
     'django_cleanup',
-    'django.contrib.site',
+    'django.contrib.sites',
     'django.contrib.sitemaps',
 ]
 
