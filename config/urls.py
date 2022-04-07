@@ -7,6 +7,7 @@ from . import settings
 from django.conf.urls.static import static
 from django.views.decorators.cache import never_cache
 from ckeditor_uploader import views as ckeditor_views
+from django.contrib.sitemaps.views import sitemap
 
 
 urlpatterns = [
@@ -30,6 +31,7 @@ urlpatterns = [
     path('ckeditor/browse/', never_cache(login_required(ckeditor_views.browse)),
          name='ckeditor_browse'),
     path('notifications/', include('notifications.urls')),
+    path('sitemap.xml', sitemap, {'sitemaps' : sitemaps}, name="sitemaps"),
 ]
 
 # 開発環境なので以下を設定

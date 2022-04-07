@@ -79,6 +79,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'data_library.templatetags.filename',
     'django_cleanup',
+    'django.contrib.site',
+    'django.contrib.sitemaps',
 ]
 
 MIDDLEWARE = [
@@ -189,6 +191,9 @@ X_FRAME_OPTIONS = 'SAMEORIGIN'
 ARTICLE_GENRE_CHOICES = [
     ['1', '機械学習'], ['2', '確率統計'], ['3', 'AI'], ['4', 'その他']
 ]
+
+# site maps
+SITE_ID = 1
 
 CKEDITOR_UPLOAD_PATH = "ckeditor/"
 
