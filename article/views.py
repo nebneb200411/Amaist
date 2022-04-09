@@ -1,4 +1,7 @@
 from django.views.generic import CreateView, ListView, DetailView, UpdateView
+#from sqlalchemy import null
+
+#from importlib_metadata import pass_none
 from .forms import ArticleForm, ArticleCommentForm
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -162,13 +165,15 @@ class ArticleUpdateView(LoginRequiredMixin, UpdateView):
         created_article = Article.objects.get(pk=pk)
         """タグの作成"""
         tags = self.request.POST.getlist('tags')
-        tag_created = []
+        tags_updated = []
         for tag in tags:
             created_tag = Tag.objects.create(tag_name=tag)
             created_tag.save()
-            tag_created.append(created_tag)
-        for tags in tag_created:
-            created_article.tag.add(tags)
+            tags_updated.append(created_tag)
+        # 初めに更新記事のタグオブジェクトを全部削除
+        created_article.tag.all().delete()
+        for tag in tags_updated:
+            created_article.tag.add(tag)
             created_article.save()
         messages.success(self.request, '記事を作成しました')
         return super().form_valid(form)
