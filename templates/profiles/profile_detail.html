@@ -82,6 +82,9 @@
                         <a class="link-to" href={% url 'article:update' published_article.pk %}>
                             編集
                         </a>
+                        <a class="link-to" href={% url 'article:delete' published_article.pk %}>
+                            削除
+                        </a>
                     </td>
                 </tr>
                 {% endfor %}
@@ -102,6 +105,9 @@
                     <td class="update">
                         <a class="link-to" href={% url 'article:update' draft_article.pk %}>
                             編集
+                        </a>
+                        <a class="link-to" href={% url 'article:delete' draft_article.pk %}>
+                            削除
                         </a>
                     </td>
                 </tr>

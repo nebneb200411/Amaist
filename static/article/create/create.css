@@ -82,11 +82,12 @@ main form #title input {
 main form #genre {
   background-color: #36a136;
   margin: 20px 0 0 0;
+  padding: 0 10px 10px 10px;
 }
 
-main form #genre select {
-  width: 60%;
-  margin: 0 0 10px 20%;
+main form #genre #selections {
+  margin-left: 5%;
+  width: 90%;
 }
 
 main form #tags {

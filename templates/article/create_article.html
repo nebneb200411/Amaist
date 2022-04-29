@@ -29,7 +29,17 @@
                         </div>
                         <div id="genre">
                             <p class="form-text">ジャンル</p>
-                            {{form.genre}}
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <label class="input-group-text" for="id_genre">Options</label>
+                                </div>
+                                <select class="custom-select" id="inputGroupSelect01">
+                                    <option selected>選択肢</option>
+                                    {% for genre in form.genre %}
+                                        <option value="{{genre.label}}">{{genre.tag}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
                         </div>
                     </div>
                     <div class="col-6 col-md-6 col-sm-12">

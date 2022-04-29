@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block stylesheet %}
+    <title>記事の削除</title>
+    <link rel="stylesheet" href="{% static 'article/delete/delete.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/monokai.min.css">
+{% endblock stylesheet %}
+{% block contents %}
+<h1 class="display-4">記事を削除</h1>
+<form method="post">
+    {% csrf_token %}
+    <h2 class="h2">{{article.title}}を削除しますか？</h2>
+    <input class="btn btn-danger" type="submit" value="削除する">
+</form>
+{% endblock contents %}
+{% block script %}
+{% endblock script %}

@@ -1,4 +1,4 @@
-from django.views.generic import CreateView, ListView, DetailView, UpdateView
+from django.views.generic import CreateView, ListView, DetailView, UpdateView, DeleteView
 #from sqlalchemy import null
 
 #from importlib_metadata import pass_none
@@ -178,6 +178,15 @@ class ArticleUpdateView(LoginRequiredMixin, UpdateView):
         messages.success(self.request, '記事を作成しました')
         return super().form_valid(form)
 
+class ArticleDeleteView(DeleteView):
+    template_name = "article/delete.html"
+    model = Article
+
+    def get_success_url(self):
+        user = self.request.user
+        profile = Profile.objects.get(user=user)
+        pk = profile.pk
+        return reverse_lazy('profiles:profile_detail', kwargs={'pk':pk})
 
 
 # good_counter
