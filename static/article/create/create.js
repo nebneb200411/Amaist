@@ -1,5 +1,5 @@
 $('#tag-add-button').click(function () {
-    $('#tag-box').append('<input type="text" multiple name="tags" class="tag-input" placeholder="&#xf02b;tag"/>')
+    $('#tag-form').append('<input type="text" name="tags" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" multiple>')
 })
 
 $(function () {

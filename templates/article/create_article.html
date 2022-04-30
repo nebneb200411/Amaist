@@ -3,6 +3,7 @@
 {% block stylesheet %}
 <title>記事作成</title>
 <link rel="stylesheet" href="{% static 'ckeditor/plugins/codesnippet/lib/highlight/styles/mono-blue.css' %}">
+<link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
 <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/monokai.min.css">-->
 <script src="{% static 'ckeditor/plugins/codesnippet/lib/highlight/highlight.pack.js' %}"></script>
 <link rel="stylesheet" href="{% static 'article/create/create.css' %}"/>
@@ -25,7 +26,12 @@
                     <div class="col-6 col-md-6 col-sm-12">
                         <div id="title">
                             <p class="form-text">タイトル</p>
-                            {{form.title}}
+                            <div class="input-group input-group-default">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="inputGroup-sizing-default">Title</span>
+                                </div>
+                                {{form.title}}
+                            </div>
                         </div>
                         <div id="genre">
                             <p class="form-text">ジャンル</p>
@@ -33,10 +39,11 @@
                                 <div class="input-group-prepend">
                                     <label class="input-group-text" for="id_genre">Options</label>
                                 </div>
-                                <select class="custom-select" id="inputGroupSelect01">
+                                <!--{{form.genre}}-->
+                                <select name="genre" class="custom-select" id="inputGroupSelect01">
                                     <option selected>選択肢</option>
-                                    {% for genre in form.genre %}
-                                        <option value="{{genre.label}}">{{genre.tag}}</option>
+                                    {% for key, value in genres.items %}
+                                        <option value="{{key}}">{{value}}</option>
                                     {% endfor %}
                                 </select>
                             </div>
@@ -44,18 +51,18 @@
                     </div>
                     <div class="col-6 col-md-6 col-sm-12">
                         <div id="tags">
-                            <p class="text-family form-text"><i class="fas fa-tags"></i><span class="mgr-10"></span>タグ</p>
-                            <p class="tag-input"><input type="text" multiple name="tags" class="tag-input" placeholder="&#xf02b; tag（任意）"></p>
+                            <p class="form-text">タグ</p>
+                            <div id="tag-form" class="input-group input-group-default mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="inputGroup-sizing-default"><i class="fas fa-tags"></i></span>
+                                </div>
+                                <input type="text" name="tags" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" multiple>
+                            </div>
+                            <button id="tag-add-button" type="button" class="btn btn-info">タグ追加</button>
+                            <!--<p class="tag-input"><input type="text" multiple name="tags" class="tag-input"></p>-->
                         </div>
                         <div id="publish">
-                            <p class="text-family form-text">公開・下書き保存</p>
-                            {{form.is_published}}
-                            <div class="d-flex justify-content-center">
-                                <label for="id_is_published">
-                                    <div id="check-box" class="align-self-center"><div id='check-icon'></div></div>
-                                </label>
-                                <span>チェックを入れると公開されます</span>
-                            </div>
+                            <p class="form-text"><span id="publish-or-not">公開・下書き</span>{{form.is_published}}</p>
                         </div>
                     </div>
                 </div>
@@ -71,7 +78,8 @@
 <script>hljs.initHighlightingOnLoad();</script>
 {% endblock contents %}
 {% block script %}
-    <script type="text/javascript" src="{% static 'django-summernote-options/django_summernote_option.js' %}"></script>
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-    <script type="text/javascript" src="{% static 'article/create/create.js' %}"></script>
+<script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+<script type="text/javascript" src="{% static 'django-summernote-options/django_summernote_option.js' %}"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script type="text/javascript" src="{% static 'article/create/create.js' %}"></script>
 {% endblock script %}

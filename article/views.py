@@ -28,10 +28,15 @@ class ArticleFormCreateView(LoginRequiredMixin, CreateView):
         article = form.save(commit=False)
         article.author = self.request.user
         genre_selected = self.request.POST.getlist('genre')
+        genre_selected = genre_selected[0]
         genre_choices = settings.ARTICLE_GENRE_CHOICES
+        genre = genre_choices[genre_selected]
+        
+        """
         item_number = genre_selected[0]
         item_number = int(item_number) - 1
         genre = genre_choices[item_number][1]
+        """
         article.genre = genre
         article.save()
         pk = article.pk
@@ -48,6 +53,12 @@ class ArticleFormCreateView(LoginRequiredMixin, CreateView):
             created_article.save()
         messages.success(self.request, '記事を作成しました')
         return super().form_valid(form)
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["genres"] = settings.ARTICLE_GENRE_CHOICES
+        return context
+    
 
     def form_invalid(self, form):
         messages.error(self.request, '記事の作成に失敗しました')
