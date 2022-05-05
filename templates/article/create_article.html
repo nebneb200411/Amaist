@@ -21,9 +21,9 @@
     {% csrf_token %}
     <div class="container-fluid">
         <div class="row">
-            <div class="col-12 col-md-12 col-sm-12">
+            <div class="col-12 col-md-12 col-xl-12">
                 <div class="row">
-                    <div class="col-6 col-md-6 col-sm-12">
+                    <div class="col-12 col-md-6 col-xl-6">
                         <div id="title">
                             <p class="form-text">タイトル</p>
                             <div class="input-group input-group-default">
@@ -33,6 +33,19 @@
                                 {{form.title}}
                             </div>
                         </div>
+                        <div id="tags">
+                            <p class="form-text">タグ</p>
+                            <div id="tag-form" class="input-group input-group-default mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="inputGroup-sizing-default"><i class="fas fa-tags"></i></span>
+                                </div>
+                                <input type="text" name="tags" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" multiple>
+                            </div>
+                            <button id="tag-add-button" type="button" class="btn btn-info">タグ追加</button>
+                            <!--<p class="tag-input"><input type="text" multiple name="tags" class="tag-input"></p>-->
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-6">
                         <div id="genre">
                             <p class="form-text">ジャンル</p>
                             <div id="selections" class="input-group mb-3">
@@ -46,20 +59,10 @@
                                         <option value="{{key}}">{{value}}</option>
                                     {% endfor %}
                                 </select>
+                                {% for error in form.genre.errors %}
+                                    <div class="p-3 bg-danger bg-gradient text-white">{{error}}</div>
+                                {% endfor %}
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-6 col-sm-12">
-                        <div id="tags">
-                            <p class="form-text">タグ</p>
-                            <div id="tag-form" class="input-group input-group-default mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="inputGroup-sizing-default"><i class="fas fa-tags"></i></span>
-                                </div>
-                                <input type="text" name="tags" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" multiple>
-                            </div>
-                            <button id="tag-add-button" type="button" class="btn btn-info">タグ追加</button>
-                            <!--<p class="tag-input"><input type="text" multiple name="tags" class="tag-input"></p>-->
                         </div>
                         <div id="publish">
                             <p class="form-text"><span id="publish-or-not">公開・下書き</span>{{form.is_published}}</p>

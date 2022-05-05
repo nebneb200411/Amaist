@@ -33,6 +33,21 @@
                                 {{form.title}}
                             </div>
                         </div>
+                        <div id="tags">
+                            <p class="form-text">タグ</p>
+                            <div id="tag-form" class="input-group input-group-default mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="inputGroup-sizing-default"><i class="fas fa-tags"></i></span>
+                                </div>
+                                {% for tag in tags %}
+                                    <input value="{{tag}}" type="text" name="tags" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" multiple>
+                                {% endfor %}
+                            </div>
+                            <button id="tag-add-button" type="button" class="btn btn-info">タグ追加</button>
+                            <!--<p class="tag-input"><input type="text" multiple name="tags" class="tag-input"></p>-->
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-6 col-sm-12">
                         <div id="genre">
                             <p class="form-text">ジャンル</p>
                             <div id="selections" class="input-group mb-3">
@@ -57,21 +72,6 @@
                                 <p>{{error}}</p>
                                 {% endfor %}
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-6 col-sm-12">
-                        <div id="tags">
-                            <p class="form-text">タグ</p>
-                            <div id="tag-form" class="input-group input-group-default mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="inputGroup-sizing-default"><i class="fas fa-tags"></i></span>
-                                </div>
-                                {% for tag in tags %}
-                                    <input value="{{tag}}" type="text" name="tags" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" multiple>
-                                {% endfor %}
-                            </div>
-                            <button id="tag-add-button" type="button" class="btn btn-info">タグ追加</button>
-                            <!--<p class="tag-input"><input type="text" multiple name="tags" class="tag-input"></p>-->
                         </div>
                         <div id="publish">
                             <p class="form-text"><span id="publish-or-not">公開・下書き</span>{{form.is_published}}</p>
