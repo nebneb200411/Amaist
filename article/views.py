@@ -1,4 +1,5 @@
 from django.views.generic import CreateView, ListView, DetailView, UpdateView, DeleteView
+
 #from sqlalchemy import null
 
 #from importlib_metadata import pass_none
@@ -184,7 +185,25 @@ class ArticleUpdateView(LoginRequiredMixin, UpdateView):
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["genres"] = settings.ARTICLE_GENRE_CHOICES
+        editing_article = self.object
+        context['genres'] = settings.ARTICLE_GENRE_CHOICES
+        genre_selected = editing_article.genre
+        if genre_selected != None:
+            genre_dict = {}
+            genre_selected_key = []
+            for k, v in settings.ARTICLE_GENRE_CHOICES.items():
+                if v == genre_selected:
+                    genre_selected_key.append(k)
+                else: 
+                    pass
+            genre_dict[genre_selected_key[0]] = genre_selected
+            context['genre_selected'] = genre_dict
+        else:
+            pass
+        tags = editing_article.tag.all()
+        tags = [tag.tag_name for tag in tags]
+        context['tags'] = tags
+
         return context
 
 class ArticleDeleteView(DeleteView):

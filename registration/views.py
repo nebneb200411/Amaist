@@ -11,6 +11,7 @@ from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.utils.encoding import force_bytes, force_text
 from django.contrib.auth.tokens import default_token_generator
 from django.shortcuts import render
+#from .forms import LoginForm
 # load templates
 # send email
 
@@ -53,7 +54,6 @@ class SignUpView(CreateView):
 class UserDeleteView(DeleteView):
     model = User
     success_url = reverse_lazy('login')
-
 
 class ActivateView(TemplateView):
     template_name = 'registration/activate.html'

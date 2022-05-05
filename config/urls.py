@@ -15,7 +15,7 @@ around site map
 from .sitemaps import ArticleSiteMaps
 
 sitemaps = {
-    'article': ArticleSiteMaps,
+     'article': ArticleSiteMaps,
 }
 
 
@@ -29,7 +29,7 @@ urlpatterns = [
     path('password_reset/', views.MyPasswordResetView.as_view(),
          name='password_reset'),
     path('activate/<uidb64>/<token>/',
-         views.ActivateView.as_view(), name="activate"),
+          views.ActivateView.as_view(), name='activate'),
     path('article/', include('article.urls')),
     path('profile/', include('registration.urls')),
     path('profiles/', include('profiles.urls')),
@@ -45,5 +45,5 @@ urlpatterns = [
 
 # 開発環境なので以下を設定
 if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL,
-                          document_root=settings.MEDIA_ROOT)
+     urlpatterns += static(settings.MEDIA_URL,
+                              document_root=settings.MEDIA_ROOT)

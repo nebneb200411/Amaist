@@ -41,11 +41,21 @@
                                 </div>
                                 <!--{{form.genre}}-->
                                 <select name="genre" class="custom-select" id="inputGroupSelect01">
-                                    <option selected>選択肢</option>
+                                    {% if genre_selected is not None %}
+                                        {% for key, value in genre_selected.items %}
+                                            <option value="{{key}}" selected>{{value}}</option>
+                                        {% endfor %}
+                                    {% else %}
+                                        <option selected>選択肢</option>
+                                    {% endif %}
+            
                                     {% for key, value in genres.items %}
                                         <option value="{{key}}">{{value}}</option>
                                     {% endfor %}
                                 </select>
+                                {% for error in form.genre.errors %}
+                                <p>{{error}}</p>
+                                {% endfor %}
                             </div>
                         </div>
                     </div>
@@ -56,7 +66,9 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="inputGroup-sizing-default"><i class="fas fa-tags"></i></span>
                                 </div>
-                                <input type="text" name="tags" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" multiple>
+                                {% for tag in tags %}
+                                    <input value="{{tag}}" type="text" name="tags" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" multiple>
+                                {% endfor %}
                             </div>
                             <button id="tag-add-button" type="button" class="btn btn-info">タグ追加</button>
                             <!--<p class="tag-input"><input type="text" multiple name="tags" class="tag-input"></p>-->

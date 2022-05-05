@@ -20,12 +20,18 @@ class ArticleForm(forms.ModelForm):
 
     class Meta:
         model = Article
-        fields = ('title', 'content', 'is_published', )
+        fields = ('title', 'content', 'is_published')
         widgets = {
             'content': CKEditorWidget(),
             'title': forms.TextInput(attrs={'class': 'form-control','aria-label':'Sizing example input', 'aria-describedby':'nputGroup-sizing-lg', 'placeholder': '記事のタイトルを入力してください'}),
             'is_published':forms.BooleanField(),
         }
+    
+    def clean_body(self):
+        genre = self.cleaned_data['genre']
+        if not genre in settings.ARTICLE_GENRE_CHOICES.values():
+            raise forms.ValidationError("ジャンルを選択してください")
+        return genre
 
 
 class ArticleCommentForm(forms.ModelForm):

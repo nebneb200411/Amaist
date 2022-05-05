@@ -1,4 +1,4 @@
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import get_user_model
 from django.urls import reverse_lazy
 from django.conf import settings
@@ -13,6 +13,15 @@ from django.core.mail import send_mail
 
 # get user model
 User = get_user_model()
+
+"""
+class LoginForm(AuthenticationForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for field in self.fields.values():
+            field.widget.attrs['class'] = 'form-control'
+            field.widget.attrs['placeholder'] = field.label
+"""
 
 
 def activate_user(uidb64, token):
