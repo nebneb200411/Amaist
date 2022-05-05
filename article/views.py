@@ -190,13 +190,14 @@ class ArticleUpdateView(LoginRequiredMixin, UpdateView):
         genre_selected = editing_article.genre
         if genre_selected != None:
             genre_dict = {}
-            genre_selected_key = []
+            genre_selected_key = '1'
             for k, v in settings.ARTICLE_GENRE_CHOICES.items():
                 if v == genre_selected:
-                    genre_selected_key.append(k)
+                    genre_selected_key = k
+                    break
                 else: 
                     pass
-            genre_dict[genre_selected_key[0]] = genre_selected
+            genre_dict[genre_selected_key] = genre_selected
             context['genre_selected'] = genre_dict
         else:
             pass
