@@ -32,6 +32,9 @@
                                 </div>
                                 {{form.title}}
                             </div>
+                            {% for error in form.title.errors %}
+                                <div id="title-error" class="p-3 bg-danger bg-gradient text-white"><i id="title-error-delete-button" class="far fa-times-circle"></i>{{error}}</div>
+                            {% endfor %}
                         </div>
                         <div id="tags">
                             <p class="form-text">タグ</p>
@@ -59,10 +62,10 @@
                                         <option value="{{key}}">{{value}}</option>
                                     {% endfor %}
                                 </select>
-                                {% for error in form.genre.errors %}
-                                    <div class="p-3 bg-danger bg-gradient text-white">{{error}}</div>
-                                {% endfor %}
                             </div>
+                            {% for error in form.genre.errors %}
+                                <div id="genre-error" class="p-3 bg-danger bg-gradient text-white"><i id="genre-error-delete-button" class="far fa-times-circle"></i>{{error}}</div>
+                            {% endfor %}
                         </div>
                         <div id="publish">
                             <p class="form-text"><span id="publish-or-not">公開・下書き</span>{{form.is_published}}</p>
@@ -73,6 +76,9 @@
             <div id="content-box" class="col-12 col-md-12 col-sm-12">
                 {{form.media}}
                 {{form.content}}
+                {% for error in form.content.errors %}
+                    <div id="content-error" class="p-3 bg-danger bg-gradient text-white"><i id="content-error-delete-button" class="far fa-times-circle"></i>{{error}}</div>
+                {% endfor %}
             </div>
         </div>
     </div>

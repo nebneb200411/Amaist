@@ -10,3 +10,15 @@ $(function () {
         $('#check-icon').toggleClass('visible');
     });
 })
+
+$('#genre-error-delete-button').click(function() {
+    $('#genre-error').remove()
+})
+
+$('#title-error-delete-button').click(function() {
+    $('#title-error').remove()
+})
+
+$('#content-error-delete-button').click(function() {
+    $('#content-error').remove()
+})
