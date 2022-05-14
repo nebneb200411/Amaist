@@ -14,6 +14,10 @@
     background-color: gray;
 }
 
+.common-font {
+    font-family: "MS Gothic", "arial";
+}
+
 h1 {
     color: black;
     border-left: 10px solid #1a244d;
@@ -28,61 +32,89 @@ h6 {
     border-left: 10px solid #29397a;
 }
 
+body {
+    position: relative;
+}
 
 main {
     background-color: #bbccdd;
 
     div {
+        padding: 10px 10px 10px 10px;
         div {
             #article-content {
                 background-color: white;
-                margin: 20px 20px;
+                padding: 20px 20px;
+
+                #article-info-box {
+                    padding : 10px 10px;
+
+                    #article-sub-info{
+
+                        span {
+                            margin-right: 5px;
+                        }
+                    }
+                }
 
                 #user-info {
                     margin: 10px 10px;
 
+                    p {
+                        padding: 20px 20px;
+                        background-color: #fff8dc;
+                        border-radius: 3px;
+                        color:#a17636;
+                        font-size: 1.5rem;
+                    }
+
                     a {
                         margin: 0px 10px;
+                        color:#a17636;
 
                         img {
                             height: 80px;
                             width: auto;
+                            background: linear-gradient(-45deg, #c21500 0%, #ffc500 100%);
                             border-radius: 50%;
                         }
                     }
                 }
 
-                #article-info {
-                    padding: 50px 50px;
+                #good-box {
+                    width: 50%;
 
-                    #tag-box {
-                        width: 50%;
+                    #good-number {
+                        display: inline-block;
                     }
 
-                    #good-box {
-                        width: 50%;
+                    #good-post {
+                        display: inline-block;
 
-                        #good-number {
-                            display: inline-block;
-                        }
+                        form {
+                            button {
+                                height: 30px;
+                                width: 30px;
+                                border: none;
+                                border-radius: 2px;
+                                background-color: #114477;
+                                color: white;
+                                cursor: pointer;
+                            }
 
-                        #good-post {
-                            display: inline-block;
-
-                            form {
-                                button {
-                                    border: none;
-                                    border-radius: 2px;
-                                    background-color: #114477;
-                                    color: white;
-                                    cursor: pointer;
-                                }
+                            button:hover {
+                                height: 35px;
+                                width: 35px;
+                                background-color:#ffc500;
+                                transition: width 0.3s, height 0.3s;
                             }
                         }
                     }
                 }
 
                 #article-content-box {
+                    padding: 20px 20px 20px 20px;
+                    position: relative;
                     .widget-toc{
                         display: table;
                         border: 1px solid #a2a9b1;
@@ -148,6 +180,31 @@ main {
                         }
                     }
                 }
+            }
+        }
+    }
+
+    #subcontents-box {
+        position:relative;
+
+        #table-of-contents {
+            position: fixed;
+            margin: 0 0 0 30px;
+            nav {
+                ul {
+                    display: block;
+                    li {
+                        a {
+                            color:#29397a;
+                        }
+                        a:hover {
+                            color: white;
+                        }
+                    }
+                }
+            }
+            span {
+                font-weight: bold;
             }
         }
     }

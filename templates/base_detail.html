@@ -1,0 +1,146 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <link rel="stylesheet" href="{% static 'base/base.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="google-site-verification" content="TZX42bsTbrF-xUBFYifpFEDMuuXnAAQqDumJ9vD1448" />
+    <meta name="google-site-verification" content="WjViD53zotxl8S97kULsVdkj63UTOnJ-vzPDWLJhYqY" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" type="image/png" href="{% static 'images/base/favicons/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" href="{% static 'images/base/favicons/icon-192x192.png' %}">
+    {% block stylesheet %}
+    {% endblock stylesheet %}
+</head>
+
+<header>
+    <div class="header-box d-flex">
+        <div class = 'menu-button'>
+            <div class="top-line"></div>
+            <div class="middle-line"></div>
+            <div class="bottom-line"></div>
+        </div>
+        <div class="app-icon ml-auto">
+            <img src="{% static 'images/base/logo3.png' %}"></img>
+        </div>
+        <div class="user-icon-box ml-auto p-2">
+            <a href="{% url 'profiles:found_or_not_found' %}"><img src="{{MEDIA_URL}}{{request.user.user.icon|default:"images/user-icon-default.png"}}"></a>
+        </div>
+    </div>
+    <div class="header-nav">
+        <ul class="header-menu">
+            <li id="home-menu" class="first-menu"><a href="{% url 'index:index' %}"><i class="fas fa-home"></i><span class="mgr-10"></span>Home</a></li>
+            <li id="article-first-menu" class="first-menu">
+                <ul class="second-menu" id="article-second-menu">
+                    <li id="article-menu"><i class="fas fa-book"></i><span class="mgr-10"></span>Article</li>
+                    <li class="link-to-contents">
+                        <a href="{% url 'article:list' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>記事一覧</a>
+                    </li>
+                    <li class="link-to-contents">
+                        <a href="{% url 'article:CreateArticle' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>記事作成</a>
+                    </li>
+                </ul>
+            </li>
+            <li id="datalibrary-first-menu" class="first-menu">
+                <ul class="second-menu" id="datalibrary-second-menu">
+                    <li id="datalibrary-menu"><i class="fas fa-database"></i><span class="mgr-10"></span>DataLibrary</li>
+                    <li class="link-to-contents">
+                        <a href="{% url 'data_library:list' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>データ一覧</a>
+                    </li>
+                    <li class="link-to-contents">
+                        <a href="{% url 'data_library:create' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>データの投稿</a>
+                    </li>
+                </ul>
+            </li>
+            <li id="question-first-menu" class="first-menu">
+                <ul class="second-menu" id="question-second-menu">
+                    <li id="question-menu"><i class="fas fa-question"></i></i><span class="mgr-10"></span>Questions</li>
+                    <li class="link-to-contents">
+                        <a href="{% url 'question:list' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>質問一覧</a>
+                    </li>
+                    <li class="link-to-contents">
+                        <a href="{% url 'question:create' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>質問作成</a>
+                    </li>
+                </ul>
+            </li>
+            {% if request.user.is_authenticated %}
+            <li id="profile-first-menu" class="first-menu">
+                <ul class="second-menu" id="profile-second-menu">
+                    <li id="profile-menu"><i class="fas fa-user-circle"></i><span class="mgr-10"></span>Profile</li>
+                    <li class="link-to-contents">
+                        <a href="{% url 'profiles:found_or_not_found' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>{{request.user.username}}さんのプロフィール</a>
+                    </li>
+                    <li class="link-to-contents">
+                        <a href="{% url 'profiles:profile_list' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>プロフィール一覧</a>
+                    </li>
+                    <li class="link-to-contents"><a href="{% url 'login' %}"><i class="fas fa-sign-in-alt"></i><span class="mgr-10"></span>Login</a></li>
+                    <li class="link-to-contents">
+                        <a href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i><span class="mgr-10"></span>Logout</a>
+                    </li>
+                </ul>
+            </li>
+            {% else %}
+            <li id="noauth-first-menu" class="first-menu">
+                <ul class="second-menu" id="noauth-second-menu">
+                    <li id="noauth-menu">
+                        <i class="fas fa-exclamation"></i><span class="mgr-10"></span>ユーザー登録もしくはログインしましょう！
+                    </li>
+                    <li class="link-to-contents">
+                        <a href="{% url 'login' %}"><i class="fas fa-sign-in-alt"></i><span class="mgr-10"></span>Login</a>
+                    </li>
+                    <li class="link-to-contents">
+                        <a href="{% url 'sign_up' %}"><i class="fas fa-sign-out-alt"></i><span class="mgr-10"></span>Register</a>
+                    </li>
+                </ul>
+            </li>
+            {% endif %}
+            <li id="inq-first-menu" class="first-menu">
+                <ul class="second-menu" id="inq-second-menu">
+                    <li id="inq-menu">
+                        <i class="fas fa-mail-bulk"></i><span class="mgr-10"></span>Inquiry
+                    </li>
+                    <li class="link-to-contents">
+                        <a href="{% url 'notifications:list' %}"><i class="fas fa-bell"></i><span class="mgr-10"></span>お知らせ</a>
+                    </li>
+                    <li class="link-to-contents">
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdg-QjlojQ0CANiupGAnulT2Uf3jEumpPrdVNwFCZ8OqRzDrQ/viewform?usp=sf_link"><i class="fas fa-info-circle"></i><span class="mgr-10"></span>お問合せ</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</header>
+<div class="nothing">
+</div>
+{% block contents %}
+{% endblock contents %}
+
+{% block comments %}
+{% endblock comments %}
+
+
+<footer>
+    <div id="app-box" class="d-flex">
+        <img id="footer-icon" src="{% static 'images/base/icon.png' %}"></img>
+        <p class="app-title"><span class="app-subtitle"><span class="app-title-emphasize">データ分析愛好家</span>のための記事作成サービス</span><br><span class="app-maintitle">Dataラボ</span></p>
+    </div>
+    <div class="footer-contents">
+        <p class="inquiry-p"><i class="fas fa-envelope"></i><span class="mgr-10"></span>お問い合わせ先:<span class="mgr-10"></span><a href="mailto:amaizingstrange&#64;gmail.com">amaizingstrange@gmail.com</a></p>
+        <p class="term"><i class="fas fa-atlas"></i><span class="mgr-10"></span><a href="{% url 'index:terms' %}">利用規約</a>
+    </div>
+</footer>
+
+</div>
+<meta charset="utf-8">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/c8491d5b73.js" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_HTML"></script>
+<script type="text/javascript" src="{% static 'base/base.js' %}"></script>
+{% block script %}
+{% endblock %}
+</html>

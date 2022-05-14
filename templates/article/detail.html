@@ -2,13 +2,51 @@
 {% load static %}
 {% block stylesheet %}
     <title>{{object.title}}</title>
-    <link rel="stylesheet" href="{% static 'article/detail/detail.css' %}"/>
+    <link rel="stylesheet" href="{% static 'article/detail/detail.css' %}">
+    <link rel="stylesheet" href="{% static 'common/detail/detail.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/monokai.min.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css">
 {% endblock stylesheet %}
 {% block contents %}
 <div class="container-fluid">
     <div class="row">
-        <div class="col-12 col-md-9 col-xl-9" id="article-content">
+        <div class="col-12 col-md-8 col-xl-8" id="article-content">
+            <div id="article-info-box" class="common-font">
+                <p id="article-sub-info">
+                    <span id="created-at" class="info badge bg-info text-white">作成日</span>{{object.created_at|date:"Y/m/d"}}
+                    <span id="updated-at" class="info badge bg-info text-white">更新日</span>{{object.updated_at|date:"Y/m/d"}}
+                    <span id="genre" class="info badge bg-info text-white">ジャンル</span>{{object.genre}}
+                </p>
+                <p>
+                    <i class="fas fa-tags"></i>
+                    {% for tag in tags %}
+                        <span class="tags">{{tag}}</span>
+                    {% endfor %}
+                </p>
+            </div>
+            <div id="user-info">
+                <p class="common-font">この記事の作成者</p>
+                <div class="d-flex">
+                    <a href="{% url 'profiles:otheruser_profile' profile.pk %}" class="align-self-center">
+                        <img src="{{MEDIA_URL}}{{object.author.user.icon}}">
+                    </a>
+                    <a href="{% url 'profiles:otheruser_profile' profile.pk %}" class="align-self-center">
+                        <span class="common-font">{{object.author}}</span>
+                    </a>
+                </div>
+            </div>
+            <div id="good-box">
+                <div id="good-post">
+                    <form method="POST" action="{% url 'article:good_count' %}">
+                        {% csrf_token %}
+                        <input type="hidden" name="good_count" value="{{object.pk}}"/>
+                        <button type="submit" id="good-button"><i class="fas fa-thumbs-up"></i></button>
+                    </form>
+                </div>
+                <div id="good-number">{{good_number}}</div>
+            </div>
+            <hr>
+            <!--
             <div id="user-info" class="d-flex">
                 <a href="{% url 'profiles:otheruser_profile' profile.pk %}" class="align-self-center">
                     <img src="{{MEDIA_URL}}{{object.author.user.icon}}">
@@ -37,12 +75,14 @@
                     <div id="good-number">{{good_number}}</div>
                 </div>
             </div>
-            <div id="article-content-box">
-                <p id="title">{{object.title}}</p>
+            -->
+            <p class="title-stylish">{{object.title}}</p>
+            <div id="article-content-box" data-spy="scroll" data-target="#toc-nav" data-offset="10">
                 {{object.content|safe}}
             </div>
             <hr class="horizontal-line">
             <p><i class="fas fa-comment"></i><span class="mgr-10"/>コメント</p>
+            <hr class="hr-line">
             <div class="comment-form">
                 <form method="POST">
                     {% csrf_token %}
@@ -53,7 +93,6 @@
                     <button type="submit" class="btn btn-primary">送信</button>
                 </form>
             </div>
-            <hr class="hr-line">
             <div id="comment-display-box">
                 {% for comment_object in comment_objects %}
                 <div class="each-user-comment-box">
@@ -73,12 +112,24 @@
                 {% endfor %}
             </div>
         </div>
-        <div class="col-12 col-md-3 col-xl-3" id="subcontents-box">
+        <div class="col-12 col-md-4 col-xl-4" id="subcontents-box">
+            <div id="table-of-contents">
+                <hr>
+                <span class="common-font">見出し</span>
+                <nav id="toc-nav" data-toggle="toc" class="navbar navbar-light navbar-expand-lg flex-column common-font"></nav>
+                <hr>
+            </div>
         </div>
     </div>
 </div>
 {% endblock contents %}
+
+<!--{% block comments %}
+{% endblock comments %}-->
+
 {% block script %}
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
+    <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+    <script type="text/javascript" src="{% static 'article/detail/detail.js' %}"></script>
 {% endblock script %}

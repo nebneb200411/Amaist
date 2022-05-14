@@ -14,6 +14,10 @@
   background-color: gray;
 }
 
+.common-font {
+  font-family: "MS Gothic", "arial";
+}
+
 h1 {
   color: black;
   border-left: 10px solid #1a244d;
@@ -28,55 +32,88 @@ h6 {
   border-left: 10px solid #29397a;
 }
 
+body {
+  position: relative;
+}
+
 main {
   background-color: #bbccdd;
 }
 
+main div {
+  padding: 10px 10px 10px 10px;
+}
+
 main div div #article-content {
   background-color: white;
-  margin: 20px 20px;
+  padding: 20px 20px;
+}
+
+main div div #article-content #article-info-box {
+  padding: 10px 10px;
+}
+
+main div div #article-content #article-info-box #article-sub-info span {
+  margin-right: 5px;
 }
 
 main div div #article-content #user-info {
   margin: 10px 10px;
 }
 
+main div div #article-content #user-info p {
+  padding: 20px 20px;
+  background-color: #fff8dc;
+  border-radius: 3px;
+  color: #a17636;
+  font-size: 1.5rem;
+}
+
 main div div #article-content #user-info a {
   margin: 0px 10px;
+  color: #a17636;
 }
 
 main div div #article-content #user-info a img {
   height: 80px;
   width: auto;
+  background: linear-gradient(-45deg, #c21500 0%, #ffc500 100%);
   border-radius: 50%;
 }
 
-main div div #article-content #article-info {
-  padding: 50px 50px;
-}
-
-main div div #article-content #article-info #tag-box {
+main div div #article-content #good-box {
   width: 50%;
 }
 
-main div div #article-content #article-info #good-box {
-  width: 50%;
-}
-
-main div div #article-content #article-info #good-box #good-number {
+main div div #article-content #good-box #good-number {
   display: inline-block;
 }
 
-main div div #article-content #article-info #good-box #good-post {
+main div div #article-content #good-box #good-post {
   display: inline-block;
 }
 
-main div div #article-content #article-info #good-box #good-post form button {
+main div div #article-content #good-box #good-post form button {
+  height: 30px;
+  width: 30px;
   border: none;
   border-radius: 2px;
   background-color: #114477;
   color: white;
   cursor: pointer;
+}
+
+main div div #article-content #good-box #good-post form button:hover {
+  height: 35px;
+  width: 35px;
+  background-color: #ffc500;
+  -webkit-transition: width 0.3s, height 0.3s;
+  transition: width 0.3s, height 0.3s;
+}
+
+main div div #article-content #article-content-box {
+  padding: 20px 20px 20px 20px;
+  position: relative;
 }
 
 main div div #article-content #article-content-box .widget-toc {
@@ -137,5 +174,30 @@ main div div #article-content #comment-display-box .each-user-comment-box .comme
 
 main div div #article-content #comment-display-box .each-user-comment-box .comment-content {
   margin-top: 10px;
+}
+
+main #subcontents-box {
+  position: relative;
+}
+
+main #subcontents-box #table-of-contents {
+  position: fixed;
+  margin: 0 0 0 30px;
+}
+
+main #subcontents-box #table-of-contents nav ul {
+  display: block;
+}
+
+main #subcontents-box #table-of-contents nav ul li a {
+  color: #29397a;
+}
+
+main #subcontents-box #table-of-contents nav ul li a:hover {
+  color: white;
+}
+
+main #subcontents-box #table-of-contents span {
+  font-weight: bold;
 }
 /*# sourceMappingURL=detail.css.map */
