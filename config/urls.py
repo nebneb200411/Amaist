@@ -12,10 +12,17 @@ from django.contrib.sitemaps.views import sitemap
 """
 around site map
 """
-from .sitemaps import ArticleSiteMaps
+from .sitemaps import (ListViewsSitemap, ArticlesSiteMaps, IndexSitemap, CreateViewsSiteMaps
+, QuetionsSiteMaps, DatasSiteMaps)
 
+#'index':IndexViewSitemap,
 sitemaps = {
-     'article': ArticleSiteMaps,
+     'index': IndexSitemap,
+     'lists': ListViewsSitemap,
+     'creates': CreateViewsSiteMaps,
+     'articles': ArticlesSiteMaps,
+     'questions': QuetionsSiteMaps,
+     'datas' : DatasSiteMaps,
 }
 
 

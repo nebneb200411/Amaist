@@ -49,36 +49,6 @@
             <img border="0" width="468" height="60" alt="" src="https://www21.a8.net/svt/bgt?aid=220514823086&wid=001&eno=01&mid=s00000022953001004000&mc=1"></a>
             <img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=3NAEBR+1F7ASY+4X3U+5Z6WX" alt="">
             <hr>
-            <!--
-            <div id="user-info" class="d-flex">
-                <a href="{% url 'profiles:otheruser_profile' profile.pk %}" class="align-self-center">
-                    <img src="{{MEDIA_URL}}{{object.author.user.icon}}">
-                </a>
-                <a href="{% url 'profiles:otheruser_profile' profile.pk %}" class="align-self-center">
-                    {{object.author}}
-                </a>
-            </div>
-            <div id="article-info" class="d-flex">
-                <div id="tag-box">
-                    {% for tag in tags %}
-                    <div class="each-tag-box">
-                        <i class="fas fa-tags"></i>
-                        {{tag}}
-                    </div>
-                    {% endfor %}
-                </div>
-                <div id="good-box">
-                    <div id="good-post">
-                        <form method="POST" action="{% url 'article:good_count' %}">
-                            {% csrf_token %}
-                            <input type="hidden" name="good_count" value="{{object.pk}}"/>
-                            <button type="submit" id="good-button"><i class="fas fa-thumbs-up"></i></button>
-                        </form>
-                    </div>
-                    <div id="good-number">{{good_number}}</div>
-                </div>
-            </div>
-            -->
             <p class="title-stylish">{{object.title}}</p>
             <div id="article-content-box" data-spy="scroll" data-target="#toc-nav" data-offset="10">
                 {{object.content|safe}}

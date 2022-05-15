@@ -189,10 +189,13 @@ X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 # global variables which we can use through this project
 ARTICLE_GENRE_CHOICES = {
-    '1':'機械学習', 
-    '2':'確率統計', 
-    '3':'AI',
-    '4':'その他',
+    '1':'AI',
+    '2':'機械学習', 
+    '4':'ディープラーニング',
+    '5':'強化学習',
+    '6':'確率統計',
+    '7':'データ分析', 
+    '8':'その他',
 }
 
 # site maps
