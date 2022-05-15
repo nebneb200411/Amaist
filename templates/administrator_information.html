@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block stylesheet %}
+    <link rel="stylesheet" href="{% static 'base/admin_inform/admin_inform.css' %}">
+{% endblock stylesheet %}
+
+
+{% block contents %}
+<div>
+    <h1 class="title-font">サイト管理者情報</h1>
+    <div class="content-font">
+        <h2 class="title-font">自己紹介</h2>
+        　Dataラボの管理人のゆうやです。現在は理系大学生で、化学を専攻しています！学部卒業後は院に進みます！
+    </div>
+    <div class="content-font">
+        <h2 class="title-font">サイトについて</h2>
+        　Dataラボはでは、データを活用した表現を実現する場を目指しています。
+        自分が学んだ内容をアウトプットする場、また情報共有のプラットフォームとして活用していただけることを想定しています。
+        もちろん見るだけでも構わないです。とにかく、データ分析、データ生成、確率統計の情報プラットフォームとしてDataラボをご活用ください！
+        サイト管理者は、これが初めて立ち上げるWebサービスです。是非改善してほしい、実現してほしい機能があったらメニューのお問合わせフォームから送信してください。
+    </div>
+    <div class="content-font">
+        <h2 class="title-font">連絡先</h2>
+        <a href="mailto:amaizingstrange&#64;gmail.com">amaizingstrange@gmail.com</a>
+    </div>
+</div>
+{% endblock contents %}

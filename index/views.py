@@ -16,3 +16,6 @@ class IndexView(ListView):
 
 class TermsView(TemplateView):
     template_name = 'terms.html'
+
+class AdministratorInformation(TemplateView):
+    template_name = 'administrator_information.html'

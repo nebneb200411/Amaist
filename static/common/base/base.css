@@ -1,0 +1,11 @@
+.link-cursor-big {
+  color: white;
+  cursor: pointer;
+}
+
+.link-cursor-big:hover {
+  font-size: 120%;
+  -webkit-transition: width 0.3s, height 0.3s;
+  transition: width 0.3s, height 0.3s;
+}
+/*# sourceMappingURL=base.css.map */

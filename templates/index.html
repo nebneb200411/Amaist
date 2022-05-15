@@ -2,6 +2,8 @@
 {% load static %}
 {% block stylesheet %}
 <title>Dataラボ</title>
+<meta name="application-name" content="Dataラボ">
+<meta name="description" content="Dataラボはディープラーニング、強化学習を始めとする機械学習、確率統計に関する記事を誰でも無料で作成できるサービスです。Dataラボでは、記事を書くことで学習成果のアウトプットを実現できます。">
 <link rel="stylesheet" href="{% static 'base/index.css' %}">
 {% endblock stylesheet %}
 {% block contents %}
@@ -10,7 +12,7 @@
         <div id="site-discription-box" class="col-12 col-md-7 col-xl-7">
             <div id="site-discriptions">
                 <h1 class="font">Dataラボ</h1>
-                <h4 class="font">Dataラボは，データ分析愛好家のための記事作成サービスです</h4>
+                <h4 class="font">Dataラボは，データ分析愛好家のための記事作成サービスです。ディープラーニング、強化学習を始めとする機械学習、確率統計に関する記事を誰でも簡単に作成できます。</h4>
                 <h2 class="font">・記事作成</h2>    
                 <h3 class="font">テキストエディターを使って記事の投稿が可能です</h3>
                 <h2 class="font">・質問投稿</h2>
@@ -35,59 +37,6 @@
                             class="link-to-login-and-register" href={% url 'login' %}></span>Login</a></p>
             </div>
         </div>
-        <!--
-        <div class="col-12 col-md-9 col-xl-9" id="main-box">
-            <div class="amaist-description-box">
-                <div class="amaist-description" id="amaist-title-box">
-                    <div class="amaist-description-text">
-                        <h1 class="about-amaist"><span class="amaist">Dataラボ</span></h1>
-                        <p class="amaist-content">
-                            <span class="amaist">データ分析の学習プラットフォームが新登場しました．<br>
-                            Dataラボは，データ分析に関する記事を作成し，あなたの解析結果を表現する場所です．</span>
-                        </p>
-                    </div>
-                </div>
-                <h1 class="amaist-survice">Dataラボのサービス</h1>
-                <div class="amaist-survice-box">
-                    <div class="amaist-survice-article-box">
-                        <div class="amaist-survice-article d-flex">
-                            <p class="survice-name ml-auto p-2 each-survice"><img class="survice-icon"
-                                    src="{% static 'images/index/amaist_survice_article.png' %}"></img>Article</p>
-                            <p class="about-article ml-auto p-2 align-self-center">
-                                データ分析の結果を記事にして表現する場所です．データ分析に関係することなら，内容は問いません！自由にあなただけの記事を作りましょう！</p>
-                        </div>
-                    </div>
-                    <div class="amaist-survice-question-box">
-                        <div class="amaist-survice-question d-flex">
-                            <p class="survice-name ml-auto p-2 each-survice"><img class="survice-icon"
-                                    src="{% static 'images/index/amaist_survice_question.png' %}"></img>Question</p>
-                            <p class="about-question ml-auto p-2 align-self-center">
-                                わからないことを質問する場所です．あなたの悩みを共有しましょう！誰かが教えてくるかもしれません．同じ悩みを抱えてる方の力になるかも...</p>
-                        </div>
-                    </div>
-                    <div class="amaist-survice-datalibrary-box">
-                        <div class="amaist-survice-datalibrary d-flex">
-                            <p class="survice-name ml-auto p-2 each-survice"><img class="survice-icon"
-                                    src="{% static 'images/index/amaist_survice_datalibrary.png' %}"></img>DataLibrary
-                            </p>
-                            <p class="about-datalibrary ml-auto p-2 align-self-center">
-                                データの図書館です．集めたデータをここに寄付してください！！データは共有され，Dataラボユーザー皆さんがダウンロードできます．ここで得られたデータを使って分析しましょう！！
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="login-and-register-box">
-                <div class="login-and-register-text">
-                    <p class="login-and-register" id="login-and-register-title"><span>登録，ログインはこちら</span></p>
-                    <p class="login-and-register"><i class="fas fa-user-plus"></i><span class="mgr-10"></span><a
-                            class="link-to-login-and-register" href={% url 'sign_up' %}>Register</a></p>
-                    <p class="login-and-register"><i class="fas fa-sign-in-alt"></i><span class="mgr-10"><a
-                                class="link-to-login-and-register" href={% url 'login' %}></span>Login</a></p>
-                </div>
-            </div>
-        -->
     </div>
 </div>
 {% endblock contents %}

@@ -185,10 +185,11 @@ main {
     }
 
     #subcontents-box {
-        position:relative;
 
         #table-of-contents {
-            position: fixed;
+            position: sticky;
+            position: -webkit-sticky;
+            top: 40px;
             margin: 0 0 0 30px;
             nav {
                 ul {

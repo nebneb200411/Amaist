@@ -176,12 +176,10 @@ main div div #article-content #comment-display-box .each-user-comment-box .comme
   margin-top: 10px;
 }
 
-main #subcontents-box {
-  position: relative;
-}
-
 main #subcontents-box #table-of-contents {
-  position: fixed;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 40px;
   margin: 0 0 0 30px;
 }
 
