@@ -32,7 +32,7 @@
         <div id="article-list-box" class="col-12 col-md-9 col-xl-9">
             {% for article in article_list %}
             <a class="article-link" href="{% url 'article:article_detail' article.pk %}">
-            <div class="d-xl-flex d-md-flex articles">
+            <div class="d-xl-flex d-md-flex d-sm-flex articles">
                 <img class="author-icon align-self-center" src="{{ MEDIA_URL }}{{article.author.user.icon|default:'images/user-icon-default.png'}}">
                 <div class="article-info align-self-center">
                     <p class="info"><i class="fas fa-user"></i><span class="mgr-10"></i>{{article.author}}</p>
@@ -54,84 +54,7 @@
         </div>
     </div>
 </div>
-<!--
-    <div class="container-fluid">
-        <div class="row">
-            <div class ="col-xl-3 col-md-3 col-12" id="left-grid">
-                <div class="searching">
-                    <hr class="searching-hr"/>
-                    <form class="flex-column" method="GET" action="{% url 'article:list' %}" id="article-search">
-                        <input type="text" name="article_search" placeholder="記事検索"/>
-                        <button type="submit" class="btn btn-success">記事検索</button>
-                    </form>
-                    <hr class="searching-hr"/>
-                    <form class="flex-column" method="GET" id="tag-search">
-                        <input type="text" name="tag_search" placeholder="タグ検索"/>
-                        <button type="submit" class="btn btn-success">タグ検索</button>
-                    </form>
-                    <hr class="searching-hr"/>
-                </div>
-            </div>
-            <div class="col-xl-6 col-md-6 col-12" id="article-grid">
-                <h1><i>New!!</i></h1>
-                {% for article in article_list %}
-                <hr class="article-division-hr"/>
-                <div id="article-header" class="d-flex">
-                    <div id="icon">
-                        <div class="author-icon">
-                            <img class="user-icon" src="{{ MEDIA_URL }}{{article.author.user.icon|default:'images/user-icon-default.png'}}"/>
-                        </div>
-                    </div>
-                    <div id="author-name-created-at">
-                        <div class="autor-name">
-                            <p><i class="fas fa-user"></i><span class="mgr-10"/><p class="article-author">{{article.author}}</p></p>
-                        </div>
-                        <div class="created-at">
-                            <p class="font"><i class="far fa-calendar-alt"></i><span class="mgr-10"/>{{article.created_at|date:"y/m/d"}}</p>
-                        </div>
-                        <div class="tag-box">
-                            {% for tag in article.tag.all %}
-                            <p><i class="fas fa-tags"></i><span class="mgr-10"/>{{tag}}</p>
-                            {% empty %}
-                            {% endfor %}
-                        </div>
-                    </div>
-                </div>
-                <div id="title">
-                    <hr class="title-hr"/>
-                    <a href="{% url 'article:article_detail' article.pk %}">
-                        <h3 class-"article-title">{{article.title}}</h3>
-                    </a>
-                    <hr class="title-hr"/>
-                </div>
 
-                <div id="good-number">
-                    <p><i class="fas fa-thumbs-up"></i><span class="mgr-10"/>{{article.good_from.all|length}}</p>
-                </div>
-                {% endfor %}
-            </div>
-            <div class="col-xl-3 col-md-3 col-12" id="right-grid">
-                <a href="{% url 'sign_up' %}"><p class="arround-account">Register</p></a>
-                <a href="{% url 'logout' %}"><p class="arround-account">Logout</p></a>
-                <div class="notifications-box">
-                    <p class="notification">News</p>                
-                    {% for notification in notifications %}
-                    <div class="each-notifications">
-                        <a href="{% url 'notifications:detail' notification.pk %}">
-                            <p class="notification-title">
-                                {{notification.title}}
-                            </p>
-                        </a>
-                        <p class="created-date">{{notification.created_at}}</p>
-                    </div>
-                    <hr>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
-    </div>
--->
-        
 {% endblock contents %}
 {% block script %}
 <script type="text/javascript" src="{% static 'article/list.js' %}"></script>
