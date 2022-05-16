@@ -66,6 +66,7 @@ h3,
 h4,
 h5,
 h6 {
+    border-bottom:solid 2px black;
     font-weight: normal;
     line-height: 1.2;
 }

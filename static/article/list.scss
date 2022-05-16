@@ -12,6 +12,10 @@ a:visited {
     color: inherit;
 }
 
+.advertise-footer {
+    padding:10px 10px;
+}
+
 //スマホ用
 @media screen and (max-width:767px) {
     body {
@@ -102,10 +106,10 @@ a:visited {
 //共通処理
 @media screen and (min-width:768px) {
     body {
-        background: linear-gradient(45deg, #2E38F6, #0E294E, #415C55, #528A4C);
-        font-family: "arial", "MS Gothic";
 
         main {
+            background: linear-gradient(45deg, #2E38F6, #0E294E, #415C55, #528A4C);
+            font-family: "arial", "MS Gothic";
             #contents {
                 position: relative;
                 background-image: url(/static/images/article/list/article_bg.png);
@@ -116,30 +120,33 @@ a:visited {
 
                 #contents-row {
                     #search-box {
-                        background-color: #556b2f;
-                        margin: 20px 0px;
-                        border-radius: 5px;
 
-                        #search-title {
-                            color: white;
-                            text-align: center;
-                            padding: 20px 0px;
-                        }
-
-                        .search-btn {
-                            border: 1px solid gray;
-                            border-radius: 2px;
-                            background-color: #0E294E;
-                        }
-
-                        .search-p {
-                            text-align: center;
-                        }
-
-                        .search-input {
-                            outline: none;
-                            border-radius: 2px;
-                            border: none;
+                        #search {
+                            background-color: #556b2f;
+                            margin:20px 0 0 0;
+                            padding: 10px 10px;
+                            border-radius: 5px;
+                            #search-title {
+                                color: white;
+                                text-align: center;
+                                padding: 20px 0px;
+                            }
+    
+                            .search-btn {
+                                border: 1px solid gray;
+                                border-radius: 2px;
+                                background-color: #0E294E;
+                            }
+    
+                            .search-p {
+                                text-align: center;
+                            }
+    
+                            .search-input {
+                                outline: none;
+                                border-radius: 2px;
+                                border: none;
+                            }
                         }
                     }
 

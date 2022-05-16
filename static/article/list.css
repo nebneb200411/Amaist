@@ -13,6 +13,10 @@ a:visited {
   color: inherit;
 }
 
+.advertise-footer {
+  padding: 10px 10px;
+}
+
 @media screen and (max-width: 767px) {
   body {
     background: linear-gradient(45deg, #2E38F6, #0E294E, #415C55, #528A4C);
@@ -83,7 +87,7 @@ a:visited {
 }
 
 @media screen and (min-width: 768px) {
-  body {
+  body main {
     background: linear-gradient(45deg, #2E38F6, #0E294E, #415C55, #528A4C);
     font-family: "arial", "MS Gothic";
   }
@@ -95,25 +99,26 @@ a:visited {
     background-position: center;
     opacity: 1;
   }
-  body main #contents #contents-row #search-box {
+  body main #contents #contents-row #search-box #search {
     background-color: #556b2f;
-    margin: 20px 0px;
+    margin: 20px 0 0 0;
+    padding: 10px 10px;
     border-radius: 5px;
   }
-  body main #contents #contents-row #search-box #search-title {
+  body main #contents #contents-row #search-box #search #search-title {
     color: white;
     text-align: center;
     padding: 20px 0px;
   }
-  body main #contents #contents-row #search-box .search-btn {
+  body main #contents #contents-row #search-box #search .search-btn {
     border: 1px solid gray;
     border-radius: 2px;
     background-color: #0E294E;
   }
-  body main #contents #contents-row #search-box .search-p {
+  body main #contents #contents-row #search-box #search .search-p {
     text-align: center;
   }
-  body main #contents #contents-row #search-box .search-input {
+  body main #contents #contents-row #search-box #search .search-input {
     outline: none;
     border-radius: 2px;
     border: none;

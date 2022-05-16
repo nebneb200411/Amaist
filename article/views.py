@@ -63,6 +63,7 @@ class ArticleFormCreateView(LoginRequiredMixin, CreateView):
 class ArticleListView(ListView):
     template_name = 'article/list.html'
     model = Article
+    paginate_by = 20
 
     def get_queryset(self):
         queryset = super().get_queryset()
@@ -95,6 +96,7 @@ class ArticleListView(ListView):
         context = super().get_context_data(**kwargs)
         notifications = Notifications.objects.all()
         context['notifications'] = notifications
+        context["genres"] = settings.ARTICLE_GENRE_CHOICES
         return context
 
 

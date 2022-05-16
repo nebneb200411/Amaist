@@ -14,9 +14,18 @@
 
 html {
   background-color: black;
+  height: auto;
   -webkit-text-size-adjust: 100%;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+}
+
+body {
+  height: auto;
+}
+
+main {
+  background-color: #ededed;
 }
 
 a {
