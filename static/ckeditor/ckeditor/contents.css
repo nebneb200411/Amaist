@@ -16,12 +16,11 @@ body {
     background-color: #fff;
 
     margin: 20px;
-    overflow: hidden;
 }
 
 .cke_editable {
     font-size: 13px;
-    line-height: 0px;
+    /*line-height: 0px;*/
 
     /* Fix for missing scrollbars with RTL texts. (#10488) */
     word-wrap: break-word;

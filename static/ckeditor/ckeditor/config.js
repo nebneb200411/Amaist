@@ -18,11 +18,7 @@ CKEDITOR.editorConfig = function (config) {
 		}
 	};
 
-	config.extraPlugins = 'pbckcode';
-
 	config.font_defaultLabel = 'serif';
-
-	config.allowedContent = true;
 };
 
 //CKEDITOR.config.extraPlugins = "toc";
