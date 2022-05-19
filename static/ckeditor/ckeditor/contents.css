@@ -16,6 +16,7 @@ body {
     background-color: #fff;
 
     margin: 20px;
+    overflow: hidden;
 }
 
 .cke_editable {
@@ -66,8 +67,9 @@ h3,
 h4,
 h5,
 h6 {
+    margin: 0 0 0 5px;
     border-bottom:solid 2px black;
-    font-weight: normal;
+    font-weight: bold;
     line-height: 1.2;
 }
 

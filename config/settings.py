@@ -184,7 +184,6 @@ LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/login/'
 
-
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 # global variables which we can use through this project
@@ -216,7 +215,7 @@ CKEDITOR_CONFIGS = {
     'default': {
         'allowedContent': True,
         # css path
-        'contentsCss': '/static/ckeditor/ckeditor.css',
+        #'contentsCss': os.path.join(BASE_DIR, '/static/ckeditor/ckeditor.css'),
         'width': '100%',
         'skin': 'moono-lisa',
         'codeSnippet_theme': 'ir_black',
@@ -242,12 +241,12 @@ CKEDITOR_CONFIGS = {
                        'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'BidiLtr', 'BidiRtl', ]},
             {'name': 'links', 'items': ['Link', 'Unlink', 'Anchor']},
             {'name': 'insert',
-             'items': ['Image', 'Flash', 'Table', 'HorizontalRule', 'Smiley', 'SpecialChar', 'PageBreak', 'Iframe', 'Mathjax', ]},
+             'items': ['Image', 'Flash', 'Table', 'HorizontalRule', 'SpecialChar', 'Iframe', 'Mathjax', ]},
             '/',
             {'name': 'styles', 'items': [
                 'Styles', 'Format', 'Font', 'FontSize', 'CodeSnippet', 'lineheight', 'Contents']},
             {'name': 'colors', 'items': ['TextColor', 'BGColor']},
-            {'name': 'tools', 'items': ['Maximize', 'ShowBlocks']},
+            {'name': 'tools', 'items': ['Maximize', 'pbckcode']},
             {'name': 'about', 'items': ['About']},
             '/',  # put this to force next toolbar on new line
             {'name': 'yourcustomtools', 'items': [
@@ -258,7 +257,7 @@ CKEDITOR_CONFIGS = {
 
             ]},
         ],
-        'toolbar': 'YourCustomToolbarConfig',  # put selected toolbar config here
+        'toolbar': 'full',#'YourCustomToolbarConfig',  # put selected toolbar config here
         # 'toolbarGroups': [{ 'name': 'document', 'groups': [ 'mode', 'document', 'doctools' ] }],
         # 'height': 291,
         'width': '100%',
@@ -269,6 +268,7 @@ CKEDITOR_CONFIGS = {
         'tabSpaces': 4,
         'extraPlugins': ','.join([
             'uploadimage',  # the upload image feature
+            'image2',
             # your extra plugins here
             'div',
             'autolink',
@@ -276,6 +276,7 @@ CKEDITOR_CONFIGS = {
             'embedsemantic',
             'autogrow',
             # 'devtools',
+            'pbckcode',
             'widget',
             'lineutils',
             'clipboard',
@@ -283,6 +284,7 @@ CKEDITOR_CONFIGS = {
             'dialogui',
             'elementspath',
             'codesnippet',
+            'ckeditor_wiris',
             'mathjax',
             'uicolor',
             'lineheight',

@@ -52,6 +52,18 @@
             <p class="title-stylish">{{object.title}}</p>
             <div id="article-content-box" data-spy="scroll" data-target="#toc-nav" data-offset="10">
                 {{object.content|safe}}
+                <!--
+                <iframe id="contents" src="{% url 'article:contents' object.pk %}" frameborder="0" width="100%" onload="change_size()">
+                </iframe>
+                <script>
+                    const sub = document.getElementById("contents");
+                
+                    function change_size() {
+                        sub.style.width = sub.contentWindow.document.body.scrollWidth + "px";
+                        sub.style.height = sub.contentWindow.document.body.scrollHeight + "px";
+                    }
+                </script>
+                -->
             </div>
             <a href="https://px.a8.net/svt/ejp?a8mat=3NAEBR+3HMHF6+4PGA+BY641" rel="nofollow">
             <img border="0" width="936" height="120" alt="" src="https://www21.a8.net/svt/bgt?aid=220514823211&wid=001&eno=01&mid=s00000021961002007000&mc=1"></a>
@@ -108,4 +120,7 @@
     <script>hljs.initHighlightingOnLoad();</script>
     <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
     <script type="text/javascript" src="{% static 'article/detail/detail.js' %}"></script>
+    <script>window.CKEDITOR_BASEPATH = "{% static '/ckeditor/ckeditor/' %}";</script>
+    <script type="text/javascript" src="{% static 'ckeditor/ckeditor-init.js' %}" data-ckeditor-basepath="{% static 'ckeditor/ckeditor/' %}" id="ckeditor-init-script"></script>
+    <script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
 {% endblock script %}

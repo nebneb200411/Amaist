@@ -1,8 +1,4 @@
 from django.views.generic import CreateView, ListView, DetailView, UpdateView, DeleteView
-
-#from sqlalchemy import null
-
-#from importlib_metadata import pass_none
 from .forms import ArticleForm, ArticleCommentForm
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -98,6 +94,10 @@ class ArticleListView(ListView):
         context['notifications'] = notifications
         context["genres"] = settings.ARTICLE_GENRE_CHOICES
         return context
+
+class ContentsView(DetailView):
+    template_name = "article/contents.html"
+    model = Article
 
 
 class ArticleDetailView(DetailView):

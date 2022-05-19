@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "AAAA;;;;;;;;;;;;EAYE",
+    "mappings": "AAAA,AAAA,EAAE,CAAA;EACE,KAAK,EAAE,KAAK;EACZ,WAAW,EAAE,kBAAkB;CAClC;;AACD,AAAA,EAAE;AACF,EAAE;AACF,EAAE;AACF,EAAE;AACF,EAAE,CAAC;EACC,KAAK,EAAE,KAAK;EACZ,WAAW,EAAE,kBAAkB;CAClC",
     "sources": [
         "ckeditor.scss"
     ],
