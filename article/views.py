@@ -1,3 +1,4 @@
+from ast import Return
 from django.views.generic import CreateView, ListView, DetailView, UpdateView, DeleteView
 from .forms import ArticleForm, ArticleCommentForm
 from django.urls import reverse_lazy
@@ -9,6 +10,10 @@ from profiles.models import Profile
 from django.db.models import Q
 from notifications.models import Notifications
 from django.conf import settings
+
+def key_to_value(dict_obj, key):
+    value = dict_obj[key]
+    return value
 
 
 class ArticleFormCreateView(LoginRequiredMixin, CreateView):
@@ -65,7 +70,12 @@ class ArticleListView(ListView):
         queryset = super().get_queryset()
         article_keyword = self.request.GET.get('article_search')
         tag_keyword = self.request.GET.get('tag_search')
-        genre = self.request.GET.get('genre_search')
+        genre_key = self.request.GET.get('genre_search')
+        if genre_key != 'None':
+            genre = key_to_value(settings.ARTICLE_GENRE_CHOICES, genre_key)
+        else:
+            genre = ""
+
         if article_keyword:
             queryset = Article.objects.filter(is_published=True)
             queryset = queryset.filter(

@@ -12,21 +12,34 @@
             <div id="search">
                 <h2 id="search-title">記事検索</h2>
                 <form method="GET" action="{% url 'article:list' %}" id="article-search">
-                    <p class="search-p"><input class="search-input" type="text" name="article_search" placeholder="記事検索"></input><button class="search-btn" type="submit"><i class="fas fa-search"></i></button></p>
+                    <div class="input-group mb-3" id="article-search-box">
+                        <input class="search-input form-control" type="text" name="article_search" placeholder="タイトル検索" aria-label="article" aria-describedby="article-search-box"></input>
+                        <div class="input-group-prepend">
+                            <button class="search-btn input-group-text" type="submit"><i class="fas fa-search"></i></button>
+                            <!--<span class="" id="inputGroup-sizing-default"><i class="fas fa-tags"></i></span>-->
+                        </div>
+                    </div>
                 </form>
                 <form method="GET" id="tag-search">
-                    <p class="search-p"><input class="search-input" type="text" name="tag_search" placeholder="タグ検索"></input><button class="search-btn" type="submit"><i class="fas fa-search"></i></button></p>
+                    <div class="input-group mb-3" id="tag-search-box">
+                        <input class="search-input form-control" type="text" name="tag_search" placeholder="タグ検索" aria-label="tag" aria-describedby="tag-search-box"></input>
+                        <div class="input-group-prepend">
+                            <button class="search-btn input-group-text" type="submit"><i class="fas fa-search"></i></button>
+                        </div>
+                    </div>
                 </form>
                 <form method="GET" id="genre-search">
-                    <p class="search-p">
-                        <input type="text" list="genre-list" name="genre_search" class="list-seacrh"/>
-                        <datalist id="genre-list">
+                    <div id="selections" class="input-group mb-3">
+                        <select name="genre_search" class="custom-select" id="inputGroupSelect01">
+                            <option value="None" selected>選択肢</option>
                             {% for key, value in genres.items %}
-                                <option class="selection">{{value}}</option>
+                                <option value="{{key}}">{{value}}</option>
                             {% endfor %}
-                        </datalist>
-                        <button class="search-btn" type="submit"><i class="fas fa-search"></i></button>
-                    </p>
+                        </select>
+                        <div class="input-group-prepend">
+                            <button class="search-btn input-group-text" type="submit"><i class="fas fa-search"></i></button>
+                        </div>
+                    </div>
                 </form>
             </div>
             <div class="advertise">
