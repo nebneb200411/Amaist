@@ -31,7 +31,7 @@
                 <form method="GET" id="genre-search">
                     <div id="selections" class="input-group mb-3">
                         <select name="genre_search" class="custom-select" id="inputGroupSelect01">
-                            <option value="None" selected>選択肢</option>
+                            <option selected>選択肢</option>
                             {% for key, value in genres.items %}
                                 <option value="{{key}}">{{value}}</option>
                             {% endfor %}

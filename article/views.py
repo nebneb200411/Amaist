@@ -71,8 +71,10 @@ class ArticleListView(ListView):
         article_keyword = self.request.GET.get('article_search')
         tag_keyword = self.request.GET.get('tag_search')
         genre_key = self.request.GET.get('genre_search')
-        if genre_key != 'None':
+        if (genre_key != None) and (genre_key != '選択肢'):
             genre = key_to_value(settings.ARTICLE_GENRE_CHOICES, genre_key)
+        elif genre_key == "選択肢":
+            genre = ""
         else:
             genre = ""
 
