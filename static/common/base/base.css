@@ -24,4 +24,24 @@
 .font-arial-MSGothic {
   font-family: "arial", "MS Gothic";
 }
+
+.title-two-colorbar {
+  position: relative;
+  color: #2864ac;
+  padding-bottom: .3em;
+  border-bottom: 4px solid #ffbc00;
+  font-weight: bold;
+  padding-left: 10px;
+}
+
+.title-two-colorbar::after {
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  z-index: 2;
+  content: '';
+  width: 30%;
+  height: 4px;
+  background-color: #2864ac;
+}
 /*# sourceMappingURL=base.css.map */

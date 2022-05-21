@@ -1,4 +1,4 @@
-$(function() {
+/*$(function() {
     var navSelector = "#toc-nav";
     var $myNav = $(navSelector);
 
@@ -8,4 +8,4 @@ $(function() {
         $scope: $("#article-contents-box"),
         offset: 10,
     });
-});
+})*/

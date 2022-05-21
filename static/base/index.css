@@ -99,20 +99,18 @@ input {
   main #site-discription-box #site-discriptions #service {
     margin-bottom: 20px;
   }
-  main #site-discription-box #site-discriptions #service .card .card-header {
-    font-weight: bold;
+  main #site-discription-box #site-discriptions #service .card .dropdown ul {
+    padding: 20px 20px;
+  }
+  main #site-discription-box #site-discriptions #service .card .dropdown ul li a {
+    text-decoration: none;
+    color: white;
   }
   main #site-discription-box #site-discriptions #service .card .card-body h5 {
-    font-size: 1.1rem;
-    color: #9eaeff;
-    font-weight: bold;
-  }
-  main #site-discription-box #site-discriptions #service .card .card-body p {
-    font-size: 0.9rem;
-    margin-left: 5px;
+    font-size: 1rem;
+    margin: 20px 0px 20px 5px;
   }
   main #site-discription-box #site-discriptions #service .card .card-body li {
-    font-size: 0.9rem;
     list-style: none;
   }
   main #site-discription-box #site-discriptions #service .card .card-body li a {
@@ -368,15 +366,15 @@ input {
     width: 100%;
     height: 100%;
   }
-  main #site-discription-box #site-discriptions #service .card .card-header {
-    font-weight: bold;
+  main #site-discription-box #site-discriptions #service .card .dropdown ul {
+    padding: 20px 20px;
+  }
+  main #site-discription-box #site-discriptions #service .card .dropdown ul li a {
+    text-decoration: none;
+    color: white;
   }
   main #site-discription-box #site-discriptions #service .card .card-body h5 {
-    color: #9eaeff;
-    font-weight: bold;
-  }
-  main #site-discription-box #site-discriptions #service .card .card-body p {
-    margin-left: 5px;
+    margin: 20px 0px 20px 5px;
   }
   main #site-discription-box #site-discriptions #service .card .card-body li {
     list-style: none;

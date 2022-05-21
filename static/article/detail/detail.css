@@ -91,16 +91,40 @@ body {
     display: inline-block;
     padding-left: 10px;
   }
+  main div div #article-content #expand-page {
+    text-align: right;
+  }
+  main div div #article-content #expand-page a {
+    color: black;
+  }
+  main div div #article-content #expand-page a i {
+    cursor: pointer;
+  }
+  main div div #article-content #expand-page a i:hover {
+    color: #d84450;
+    -webkit-transition: width 0.3s, height 0.3s;
+    transition: width 0.3s, height 0.3s;
+  }
   main div div #article-content #title {
-    padding: 5px;
     font-size: 1.2rem;
-    background-color: #114477;
-    border-radius: 5px;
+  }
+  main div div #article-content #toc-nav h2 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  main div div #article-content #toc-nav ul {
+    display: block;
+  }
+  main div div #article-content #toc-nav ul li a {
+    color: #29397a;
+  }
+  main div div #article-content #toc-nav ul li a:hover {
     color: white;
   }
   main div div #article-content #article-content-box {
     padding: 3px;
-    position: relative;
+    overflow-y: scroll;
   }
   main div div #article-content #article-content-box .widget-toc {
     display: table;
@@ -146,10 +170,13 @@ body {
     margin-top: 10px;
   }
   main #subcontents-box #table-of-contents {
-    position: sticky;
-    position: -webkit-sticky;
-    top: 40px;
-    margin: 0 0 0 30px;
+    display: none;
+    margin: 0 0 30px 0;
+  }
+  main #subcontents-box #table-of-contents h2 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
   }
   main #subcontents-box #table-of-contents nav ul {
     display: block;
@@ -162,6 +189,12 @@ body {
   }
   main #subcontents-box #table-of-contents span {
     font-weight: bold;
+  }
+  #article-content-box {
+    padding: 3px;
+    position: relative;
+    overflow-y: scroll;
+    font-size: clamp(12px, 14px, 1.2rem);
   }
   #article-content-box .cke_editable {
     font-size: 13px;
@@ -349,6 +382,7 @@ body {
     font-size: 1.5rem;
   }
   main div div #article-content #user-info a {
+    text-decoration: none;
     margin: 0px 10px;
     color: #a17636;
   }
@@ -400,6 +434,7 @@ body {
   main div div #article-content #article-content-box {
     padding: 20px 20px 20px 20px;
     position: relative;
+    overflow-y: scroll;
   }
   main div div #article-content #article-content-box .widget-toc {
     display: table;
@@ -450,6 +485,11 @@ body {
   }
   main div div #article-content #comment-display-box .each-user-comment-box .comment-content {
     margin-top: 10px;
+  }
+  main #subcontents-box h2 {
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-align: center;
   }
   main #subcontents-box #table-of-contents {
     position: sticky;

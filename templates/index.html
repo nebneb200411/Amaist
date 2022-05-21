@@ -24,37 +24,49 @@
                     <i class="fas fa-icons"></i><span class="mgr-10"></span>Contents
                 </div>
                 <div class="card-body font">
-                    <h5 class="card-title">記事作成</h5>
-                    <p class="card-text">テキストエディターを使って記事の投稿が可能です</p>
-                    <p class="links">
-                        <li class="link-to-contents">
-                            <a href="{% url 'article:list' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>記事一覧</a>
-                        </li>
-                        <li class="link-to-contents">
-                            <a href="{% url 'article:CreateArticle' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>記事作成</a>
-                        </li>
-                    </p>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuDark" data-bs-toggle="dropdown" aria-expanded="false">
+                            記事
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuDark">
+                            <li class="link-to-contents">
+                                <a href="{% url 'article:list' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>記事一覧</a>
+                            </li>
+                            <li class="link-to-contents">
+                                <a href="{% url 'article:CreateArticle' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>記事作成</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <h5 class="card-text">テキストエディターを使って記事の投稿が可能です</h5>
 
-                    <h5 class="card-title">データ投稿</h5>
-                    <p class="card-text">データを共有できます</p>
-                    <p class="links">
-                        <li class="link-to-contents">
-                            <a href="{% url 'data_library:list' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>データ一覧</a>
-                        </li>
-                        <li class="link-to-contents">
-                            <a href="{% url 'data_library:create' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>データの投稿</a>
-                        </li>
-                    </p>
-                    <h5 class="card-title">質問投稿</h5>
-                    <p class="card-text">議論の場所として使えます</p>
-                    <p class="links">
-                        <li class="link-to-contents">
-                            <a href="{% url 'question:list' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>質問一覧</a>
-                        </li>
-                        <li class="link-to-contents">
-                            <a href="{% url 'question:create' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>質問作成</a>
-                        </li>
-                    </p>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuDark" data-bs-toggle="dropdown" aria-expanded="false">
+                            データ
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuDark">
+                            <li class="link-to-contents">
+                                <a href="{% url 'data_library:list' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>データ一覧</a>
+                            </li>
+                            <li class="link-to-contents">
+                                <a href="{% url 'data_library:create' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>データの投稿</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <h5 class="card-text">データを共有できます</h5>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuDark" data-bs-toggle="dropdown" aria-expanded="false">
+                            質問
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuDark">
+                            <li class="link-to-contents">
+                                <a href="{% url 'question:list' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>質問一覧</a>
+                            </li>
+                            <li class="link-to-contents">
+                                <a href="{% url 'question:create' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>質問作成</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <h5 class="card-text">議論の場所として使えます</h5>
                 </div>
             </div>
         </div>

@@ -101,7 +101,7 @@ a:visited {
     }
 }
 
-//共通処理
+//desktop
 @media screen and (min-width:768px) {
 
     body {
@@ -122,18 +122,16 @@ a:visited {
                         #search {
                             background-color: #556b2f;
                             margin:20px 0 0 0;
-                            padding: 10px 10px;
+                            padding: 20px 20px;
                             border-radius: 5px;
+
+                            h2 {
+                                color:white;
+                            }
                             #search-title {
                                 color: white;
                                 text-align: center;
                                 padding: 20px 0px;
-                            }
-    
-                            .search-btn {
-                                border: 1px solid gray;
-                                border-radius: 2px;
-                                background-color: #0E294E;
                             }
     
                             .search-p {

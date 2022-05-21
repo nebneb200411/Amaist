@@ -99,18 +99,16 @@ a:visited {
   body main #contents #contents-row #search-box #search {
     background-color: #556b2f;
     margin: 20px 0 0 0;
-    padding: 10px 10px;
+    padding: 20px 20px;
     border-radius: 5px;
+  }
+  body main #contents #contents-row #search-box #search h2 {
+    color: white;
   }
   body main #contents #contents-row #search-box #search #search-title {
     color: white;
     text-align: center;
     padding: 20px 0px;
-  }
-  body main #contents #contents-row #search-box #search .search-btn {
-    border: 1px solid gray;
-    border-radius: 2px;
-    background-color: #0E294E;
   }
   body main #contents #contents-row #search-box #search .search-p {
     text-align: center;

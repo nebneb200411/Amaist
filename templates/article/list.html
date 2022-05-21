@@ -4,41 +4,35 @@
 {% block stylesheet %}
     <title>記事一覧</title>
     <link rel="stylesheet" href="{% static 'article/list.css' %}"/>
+    <link rel="stylesheet" href="{% static 'common/base.css' %}">
 {% endblock stylesheet %}
 {% block contents %}
 <div id="contents" class="container">
     <div id="contents-row" class="row">
         <div id="search-box" class="col-12 col-md-3 col-xl-3">
             <div id="search">
-                <h2 id="search-title">記事検索</h2>
-                <form method="GET" action="{% url 'article:list' %}" id="article-search">
+                <h2 class="font-arial-MSGothic">記事検索</h2>
+                <form method="GET" id="article-search">
                     <div class="input-group mb-3" id="article-search-box">
                         <input class="search-input form-control" type="text" name="article_search" placeholder="タイトル検索" aria-label="article" aria-describedby="article-search-box"></input>
-                        <div class="input-group-prepend">
-                            <button class="search-btn input-group-text" type="submit"><i class="fas fa-search"></i></button>
-                            <!--<span class="" id="inputGroup-sizing-default"><i class="fas fa-tags"></i></span>-->
-                        </div>
+                        <button class="search-btn btn btn-warning text-white" type="submit"><i class="fas fa-search"></i></button>
                     </div>
                 </form>
                 <form method="GET" id="tag-search">
                     <div class="input-group mb-3" id="tag-search-box">
                         <input class="search-input form-control" type="text" name="tag_search" placeholder="タグ検索" aria-label="tag" aria-describedby="tag-search-box"></input>
-                        <div class="input-group-prepend">
-                            <button class="search-btn input-group-text" type="submit"><i class="fas fa-search"></i></button>
-                        </div>
+                        <button class="search-btn btn btn-warning text-white" type="submit"><i class="fas fa-search"></i></button>
                     </div>
                 </form>
                 <form method="GET" id="genre-search">
                     <div id="selections" class="input-group mb-3">
-                        <select name="genre_search" class="custom-select" id="inputGroupSelect01">
+                        <select name="genre_search" class="form-select" id="inputGroupSelect01">
                             <option selected>選択肢</option>
                             {% for key, value in genres.items %}
                                 <option value="{{key}}">{{value}}</option>
                             {% endfor %}
                         </select>
-                        <div class="input-group-prepend">
-                            <button class="search-btn input-group-text" type="submit"><i class="fas fa-search"></i></button>
-                        </div>
+                        <button class="search-btn btn btn-warning text-white" type="submit"><i class="fas fa-search"></i></button>
                     </div>
                 </form>
             </div>
