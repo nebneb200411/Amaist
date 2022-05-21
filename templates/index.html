@@ -7,41 +7,71 @@
 <link rel="stylesheet" href="{% static 'base/index.css' %}">
 {% endblock stylesheet %}
 {% block contents %}
-<div class="container-fluid">
-    <div class="row">
-        <div id="site-discription-box" class="col-12 col-md-7 col-xl-7">
-            <div id="site-discriptions">
-                <h1 class="font">Dataラボ</h1>
-                <h4 class="font">Dataラボは，データ分析愛好家のための記事作成サービスです。ディープラーニング、強化学習を始めとする機械学習、確率統計に関する記事を誰でも簡単に作成できます。</h4>
-                <h2 class="font">・記事作成</h2>    
-                <h3 class="font">テキストエディターを使って記事の投稿が可能です</h3>
-                <h2 class="font">・質問投稿</h2>
-                <h3 class="font">議論の場所として使えます</h3>
-                <h2 class="font">・データ投稿</h2>
-                <h3 class="font">データを共有できます</h3>
-            </div>
-            <div id="site-images">
-                <img id="article-icon" src="{% static 'images/index/amaist_survice_article.png' %}">
-                <img id="question-icon" src="{% static 'images/index/amaist_survice_question.png' %}">
-                <img id="datalibrary-icon" src="{% static 'images/index/amaist_survice_datalibrary.png' %}">
+<div id="site-discription-box" class="container">
+    <div id="site-discriptions" class="row">
+        <div id="about-site" class="col-12 col-md-4 col-xl-4">
+            <div>
+                <div>
+                    <h1 class="font">Dataラボ</h1>
+                    <hr>
+                    <h4 class="font">Dataラボは，データ分析愛好家のための記事作成サービスです。ディープラーニング、強化学習を始めとする機械学習や確率統計に関する記事を誰でも簡単に作成できます</h4>
+                </div>
+            </div> 
+        </div>
+        <div id="service" class="col-12 col-md-8 col-xl-8">
+            <div class="card">
+                <div class="card-header bg-info text-white">
+                    <i class="fas fa-icons"></i><span class="mgr-10"></span>Contents
+                </div>
+                <div class="card-body font">
+                    <h5 class="card-title">記事作成</h5>
+                    <p class="card-text">テキストエディターを使って記事の投稿が可能です</p>
+                    <p class="links">
+                        <li class="link-to-contents">
+                            <a href="{% url 'article:list' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>記事一覧</a>
+                        </li>
+                        <li class="link-to-contents">
+                            <a href="{% url 'article:CreateArticle' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>記事作成</a>
+                        </li>
+                    </p>
+
+                    <h5 class="card-title">データ投稿</h5>
+                    <p class="card-text">データを共有できます</p>
+                    <p class="links">
+                        <li class="link-to-contents">
+                            <a href="{% url 'data_library:list' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>データ一覧</a>
+                        </li>
+                        <li class="link-to-contents">
+                            <a href="{% url 'data_library:create' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>データの投稿</a>
+                        </li>
+                    </p>
+                    <h5 class="card-title">質問投稿</h5>
+                    <p class="card-text">議論の場所として使えます</p>
+                    <p class="links">
+                        <li class="link-to-contents">
+                            <a href="{% url 'question:list' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>質問一覧</a>
+                        </li>
+                        <li class="link-to-contents">
+                            <a href="{% url 'question:create' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>質問作成</a>
+                        </li>
+                    </p>
+                </div>
             </div>
         </div>
-        <div id="site-top-image" class="col-12 col-md-5 col-xl-5">
-        </div>
-        {% if request.user.is_authenticated %}
-        {% else %}
-        <div class="login-and-register-box">
-            <div class="login-and-register-text">
-                <p class="login-and-register" id="login-and-register-title"><span>登録，ログインはこちら</span></p>
-                <p class="login-and-register"><i class="fas fa-user-plus"></i><span class="mgr-10"></span><a
-                        class="link-to-login-and-register" href={% url 'sign_up' %}>Register</a></p>
-                <p class="login-and-register"><i class="fas fa-sign-in-alt"></i><span class="mgr-10"><a
-                            class="link-to-login-and-register" href={% url 'login' %}></span>Login</a></p>
-            </div>
-        </div>
-        {% endif %}
     </div>
 </div>
+{% if request.user.is_authenticated %}
+{% else %}
+<div class="login-and-register-box">
+    <div class="login-and-register-text">
+        <p class="login-and-register" id="login-and-register-title"><span>登録，ログインはこちら</span></p>
+        <p class="login-and-register"><i class="fas fa-user-plus"></i><span class="mgr-10"></span><a
+                class="link-to-login-and-register" href={% url 'sign_up' %}>Register</a></p>
+        <p class="login-and-register"><i class="fas fa-sign-in-alt"></i><span class="mgr-10"><a
+                    class="link-to-login-and-register" href={% url 'login' %}></span>Login</a></p>
+    </div>
+</div>
+{% endif %}
 
 {% include 'includes/list/list1.html' %}
 
