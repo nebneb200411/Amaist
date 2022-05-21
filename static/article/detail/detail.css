@@ -22,6 +22,10 @@ body {
   position: relative;
 }
 
+span {
+  max-width: 100%;
+}
+
 @media screen and (max-width: 767px) {
   main {
     background-color: #bbccdd;
@@ -431,6 +435,9 @@ body {
     -webkit-transition: width 0.3s, height 0.3s;
     transition: width 0.3s, height 0.3s;
   }
+  main div div #article-content #toc-nav {
+    display: none;
+  }
   main div div #article-content #article-content-box {
     padding: 20px 20px 20px 20px;
     position: relative;
@@ -464,13 +471,6 @@ body {
     font-weight: 700;
     margin: 0;
     padding: 0;
-  }
-  main div div #article-content #article-content-box #title {
-    padding: 20px;
-    font-size: 1.5rem;
-    background-color: #114477;
-    border-radius: 5px;
-    color: white;
   }
   main div div #article-content #comment-display-box {
     font-family: "arial", "MS Gothic";

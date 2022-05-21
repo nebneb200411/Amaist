@@ -8,11 +8,8 @@ class ArticleForm(forms.ModelForm):
     is_published = forms.BooleanField(initial=True, required=False)
     is_published.widget.attrs.update({
                                     'type':'checkbox',
-                                    'data-toggle':'toggle',
-                                    'data-on':'公開する',
-                                    'data-off':'下書き保存',
-                                    'data-onstyle':'info',
-                                    'data-offstyle':'outline-dark'
+                                    'class' : 'form-check-input',
+                                    'id' : 'publish-or-not',
                                     })
 
     class Meta:
