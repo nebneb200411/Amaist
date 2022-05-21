@@ -28,6 +28,8 @@
         </div>
         <div id="site-top-image" class="col-12 col-md-5 col-xl-5">
         </div>
+        {% if request.user.is_authenticated %}
+        {% else %}
         <div class="login-and-register-box">
             <div class="login-and-register-text">
                 <p class="login-and-register" id="login-and-register-title"><span>登録，ログインはこちら</span></p>
@@ -37,8 +39,12 @@
                             class="link-to-login-and-register" href={% url 'login' %}></span>Login</a></p>
             </div>
         </div>
+        {% endif %}
     </div>
 </div>
+
+{% include 'includes/list/list1.html' %}
+
 {% endblock contents %}
 
 {% block script %}

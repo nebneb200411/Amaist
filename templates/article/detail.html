@@ -49,6 +49,11 @@
             <img border="0" width="468" height="60" alt="" src="https://www21.a8.net/svt/bgt?aid=220514823086&wid=001&eno=01&mid=s00000022953001004000&mc=1"></a>
             <img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=3NAEBR+1F7ASY+4X3U+5Z6WX" alt="">
             <hr>
+            <p id="expand-page">
+                <a href={% url 'article:contents' object.pk %}>
+                    <i class="fas fa-expand"></i>
+                </a>
+            </p>
             <p id="title" class="title-stylish">{{object.title}}</p>
             <div id="article-content-box" data-spy="scroll" data-target="#toc-nav" data-offset="10">
                 {{object.content|safe}}
@@ -66,6 +71,10 @@
                     <input type="hidden" name="article_pk" value="{{object.pk}}"/>
                     {{form.media}}
                     {{form.comment}}
+                    <!--
+                    {{form.media}}
+                    {{form.comment}}
+                    -->
                     <button type="submit" class="btn btn-primary">送信</button>
                 </form>
             </div>

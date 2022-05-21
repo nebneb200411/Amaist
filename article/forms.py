@@ -5,7 +5,6 @@ from ckeditor.fields import RichTextField
 from django.conf import settings
 
 class ArticleForm(forms.ModelForm):
-    #content = RichTextField()
     is_published = forms.BooleanField(initial=True, required=False)
     is_published.widget.attrs.update({
                                     'type':'checkbox',
@@ -15,8 +14,6 @@ class ArticleForm(forms.ModelForm):
                                     'data-onstyle':'info',
                                     'data-offstyle':'outline-dark'
                                     })
-    #genre = forms.MultipleChoiceField(choices=settings.ARTICLE_GENRE_CHOICES)
-    #genre.widget.attrs.update({'class': 'custom-select'})
 
     class Meta:
         model = Article

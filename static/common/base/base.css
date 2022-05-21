@@ -8,4 +8,20 @@
   -webkit-transition: width 0.3s, height 0.3s;
   transition: width 0.3s, height 0.3s;
 }
+
+.icon-80 {
+  height: 80px;
+  width: auto;
+  border-radius: 50%;
+}
+
+.icon-60 {
+  height: 60px;
+  width: auto;
+  border-radius: 50%;
+}
+
+.font-arial-MSGothic {
+  font-family: "arial", "MS Gothic";
+}
 /*# sourceMappingURL=base.css.map */

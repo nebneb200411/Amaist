@@ -383,6 +383,20 @@ body {
     -webkit-transition: width 0.3s, height 0.3s;
     transition: width 0.3s, height 0.3s;
   }
+  main div div #article-content #expand-page {
+    text-align: right;
+  }
+  main div div #article-content #expand-page a {
+    color: black;
+  }
+  main div div #article-content #expand-page a i {
+    cursor: pointer;
+  }
+  main div div #article-content #expand-page a i:hover {
+    color: #d84450;
+    -webkit-transition: width 0.3s, height 0.3s;
+    transition: width 0.3s, height 0.3s;
+  }
   main div div #article-content #article-content-box {
     padding: 20px 20px 20px 20px;
     position: relative;

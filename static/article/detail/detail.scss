@@ -472,6 +472,21 @@ body {
                             }
                         }
                     }
+
+                    #expand-page {
+                        text-align: right;
+
+                        a {
+                            color:black;
+                            i {
+                                cursor: pointer;
+                            }
+                            i:hover {
+                                color:#d84450;
+                                transition: width 0.3s, height 0.3s;
+                            }
+                        }
+                    }
     
                     #article-content-box {
                         padding: 20px 20px 20px 20px;
