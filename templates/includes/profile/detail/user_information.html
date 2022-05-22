@@ -1,0 +1,47 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'includes/profile/detail/user_information/user_information.css' %}">
+
+<div id="user-information">
+    <div class="container-fluid">
+        <div class="row">
+            <div id="user" class="col-12 col-md-8 col-xl-8">
+                <div id="user-status-box" class="d-flex">
+                    <span class="mgr-10"></span>
+                    <div>
+                        <img class="icon-80" src="{{ MEDIA_URL }}{{object.icon}}"></img>
+                    </div>
+                    <span class="mgr-10"></span>
+                    <span class="mgr-10"></span>
+                    <div id="follower-following">
+                        <p class="font-arial-MSGothic title-two-colorbar"><i class="fas fa-user"></i><span class="mgr-10"></span>{{object.user.username}}</p>
+                        <p class="font-arial-MSGothic">
+                            <span class="follow-follower">
+                                {{login_user_follow_count}}
+                                <span class="mgr-10"></span>
+                                <a class="link-hover-big" href="{% url 'profiles:following_list' profile.pk %}">フォロー中</a>
+                            </span>
+                            <span class="mgr-10"></span>
+                            <span class="follow-follower">
+                                {{login_user_follower_count}}
+                                <span class="mgr-10"></span>
+                                <a class="link-hover-big" href="{% url 'profiles:follower_list' profile.pk %}">フォロワー</a>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+                <div id="introduce-box" class="card">
+                    <div class="card-header">
+                        自己紹介
+                    </div>
+                    <div class="card-body">
+                        {{object.introduction}}
+                    </div>
+                </div>
+            </div>
+            <div id="utils" class="col-12 col-md-4 col-xl-4">
+                <p class="util-links"><span class="mgr-10"></span><a class="link-hover-big" href="{% url 'profiles:profile_update' profile.pk %}">プロフィールの編集</a></p>
+                <p class="util-links"><span class="mgr-10"></span><a class="link-hover-big" href="{% url 'password_change' %}">パスワードの変更</a></p>
+            </div>
+        </div>
+    </div>
+</div>

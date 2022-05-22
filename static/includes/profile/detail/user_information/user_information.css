@@ -1,0 +1,46 @@
+@media screen and (max-width: 767px) {
+  #user-information {
+    padding: 0px 5px;
+  }
+  #user-information a {
+    text-decoration: none;
+  }
+  #user-information .container-fluid .row #user #user-status-box .mgr-10 {
+    margin-left: 5px;
+  }
+  #user-information .container-fluid .row #user #user-status-box #follower-following a {
+    color: #4d1a1a;
+  }
+  #user-information .container-fluid .row #user #introduce-box {
+    margin-top: 5px;
+  }
+  #user-information .container-fluid .row #utils {
+    margin-top: 20px;
+  }
+  #user-information .container-fluid .row #utils .util-links a {
+    color: #393db1;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #user-information {
+    padding: 0px 30px;
+  }
+  #user-information a {
+    text-decoration: none;
+  }
+  #user-information .container-fluid .row #user #user-status-box #follower-following a {
+    color: #4d1a1a;
+  }
+  #user-information .container-fluid .row #user #introduce-box {
+    margin-top: 10px;
+  }
+  #user-information .container-fluid .row #utils {
+    padding: 5px 10px;
+    border-left: 2px solid #d6d6d6;
+  }
+  #user-information .container-fluid .row #utils .util-links a {
+    color: #393db1;
+  }
+}
+/*# sourceMappingURL=user_information.css.map */

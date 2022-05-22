@@ -51,13 +51,16 @@
                     <p class="info"><i class="fas fa-user"></i><span class="mgr-10"></i>{{article.author}}</p>
                     <p class="info"><i class="far fa-calendar-alt"></i><span class="mgr-10"></span>{{article.created_at|date:"y/m/d"}}</p>
                     <p class="info">
+                        <i class="fas fa-tags"></i>
                         {% for tag in article.tag.all %}
-                        <i class="fas fa-tags"></i><span class="mgr-10"></span>{{tag}}
+                            <span class="mgr-10"></span>{{tag}}
                         {% empty %}
                         {% endfor %}
+                        <span class="mgr-10"></span>
+                        <i class="fas fa-hashtag"></i><span class="mgr-10"></span>{{article.genre}}
                     </p>
                     <p class="info">
-                        <i class="fas fa-hashtag"></i><span class="mgr-10"></span>{{article.genre}}
+                        <i class="fas fa-thumbs-up"></i><span class="mgr-10"></span>{{article.good_from|length}}
                     </p>
                 </div>
                 <p class="article-title align-self-center">{{article.title}}</p>

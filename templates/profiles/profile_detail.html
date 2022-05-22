@@ -1,163 +1,21 @@
 {% extends 'base.html'%}
-
 {% load static %}
-
 {% block stylesheet %}
 <title>プロフィール</title>
 <link rel="stylesheet"href="{% static 'profile/profile_detail/profile_detail.css' %}">
+<link rel="stylesheet" href="{% static 'common/base/base.css' %}">
 {% endblock stylesheet %}
 
 {% block contents %}
-    <div id="user-profile" class="container-fluid">
-        <div id="user-info-box" class="row">
-            <div id="edit-box" class="col-xl-3 col-md-3 col-12"> 
-                <p><span class="mgr-10"></span><a href="{% url 'profiles:profile_update' profile.pk %}">プロフィールの編集</a></p>
-                <div class="blank-box">
-                </div>
-                <div class="password_change_link">
-                    <p><span class="mgr-10"></span><a href="{% url 'password_change' %}">パスワードの変更</a></p>
-                </div>
-            </div>
-            <div id="user-profile" class="col-xl-9 col-md-9 col-12">
-                <div id="profile">
-                    <img src="{{ MEDIA_URL }}{{object.icon}}"></img>
-                    <hr class="line">
-                    <table id="user-info">
-                        <tr class="info">
-                            <td class="blank-cell"></td>
-                            <td class="info-contents"><i class="fas fa-user"></i></td>
-                            <td class="blank-cell"></td>
-                            <td>{{ object.user.username }}</td>
-                        </tr>
-                        <tr class="info">
-                            <td class="blank-cell"></td>
-                            <td class="info-contents"><a href="{% url 'profiles:following_list' profile.pk %}" class="f-f-link">フォロー</a></td>
-                            <td class="blank-cell"></td>
-                            <td>{{ login_user_follow_count }}　人</td>
-                        </tr>
-                        <tr class="info">
-                            <td class="blank-cell"></td>
-                            <td class="info-contents"><a href="{% url 'profiles:follower_list' profile.pk %}" class="f-f-link">フォロワー</a></td>
-                            <td class="blank-cell"></td>
-                            <td>{{ login_user_follower_count }}　人</td>
-                        </tr>
-                    </table>
-                    <hr class="line">
-                </div>
-                <div id="introduction-box">
-                    <div id="introduction-title">自己紹介</div>
-                    <div id="introduction">{{object.introduction}}</div>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <div id="user-works">
-        <input id="article-tab-button" class="tab-button" type="radio" name="tab-btn" checked>
-        <input id="draft-tab-button" class="tab-button" type="radio" name="tab-btn">
-        <input id="question-tab-button" class="tab-button" type="radio" name="tab-btn">
-        <input id="data-tab-button" class="tab-button" type="radio" name="tab-btn">
-        <div id="tab-box" class="d-flex">
-            <label id="article-tab" class="flex-fill" for="article-tab-button">記事</label>
-            <label id="draft-tab" class="flex-fill" for="draft-tab-button">下書き</label>
-            <label id="question-tab" class="flex-fill" for="question-tab-button">質問</label>
-            <label id="data-tab" class="flex-fill" for="data-tab-button">データ</label>
-        </div>
-        <div id="user-tab-box" class="panel-area">
-            <table id="article-works" class="tab-panel">
-                {% for published_article in published_articles %}
-                <tr class="article work-cell">
-                    <td class="blank-cell"></td>
-                    <td class="title">
-                        <a id="link-to" href="{% url 'article:article_detail' published_article.pk %}">
-                            <h2 class="article-title">{{published_article.title}}</h2>
-                        </a>
-                    </td>
-                    <td class="blank-cell"></td>
-                    <td class="created-at">
-                        {{published_article.created_at|date:"y/m/d"}}
-                    </td>
-                    <td class="blank-cell"></td>
-                    <td class="update">
-                        <a class="link-to" href={% url 'article:update' published_article.pk %}>
-                            編集
-                        </a>
-                        <a class="link-to" href={% url 'article:delete' published_article.pk %}>
-                            削除
-                        </a>
-                    </td>
-                </tr>
-                {% endfor %}
-            </table>
-            <table id="draft-works" class="tab-panel">
-                {% for draft_article in draft_articles %}
-                <tr class="draft work-cell">
-                    <td class="blank-cell"></td>
-                    <td class="title">
-                        <a href={% url 'article:update' draft_article.pk %}>
-                            <h2 class="title-p">{{draft_article.title}}</h2>
-                        </a>
-                    </td>
-                    <td class="blank-cell"></td>
-                    <td class="created-at">
-                        {{draft_article.created_at|date:"y/m/d"}}
-                    </td>
-                    <td class="update">
-                        <a class="link-to" href={% url 'article:update' draft_article.pk %}>
-                            編集
-                        </a>
-                        <a class="link-to" href={% url 'article:delete' draft_article.pk %}>
-                            削除
-                        </a>
-                    </td>
-                </tr>
-                {% endfor %}
-            </table>
-            <table id="question-works" class="tab-panel">
-                {% for question in questions %}
-                <tr class="question work-cell">
-                    <td class="blank-cell"></td>
-                    <td class="title">
-                        <a href="{% url 'question:detail' question.pk %}">
-                            <h2>{{question.title}}</h2>
-                        </a>
-                    </td>
-                    <td class="blank-cell"></td>
-                    <td class="created-at">
-                        {{question.created_at|date:"y/m/d"}}
-                    </td>
-                    <td class="update">
-                        <a class="link-to" href="{% url 'question:detail' question.pk %}">
-                            詳細
-                        </a>
-                    </td>
-                </tr>
-                {% endfor %}
-            </table>
-            <table id="data-works" class="tab-panel">
-                {% for datalibrary in data_libraries %}
-                <tr class="data work-cell">
-                    <td class="blank-cell"></td>
-                    <td class="title">
-                        <h2>{{datalibrary.title}}</h2>
-                    </td>
-                    <td class="blank-cell"></td>
-                    <td class="created-at">
-                        {{datalibrary.created_at|date:"y/m/d"}}
-                    </td>
-                    <td class="update">
-                        <a class="link-to" href={% url 'data_library:detail' datalibrary.pk %}>
-                            詳細
-                        </a>
-                    </td>
-                    <td class="update">
-                        <a class="link-to" href={% url 'data_library:update' datalibrary.pk %}>
-                            編集
-                        </a>
-                    </td>
-                </tr>
-                {% endfor %}
-            </table>
-        </div>
-    </div>
+<div class="blank-box-40"></div>
+
+{% include 'includes/profile/detail/user_information.html' %}
+
+<div class="blank-box-40"></div>
+
+{% include 'includes/profile/detail/uploaded_contents.html' %}
+
+<div class="blank-box-40"></div>
+
 {% endblock contents %}
