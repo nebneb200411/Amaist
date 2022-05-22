@@ -33,6 +33,12 @@ p {
   box-sizing: border-box;
 }
 
+span {
+  max-width: 100%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 @media screen and (max-width: 767px) {
   main {
     background-color: #bbccdd;
