@@ -44,4 +44,12 @@
   height: 4px;
   background-color: #2864ac;
 }
+
+.advertise-display {
+  display: block;
+}
+
+.advertise-hidden {
+  display: none;
+}
 /*# sourceMappingURL=base.css.map */

@@ -10,6 +10,11 @@ a:visited {
     padding:10px 10px;
 }
 
+div, img {
+	max-width: 100%;
+	height: auto;
+}
+
 //スマホ用
 @media screen and (max-width:767px) {
     .row {
@@ -34,27 +39,34 @@ a:visited {
                         background-color: #556b2f;
                         border-radius: 5px;
     
-                        #search-title {
-                            font-size: 1.2rem;
-                            color: white;
-                            text-align: center;
-                            padding: 20px 0px;
-                        }
+                        #search {
+                            background-color: #556b2f;
+                            margin:20px 0 0 0;
+                            padding: 20px 20px;
+                            border-radius: 5px;
+
+                            h2 {
+                                color:white;
+                            }
+                            #search-title {
+                                color: white;
+                                text-align: center;
+                                padding: 20px 0px;
+                            }
     
-                        .search-btn {
-                            border: 1px solid gray;
-                            border-radius: 2px;
-                            background-color: #0E294E;
-                        }
+                            .search-p {
+                                text-align: center;
+                            }
     
-                        .search-p {
-                            text-align: center;
+                            .search-input {
+                                outline: none;
+                                border-radius: 2px;
+                                border: none;
+                            }
                         }
-    
-                        .search-input {
-                            outline: none;
-                            border-radius: 2px;
-                            border: none;
+
+                        .advertise {
+                            display: none;
                         }
                     }
     
