@@ -17,7 +17,80 @@
         <li>お気軽に投稿してください！</li>
     </ul>
 </div>
-{% include 'includes/create/article/article_form.html' %}
+<form method="POST">
+    {% csrf_token %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-md-12 col-sm-12">
+                <div class="row">
+                    <div class="col-6 col-md-6 col-sm-12">
+                        <div id="title">
+                            <p class="form-text">タイトル</p>
+                            <div class="input-group input-group-default">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="inputGroup-sizing-default">Title</span>
+                                </div>
+                                {{form.title}}
+                            </div>
+                        </div>
+                        <div id="tags">
+                            <p class="form-text">タグ</p>
+                            <div id="tag-form" class="input-group input-group-default mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="inputGroup-sizing-default">Tags</span>
+                                </div>
+                                {% for tag in tags %}
+                                    <input value="{{tag}}" type="text" name="tags" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" multiple>
+                                {% endfor %}
+                            </div>
+                            <button id="tag-add-button" type="button" class="btn btn-info">タグ追加</button>
+                            <!--<p class="tag-input"><input type="text" multiple name="tags" class="tag-input"></p>-->
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-6 col-sm-12">
+                        <div id="genre">
+                            <p class="form-text">ジャンル</p>
+                            <div id="selections" class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <label class="input-group-text" for="id_genre">Options</label>
+                                </div>
+                                <select name="genre" class="form-select" id="inputGroupSelect01">
+                                    {% if genre_selected is not None %}
+                                        {% for key, value in genre_selected.items %}
+                                            <option value="{{key}}" selected>{{value}}</option>
+                                        {% endfor %}
+                                    {% else %}
+                                        <option selected>選択肢</option>
+                                    {% endif %}
+            
+                                    {% for key, value in genres.items %}
+                                        <option value="{{key}}">{{value}}</option>
+                                    {% endfor %}
+                                </select>
+                                {% for error in form.genre.errors %}
+                                <p>{{error}}</p>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div id="publish" class="d-flex">
+                            <span class="form-text">公開・下書き保存</span>
+                            <span class="mgr-10"></span>
+                            <div class="form-check form-switch align-self-center">
+                                {{form.is_published}}
+                                <label class="form-check-label" for="publish-or-not" ></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="content-box" class="col-12 col-md-12 col-sm-12">
+                {{form.media}}
+                {{form.content}}
+            </div>
+        </div>
+    </div>
+    <button>投稿</button>
+</form>
 <script>hljs.initHighlightingOnLoad();</script>
 {% endblock contents %}
 {% block script %}
