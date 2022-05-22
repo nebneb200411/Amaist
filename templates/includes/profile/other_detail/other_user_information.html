@@ -1,0 +1,63 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'includes/profile/other_detail/other_user_information/other_user_information.css' %}">
+
+<div id="user-information">
+    <div class="container-fluid">
+        <div class="row">
+            <div id="user" class="col-12 col-md-8 col-xl-8">
+                <div id="user-status-box" class="d-flex">
+                    <span class="mgr-10"></span>
+                    <div>
+                        <img class="icon-80" src="{{ MEDIA_URL }}{{object.icon}}"></img>
+                    </div>
+                    <span class="mgr-10"></span>
+                    <span class="mgr-10"></span>
+                    <div id="follower-following">
+                        <p class="font-arial-MSGothic title-two-colorbar"><i class="fas fa-user"></i><span class="mgr-10"></span>{{ object.user.username }}</p>
+                        <p class="font-arial-MSGothic">
+                            <span class="follow-follower">
+                                {{login_user_follow_count}}
+                                <span class="mgr-10"></span>
+                                <a class="link-hover-big" href="{% url 'profiles:following_list' profile.pk %}">フォロー中</a>
+                            </span>
+                            <span class="mgr-10"></span>
+                            <span class="follow-follower">
+                                {{login_user_follower_count}}
+                                <span class="mgr-10"></span>
+                                <a class="link-hover-big" href="{% url 'profiles:follower_list' profile.pk %}">フォロワー</a>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+                <div id="introduce-box" class="card">
+                    <div class="card-header">
+                        自己紹介
+                    </div>
+                    <div class="card-body">
+                        {{object.introduction}}
+                    </div>
+                </div>
+            </div>
+            <div id="utils" class="col-12 col-md-4 col-xl-4">
+                <form method="POST" action="{% url 'profiles:follow_unfollow_view' %}" id="follow-unfollow-form">
+                    {% csrf_token %}
+                    {% if follow %}
+                    <input type="hidden" name="profile_pk" value="{{object.pk}}"/>
+                    <p class="follow-unfollow">
+                        フォローを外す
+                        <span class="mgr-10"></span>
+                        <button class="btn btn-danger" type="submit"><i class="fas fa-minus"></i></button>
+                    </p>
+                    {% else %}
+                    <input type="hidden" name="profile_pk" value="{{object.pk}}"/>
+                    <p class="follow-unfollow">
+                        フォローする
+                        <span class="mgr-10"></span>
+                        <button class="btn btn-primary" type="submit"><i class="fas fa-plus"></i></button>
+                    </p>
+                    {% endif %}
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

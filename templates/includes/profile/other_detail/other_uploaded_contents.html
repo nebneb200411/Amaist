@@ -1,0 +1,70 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'includes/profile/other_detail/other_uploaded_contents/other_uploaded_contents.css' %}">
+<link rel="stylesheet" href="{% static 'common/base/base.css' %}">
+<div id="user-upload-contents">
+    <nav class="nav nav-tabs" id="nav-tab" role="tablist">
+        <a class="nav-link active" id="nav-article-tab" data-bs-toggle="tab" href="#nav-article" role="tab" aria-controls="nav-home" aria-selected="true">記事</a>
+        <a class="nav-link" id="nav-question-tab" data-bs-toggle="tab" href="#nav-question" role="tab" aria-controls="nav-question" aria-selected="false">質問</a>
+        <a class="nav-link" id="nav-data-tab" data-bs-toggle="tab" href="#nav-data" role="tab" aria-controls="nav-data" aria-selected="false">データ</a>
+    </nav>
+    <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="nav-article" role="tabpanel" aria-labelledby="nav-article-tab">
+            {% for article in articles %}
+                <div class="d-flex justify-content-between flex-wrap contents-container">
+                    <a class="link-to align-self-center mr-auto p-2" href="{% url 'article:article_detail' article.pk %}">
+                        <h5 class="article-title">{{article.title}}</h5>
+                    </a>
+                    <a href="{% url 'article:article_detail' article.pk %}" class="btn btn-secondary">
+                        詳細
+                    </a>
+                </div>
+                {% empty %}
+                <p class="empty">記事未作成</p>
+            {% endfor %}
+        </div>
+        <div class="tab-pane fade" id="nav-question" role="tabpanel" aria-labelledby="nav-question-tab">
+            {% for question in questions %}
+                <div class="d-flex justify-content-between flex-wrap contents-container">
+                    <a href="{% url 'question:detail' question.pk %}" class="link-to align-self-center">
+                        <h5>{{question.title}}</h5>
+                    </a>
+                    <div class="p-2">
+                        <span class="mgr-10"></span>
+                        <span class="created-at align-self-center">
+                            {{question.created_at|date:"Y年m月d日"}}
+                        </span>
+                        <span class="mgr-10"></span>
+                        <a href="{% url 'question:detail' question.pk %}" class="btn btn-secondary">
+                            詳細
+                        </a>
+                        <span class="mgr-10"></span>
+                    </div>
+                </div>
+                {% empty %}
+                <p class="empty">質問なし</p>
+            {% endfor %}
+        </div>
+        <div class="tab-pane fade" id="nav-data" role="tabpanel" aria-labelledby="nav-dara-tab">
+            {% for datalibrary in data_libraries %}
+                <div class="d-flex justify-content-between flex-wrap contents-container">
+                    <a href="{% url 'data_library:detail' datalibrary.pk %}" class="link-to align-self-center flex-grow-1">
+                        <h5 class="title-p">{{datalibrary.title}}</h5>
+                    </a>
+                    <div class="p-2">
+                        <span class="mgr-10"></span>
+                        <span class="created-at align-self-center">
+                            {{datalibrary.created_at|date:"Y年m月d日"}}
+                        </span>
+                        <span class="mgr-10"></span>
+                        <a href="{% url 'data_library:detail' datalibrary.pk %}" class="btn btn-success">
+                            詳細
+                        </a>
+                        <span class="mgr-10"></span>
+                    </div>
+                </div>
+                {% empty %}
+                <p class="empty">データなし</p>
+            {% endfor %}
+        </div>
+    </div>
+</div>

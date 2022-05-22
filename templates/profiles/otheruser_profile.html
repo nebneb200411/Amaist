@@ -5,9 +5,21 @@
 {% block stylesheet %}
 <title>プロフィール</title>
 <link rel="stylesheet" href="{% static 'profile/profile_detail/profile_detail.css' %}">
+<link rel="stylesheet" href="{% static 'common/base/base.css' %}">
 {% endblock stylesheet %}
 
 {% block contents %}
+
+<div class="blank-box-40"></div>
+
+{% include 'includes/profile/other_detail/other_user_information.html' %}
+
+<div class="blank-box-40"></div>
+
+{% include 'includes/profile/other_detail/other_uploaded_contents.html' %}
+
+<div class="blank-box-40"></div>
+<!--
     <div id="user-profile" class="container-fluid">
         <div id="user-info-box" class="row">
             <div id="edit-box" class="col-xl-3 col-md-3 col-12"> 
@@ -54,8 +66,8 @@
                 </div>
             </div>
         </div>
-    </div>
-
+    </div>-->
+    <!--
     <div id="user-works">
         <input id="article-tab-button" class="tab-button" type="radio" name="tab-btn" checked>
         <input id="draft-tab-button" class="tab-button" type="radio" name="tab-btn">
@@ -137,4 +149,5 @@
             </table>
         </div>
     </div>
+    -->
 {% endblock contents %}

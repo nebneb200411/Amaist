@@ -137,65 +137,65 @@
         <nav>
             <ul>
                 <h5>記事</h5>
-                <li class="link-cursor-big">
+                <li class="link-hover-big">
                     <a href="{% url 'article:list' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>記事一覧</a>
                 </li>
-                <li class="link-cursor-big">
+                <li class="link-hover-big">
                     <a href="{% url 'article:CreateArticle' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>記事作成</a>
                 </li>
             </ul>
             <ul>
                 <h5>データ</h5>
-                <li class="link-cursor-big">
+                <li class="link-hover-big">
                     <a href="{% url 'data_library:list' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>データ一覧</a>
                 </li>
-                <li class="link-cursor-big">
+                <li class="link-hover-big">
                     <a href="{% url 'data_library:create' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>データの投稿</a>
                 </li>
             </ul>
             <ul>
                 <h5>質問</h5>
-                <li class="link-cursor-big">
+                <li class="link-hover-big">
                     <a href="{% url 'question:list' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>質問一覧</a>
                 </li>
-                <li class="link-cursor-big">
+                <li class="link-hover-big">
                     <a href="{% url 'question:create' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>質問作成</a>
                 </li>
             </ul>
             <ul>
                 <h5>アカウント</h5>
                 {% if request.user.is_authenticated %}
-                    <li class="link-cursor-big">
+                    <li class="link-hover-big">
                         <a href="{% url 'profiles:found_or_not_found' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>{{request.user.username}}さんのプロフィール</a>
                     </li>
-                    <li class="link-cursor-big">
+                    <li class="link-hover-big">
                         <a href="{% url 'profiles:profile_list' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>プロフィール一覧</a>
                     </li>
-                    <li class="link-cursor-big"><a href="{% url 'login' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>ログイン</a></li>
-                    <li class="link-cursor-big">
+                    <li class="link-hover-big"><a href="{% url 'login' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>ログイン</a></li>
+                    <li class="link-hover-big">
                         <a href="{% url 'logout' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>ログアウト</a>
                     </li>
                 {% else %}
-                <li class="link-cursor-big">
+                <li class="link-hover-big">
                     <a href="{% url 'login' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>ログイン</a>
                 </li>
-                <li class="link-cursor-big">
+                <li class="link-hover-big">
                     <a href="{% url 'sign_up' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>ユーザー登録</a>
                 </li>
                 {% endif %}
             </ul>
             <ul>
                 <h5>お問合せ</h5>
-                <li class="link-cursor-big">
+                <li class="link-hover-big">
                     <a href="mailto:amaizingstrange&#64;gmail.com">amaizingstrange@gmail.com</a></th>
                 </li>
             </ul>
             <ul>
                 <h5>その他</h5>
-                <li class="link-cursor-big">
+                <li class="link-hover-big">
                     <a href="{% url 'index:terms' %}">利用規約</a>
                 </li>
-                <li class="link-cursor-big">
+                <li class="link-hover-big">
                     <a href="{% url 'index:admin_inform' %}">運営者情報</a>
                 </li>
             </ul>
