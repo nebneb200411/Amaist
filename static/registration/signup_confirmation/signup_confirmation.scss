@@ -1,9 +1,23 @@
-#signup-confirmation {
-    padding: 100px 200px;
-    h2 {
-        font-size: 1.4rem;
+@media screen and (max-width:767px){
+    #signup-confirmation {
+        padding: 80px 10px;
+        h2 {
+            font-size: 1.2rem;
+        }
+        h3 {
+            font-size: 0.9rem;
+        }
     }
-    h3 {
-        font-size: 1.2rem;
+}
+
+@media screen and (min-width:768px){
+    #signup-confirmation {
+        padding: 100px 200px;
+        h2 {
+            font-size: 1.4rem;
+        }
+        h3 {
+            font-size: 1.2rem;
+        }
     }
 }

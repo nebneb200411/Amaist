@@ -1,12 +1,24 @@
-#signup-confirmation {
-  padding: 100px 200px;
+@media screen and (max-width: 767px) {
+  #signup-confirmation {
+    padding: 80px 10px;
+  }
+  #signup-confirmation h2 {
+    font-size: 1.2rem;
+  }
+  #signup-confirmation h3 {
+    font-size: 0.9rem;
+  }
 }
 
-#signup-confirmation h2 {
-  font-size: 1.4rem;
-}
-
-#signup-confirmation h3 {
-  font-size: 1.2rem;
+@media screen and (min-width: 768px) {
+  #signup-confirmation {
+    padding: 100px 200px;
+  }
+  #signup-confirmation h2 {
+    font-size: 1.4rem;
+  }
+  #signup-confirmation h3 {
+    font-size: 1.2rem;
+  }
 }
 /*# sourceMappingURL=signup_confirmation.css.map */
