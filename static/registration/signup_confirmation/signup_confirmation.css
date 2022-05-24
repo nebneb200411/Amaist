@@ -1,25 +1,12 @@
-@charset "UTF-8";
-*,
-*::before,
-*::after {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+#signup-confirmation {
+  padding: 100px 200px;
 }
 
-.mgr-10 {
-  margin-left: 10px;
+#signup-confirmation h2 {
+  font-size: 1.4rem;
 }
 
-body main p {
-  font-family: "arial", "メイリオ";
-  font-size: 3vh;
-}
-
-body main .username {
-  margin-top: 20%;
-}
-
-body main .content {
-  margin-top: 10%;
+#signup-confirmation h3 {
+  font-size: 1.2rem;
 }
 /*# sourceMappingURL=signup_confirmation.css.map */

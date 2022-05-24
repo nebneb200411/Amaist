@@ -6,61 +6,60 @@
 {% endblock stylesheet %}
 {% block contents %}
 
-<div class="register-box">
-    <div class="regiter-page-title">
-        <p class="regiter-page-text"><i class="fas fa-address-card"></i><span class="mgr-10"></span>Registration</p>
-    </div>
-
-    <div class="register-form-box">
-        <form method="POST">
-            {% csrf_token %}
-            <!--users will input username in here-->
-            <div class="username-input-box">
-                <p class="user-input-text"><i class="fas fa-user"></i><span class="mgr-10"></span>Username{{form.username}}</p>
-                <!--display error message if there is somethig wrong with posted username-->
-                {% if form.username.errors %}
-                <p class="error-messages">{{form.username.errors}}</p>
-                {% endif %}
+<div id="registration">
+    <form method="POST">
+        <h2 class="font-arial-MSGothic">ユーザー登録</h2>
+        {% csrf_token %}
+        <h5 class="font-arial-MSGothic">ユーザー名</h5>
+        <div class="input-group">
+            <span class="input-group-text"><i class="fas fa-user"></i></span>
+            {{form.username}}
+        </div>
+        {% if form.username.errors %}
+                <div class="alert alert-danger" role="alert">
+                    {{form.username.errors}}
+                </div>
+        {% endif %}
+        <h5 class="font-arial-MSGothic">メールアドレス</h5>
+        <div class="input-group">
+            <span class="input-group-text"><i class="fas fa-at"></i></span>
+            {{form.email}}
+        </div>
+        {% if form.email.errors %}
+                <div class="alert alert-danger" role="alert">
+                    {{form.email.errors}}
+                </div>
+        {% endif %}
+        <h5 class="font-arial-MSGothic">パスワード</h5>
+        <div class="input-group">
+            <span class="input-group-text"><i class="fas fa-key"></i></span>
+            {{form.password1}}
+        </div>
+        {% if form.password1.errors %}
+            <div class="alert alert-danger" role="alert">
+                {{form.password1.errors}}
             </div>
+        {% endif %}
+        <h5 class="font-arial-MSGothic">パスワード確認</h5>
+        <div class="input-group">
+            <span class="input-group-text"><i class="fas fa-key"></i></span>
+            {{form.password2}}
+        </div>
+        {% if form.password2.errors %}
+                <div class="alert alert-danger" role="alert">
+                    {{form.password2.errors}}
+                </div>
+        {% endif %}
 
-            <hr class="horizontal-line">
-
-            <!--users will input email in here-->
-            <div class="email-input-box">
-                <p class="user-input-text"><i class="fas fa-envelope"></i><span class="mgr-10"></span>E-mail{{form.email}}</p>
-                {% if form.email.errors %}
-                <p class="error-messages">{{form.email.errors}}</p>
-                {% endif %}
-            </div>
-
-            <hr class="horizontal-line">
-
-            <!--Password1-->
-            <div class="password1-input-box">
-                <p class="user-input-text"><i class="fas fa-lock"></i><span class="mgr-10"></span>Password{{form.password1}}</p>
-                {% if form.password1.errors %}
-                <p class="error-messages">{{form.password1.errors}}</p>
-                {% endif %}
-            </div>
-
-            <hr class="horizontal-line">
-
-            <!--password2-->
-            <div class="password2-input-box">
-                <p class="user-input-text"><i class="fas fa-lock-open"></i><span class="mgr-10"></span>Password（確認用）{{form.password2}}</p>
-                {% if form.password2.errors %}
-                <p class="error-messages">{{form.password2.errors}}</p>
-                {% endif %}
-            </div>
-
-            <hr class="lastline">
-
-            <div class="d-flex"><input type="checkbox" class="service-term"/><p>「<a href="{% url 'index:terms' %}">利用規約</a>」に同意します</p></div>
-
-            <!--submit button-->
-            <input id="register-button" type="submit" class="btn btn-primary" value="ユーザー登録" disabled/>
-        </form>
-    </div>
+        <div id="term" class="d-flex justify-content-center form-check">
+            <input id="term-checkbox" class="align-self-center form-check-input" type="checkbox">
+            <label class="form-check-label" for="term-checkbox">
+                「<a class="link-hover-big" href="{% url 'index:terms' %}">利用規約</a>」に同意します
+            </label>
+        </div>
+        <button id="register-button" class="btn btn-primary" type="submit" disabled>ユーザー登録</button>
+    </form>
+</div>
 {% endblock contents %}
 
 {% block script %}

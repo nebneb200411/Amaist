@@ -3,24 +3,29 @@
 {% block stylesheet %}
 <title>login</title>
 <link rel="stylesheet" href="{% static 'login/login.css' %}">
+<link rel="stylesheet" href="{% static 'common/base/base.css' %}">
 {% endblock %}
 {% block contents %}
-    <div class="login_contents">
-        <p class="login-title"><i class="fas fa-sign-in-alt"></i><span class="mgr-10"></span>Login</p>
-        <form id="login-form" method='POST'>
+    <div id="login" class="font-arial-MSGothic">
+        <h5>ログイン画面</h5>
+        <form method="POST">
             {% csrf_token %}
-            <div class="login-username-box">
-                <span class="mgr-10"></span><p class="login-username-text"><i class="fas fa-envelope"></i><span class="mgr-10"></span>E-mail</p>
+            <p class="input-content">メールアドレス</p>
+            <div class="login-form input-group">
+                <span class="input-group-text"><i class="fas fa-at"></i></span>
                 {{form.username}}
             </div>
-            <div class="login-password-box">
-                <span class="mgr-10"></span><p class="login-password-text"><i class="fas fa-unlock-alt"></i><span class="mgr-10"></span>Password</p>
+            <p class="input-content">パスワード</p>
+            <div class="login-form input-group">
+                <span class="input-group-text"><i class="fas fa-key"></i></span>
                 {{form.password}}
             </div>
-            <input class="btn btn-primary" type="submit" value="ログイン" id="login_button"/>
+            <button class="button-design" type="submit">送信</button>
         </form>
-        <div class='forget_password_link'>
-            <p><a href = "{% url 'password_reset' %}"><i class="fas fa-question-circle"></i>パスワードを忘れた場合</a></p>
+        <div id="foget-password">
+            <a class="link-hover-big" href="{% url 'password_reset' %}">
+                <i class="fas fa-question-circle"></i><span class="mgr-10"></span>パスワードを忘れた場合
+            </a>
         </div>
     </div>
 {% endblock contents%}

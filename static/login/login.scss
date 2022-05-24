@@ -1,162 +1,75 @@
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
-
 //common style
-.mgr-10 {
-    margin-left: 10px;
-}
-
-body {
-    background-color: #f0ffff;
-}
-
 input {
     -webkit-appearance: none;
 }
 
+//for smartphone
 @media screen and (max-width:767px){
-    .login_contents {
-        padding: 30px 10px ;
-        font-family: "serif";
-
-        .login-title {
-            text-align: center;
+    #login {
+        background-color: #f9f9f9;
+        padding:50px 30px;
+        h5 {
             font-size: 1.2rem;
+            font-weight: bold;
+            text-align: center;
+            color:#12277d;
         }
-        #login-form {
-            padding: 0 0 20px 0;
-            div {
-                padding: 0 0 20px 0;
-                input {
-                    border: solid 2px #4d4d1a;
-                    border-radius: 2px;
-                    outline: none;
-                    height:40px;
-                    width: 100%;
-                }
+        form {
+            margin: 20px 0px;
+            .input-content{
+                font-size: 0.8rem;
+                font-weight: bold;
+                margin-bottom: 0px;
             }
-
-            #login_button {
-                margin-left: 5%;
-                width:90%
+            .login-form {
+                margin-bottom:10px;
+            }
+            button {
+                width:100%;
+                margin: 10px 0 0 0;
             }
         }
 
-        .forget_password_link{
-            p {
-                a{
-                    text-emphasis: none;
-                    text-decoration: none;
-                    color:#34582c;
-                }
+        #foget-password {
+            margin-top:20px;
+            text-align: center;
+            a {
+                color:#12277d;
             }
         }
     }
 }
 
+//desktop
 @media screen and (min-width:768px) {
-    .login_contents {
-        width: 80%;
-        margin-left: 10%;
-        margin-top: 10%;
-        margin-bottom: 10%;
-        border: solid 2px #1e90ff;
-    
-        .login-title {
-            font-family: 'Bookman Old Style';
-            color: #6495ed;
+    #login {
+        background-color: #f9f9f9;
+        padding:200px 35%;
+        h5 {
+            font-weight: bold;
             text-align: center;
-            font-size: 2rem;
-            border-bottom: dotted 2px #87ceeb;
+            color:#12277d;
         }
-    
         form {
-            height: 280px;
-    
-            .login-username-box {
-    
-                .login-username-text {
-                    position: relative;
-                    display: inline-block;
-                    width: 100%;
-                    font-family: 'Book Antiqua';
-                    font-size: 1.2rem;
-                    color: #808080;
-                    padding-left: 5%;
-                }
-    
-                #id_username {
-                    display: inline-block;
-                    width: 90%;
-                    height: 40px;
-                    outline: none;
-                    border: solid 2px #afeeee;
-                    font-family: 'Book Antiqua';
-                    margin-left: 5%;
-                }
-    
-                #id_username:focus {
-                    box-shadow: 0 0 10px #a9a9a9;
-                }
+            margin: 20px 0px;
+            .input-content{
+                font-weight: bold;
+                margin-bottom: 0px;
             }
-    
-            .login-password-box {
-                margin-top: 2%;
-    
-                .login-password-text {
-                    position: relative;
-                    display: inline-block;
-                    width: 100%;
-                    font-family: 'Book Antiqua';
-                    font-size: 1.2rem;
-                    color: #808080;
-                    padding-left: 5%;
-                }
-    
-                #id_password {
-                    position: relative;
-                    display: inline-block;
-                    width: 90%;
-                    height: 40px;
-                    outline: none;
-                    border: solid 2px #afeeee;
-                    font-family: 'Book Antiqua';
-                    margin-left: 5%;
-                }
-    
-                #id_password:focus {
-                    box-shadow: 0 0 10px #a9a9a9;
-                }
+            .login-form {
+                margin-bottom:10px;
             }
-    
-            #login_button {
-                position: relative;
-                width: 80%;
-                margin-left: 10%;
-                margin-top: 5%;
-                font-size: 1.2rem;
-                font-family: 'Meiryo';
+            button {
+                width:100%;
+                margin: 10px 0 0 0;
             }
-    
         }
-    
-    
-    
-        .forget_password_link {
-            margin-top: 5%;
-    
-            p {
-                font-size: 1.2rem;
-                font-family: 'Meiryo';
-                text-align: right;
-                margin-right: 5%;
-    
-                a {
-                    color: #696969;
-                }
+
+        #foget-password {
+            margin-top:20px;
+            text-align: center;
+            a {
+                color:#12277d;
             }
         }
     }

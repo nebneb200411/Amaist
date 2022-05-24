@@ -1,5 +1,5 @@
 $(function () {
-    $('.service-term').on('change', function () {
+    $('#term-checkbox').on('change', function () {
         if ($(this).is(':checked')) {
             $('#register-button').prop('disabled', false);
         }

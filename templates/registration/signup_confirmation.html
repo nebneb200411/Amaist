@@ -1,11 +1,14 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block stylesheet %}
-<title>ユーザー登録完了</title>
+<title>ユーザー登録</title>
+<link rel="stylesheet" href="{% static 'registration/signup_confirmation/signup_confirmation.css' %}">
 {% endblock stylesheet %}
 
 {% block contents %}
-<p class="username">{{registered_user.username}}様</p><br></br>
-<p class="content">{{registered_user.email}}宛にユーザー登録用のメールを送信いたしました．
-メールに記載されたアドレスから登録を完了させてください．</p>
+<div id="signup-confirmation">
+    <h2 class="username">{{registered_user.username}}様</h2>
+    <h3 class="content">{{registered_user.email}}宛にユーザー登録用のメールを送信いたしました．
+    メールに記載されたアドレスから登録を完了させてください．</h3>
+</div>
 {% endblock contents %}

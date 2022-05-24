@@ -1,27 +1,9 @@
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
-
-//common style 
-.mgr-10 {
-    margin-left: 10px;
-}
-
-body {
-    main {
-        p {
-            font-family: "arial", "メイリオ";
-            font-size: 3vh;
-        }
-
-        .username {
-            margin-top: 20%;
-        }
-
-        .content {
-            margin-top: 10%;
-        }
+#signup-confirmation {
+    padding: 100px 200px;
+    h2 {
+        font-size: 1.4rem;
+    }
+    h3 {
+        font-size: 1.2rem;
     }
 }

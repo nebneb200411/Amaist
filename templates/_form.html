@@ -1,5 +1,9 @@
 <form method='POST'>
     {% csrf_token %}
-    {{form.as_p}}
-    <input class="btn btn-primary" type="submit" value="{{ submit_label }}" id="login_button"/>
+    <p>メールアドレス</p>
+    <div class="input-group font-arial-MSGothic">
+        <span class="input-group-text" id="input-group-left-example">@</span>
+        {{form.email}}
+    </div>
+    <button class="button-design" type="submit">{{submit_label}}</button>
 </form>

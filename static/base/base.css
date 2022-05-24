@@ -297,6 +297,9 @@ a {
     color: white;
     text-decoration: none;
   }
+  footer div nav ul li a:visited {
+    color: white;
+  }
   footer div nav ul li:hover a {
     color: #ffd700;
     text-decoration: none;
@@ -590,6 +593,9 @@ a {
   footer div nav ul li a {
     color: white;
     text-decoration: none;
+  }
+  footer div nav ul li a:visited {
+    color: white;
   }
   footer div nav ul li:hover a {
     color: #ffd700;

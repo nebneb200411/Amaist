@@ -1,3 +1,7 @@
+a {
+  text-decoration: none;
+}
+
 .link-cursor-big {
   color: white;
   cursor: pointer;
@@ -67,5 +71,24 @@
 .blank-box-40 {
   width: 100%;
   height: 40px;
+}
+
+.mgr-10 {
+  margin-left: 10px;
+}
+
+.button-design {
+  background-color: #2864ac;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+.button-design:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: all .3s ease 0s;
+  transition: all .3s ease 0s;
 }
 /*# sourceMappingURL=base.css.map */
