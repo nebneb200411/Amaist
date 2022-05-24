@@ -11,6 +11,12 @@
 <div class="container-fluid">
     <div class="row flex-column-reverse flex-md-row">
         <div class="col-12 col-md-8 col-xl-8" id="article-content">
+            <nav id="article-breadcrumb" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a class="link-hover-big" href="{% url 'article:list' %}">記事一覧</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">{{object.title}}</li>
+                </ol>
+            </nav>
             <div id="article-info-box" class="common-font">
                 <p id="article-sub-info">
                     <span id="created-at" class="info badge bg-info text-white">作成日</span>{{object.created_at|date:"Y/m/d"}}

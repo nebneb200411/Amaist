@@ -61,6 +61,13 @@ span {
                     padding: 5px 5px;
                     font-size:0.6rem;
 
+                    #article-breadcrumb {
+                        a {
+                            text-decoration: none;
+                            color: #0782C1;
+                        }
+                    }
+
                     #article-info-box {
                         padding : 10px 10px;
 
@@ -465,6 +472,11 @@ span {
                 #article-content {
                     background-color: white;
                     padding: 20px 20px;
+
+                    a {
+                        text-decoration: none;
+                        color: #0782C1;
+                    }
     
                     #article-info-box {
                         padding : 10px 10px;
