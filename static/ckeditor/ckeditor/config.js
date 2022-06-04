@@ -18,8 +18,11 @@ CKEDITOR.editorConfig = function (config) {
 		}
 	};
 
+	config.fontSize_defaultLabel = 'サイズ';
 	config.font_defaultLabel = 'serif';
 };
+
+CKEDITOR.addCss(".cke_editable{cursor:text; font-size: 16px; font-family: Arial, sans-serif;}");
 
 //CKEDITOR.config.extraPlugins = "toc";
 //CKEDITOR.config.format_tags = 'div';
