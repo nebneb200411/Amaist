@@ -30,15 +30,25 @@
                     {% endfor %}
                 </p>
             </div>
-            <div id="user-info">
-                <p class="common-font">この記事の作成者</p>
-                <div class="d-flex">
-                    <a href="{% url 'profiles:otheruser_profile' profile.pk %}" class="align-self-center">
-                        <img src="{{MEDIA_URL}}{{object.author.user.icon}}">
-                    </a>
-                    <a href="{% url 'profiles:otheruser_profile' profile.pk %}" class="align-self-center">
-                        <span class="common-font">{{object.author}}</span>
-                    </a>
+            <div id="user-info" class="card">
+                <div class="row g-0">
+                    <div class="col-5 col-sm-4">
+                        <a href="{% url 'profiles:otheruser_profile' profile.pk %}" class="align-self-center">
+                            <img src="{{MEDIA_URL}}{{object.author.user.icon}}">
+                        </a>
+                    </div>
+                    <div class="col-7 col-sm-8">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                この記事の作成者
+                            </h5>
+                            <p class="card-text">
+                                <a href="{% url 'profiles:otheruser_profile' profile.pk %}" class="align-self-center">
+                                    <span class="common-font">{{object.author}}</span>
+                                </a>
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div id="good-box">

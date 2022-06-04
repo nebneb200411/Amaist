@@ -33,12 +33,14 @@ p {
   box-sizing: border-box;
 }
 
+/*
 span {
-  max-width: 100%;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+    max-width: 100%;
+    -webkit-box-sizing: border-box;  
+    -moz-box-sizing: border-box;  
+    box-sizing: border-box;
 }
-
+*/
 @media screen and (max-width: 767px) {
   main {
     background-color: #bbccdd;
@@ -68,16 +70,13 @@ span {
   main div div #article-content #user-info {
     margin: 2px 2px;
   }
-  main div div #article-content #user-info p {
-    padding: 5px 5px;
-    background-color: #fff8dc;
-    border-radius: 3px;
-    color: #a17636;
-    font-size: 1.2rem;
+  main div div #article-content #user-info h5 {
+    font-size: 1rem;
   }
   main div div #article-content #user-info a {
     margin: 0px 3px;
     color: #a17636;
+    text-decoration: none;
   }
   main div div #article-content #user-info a img {
     height: 80px;
@@ -86,6 +85,7 @@ span {
     border-radius: 50%;
   }
   main div div #article-content #good-box {
+    margin: 20px 0px;
     width: 50%;
     padding: 0 0 10px 10px;
   }
@@ -399,14 +399,8 @@ span {
   main div div #article-content #user-info {
     margin: 10px 10px;
   }
-  main div div #article-content #user-info p {
-    padding: 20px 20px;
-    background-color: #fff8dc;
-    border-radius: 3px;
-    color: #a17636;
-    font-size: 1.5rem;
-  }
   main div div #article-content #user-info a {
+    font-size: 1.2rem;
     text-decoration: none;
     margin: 0px 10px;
     color: #a17636;
