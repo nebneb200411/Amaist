@@ -23,34 +23,8 @@ a {
 }
 
 @media screen and (max-width: 767px) {
-  header ul {
-    list-style-type: none;
-  }
-  header .top-nav.selected {
-    background-color: rgba(0, 0, 0, 0.1);
-  }
-  header #menu-nav {
+  header #menu-nav * {
     display: none;
-    position: relative;
-    font-size: 0.1rem;
-  }
-  header #menu-nav a {
-    color: black;
-  }
-  header #menu-nav .nav-link {
-    font-weight: bold;
-  }
-  header #menu-nav .sub-nav {
-    display: none;
-    position: absolute;
-    list-style: none;
-    margin: 0;
-    padding: 10px 10px 5px 0;
-    z-index: 1;
-    background-color: white;
-  }
-  header #menu-nav .sub-nav li {
-    display: block;
   }
   header .menu-button closed {
     visibility: hidden;
