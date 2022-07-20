@@ -23,17 +23,40 @@ a {
 }
 
 @media screen and (max-width: 767px) {
-  header {
-    position: fixed;
-    height: 50px;
-    width: 100%;
-    z-index: 100;
+  header ul {
+    list-style-type: none;
+  }
+  header .top-nav.selected {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  header #menu-nav {
+    display: none;
+    position: relative;
+    font-size: 0.1rem;
+  }
+  header #menu-nav a {
+    color: black;
+  }
+  header #menu-nav .nav-link {
+    font-weight: bold;
+  }
+  header #menu-nav .sub-nav {
+    display: none;
+    position: absolute;
+    list-style: none;
+    margin: 0;
+    padding: 10px 10px 5px 0;
+    z-index: 1;
+    background-color: white;
+  }
+  header #menu-nav .sub-nav li {
+    display: block;
   }
   header .menu-button closed {
     visibility: hidden;
   }
   header .header-box {
-    height: 100%;
+    height: 50px;
     background-color: black;
   }
   header .header-box .menu-button {
@@ -133,7 +156,8 @@ a {
     perspective: 1000;
   }
   header .header-box .app-icon img {
-    display: none;
+    height: 50px;
+    width: auto;
   }
   header .header-box .register-box a {
     color: #b0c4de;
@@ -152,13 +176,11 @@ a {
     width: auto;
     margin-right: 0;
     border-radius: 50%;
-    z-index: 100;
   }
   header .header-nav {
     visibility: hidden;
-    position: relative;
+    position: absolute;
     width: 100%;
-    top: 0px;
     background-color: rgba(0, 0, 0, 0.9);
     -webkit-transform: translateX(-100%);
     transform: translateX(-100%);
@@ -322,231 +344,44 @@ a {
 
 @media screen and (min-width: 768px) {
   header {
-    position: fixed;
-    height: 50px;
-    width: 100%;
-    z-index: 100;
+    padding: 20px 20px;
   }
-  header .menu-button closed {
-    visibility: hidden;
+  header .header-nav * {
+    display: none;
   }
-  header .header-box {
-    height: 100%;
-    background-color: black;
+  header .header-box * {
+    display: none;
   }
-  header .header-box .menu-button {
+  header ul {
+    list-style-type: none;
+  }
+  header .top-nav {
+    border-right: solid 1px gray;
+  }
+  header .top-nav.selected {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  header #menu-nav {
+    display: block;
     position: relative;
-    margin-top: 5px;
-    margin-left: 5px;
-    height: 40px;
-    width: 40px;
-    background-color: transparent;
-    border: solid 2px #b0c4de;
-    -webkit-perspective: 1000;
-    perspective: 1000;
   }
-  header .header-box .menu-button .top-line {
+  header #menu-nav a {
+    color: black;
+  }
+  header #menu-nav .nav-link {
+    font-weight: bold;
+  }
+  header #menu-nav .sub-nav {
+    display: none;
     position: absolute;
-    top: 25%;
-    left: 50%;
-    display: block;
-    width: 70%;
-    height: 5%;
-    border: solid 1px #b0c4de;
-    background-color: #b0c4de;
-    transform: translateX(-50%);
-    -webkit-transform: translateX(-50%);
-    -webkit-transition: .3s;
-    transition: .3s;
-    -webkit-perspective: 1000;
-    perspective: 1000;
-  }
-  header .header-box .menu-button .top-line.clicked-top {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    display: block;
-    width: 80%;
-    height: 5%;
-    border: solid 1px #b0c4de;
-    background-color: #b0c4de;
-    transform: translateX(-50%) rotate(45deg);
-    -webkit-transform: translateX(-50%) rotate(45deg);
-    -webkit-transition: .3s;
-    transition: .3s;
-    -webkit-perspective: 1000;
-    perspective: 1000;
-  }
-  header .header-box .menu-button .middle-line {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    display: block;
-    width: 70%;
-    height: 5%;
-    border: solid 1px #b0c4de;
-    background-color: #b0c4de;
-    transform: translateX(-50%);
-    -webkit-transform: translateX(-50%);
-    -webkit-perspective: 1000;
-    perspective: 1000;
-  }
-  header .header-box .menu-button .middle-line.clicked-middle {
-    visibility: hidden;
-    -webkit-perspective: 1000;
-    perspective: 1000;
-  }
-  header .header-box .menu-button .bottom-line {
-    position: absolute;
-    top: 75%;
-    left: 50%;
-    display: block;
-    width: 70%;
-    height: 5%;
-    border: solid 1px #b0c4de;
-    background-color: #b0c4de;
-    transform: translateX(-50%);
-    -webkit-transform: translateX(-50%);
-    -webkit-transition: .3s;
-    transition: .3s;
-    -webkit-perspective: 1000;
-    perspective: 1000;
-  }
-  header .header-box .menu-button .bottom-line.clicked-bottom {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    display: block;
-    width: 80%;
-    height: 5%;
-    border: solid 1px #b0c4de;
-    background-color: #b0c4de;
-    -webkit-transform: translateX(-50%);
-    transform: translateX(-50%);
-    transform: translateX(-50%) rotate(-45deg);
-    -webkit-transform: translateX(-50%) rotate(-45deg);
-    -webkit-transition: .3s;
-    transition: .3s;
-    -webkit-perspective: 1000;
-    perspective: 1000;
-  }
-  header .header-box .app-icon img {
-    height: 50px;
-    width: auto;
-  }
-  header .header-box .register-box a {
-    color: #b0c4de;
-  }
-  header .header-box .register-box a p {
-    font-size: 2vh;
-    font-family: 'Century';
-    margin-top: 55%;
-  }
-  header .header-box .user-icon-box {
-    max-width: 25%;
-  }
-  header .header-box .user-icon-box a img {
-    background-color: white;
-    height: 40px;
-    width: auto;
-    margin-right: 0;
-    border-radius: 50%;
-  }
-  .header-nav {
-    visibility: hidden;
-    position: relative;
-    width: 100%;
-    top: 0px;
-    background-color: rgba(0, 0, 0, 0.9);
-    -webkit-transform: translateX(-100%);
-    transform: translateX(-100%);
-    -webkit-transition: .3s;
-    transition: .3s;
-    z-index: 100;
-    font-family: "arial", "MS Gothic";
-  }
-  .header-nav.slide-in {
-    visibility: visible;
-    -webkit-transform: translateX(0px);
-    transform: translateX(0px);
-    -webkit-transition: .3s;
-    transition: .3s;
-  }
-  .header-nav .header-menu {
-    z-index: 100;
-    color: #b0c4de;
-  }
-  .header-nav .header-menu li {
-    z-index: 100;
-  }
-  .header-nav .header-menu li a {
-    text-decoration: none;
-    color: #b0c4de;
-    z-index: 100;
-  }
-  .header-nav .header-menu ul {
-    -webkit-padding-start: 0;
-    padding-inline-start: 0;
-  }
-  .header-nav .header-menu .link-to-contents {
-    height: 0;
-    overflow: hidden;
-    -webkit-transition: .3s;
-    transition: .3s;
-  }
-  .header-nav .header-menu .first-menu {
-    padding: 10px 0;
-  }
-  .header-nav .header-menu #article-first-menu #article-second-menu #article-menu {
-    cursor: pointer;
-  }
-  .header-nav .header-menu #article-first-menu #article-second-menu:hover .link-to-contents {
-    height: 2rem;
-    overflow: visible;
-    padding: 10px 30px;
-  }
-  .header-nav .header-menu #datalibrary-first-menu #datalibrary-second-menu #datalibrary-menu {
-    cursor: pointer;
-  }
-  .header-nav .header-menu #datalibrary-first-menu #datalibrary-second-menu:hover .link-to-contents {
-    height: 2rem;
-    overflow: visible;
-    padding: 10px 30px;
-  }
-  .header-nav .header-menu #question-first-menu #question-second-menu #question-menu {
-    cursor: pointer;
-  }
-  .header-nav .header-menu #question-first-menu #question-second-menu:hover .link-to-contents {
-    height: 2rem;
-    overflow: visible;
-    padding: 10px 30px;
-  }
-  .header-nav .header-menu #profile-first-menu #profile-second-menu #profile-menu {
-    cursor: pointer;
-  }
-  .header-nav .header-menu #profile-first-menu #profile-second-menu:hover .link-to-contents {
-    height: 2rem;
-    overflow: visible;
-    padding: 10px 30px;
-  }
-  .header-nav .header-menu #noauth-first-menu #noauth-second-menu #noauth-menu {
-    cursor: pointer;
-  }
-  .header-nav .header-menu #noauth-first-menu #noauth-second-menu:hover .link-to-contents {
-    height: 2rem;
-    overflow: visible;
-    padding: 10px 30px;
-  }
-  .header-nav .header-menu #inq-first-menu #inq-second-menu #inq-menu {
-    cursor: pointer;
-  }
-  .header-nav .header-menu #inq-first-menu #inq-second-menu:hover .link-to-contents {
-    height: 2rem;
-    overflow: visible;
-    padding: 10px 30px;
-  }
-  .header-nav li {
     list-style: none;
+    margin: 0;
+    padding: 10px 10px 5px 0;
+    z-index: 1;
+    background-color: white;
+  }
+  header #menu-nav .sub-nav li {
+    display: block;
   }
   main .nothing {
     height: 50px;

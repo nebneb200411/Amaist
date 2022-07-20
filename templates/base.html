@@ -20,7 +20,7 @@
 </head>
 <body>
     <header>
-        <div class="header-box d-flex justify-content-between">
+        <div id="s-menu" class="header-box d-flex justify-content-between">
             <div class = 'menu-button'>
                 <div class="top-line"></div>
                 <div class="middle-line"></div>
@@ -115,12 +115,100 @@
                 </li>
             </ul>
         </div>
+
+        <div id="menu-nav" class="d-flex">
+            <ul class="nav d-flex" id="navigation">
+                <li class="nav-item top-nav">
+                    <a class="nav-link" aria-current="page" href="{% url 'index:index' %}"><i class="fas fa-home"></i><span class="mgr-10"></span>Home</a>
+                </li>
+                <li class="nav-item top-nav">
+                    <a class="nav-link" href="{% url 'article:list' %}">Article</a>
+                    <ul class="sub-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'article:list' %}">記事一覧</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'article:CreateArticle' %}">記事作成</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item top-nav">
+                    <a class="nav-link" href="{% url 'data_library:list' %}">DataLibrary</a>
+                    <ul class="sub-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'data_library:list' %}">データ一覧</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'data_library:create' %}">記事作成</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item top-nav">
+                    <a class="nav-link" href="{% url 'question:list' %}">Question</a>
+                    <ul class="sub-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'question:list' %}">質問一覧</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'question:create' %}">質問作成</a>
+                        </li>
+                    </ul>
+                </li>
+                {% if request.user.is_authenticated %}
+                <li class="nav-item top-nav">
+                    <a class="nav-link" href="#">Acount</a>
+                    <ul class="sub-nav">
+                        <li class="link-to-contents">
+                            <a class="nav-link" href="{% url 'profiles:found_or_not_found' %}">{{request.user.username}}さんのプロフィール</a>
+                        </li>
+                        <li class="link-to-contents">
+                            <a class="nav-link" href="{% url 'profiles:profile_list' %}">プロフィール一覧</a>
+                        </li>
+                        <li class="link-to-contents">
+                            <a class="nav-link" href="{% url 'login' %}">Login</a>
+                        </li>
+                        <li class="link-to-contents">
+                            <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                        </li>
+                    </ul>
+                </li>
+                {% else %}
+                <li class="nav-item top-nav">
+                    <a class="nav-link" href="#">Acount</a>
+                    <ul class="sub-nav">
+                        <li class="nav-link">
+                            ユーザー登録もしくはログインしましょう！
+                        </li>
+                        <li class="link-to-contents">
+                            <a class="nav-link" href="{% url 'login' %}"><i class="fas fa-sign-in-alt"></i><span class="mgr-10"></span>Login</a>
+                        </li>
+                        <li class="link-to-contents">
+                            <a class="nav-link" href="{% url 'sign_up' %}"><i class="fas fa-sign-out-alt"></i><span class="mgr-10"></span>Register</a>
+                        </li>
+                    </ul>
+                </li>
+                {% endif %}
+                <li class="nav-item top-nav">
+                    <a class="nav-link" href="#">Inquiry</a>
+                    <ul class="sub-nav">
+                        <li class="link-to-contents">
+                            <a class="nav-link" href="{% url 'notifications:list' %}">お知らせ</a>
+                        </li>
+                        <li class="link-to-contents">
+                            <a class="nav-link" href="https://docs.google.com/forms/d/e/1FAIpQLSdg-QjlojQ0CANiupGAnulT2Uf3jEumpPrdVNwFCZ8OqRzDrQ/viewform?usp=sf_link">お問合せ</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
     </header>
 
 
     <main>
+    <!--
     <div class="nothing">
     </div>
+    -->
     {% block contents %}
     {% endblock contents %}
     </main>
@@ -209,6 +297,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://kit.fontawesome.com/c8491d5b73.js" crossorigin="anonymous"></script>
 <!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_HTML"></script>-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 </body>
 <script type="text/javascript" src="{% static 'base/base.js' %}"></script>
 {% block script %}

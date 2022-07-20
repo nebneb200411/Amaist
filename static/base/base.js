@@ -1,3 +1,14 @@
+//navigation
+$(function(){
+    $('#navigation li').hover(function(){
+        $(this).toggleClass('selected');
+        $("ul:not(:animated)", this).slideDown();
+    }, function(){
+        $(this).removeClass('selected');
+        $("ul.sub-nav",this).slideUp();
+    });
+});
+
 window.addEventListener('DOMContentLoaded', function () {
     $(document).ready(function () {
         hsize = $(window).height();
