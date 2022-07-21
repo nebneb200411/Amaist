@@ -191,25 +191,31 @@ span {
     margin-top: 10px;
   }
   main #subcontents-box #table-of-contents {
-    display: none;
-    margin: 0 0 30px 0;
-  }
-  main #subcontents-box #table-of-contents h2 {
-    font-size: 1.2rem;
-    font-weight: bold;
-    text-align: center;
-  }
-  main #subcontents-box #table-of-contents nav ul {
-    display: block;
-  }
-  main #subcontents-box #table-of-contents nav ul li a {
-    color: #29397a;
-  }
-  main #subcontents-box #table-of-contents nav ul li a:hover {
-    color: white;
-  }
-  main #subcontents-box #table-of-contents span {
-    font-weight: bold;
+    /*
+                display: none;
+                margin: 0 0 30px 0;
+                h2 {
+                    font-size: 1.2rem;
+                    font-weight: bold;
+                    text-align: center;
+                }
+                nav {
+                    ul {
+                        display: block;
+                        li {
+                            a {
+                                color:#29397a;
+                            }
+                            a:hover {
+                                color: white;
+                            }
+                        }
+                    }
+                }
+                span {
+                    font-weight: bold;
+                }
+                */
   }
   #article-content-box {
     padding: 3px;
@@ -379,48 +385,49 @@ span {
   main {
     background-color: #bbccdd;
   }
-  main div {
-    padding: 10px 10px 10px 10px;
+  main #container-box {
+    margin: 0px 0px 0px 10px;
+    padding-top: 10px;
   }
-  main div div #article-content {
+  main #container-box #row-box #article-content {
     background-color: white;
     padding: 20px 20px;
   }
-  main div div #article-content a {
+  main #container-box #row-box #article-content a {
     text-decoration: none;
     color: #0782C1;
   }
-  main div div #article-content #article-info-box {
+  main #container-box #row-box #article-content #article-info-box {
     padding: 10px 10px;
   }
-  main div div #article-content #article-info-box #article-sub-info span {
+  main #container-box #row-box #article-content #article-info-box #article-sub-info span {
     margin-right: 5px;
   }
-  main div div #article-content #user-info {
+  main #container-box #row-box #article-content #user-info {
     margin: 10px 10px;
   }
-  main div div #article-content #user-info a {
+  main #container-box #row-box #article-content #user-info a {
     font-size: 1.2rem;
     text-decoration: none;
     margin: 0px 10px;
     color: #a17636;
   }
-  main div div #article-content #user-info a img {
+  main #container-box #row-box #article-content #user-info a img {
     height: 80px;
     width: auto;
     background: linear-gradient(-45deg, #c21500 0%, #ffc500 100%);
     border-radius: 50%;
   }
-  main div div #article-content #good-box {
-    width: 50%;
+  main #container-box #row-box #article-content #good-box {
+    padding: 30px 0px;
   }
-  main div div #article-content #good-box #good-number {
+  main #container-box #row-box #article-content #good-box #good-number {
     display: inline-block;
   }
-  main div div #article-content #good-box #good-post {
+  main #container-box #row-box #article-content #good-box #good-post {
     display: inline-block;
   }
-  main div div #article-content #good-box #good-post form button {
+  main #container-box #row-box #article-content #good-box #good-post form button {
     height: 30px;
     width: 30px;
     border: none;
@@ -429,36 +436,36 @@ span {
     color: white;
     cursor: pointer;
   }
-  main div div #article-content #good-box #good-post form button:hover {
+  main #container-box #row-box #article-content #good-box #good-post form button:hover {
     height: 35px;
     width: 35px;
     background-color: #ffc500;
     -webkit-transition: width 0.3s, height 0.3s;
     transition: width 0.3s, height 0.3s;
   }
-  main div div #article-content #expand-page {
+  main #container-box #row-box #article-content #expand-page {
     text-align: right;
   }
-  main div div #article-content #expand-page a {
+  main #container-box #row-box #article-content #expand-page a {
     color: black;
   }
-  main div div #article-content #expand-page a i {
+  main #container-box #row-box #article-content #expand-page a i {
     cursor: pointer;
   }
-  main div div #article-content #expand-page a i:hover {
+  main #container-box #row-box #article-content #expand-page a i:hover {
     color: #d84450;
     -webkit-transition: width 0.3s, height 0.3s;
     transition: width 0.3s, height 0.3s;
   }
-  main div div #article-content #toc-nav {
+  main #container-box #row-box #article-content #toc-nav {
     display: none;
   }
-  main div div #article-content #article-content-box {
-    padding: 20px 20px 20px 20px;
+  main #container-box #row-box #article-content #article-content-box {
+    padding: 10px 10px 10px 10px;
     position: relative;
     overflow-y: scroll;
   }
-  main div div #article-content #article-content-box .widget-toc {
+  main #container-box #row-box #article-content #article-content-box .widget-toc {
     display: table;
     border: 1px solid #a2a9b1;
     background-color: #f8f9fa;
@@ -466,63 +473,109 @@ span {
     font-size: 95%;
     width: 50%;
   }
-  main div div #article-content #article-content-box .widget-toc ol {
+  main #container-box #row-box #article-content #article-content-box .widget-toc ol {
     padding-right: 0px;
     counter-reset: item;
   }
-  main div div #article-content #article-content-box .widget-toc ol li {
+  main #container-box #row-box #article-content #article-content-box .widget-toc ol li {
     display: block;
     position: relative;
   }
-  main div div #article-content #article-content-box .widget-toc ol li:before {
+  main #container-box #row-box #article-content #article-content-box .widget-toc ol li:before {
     content: counters(item, ".");
     counter-increment: item;
     position: absolute;
     margin-right: 100%;
     right: 0.5rem;
   }
-  main div div #article-content #article-content-box .toc-title {
+  main #container-box #row-box #article-content #article-content-box .toc-title {
     text-align: center;
     font-weight: 700;
     margin: 0;
     padding: 0;
   }
-  main div div #article-content #comment-display-box {
+  main #container-box #row-box #article-content #comment-display-box {
     font-family: "arial", "MS Gothic";
   }
-  main div div #article-content #comment-display-box .each-user-comment-box {
+  main #container-box #row-box #article-content #comment-display-box .each-user-comment-box {
     margin: 10px 0px;
   }
-  main div div #article-content #comment-display-box .each-user-comment-box .commentor-info a img {
+  main #container-box #row-box #article-content #comment-display-box .each-user-comment-box .commentor-info a img {
     height: 40px;
     width: auto;
     border-radius: 50%;
   }
-  main div div #article-content #comment-display-box .each-user-comment-box .comment-content {
+  main #container-box #row-box #article-content #comment-display-box .each-user-comment-box .comment-content {
     margin-top: 10px;
   }
-  main #subcontents-box h2 {
-    font-weight: bold;
-    font-size: 1.2rem;
-    text-align: center;
+  main #subcontents-box {
+    /*
+            h2 {
+                font-weight: bold;
+                font-size: 1.2rem;
+                text-align: center;
+            }
+            #table-of-contents {
+                position: sticky;
+                position: -webkit-sticky;
+                top: 40px;
+                margin: 0 0 0 30px;
+                nav {
+                    ul {
+                        display: block;
+                        li {
+                            a {
+                                color:#29397a;
+                            }
+                            a:hover {
+                                color: white;
+                            }
+                        }
+                    }
+                }
+                span {
+                    font-weight: bold;
+                }
+            }
+            */
   }
   main #subcontents-box #table-of-contents {
     position: sticky;
     position: -webkit-sticky;
     top: 40px;
-    margin: 0 0 0 30px;
+    padding: 0px 20px;
+    font-family: 'MS Gothic', 'arial';
   }
-  main #subcontents-box #table-of-contents nav ul {
-    display: block;
-  }
-  main #subcontents-box #table-of-contents nav ul li a {
-    color: #29397a;
-  }
-  main #subcontents-box #table-of-contents nav ul li a:hover {
-    color: white;
-  }
-  main #subcontents-box #table-of-contents span {
+  main #subcontents-box #table-of-contents .title {
     font-weight: bold;
+  }
+  main #subcontents-box #table-of-contents .items ol {
+    list-style: none;
+    counter-reset: item-count;
+    padding-left: 0px;
+  }
+  main #subcontents-box #table-of-contents .items .item {
+    padding: 0px 0px 0px 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    cursor: pointer;
+  }
+  main #subcontents-box #table-of-contents .items .item.hover {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  main #subcontents-box #table-of-contents .items .item .line {
+    padding: 5px 0px;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    border-bottom: solid 1px #ccc;
+  }
+  main #subcontents-box #table-of-contents .items .item .number::before {
+    content: counters(item-count, ".");
+    counter-increment: item-count;
+    padding-right: 5px;
   }
   #article-content-box .cke_editable {
     font-size: 13px;

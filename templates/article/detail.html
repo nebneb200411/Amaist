@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css">
 {% endblock stylesheet %}
 {% block contents %}
-<div class="container-fluid">
-    <div class="row flex-column-reverse flex-md-row">
+<div id="container-box" class="container-fluid">
+    <div id="row-box" class="row flex-column-reverse flex-md-row">
         <div class="col-12 col-md-8 col-xl-8" id="article-content">
             <nav id="article-breadcrumb" aria-label="breadcrumb">
                 <ol class="breadcrumb">
@@ -72,7 +72,7 @@
             </p>
             <h1 id="title" class="title-two-colorbar">{{object.title}}</h1>
             <nav id="toc-nav" data-toggle="toc" class="navbar navbar-light flex-column common-font"><h2>見出し</h2></nav>
-            <div id="article-content-box" data-bs-spy="scroll" data-bs-target="#toc-nav" data-bs-offset="10" data-bs-smooth-scroll="true" tabindex="0">
+            <div id="article-content-box" class="content" data-bs-spy="scroll" data-bs-target="#toc-nav" data-bs-offset="10" data-bs-smooth-scroll="true" tabindex="0">
                 {{object.content|safe}}
             </div>
             <a href="https://px.a8.net/svt/ejp?a8mat=3NAEBR+3HMHF6+4PGA+BY641" rel="nofollow">
@@ -112,6 +112,9 @@
         </div>
         <div class="col-12 col-md-4 col-xl-4" id="subcontents-box">
             <div id="table-of-contents">
+            </div>
+            <!--
+            <div id="table-of-contents">
                 <hr>
                 <h2 class="common-font">見出し</h2>
                 <nav id="toc-nav" data-toggle="toc" class="navbar navbar-light navbar-expand-lg flex-column common-font"></nav>
@@ -120,6 +123,7 @@
                 <img border="0" width="300" height="250" alt="" src="https://www25.a8.net/svt/bgt?aid=220514823243&wid=001&eno=01&mid=s00000020570001005000&mc=1"></a>
                 <img border="0" width="1" height="1" src="https://www10.a8.net/0.gif?a8mat=3NAEBR+40OCS2+4EPW+5ZEMP" alt="">
             </div>
+            -->
         </div>
     </div>
 </div>
