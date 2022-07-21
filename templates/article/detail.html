@@ -81,6 +81,7 @@
             <hr class="horizontal-line">
             <p><i class="fas fa-comment"></i><span class="mgr-10"/>コメント</p>
             <hr class="hr-line">
+            <!--
             <div class="comment-form">
                 <form method="POST">
                     {% csrf_token %}
@@ -108,25 +109,16 @@
                     </div>
                 </div>
                 {% endfor %}
-            </div>
+            -->
+            <!--</div>-->
         </div>
         <div class="col-12 col-md-4 col-xl-4" id="subcontents-box">
             <div id="table-of-contents">
             </div>
-            <!--
-            <div id="table-of-contents">
-                <hr>
-                <h2 class="common-font">見出し</h2>
-                <nav id="toc-nav" data-toggle="toc" class="navbar navbar-light navbar-expand-lg flex-column common-font"></nav>
-                <hr>
-                <a href="https://px.a8.net/svt/ejp?a8mat=3NAEBR+40OCS2+4EPW+5ZEMP" rel="nofollow">
-                <img border="0" width="300" height="250" alt="" src="https://www25.a8.net/svt/bgt?aid=220514823243&wid=001&eno=01&mid=s00000020570001005000&mc=1"></a>
-                <img border="0" width="1" height="1" src="https://www10.a8.net/0.gif?a8mat=3NAEBR+40OCS2+4EPW+5ZEMP" alt="">
-            </div>
-            -->
         </div>
     </div>
 </div>
+{% include 'includes/common/comment.html' %}
 {% endblock contents %}
 
 {% block script %}

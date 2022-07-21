@@ -1,0 +1,41 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'common/comment/comment.css' %}">
+
+
+<div id="comment-box">
+    <h2>コメント</h2>
+    <div id="comment-form">
+        {% if request.user.is_authenticated %}
+        <form method="POST">
+            {% csrf_token %}
+            <input type="hidden"  name="response_to" value="{{request.user}}"/>
+            <input type="hidden" name="article_pk" value="{{object.pk}}"/>
+            {{form.media}}
+            {{form.comment}}
+            <button type="submit" class="button-design">送信</button>
+        </form>
+        {% else %}
+        <h3 class="font-arial-MSGothic">ユーザー登録をしてコメントを残しましょう！</h3>
+        <p class="font-arial-MSGothic"><a class="link-hover-big">ログイン</a>はこちら</p>
+        <p class="font-arial-MSGothic"><a class="link-hover-big">ユーザー登録</a>はこちら</p>
+        {% endif %}
+    </div>
+</div>
+<div id="comment-list">
+    {% for comment_object in comment_objects %}
+    <div class="comment">
+        <div class="d-flex">
+            <a href="{% url 'profiles:otheruser_profile' comment_object.response_from.user.pk%}">
+                <img src="{{MEDIA_URL}}{{comment_object.response_from.user.icon}}">
+            </a>
+            <a class="link-hover-big" href="{% url 'profiles:otheruser_profile' comment_object.response_from.user.pk%}">
+                {{comment_object.response_from}}
+            </a>
+            <p>{{comment_object.created_at}}</p>
+        </div>
+        <div class="comment-content">
+            {{comment_object.comment|safe}}
+        </div>
+    </div>
+    {% endfor %}
+</div>
