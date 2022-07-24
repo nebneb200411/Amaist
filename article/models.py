@@ -26,6 +26,7 @@ class Article(models.Model):
         User, related_name="good_from", default=None)
     tag = models.ManyToManyField(Tag, related_name="tag")
     is_published = models.BooleanField(default=True)
+    views = models.PositiveIntegerField(default=0)
 
     def __str__(self):
         return self.title

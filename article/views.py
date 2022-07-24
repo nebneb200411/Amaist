@@ -140,6 +140,10 @@ class ArticleDetailView(DetailView):
         form = ArticleCommentForm()
         context['form'] = form
 
+        # add PV in here
+        article.views += 1
+        article.save()
+
         return context
 
     def post(self, request, pk):
