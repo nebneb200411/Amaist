@@ -16,8 +16,8 @@
         </form>
         {% else %}
         <h3 class="font-arial-MSGothic">ユーザー登録をしてコメントを残しましょう！</h3>
-        <p class="font-arial-MSGothic"><a class="link-hover-big">ログイン</a>はこちら</p>
-        <p class="font-arial-MSGothic"><a class="link-hover-big">ユーザー登録</a>はこちら</p>
+        <p class="font-arial-MSGothic"><a href="{% url 'login' %}" class="link-hover-big">ログイン</a>はこちら</p>
+        <p class="font-arial-MSGothic"><a href="{% url 'sign_up' %}" class="link-hover-big">ユーザー登録</a>はこちら</p>
         {% endif %}
     </div>
 </div>
