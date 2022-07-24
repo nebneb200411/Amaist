@@ -1,0 +1,14 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'common/_side_column_article/side_column_article.css' %}">
+
+<div class="side-column-article">
+    <h5>新着記事</h5>
+    {% for article in articles %}
+    <div class="article-row">
+        <div class="titles">
+            <a href="{% url 'article:article_detail' article.pk %}">{{article.title}}</a>
+        </div>
+        <div class="created-at">{{article.created_at|date:"Y年m月d日"}}</div>
+    </div>
+    {% endfor %}
+</div>

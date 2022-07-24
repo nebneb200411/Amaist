@@ -238,6 +238,7 @@ span {
         }
 
         #subcontents-box {
+            display: none;
 
             #table-of-contents {
                 display: none;
@@ -610,6 +611,7 @@ span {
                 top: 40px;
                 padding: 0px 20px;
                 font-family: 'MS Gothic', 'arial';
+                background-color: #4568a1;
                 .title {
                     font-weight: bold;
                     color:#ffd700;
@@ -648,35 +650,19 @@ span {
                     }
                 }
             }
-            /*
-            h2 {
-                font-weight: bold;
-                font-size: 1.2rem;
-                text-align: center;
+
+            .side-columns {
+                background-color: #f5f5f5;
+                padding: 20px 20px;
             }
-            #table-of-contents {
-                position: sticky;
-                position: -webkit-sticky;
-                top: 40px;
-                margin: 0 0 0 30px;
-                nav {
-                    ul {
-                        display: block;
-                        li {
-                            a {
-                                color:#29397a;
-                            }
-                            a:hover {
-                                color: white;
-                            }
-                        }
-                    }
-                }
-                span {
-                    font-weight: bold;
-                }
+
+            #new-articles {
+
             }
-            */
+
+            #relate-articles {
+
+            }
         }
     }
     

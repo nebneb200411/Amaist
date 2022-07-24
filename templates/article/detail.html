@@ -81,39 +81,15 @@
             <hr class="horizontal-line">
             <p><i class="fas fa-comment"></i><span class="mgr-10"/>コメント</p>
             <hr class="hr-line">
-            <!--
-            <div class="comment-form">
-                <form method="POST">
-                    {% csrf_token %}
-                    <input type="hidden"  name="response_to" value="{{request.user}}"/>
-                    <input type="hidden" name="article_pk" value="{{object.pk}}"/>
-                    {{form.media}}
-                    {{form.comment}}
-                    <button type="submit" class="btn btn-primary">送信</button>
-                </form>
-            </div>
-            <div id="comment-display-box">
-                {% for comment_object in comment_objects %}
-                <div class="each-user-comment-box">
-                    <div class="d-flex commentor-info">
-                        <a href="{% url 'profiles:otheruser_profile' comment_object.response_from.user.pk%}">
-                            <img src="{{MEDIA_URL}}{{comment_object.response_from.user.icon}}">
-                        </a>
-                        <a href="{% url 'profiles:otheruser_profile' comment_object.response_from.user.pk%}" class="align-self-center">
-                            {{comment_object.response_from}}
-                        </a>
-                        <p class="align-self-center ml-auto">{{comment_object.created_at}}</p>
-                    </div>
-                    <div class="comment-content">
-                        {{comment_object.comment|safe}}
-                    </div>
-                </div>
-                {% endfor %}
-            -->
-            <!--</div>-->
         </div>
         <div class="col-12 col-md-4 col-xl-4" id="subcontents-box">
             <div id="table-of-contents">
+            </div>
+            <div id="new-articles" class="side-columns">
+                {% include 'includes/article/_side_column/new.html' with articles=new_articles %}
+            </div>
+            <div id="relate-articles" class="side-columns">
+                {% include 'includes/article/_side_column/relate.html' with articles=relate_articles %}
             </div>
         </div>
     </div>

@@ -140,6 +140,23 @@ class ArticleDetailView(DetailView):
         form = ArticleCommentForm()
         context['form'] = form
 
+        # get new articles
+        new_articles = Article.objects.all().order_by('-created_at')
+        if len(new_articles) < 5:
+            new_articles = new_articles
+        else:
+            new_articles = new_articles[0:5]
+        context['new_articles'] = new_articles
+
+        # get related articles
+        genre = article.genre
+        relate_articles = Article.objects.filter(genre=genre).order_by('-created_at')
+        if len(relate_articles) < 5:
+            relate_articles = relate_articles
+        else:
+            relate_articles = relate_articles[0:5]
+        context['relate_articles'] = relate_articles
+
         # add PV in here
         article.views += 1
         article.save()

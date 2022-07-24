@@ -190,6 +190,9 @@ span {
   main div div #article-content #comment-display-box .each-user-comment-box .comment-content {
     margin-top: 10px;
   }
+  main #subcontents-box {
+    display: none;
+  }
   main #subcontents-box #table-of-contents {
     display: none;
   }
@@ -484,43 +487,13 @@ span {
   main #container-box #row-box #article-content #comment-display-box .each-user-comment-box .comment-content {
     margin-top: 10px;
   }
-  main #subcontents-box {
-    /*
-            h2 {
-                font-weight: bold;
-                font-size: 1.2rem;
-                text-align: center;
-            }
-            #table-of-contents {
-                position: sticky;
-                position: -webkit-sticky;
-                top: 40px;
-                margin: 0 0 0 30px;
-                nav {
-                    ul {
-                        display: block;
-                        li {
-                            a {
-                                color:#29397a;
-                            }
-                            a:hover {
-                                color: white;
-                            }
-                        }
-                    }
-                }
-                span {
-                    font-weight: bold;
-                }
-            }
-            */
-  }
   main #subcontents-box #table-of-contents {
     position: sticky;
     position: -webkit-sticky;
     top: 40px;
     padding: 0px 20px;
     font-family: 'MS Gothic', 'arial';
+    background-color: #4568a1;
   }
   main #subcontents-box #table-of-contents .title {
     font-weight: bold;
@@ -557,6 +530,10 @@ span {
     content: counters(item-count, ".");
     counter-increment: item-count;
     padding-right: 5px;
+  }
+  main #subcontents-box .side-columns {
+    background-color: #f5f5f5;
+    padding: 20px 20px;
   }
   #article-content-box .cke_editable {
     font-size: 13px;

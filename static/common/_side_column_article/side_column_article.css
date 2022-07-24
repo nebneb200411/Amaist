@@ -1,0 +1,27 @@
+.side-column-article h5 {
+  font-weight: bold;
+  border-bottom: solid 1px gray;
+}
+
+.side-column-article .article-row {
+  padding: 3px 0;
+}
+
+.side-column-article .article-row div {
+  display: inline-block;
+}
+
+.side-column-article .article-row .titles {
+  width: 70%;
+}
+
+.side-column-article .article-row .titles a {
+  text-decoration: none;
+  color: black;
+}
+
+.side-column-article .article-row .created-at {
+  font-size: 0.8rem;
+  color: black;
+}
+/*# sourceMappingURL=side_column_article.css.map */
