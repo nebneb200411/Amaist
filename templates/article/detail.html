@@ -29,6 +29,8 @@
                         <span class="tags">{{tag}}</span>
                     {% endfor %}
                 </p>
+                <p><i class="far fa-eye"></i><span class="mgr-10"></span>{{object.views}}</p>
+                <p><i class="fas fa-thumbs-up"></i><span class="mgr-10"></span>{{good_number}}</p>
             </div>
             <div id="user-info" class="card">
                 <div class="row g-0">
@@ -52,6 +54,7 @@
                 </div>
             </div>
             <div id="good-box">
+                {% if request.user.is_authenticated %}
                 <div id="good-post">
                     <form method="POST" action="{% url 'article:good_count' %}">
                         {% csrf_token %}
@@ -59,7 +62,7 @@
                         <button type="submit" id="good-button"><i class="fas fa-thumbs-up"></i></button>
                     </form>
                 </div>
-                <div id="good-number">{{good_number}}</div>
+                {% endif %}
             </div>
             <a href="https://px.a8.net/svt/ejp?a8mat=3NAEBR+1F7ASY+4X3U+5Z6WX" rel="nofollow">
             <img border="0" width="468" height="60" alt="" src="https://www21.a8.net/svt/bgt?aid=220514823086&wid=001&eno=01&mid=s00000022953001004000&mc=1"></a>
@@ -70,7 +73,7 @@
                     <i class="fas fa-expand fa-2x"></i>
                 </a>
             </p>
-            <h1 id="title" class="title-two-colorbar">{{object.title}}</h1>
+            <h1 id="title" class="font-arial-MSGothic">{{object.title}}</h1>
             <nav id="toc-nav" data-toggle="toc" class="navbar navbar-light flex-column common-font"><h2>見出し</h2></nav>
             <div id="article-content-box" class="content" data-bs-spy="scroll" data-bs-target="#toc-nav" data-bs-offset="10" data-bs-smooth-scroll="true" tabindex="0">
                 {{object.content|safe}}

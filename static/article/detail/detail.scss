@@ -152,6 +152,8 @@ span {
 
                     #title {
                         font-size: 1.2rem;
+                        font-weight: bold;
+                        margin-bottom: 20px;
                     }
 
                     #toc-nav {
@@ -546,6 +548,12 @@ span {
                         }
                     }
 
+                    #title {
+                        font-size: 2rem;
+                        font-weight: bold;
+                        margin: 50px 0;
+                    }
+
                     #toc-nav {
                         display: none;
                     }
@@ -582,7 +590,6 @@ span {
                         
                         
                         .toc-title{
-                        
                             text-align: center;
                             font-weight: 700;
                             margin: 0;

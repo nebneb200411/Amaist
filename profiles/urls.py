@@ -17,7 +17,7 @@ urlpatterns = [
           name='profile_create'),
      path('found_or_not_found/',
           views.profile_not_found, name='found_or_not_found'),
-     path('otheruser_profile/<uuid:pk>/', views.OtherUserProfileView.as_view(),
+     path('profile/<uuid:pk>/', views.OtherUserProfileView.as_view(),
           name='otheruser_profile'),
      path('follower_list/<uuid:pk>/', views.FollowerListView.as_view(), name = "follower_list"), 
      path('follwing_list/<uuid:pk>/', views.FollowingListView.as_view(), name = "following_list"), 
