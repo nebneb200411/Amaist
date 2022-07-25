@@ -190,6 +190,18 @@ span {
   main div div #article-content #comment-display-box .each-user-comment-box .comment-content {
     margin-top: 10px;
   }
+  main div div #article-content #sharing {
+    margin-top: 5px;
+  }
+  main div div #article-content #sharing h5 {
+    margin-left: 5px;
+    font-weight: bold;
+  }
+  main div div #article-content #sharing .sns-icon {
+    margin: 15px 15px;
+    width: 40px;
+    height: auto;
+  }
   main #subcontents-box {
     display: none;
   }
@@ -486,6 +498,18 @@ span {
   }
   main #container-box #row-box #article-content #comment-display-box .each-user-comment-box .comment-content {
     margin-top: 10px;
+  }
+  main #container-box #row-box #article-content #sharing {
+    margin-top: 20px;
+  }
+  main #container-box #row-box #article-content #sharing h5 {
+    margin-left: 15px;
+    font-weight: bold;
+  }
+  main #container-box #row-box #article-content #sharing .sns-icon {
+    margin: 15px 15px;
+    width: 40px;
+    height: auto;
   }
   main #subcontents-box #table-of-contents {
     position: sticky;

@@ -233,6 +233,18 @@ span {
                             }
                         }
                     }
+                    #sharing {
+                        margin-top: 5px;
+                        h5 {
+                            margin-left: 5px;
+                            font-weight: bold;
+                        }
+                        .sns-icon {
+                            margin:15px 15px;
+                            width:40px;
+                            height: auto;
+                        }
+                    }
                 }
             }
         }
@@ -598,6 +610,19 @@ span {
                             .comment-content {
                                 margin-top: 10px;
                             }
+                        }
+                    }
+
+                    #sharing {
+                        margin-top: 20px;
+                        h5 {
+                            margin-left: 15px;
+                            font-weight: bold;
+                        }
+                        .sns-icon {
+                            margin:15px 15px;
+                            width:40px;
+                            height: auto;
                         }
                     }
                 }

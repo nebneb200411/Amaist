@@ -78,9 +78,26 @@
             <a href="https://px.a8.net/svt/ejp?a8mat=3NAEBR+3HMHF6+4PGA+BY641" rel="nofollow">
             <img border="0" width="936" height="120" alt="" src="https://www21.a8.net/svt/bgt?aid=220514823211&wid=001&eno=01&mid=s00000021961002007000&mc=1"></a>
             <img border="0" width="1" height="1" src="https://www17.a8.net/0.gif?a8mat=3NAEBR+3HMHF6+4PGA+BY641" alt="">
-            <hr class="horizontal-line">
-            <p><i class="fas fa-comment"></i><span class="mgr-10"/>コメント</p>
-            <hr class="hr-line">
+            <div id="sharing">
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                <h5 class="font-arial-MSGothic">SNSでシェア</h5>
+                <!-- Facebook -->
+                <a class="js-sns-link" href="//www.facebook.com/sharer/sharer.php?u=&t=" target="_blank" rel="nofollow noopener noreferrer">
+                    <img class="sns-icon" src="{% static 'images/sns/facebook/f_logo_RGB-Blue_144.png' %}"></img>
+                </a>
+                <!-- Twitter -->
+                <a class="js-sns-link" href="//twitter.com/intent/tweet?text=&url=" target="_blank" rel="nofollow noopener noreferrer">
+                    <img class="sns-icon" src="{% static 'images/sns/twitter/Twitter_social icons_circle_blue.png' %}">
+                </a>
+                <!-- LINE -->
+                <a class="js-sns-link" href="//timeline.line.me/social-plugin/share?url=&text=" target="_blank" rel="nofollow noopener noreferrer">
+                    <img class="sns-icon" src="{% static 'images/sns/line/LINE_Brand_icon.png' %}">
+                </a>
+                <!--
+                <a class="js-sns-link" href="//b.hatena.ne.jp/add?mode=confirm&url=&title=" target="_blank" rel="nofollow noopener noreferrer">はてなブログ</a>
+                <a class="js-sns-link" href="//www.pinterest.com/pin/create/button/?url=&media=" target="_blank" rel="nofollow noopener noreferrer">Pin it</a>
+                -->
+            </div>
         </div>
         <div class="col-12 col-md-4 col-xl-4" id="subcontents-box">
             <div id="table-of-contents">
@@ -110,5 +127,16 @@
     </script>
     <script type="text/javascript"
         src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    <script>
+        let url = location.href
+        let snsLinks=$(".js-sns-link")
+        for(let i=0; i<snsLinks.length; i++){
+            let href=snsLinks.eq(i).attr('href');
+            //シェアページのURL上書き
+            href=href.replace("u=","u="+url)     //facebook
+            href=href.replace("url=","url="+url) //twitter,LINE,はてなブログ,ピンタレスト
+            snsLinks.eq(i).attr('href',href);
+        }
     </script>
 {% endblock script %}
