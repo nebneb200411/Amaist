@@ -468,13 +468,19 @@ span {
                     background-color: white;
                     padding: 20px 20px;
 
+                    #title {
+                        font-size: 2rem;
+                        font-weight: bold;
+                        margin: 30px 0;
+                    }
+
                     a {
                         text-decoration: none;
                         color: #0782C1;
                     }
     
                     #article-info-box {
-                        padding : 10px 10px;
+                        //padding : 10px 10px;
     
                         #article-sub-info{
     
@@ -482,28 +488,33 @@ span {
                                 margin-right: 5px;
                             }
                         }
+
+                        #article-property {
+                            .pro {
+                                margin: 0 20px 0 0;
+                            }
+                        }
                     }
     
                     #user-info {
-                        margin: 10px 10px;
-    
+                        margin: 10px 0;
                         a {
-                            font-size: 1.2rem;
+                            font-size: 1rem;
                             text-decoration: none;
+                            font-weight: bold;
                             margin: 0px 10px;
-                            color:#a17636;
+                            color:black;
     
                             img {
-                                height: 80px;
+                                height: 50px;
                                 width: auto;
-                                background: linear-gradient(-45deg, #c21500 0%, #ffc500 100%);
                                 border-radius: 50%;
                             }
                         }
                     }
     
                     #good-box {
-                        padding: 30px 0px;
+                        margin: 10px 0px;
     
                         #good-number {
                             display: inline-block;
@@ -546,12 +557,6 @@ span {
                                 transition: width 0.3s, height 0.3s;
                             }
                         }
-                    }
-
-                    #title {
-                        font-size: 2rem;
-                        font-weight: bold;
-                        margin: 50px 0;
                     }
 
                     #toc-nav {

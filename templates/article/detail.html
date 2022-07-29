@@ -17,40 +17,36 @@
                     <li class="breadcrumb-item active" aria-current="page">{{object.title}}</li>
                 </ol>
             </nav>
+            <h1 id="title" class="font-arial-MSGothic">{{object.title}}</h1>
             <div id="article-info-box" class="common-font">
                 <p id="article-sub-info">
                     <span id="created-at" class="info badge bg-info text-white">作成日</span>{{object.created_at|date:"Y/m/d"}}
                     <span id="updated-at" class="info badge bg-info text-white">更新日</span>{{object.updated_at|date:"Y/m/d"}}
                     <span id="genre" class="info badge bg-info text-white">ジャンル</span>{{object.genre}}
                 </p>
-                <p>
-                    <i class="fas fa-tags"></i>
-                    {% for tag in tags %}
-                        <span class="tags">{{tag}}</span>
-                    {% endfor %}
-                </p>
-                <p><i class="far fa-eye"></i><span class="mgr-10"></span>{{object.views}}</p>
-                <p><i class="fas fa-thumbs-up"></i><span class="mgr-10"></span>{{good_number}}</p>
+                <div id="article-property" class="d-flex">
+                    <div class="pro">
+                        <i class="fas fa-tags"></i>
+                        {% for tag in tags %}
+                            <span class="tags">{{tag}}</span>
+                        {% endfor %}
+                    </div>
+                    <div class="pro">
+                        <i class="far fa-eye"></i><span class="mgr-10"></span>{{object.views}}
+                    </div>
+                    <div class="pro">
+                        <i class="fas fa-thumbs-up"></i><span class="mgr-10"></span>{{good_number}}
+                    </div>
+                </div>
             </div>
-            <div id="user-info" class="card">
-                <div class="row g-0">
-                    <div class="col-5 col-sm-4">
-                        <a href="{% url 'profiles:otheruser_profile' profile.pk %}" class="align-self-center">
-                            <img src="{{MEDIA_URL}}{{object.author.user.icon}}">
-                        </a>
-                    </div>
-                    <div class="col-7 col-sm-8">
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                この記事の作成者
-                            </h5>
-                            <p class="card-text">
-                                <a href="{% url 'profiles:otheruser_profile' profile.pk %}" class="align-self-center">
-                                    <span class="common-font">{{object.author}}</span>
-                                </a>
-                            </p>
-                        </div>
-                    </div>
+            <div id="user-info" class="d-flex">
+                <a href="{% url 'profiles:otheruser_profile' profile.pk %}" class="align-self-center">
+                    <img src="{{MEDIA_URL}}{{object.author.user.icon}}">
+                </a>
+                <div class="align-self-center">
+                    <a href="{% url 'profiles:otheruser_profile' profile.pk %}" class="align-self-center">
+                        <span class="common-font">{{object.author}}</span>
+                    </a>
                 </div>
             </div>
             <div id="good-box">
@@ -67,13 +63,11 @@
             <a href="https://px.a8.net/svt/ejp?a8mat=3NAEBR+1F7ASY+4X3U+5Z6WX" rel="nofollow">
             <img border="0" width="468" height="60" alt="" src="https://www21.a8.net/svt/bgt?aid=220514823086&wid=001&eno=01&mid=s00000022953001004000&mc=1"></a>
             <img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=3NAEBR+1F7ASY+4X3U+5Z6WX" alt="">
-            <hr>
             <p id="expand-page">
                 <a href={% url 'article:contents' object.pk %}>
                     <i class="fas fa-expand fa-2x"></i>
                 </a>
             </p>
-            <h1 id="title" class="font-arial-MSGothic">{{object.title}}</h1>
             <nav id="toc-nav" data-toggle="toc" class="navbar navbar-light flex-column common-font"><h2>見出し</h2></nav>
             <div id="article-content-box" class="content" data-bs-spy="scroll" data-bs-target="#toc-nav" data-bs-offset="10" data-bs-smooth-scroll="true" tabindex="0">
                 {{object.content|safe}}
