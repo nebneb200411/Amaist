@@ -55,7 +55,11 @@ main #page-title-box::before {
 }
 
 main form {
-  margin: 0px 0px 0px 0px;
+  padding: 20px 0px 0px 0px;
+}
+
+main form h2 {
+  font-weight: bold;
 }
 
 main form .form-text {
@@ -66,18 +70,17 @@ main form .form-text {
   text-align: center;
 }
 
+main form .input-margin {
+  margin: 30px 120px;
+}
+
 main form #title #title-error #title-error-delete-button {
   cursor: pointer;
   margin: 0 5px 0 0;
 }
 
-main form #genre {
-  padding: 0 10px 10px 10px;
-}
-
-main form #genre #selections {
-  margin-left: 5%;
-  width: 90%;
+main form #tag #addon-wrapping {
+  cursor: pointer;
 }
 
 main form #genre #genre-error #genre-error-delete-button {
@@ -85,21 +88,19 @@ main form #genre #genre-error #genre-error-delete-button {
   margin: 0 5px 0 0;
 }
 
-main form #tags {
-  margin: 0 0 0 0;
+main form #publish div label {
+  font-weight: bold;
 }
 
-main form #tags #tag-add-button {
-  width: 90px;
-  height: 40px;
-}
-
-main form #publish {
-  margin: 20px 0 0 0;
+main form button {
+  position: relative;
+  left: 0px;
+  height: 50px;
+  width: 100px;
 }
 
 main #content-box {
-  margin: 20px 0 0 0;
+  margin: 20px 0 0 120px;
 }
 
 main #content-box #content-error #content-error-delete-button {
@@ -108,9 +109,11 @@ main #content-box #content-error #content-error-delete-button {
 }
 
 main button {
-  margin: 10px 0 10px 15px;
-  width: 50px;
-  height: 30px;
+  margin-right: 30px;
+  margin-bottom: 30px;
+  margin-left: 120px;
+  width: 100px;
+  height: 50px;
   border: none;
   background-color: #0088ff;
   color: white;

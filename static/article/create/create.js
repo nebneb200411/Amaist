@@ -1,5 +1,5 @@
-$('#tag-add-button').click(function () {
-    $('#tag-form').append('<input type="text" name="tags" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" multiple>')
+$('#addon-wrapping').click(function () {
+    $('#tag').append('<input type="text" name="tags" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" multiple>')
 })
 
 $(function () {
@@ -9,6 +9,16 @@ $(function () {
     $('#check-box').on('click', function () {
         $('#check-icon').toggleClass('visible');
     });
+})
+
+$('#publish-or-not').change(function() {
+    
+    $('#publish-or-not:checked').each(function() {
+        var r = $(this).prop('checked');
+        
+        console.log(r);
+    })
+    
 })
 
 $('#genre-error-delete-button').click(function() {

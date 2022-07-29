@@ -10,86 +10,76 @@
 {% endblock stylesheet %}
 
 {% block contents %}
-<div id="page-title-box">
-    <ul id="page-discription">
-        <li class="emphasize-text">記事作成ページ</li>
-        <li>サイト管理者もブログ初心者です</li>
-        <li>お気軽に投稿してください！</li>
-    </ul>
-</div>
 <form method="POST">
     {% csrf_token %}
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-12 col-md-12 col-sm-12">
-                <div class="row">
-                    <div class="col-6 col-md-6 col-sm-12">
-                        <div id="title">
-                            <p class="form-text">タイトル</p>
-                            <div class="input-group input-group-default">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="inputGroup-sizing-default">Title</span>
-                                </div>
-                                {{form.title}}
-                            </div>
-                        </div>
-                        <div id="tags">
-                            <p class="form-text">タグ</p>
-                            <div id="tag-form" class="input-group input-group-default mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="inputGroup-sizing-default">Tags</span>
-                                </div>
-                                {% for tag in tags %}
-                                    <input value="{{tag}}" type="text" name="tags" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" multiple>
-                                {% endfor %}
-                            </div>
-                            <button id="tag-add-button" type="button" class="btn btn-info">タグ追加</button>
-                            <!--<p class="tag-input"><input type="text" multiple name="tags" class="tag-input"></p>-->
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-6 col-sm-12">
-                        <div id="genre">
-                            <p class="form-text">ジャンル</p>
-                            <div id="selections" class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <label class="input-group-text" for="id_genre">Options</label>
-                                </div>
-                                <select name="genre" class="form-select" id="inputGroupSelect01">
-                                    {% if genre_selected is not None %}
-                                        {% for key, value in genre_selected.items %}
-                                            <option value="{{key}}" selected>{{value}}</option>
-                                        {% endfor %}
-                                    {% else %}
-                                        <option selected>選択肢</option>
-                                    {% endif %}
-            
-                                    {% for key, value in genres.items %}
-                                        <option value="{{key}}">{{value}}</option>
-                                    {% endfor %}
-                                </select>
-                                {% for error in form.genre.errors %}
-                                <p>{{error}}</p>
-                                {% endfor %}
-                            </div>
-                        </div>
-                        <div id="publish" class="d-flex">
-                            <span class="form-text">公開・下書き保存</span>
-                            <span class="mgr-10"></span>
-                            <div class="form-check form-switch align-self-center">
-                                {{form.is_published}}
-                                <label class="form-check-label" for="publish-or-not" ></label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <h2 class="input-margin">記事作成ページ</h2>
+    <div id="title" class="input-margin">
+        <div class="input-group input-group-default">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">タイトル</span>
             </div>
-            <div id="content-box" class="col-12 col-md-12 col-sm-12">
-                {{form.media}}
-                {{form.content}}
-            </div>
+            {{form.title}}
+        </div>
+        {% for error in form.title.errors %}
+            <div id="title-error" class="p-3 bg-danger bg-gradient text-white"><i id="title-error-delete-button" class="far fa-times-circle"></i>{{error}}</div>
+        {% endfor %}
+    </div>
+    <div id="tag" class="input-margin">
+        <div id="tag-form" class="input-group">
+            <span class="input-group-text">タグ</span>
+            <span class="input-group-text" id="addon-wrapping">追加</span>
+            {% for tag in tags %}
+                <input value="{{tag}}" type="text" name="tags" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" multiple>
+            {% endfor %}
         </div>
     </div>
-    <button>投稿</button>
+        <!--<button id="tag-add-button" type="button" class="btn btn-info">タグ追加</button>-->
+    <div id="genre" class="input-margin">
+        <div id="selections" class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="id_genre">Options</label>
+            </div>
+            <select name="genre" class="form-select" id="inputGroupSelect01">
+                {% if genre_selected is not None %}
+                    {% for key, value in genre_selected.items %}
+                        <option value="{{key}}" selected>{{value}}</option>
+                    {% endfor %}
+                {% else %}
+                    <option selected>選択肢</option>
+                {% endif %}
+                {% for key, value in genres.items %}
+                    <option value="{{key}}">{{value}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        {% for error in form.genre.errors %}
+            <div id="genre-error" class="p-3 bg-danger bg-gradient text-white"><i id="genre-error-delete-button" class="far fa-times-circle"></i>{{error}}</div>
+        {% endfor %}
+    </div>
+    <div id="content-box">
+        {{form.media}}
+        {{form.content}}
+        <span id="custom_img_cke" class="cke_toolbar cke_toolgroup" role="toolbar" style="display:none">
+        <span class="cke_toolbar_start"></span><span class="cke_toolgroup" role="presentation">
+        <label style="margin:20%;cursor:pointer;" id="cke_c" class="cke_button cke_button__image cke_button_off" href="javascript:void('Image')" title="Image"
+            tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_c_label" aria-describedby="cke_c_description" aria-haspopup="false" aria-disabled="false">
+        <input type="file" accept="image/jpeg,image/png" onchange="load_image_in_cke(this)" style="display: none; background-color: rgb(235, 235, 235);">
+        <span class="cke_button_icon cke_button__image_icon"
+            style="background-image:url('/static/ckeditor/ckeditor/plugins/icons.png?t=JB9C');
+            background-position:0 -960px;background-size:auto;">&nbsp;
+        </span>
+        <span id="cke_c_label" class="cke_button_label cke_button__image_label" aria-hidden="false">Image</span><span id="cke_c_description" class="cke_button_label" aria-hidden="false"></span></label></span><span class="cke_toolbar_end"></span></span>
+        {% for error in form.content.errors %}
+            <div id="content-error" class="p-3 bg-danger bg-gradient text-white"><i id="content-error-delete-button" class="far fa-times-circle"></i>{{error}}</div>
+        {% endfor %}
+    </div>
+    <div id="publish" class="input-margin">
+        <div class="form-check form-switch">
+            {{form.is_published}}
+            <label class="form-check-label" for="publish-or-not" >下書き保存・公開</label>
+        </div>
+    </div>
+    <button class="button-design">投稿</button>
 </form>
 <script>hljs.initHighlightingOnLoad();</script>
 {% endblock contents %}

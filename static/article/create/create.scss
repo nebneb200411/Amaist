@@ -53,7 +53,11 @@ main {
     }
 
     form {
-        margin: 0px 0px 0px 0px;
+        padding: 20px 0px 0px 0px;
+
+        h2 {
+            font-weight: bold;
+        }
 
         .form-text {
             font-size: 1.5rem;
@@ -61,6 +65,10 @@ main {
             color: white;
             padding: 10px 0px;
             text-align: center;
+        }
+
+        .input-margin {
+            margin: 30px 120px;
         }
 
         #title {
@@ -72,15 +80,13 @@ main {
             }
         }
 
-        #genre {
-            //margin: 20px 0 0 0;
-            padding: 0 10px 10px 10px;
-
-            #selections {
-                margin-left:5%;
-                width:90%;
+        #tag {
+            #addon-wrapping{
+                cursor: pointer;
             }
+        }
 
+        #genre {
             #genre-error {
                 #genre-error-delete-button {
                     cursor: pointer;
@@ -90,21 +96,24 @@ main {
             
         }
 
-        #tags {
-            margin: 0 0 0 0;
-            #tag-add-button {
-                width: 90px;
-                height: 40px;
+        #publish {
+            div {
+                label {
+                    font-weight: bold;
+                }
             }
         }
 
-        #publish {
-            margin: 20px 0 0 0;
+        button {
+            position: relative;
+            left: 0px;
+            height: 50px;
+            width: 100px;
         }
     }
 
     #content-box {
-        margin: 20px 0 0 0;
+        margin: 20px 0 0 120px;
         #content-error {
             #content-error-delete-button {
                 cursor: pointer;
@@ -114,9 +123,11 @@ main {
     }
 
     button {
-        margin: 10px 0 10px 15px;
-        width: 50px;
-        height: 30px;
+        margin-right: 30px;
+        margin-bottom: 30px;
+        margin-left: 120px;
+        width: 100px;
+        height: 50px;
         border: none;
         background-color: #0088ff;
         color: white;

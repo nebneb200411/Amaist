@@ -213,7 +213,6 @@ CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.j
 CKEDITOR_CONFIGS = {
 
     'default': {
-        'allowedContent': True,
         # css path
         #'contentsCss': os.path.join(BASE_DIR, '/static/ckeditor/ckeditor.css'),
         'width': '100%',
@@ -223,60 +222,52 @@ CKEDITOR_CONFIGS = {
         'toolbar_Basic': [
             ['Source', '-', 'Bold', 'Italic']
         ],
-        'toolbar_YourCustomToolbarConfig': [
-            {'name': 'document', 'items': [
-                'Source', '-', 'NewPage', 'Save', 'Preview', 'Print', '-', 'Templates']},
-            {'name': 'clipboard', 'items': [
-                'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo']},
-            {'name': 'editing', 'items': [
-                'Find', 'Replace', '-', 'SelectAll']},
-            {'name': 'forms',
-             'items': ['Form', 'Checkbox', 'Radio', 'TextField', 'Textarea', 'Select', 'Button', 'ImageButton',
-                       'HiddenField']},
-            '/',
+        'toolbar_Custom': [
+            #{'name': 'document', 'items': [
+                #'Source', '-', 'NewPage', 'Save', 'Preview', 'Print', '-', 'Templates']},
+            #{'name': 'clipboard', 'items': [
+                #'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo']},
+            #{'name': 'editing', 'items': [
+                #'Find', 'Replace', '-', 'SelectAll']},
+            #{'name': 'forms',
+             #'items': ['Form', 'Checkbox', 'Radio', 'TextField', 'Textarea', 'Select', 'Button', 'ImageButton',
+                       #'HiddenField']},
+            #'/',
+            {'name': 'styles', 'items': [
+                'Format', 'Font', 'FontSize','lineheight']},
             {'name': 'basicstyles',
-             'items': ['Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat']},
+             'items': ['TextColor', 'BGColor', 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript']},
             {'name': 'paragraph',
              'items': ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', 'CreateDiv', '-',
-                       'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'BidiLtr', 'BidiRtl', ]},
+                        'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'BidiLtr', 'BidiRtl', ]},
             {'name': 'links', 'items': ['Link', 'Unlink', 'Anchor']},
-            {'name': 'insert',
-             'items': ['Image', 'Flash', 'Table', 'HorizontalRule', 'SpecialChar', 'Iframe', 'Mathjax', ]},
             '/',
-            {'name': 'styles', 'items': [
-                'Styles', 'Format', 'Font', 'FontSize', 'CodeSnippet', 'lineheight', 'Contents']},
-            {'name': 'colors', 'items': ['TextColor', 'BGColor']},
-            {'name': 'tools', 'items': ['Maximize', 'pbckcode']},
-            {'name': 'about', 'items': ['About']},
-            '/',  # put this to force next toolbar on new line
-            {'name': 'yourcustomtools', 'items': [
-                # put the name of your editor.ui.addButton here
-                'Preview',
-                'Maximize',
-                'UIColor',
-
-            ]},
+            {'name': 'insert',
+                'items': ['Table', 'HorizontalRule', 'SpecialChar', 'Iframe', 'CodeSnippet', '-', 'RemoveFormat', 'pbckcode']},
+            {'name': 'mathtools', 'items': ['Mathjax']},
+            {'name': 'tools', 'items': ['Maximize']},
+            {'name': 'about', 'items': ['About', 'Source']},
         ],
-        'toolbar': 'full',#'YourCustomToolbarConfig',  # put selected toolbar config here
+        'toolbar': 'Custom',
+        #x'YourCustomToolbarConfig',  # put selected toolbar config here
         # 'toolbarGroups': [{ 'name': 'document', 'groups': [ 'mode', 'document', 'doctools' ] }],
         # 'height': 291,
-        'width': '100%',
-        'filebrowserWindowHeight': 725,
-        'filebrowserWindowWidth': '100%',
         # 'toolbarCanCollapse': True,
         # 'mathJaxLib': '//cdn.mathjax.org/mathjax/2.2-latest/MathJax.js?config=TeX-AMS_HTML',
         'tabSpaces': 4,
         'extraPlugins': ','.join([
             'uploadimage',  # the upload image feature
-            'image2',
+            'image2', 
+            'balloonpanel',
+            'balloontoolbar',
             # your extra plugins here
             'div',
             'autolink',
             'autoembed',
             'embedsemantic',
             'autogrow',
-            # 'devtools',
             'pbckcode',
+            # 'devtools',
             'widget',
             'lineutils',
             'clipboard',
@@ -285,10 +276,33 @@ CKEDITOR_CONFIGS = {
             'elementspath',
             'codesnippet',
             'ckeditor_wiris',
+            #'MathType',
+            #'ChemType',
             'mathjax',
             'uicolor',
             'lineheight',
             'contents',
         ]),
-    }
+
+        'allowedContent': True,
+    },
+
+    ### pbckcode ###
 }
+
+"""
+'pbckcode' : [
+        {'cls': ''},
+        {'highlighter': 'PRETTIFY'},
+        {'modes': [
+            ['Python' , 'python'],
+            ['HTML', 'html'], 
+            ['CSS', 'css'], 
+            ['PHP', 'php'], 
+            ['JS', 'javascript'],
+        ]},
+
+        {'theme': 'chrome'},
+        {'tab_size': '8'},
+    ],
+    """
