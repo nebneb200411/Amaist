@@ -81,6 +81,7 @@ INSTALLED_APPS = [
     'django_cleanup',
     'django.contrib.sites',
     'django.contrib.sitemaps',
+    'django_summernote',
 ]
 
 MIDDLEWARE = [

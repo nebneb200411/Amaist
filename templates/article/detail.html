@@ -2,6 +2,7 @@
 {% load static %}
 {% block stylesheet %}
     <title>{{object.title}}</title>
+    <meta name="description" content="{{article.content}}">
     <link rel="stylesheet" href="{% static 'article/detail/detail.css' %}">
     <link rel="stylesheet" href="{% static 'common/detail/detail.css' %}">
     <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/monokai.min.css">-->

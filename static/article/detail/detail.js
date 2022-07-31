@@ -15,6 +15,12 @@
 目次を作成する記事が格納されているdivのidをarticle-contents-boxとする
 */
 
+/*meta タグの調整*/
+$(function() {
+    const contents = $('#article-content-box').children('p').text()
+    $("meta[name='description']").attr('content', contents)
+});
+
 function IndexCreator() {
     function _create() {
         const INDEX = document.getElementById( 'table-of-contents' );
