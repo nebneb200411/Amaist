@@ -51,7 +51,6 @@ urlpatterns = [
          name='ckeditor_upload'),
      path('ckeditor/browse/', never_cache(login_required(ckeditor_views.browse)),
          name='ckeditor_browse'),
-     path('summernote/', include('django_summernote.urls')),
      path('notifications/', include('notifications.urls')),
      path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name="sitemaps"),
 ]
