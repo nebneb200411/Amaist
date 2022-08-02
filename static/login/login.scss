@@ -30,11 +30,15 @@ input {
             }
         }
 
-        #foget-password {
+        #links {
             margin-top:20px;
-            text-align: center;
-            a {
-                color:#12277d;
+            text-align: left;
+            p {
+                text-align: left;
+                a {
+                    text-decoration: none;
+                    color:#12277d;
+                }
             }
         }
     }
@@ -65,11 +69,16 @@ input {
             }
         }
 
-        #foget-password {
+        #links {
+            display: block;
             margin-top:20px;
             text-align: center;
-            a {
-                color:#12277d;
+            p {
+                text-align: left;
+                a {
+                    text-decoration: none;
+                    color:#12277d;
+                }
             }
         }
     }

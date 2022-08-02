@@ -28,11 +28,15 @@ input {
     width: 100%;
     margin: 10px 0 0 0;
   }
-  #login #foget-password {
+  #login #links {
     margin-top: 20px;
-    text-align: center;
+    text-align: left;
   }
-  #login #foget-password a {
+  #login #links p {
+    text-align: left;
+  }
+  #login #links p a {
+    text-decoration: none;
     color: #12277d;
   }
 }
@@ -61,11 +65,16 @@ input {
     width: 100%;
     margin: 10px 0 0 0;
   }
-  #login #foget-password {
+  #login #links {
+    display: block;
     margin-top: 20px;
     text-align: center;
   }
-  #login #foget-password a {
+  #login #links p {
+    text-align: left;
+  }
+  #login #links p a {
+    text-decoration: none;
     color: #12277d;
   }
 }

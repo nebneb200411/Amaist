@@ -17,121 +17,247 @@
     font-family: 'arial', 'MS Gothic';
 }
 
-main {
-    background-color: #d8d9d9;
-    #page-title-box {
-        display: table;
-        position: relative;
-        background-image: url(/static/images/article/create/create_article.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-        width: 100%;
-
-        #page-discription {
-            position: absolute;
-            padding: 100px 20px;
-            list-style: none;
-            color: white;
-
-            li {
-                font-family: 'MS Gothic';
-                size: 2rem;
-            }
-        }
-    }
-
-    #page-title-box::before {
-        content: '';
-        background-color: rgba(0, 0, 0, 0.4);
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        display: block;
-    }
-
-    form {
-        padding: 20px 0px 0px 0px;
-
-        h2 {
-            font-weight: bold;
-        }
-
-        .form-text {
-            font-size: 1.5rem;
-            margin: 0px;
-            color: white;
-            padding: 10px 0px;
-            text-align: center;
-        }
-
-        .input-margin {
-            margin: 30px 120px;
-        }
-
-        #title {
-            #title-error {
-                #title-error-delete-button {
-                    cursor: pointer;
-                    margin: 0 5px 0 0;
-                }
-            }
-        }
-
-        #tag {
-            #addon-wrapping{
-                cursor: pointer;
-            }
-        }
-
-        #genre {
-            #genre-error {
-                #genre-error-delete-button {
-                    cursor: pointer;
-                    margin: 0 5px 0 0;
-                }
-            }
-            
-        }
-
-        #publish {
-            div {
-                label {
-                    font-weight: bold;
-                }
-            }
-        }
-
-        button {
+//smartphone
+@media screen and (max-width:767px) {
+    main {
+        background-color: #d8d9d9;
+        #page-title-box {
+            display: table;
             position: relative;
-            left: 0px;
-            height: 50px;
-            width: 100px;
-        }
-    }
-
-    #content-box {
-        margin: 20px 0 0 120px;
-        #content-error {
-            #content-error-delete-button {
-                cursor: pointer;
-                margin: 0 5px 0 0;
+            background-image: url(/static/images/article/create/create_article.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+    
+            #page-discription {
+                position: absolute;
+                padding: 100px 20px;
+                list-style: none;
+                color: white;
+    
+                li {
+                    font-family: 'MS Gothic';
+                    size: 2rem;
+                }
             }
         }
-    }
-
-    button {
-        margin-right: 30px;
-        margin-bottom: 30px;
-        margin-left: 120px;
-        width: 100px;
-        height: 50px;
-        border: none;
-        background-color: #0088ff;
-        color: white;
-        border-radius: 3px;
-        cursor: pointer;
+    
+        #page-title-box::before {
+            content: '';
+            background-color: rgba(0, 0, 0, 0.4);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+    
+        form {
+            padding: 20px 0px 0px 0px;
+    
+            h2 {
+                font-weight: bold;
+            }
+    
+            .form-text {
+                font-size: 1.5rem;
+                margin: 0px;
+                color: white;
+                padding: 10px 0px;
+                text-align: center;
+            }
+    
+            .input-margin {
+                //margin: 30px 120px;
+            }
+    
+            #title {
+                #title-error {
+                    #title-error-delete-button {
+                        cursor: pointer;
+                        margin: 0 5px 0 0;
+                    }
+                }
+            }
+    
+            #tag {
+                #addon-wrapping{
+                    cursor: pointer;
+                }
+            }
+    
+            #genre {
+                #genre-error {
+                    #genre-error-delete-button {
+                        cursor: pointer;
+                        margin: 0 5px 0 0;
+                    }
+                }
+                
+            }
+    
+            #publish {
+                div {
+                    label {
+                        font-weight: bold;
+                    }
+                }
+            }
+    
+            button {
+                position: relative;
+                left: 0px;
+                height: 50px;
+                width: 100px;
+            }
+        }
+    
+        #content-box {
+            //margin: 20px 0 0 0px;
+            #content-error {
+                #content-error-delete-button {
+                    cursor: pointer;
+                    margin: 0 5px 0 0;
+                }
+            }
+        }
+    
+        button {
+            margin-top: 50px;
+            margin-right: 30px;
+            margin-bottom: 30px;
+            margin-left: 120px;
+            width: 100px;
+            height: 50px;
+            border: none;
+            background-color: #0088ff;
+            color: white;
+            border-radius: 3px;
+            cursor: pointer;
+        }
     }
 }
+
+@media screen and (min-width:768px) {
+    main {
+        background-color: #d8d9d9;
+        #page-title-box {
+            display: table;
+            position: relative;
+            background-image: url(/static/images/article/create/create_article.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+    
+            #page-discription {
+                position: absolute;
+                padding: 100px 20px;
+                list-style: none;
+                color: white;
+    
+                li {
+                    font-family: 'MS Gothic';
+                    size: 2rem;
+                }
+            }
+        }
+    
+        #page-title-box::before {
+            content: '';
+            background-color: rgba(0, 0, 0, 0.4);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+    
+        form {
+            padding: 20px 0px 0px 0px;
+    
+            h2 {
+                font-weight: bold;
+            }
+    
+            .form-text {
+                font-size: 1.5rem;
+                margin: 0px;
+                color: white;
+                padding: 10px 0px;
+                text-align: center;
+            }
+    
+            .input-margin {
+                margin: 30px 120px;
+            }
+    
+            #title {
+                #title-error {
+                    #title-error-delete-button {
+                        cursor: pointer;
+                        margin: 0 5px 0 0;
+                    }
+                }
+            }
+    
+            #tag {
+                #addon-wrapping{
+                    cursor: pointer;
+                }
+            }
+    
+            #genre {
+                #genre-error {
+                    #genre-error-delete-button {
+                        cursor: pointer;
+                        margin: 0 5px 0 0;
+                    }
+                }
+                
+            }
+    
+            #publish {
+                div {
+                    label {
+                        font-weight: bold;
+                    }
+                }
+            }
+    
+            button {
+                position: relative;
+                left: 0px;
+                height: 50px;
+                width: 100px;
+            }
+        }
+    
+        #content-box {
+            margin: 20px 0 0 120px;
+            #content-error {
+                #content-error-delete-button {
+                    cursor: pointer;
+                    margin: 0 5px 0 0;
+                }
+            }
+        }
+    
+        button {
+            margin-right: 30px;
+            margin-bottom: 30px;
+            margin-left: 120px;
+            width: 100px;
+            height: 50px;
+            border: none;
+            background-color: #0088ff;
+            color: white;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+    }
+}
+

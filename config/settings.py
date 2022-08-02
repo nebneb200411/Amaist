@@ -219,7 +219,7 @@ CKEDITOR_CONFIGS = {
 
         'width': '100%',
         'skin': 'moono-lisa',
-        'codeSnippet_theme': 'ir_black',
+        #'codeSnippet_theme': 'ir_black',
         # 'skin': 'office2013',
         'toolbar_Basic': [
             ['Source', '-', 'Bold', 'Italic']
@@ -245,10 +245,10 @@ CKEDITOR_CONFIGS = {
             {'name': 'links', 'items': ['Link', 'Unlink', 'Anchor']},
             '/',
             {'name': 'insert',
-                'items': ['Table', 'HorizontalRule', 'SpecialChar', 'Iframe', 'CodeSnippet', '-', 'RemoveFormat', 'pbckcode']},
+                'items': ['Table', 'HorizontalRule', 'SpecialChar', 'Iframe', '-', 'RemoveFormat', 'pbckcode']},
             {'name': 'mathtools', 'items': ['Mathjax']},
             {'name': 'tools', 'items': ['Maximize']},
-            {'name': 'about', 'items': ['About', 'Source']},
+            {'name': 'about', 'items': ['About', 'Source', 'Image']},
         ],
         'toolbar': 'Custom',
         #x'YourCustomToolbarConfig',  # put selected toolbar config here

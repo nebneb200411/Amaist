@@ -22,10 +22,15 @@
             </div>
             <button class="button-design" type="submit">送信</button>
         </form>
-        <div id="foget-password">
-            <a class="link-hover-big" href="{% url 'password_reset' %}">
-                <i class="fas fa-question-circle"></i><span class="mgr-10"></span>パスワードを忘れた場合
-            </a>
+        <div id="links">
+            <p>
+                <a class="link-hover-big" href="{% url 'password_reset' %}">
+                    パスワードを忘れた場合
+                </a>
+            </p>
+            <p>
+                <a href="{% url 'sign_up' %}" class="link-hover-big">アカウント作成</a>
+            </p>
         </div>
     </div>
 {% endblock contents%}
