@@ -216,6 +216,7 @@ CKEDITOR_CONFIGS = {
     'default': {
         # css path
         #'contentsCss': os.path.join(BASE_DIR, '/static/ckeditor/ckeditor.css'),
+
         'width': '100%',
         'skin': 'moono-lisa',
         'codeSnippet_theme': 'ir_black',

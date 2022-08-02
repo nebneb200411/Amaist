@@ -54,10 +54,16 @@ class SignUpView(CreateView):
             user.email_user(subject, message)
         return render(self.request, 'registration/signup_confirmation.html', {'registered_user': user})
 
+class UserDeleteConfirmView(LoginRequiredMixin, TemplateView):
+    template_name = 'registration/user_delete_confirm.html'
 
-class UserDeleteView(DeleteView):
-    model = User
-    success_url = reverse_lazy('login')
+class UserDeleteView(LoginRequiredMixin, TemplateView):
+    def get(self, *args, **kwargs):
+        user = User.objects.get(id=self.request.user.id)
+        user.delete()
+        return render('login')
+        
+    
 
 class ActivateView(TemplateView):
     template_name = 'registration/activate.html'

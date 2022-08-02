@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block stylesheet %}
+<title>login</title>
+{% endblock %}
+{% block contents %}
+    <div>
+        <h2 class="font-arial-MSGothic">アカウントを削除しますか？</h2>
+        <a href="{% url 'registration:delete' request.user.id %}" class="button-design">アカウントを削除</a>
+    </div>
+{% endblock contents%}
+
