@@ -8,3 +8,6 @@ media
 *.css.map
 *.DS_Store
 *.vscode
+Pipfile
+Pipfile.lock
+Pipfile
