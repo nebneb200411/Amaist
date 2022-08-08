@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block stylesheet %}
+<title>お支払い</title>
+{% endblock %}
+{% block contents %}
+    <h1>お支払い</h1>
+    <form action="{% url 'article:payment' %}" method="post">
+        {% csrf_token %}
+        <h5>お支払い500円</h5>
+        <script type="text/javascript" src="https://checkout.pay.jp" class="payjp-button" data-key="{{ publick_key }}"></script>
+    </form>
+{% endblock contents %}

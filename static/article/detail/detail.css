@@ -1,3 +1,4 @@
+@charset "UTF-8";
 *,
 *::before,
 *::after {
@@ -371,6 +372,19 @@ span {
     max-height: 1080px;
     margin: 0 auto;
   }
+  #article-content-box .summarize-container:before {
+    font-size: 1rem;
+    color: white;
+    content: 'まとめ';
+  }
+  #article-content-box .define-container:before {
+    font-size: 1rem;
+    content: '定義';
+  }
+  #article-content-box .recommend-container:before {
+    font-size: 1rem;
+    content: 'こんな方におすすめ！';
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -719,6 +733,19 @@ span {
     max-width: 1920px;
     max-height: 1080px;
     margin: 0 auto;
+  }
+  #article-content-box .summarize-container:before {
+    font-size: 1rem;
+    color: white;
+    content: 'まとめ';
+  }
+  #article-content-box .define-container:before {
+    font-size: 1rem;
+    content: '定義';
+  }
+  #article-content-box .recommend-container:before {
+    font-size: 1rem;
+    content: 'こんな方におすすめ！';
   }
 }
 /*# sourceMappingURL=detail.css.map */

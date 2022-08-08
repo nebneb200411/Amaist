@@ -37,13 +37,13 @@ class User(AbstractUser):
     id = models.UUIDField(default=uuid.uuid4, primary_key=True, editable=False)
 
     email = models.EmailField('メールアドレス',
-                              unique=True,
-                              error_messages={
-                                  'invalid': "正しいメールアドレスを入力してください．",
-                                  'unique': "このメールアドレスは既に登録されています．",
-                                  'required': "この項目は必須です．",
-                              }
-                              )
+                                unique=True,
+                                error_messages={
+                                    'invalid': "正しいメールアドレスを入力してください．",
+                                    'unique': "このメールアドレスは既に登録されています．",
+                                    'required': "この項目は必須です．",
+                                }
+                            )
     username = models.CharField(
         _('username'), unique=True, max_length=50, blank=False,
         help_text='必須の項目です．全角文字，半角英数字，@/./+/-/_ で50文字以下にしてください．',

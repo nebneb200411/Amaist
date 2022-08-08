@@ -208,3 +208,19 @@ img.image-grayscale {
     max-height: 1080px;
     margin: 0 auto;
 }
+
+.summarize-container:before {
+    font-size: 1rem;
+    color: white;
+    content: 'まとめ';
+}
+
+.define-container:before {
+    font-size: 1rem;
+    content: '定義';
+}
+
+.recommend-container:before {
+    font-size: 1rem;
+    content: 'こんな方におすすめ！';
+}

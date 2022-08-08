@@ -41,8 +41,43 @@ CKEDITOR.stylesSet.add('default', [
 		styles: {
 			padding: '5px 10px',
 			background: '#eee',
-			border: '1px solid #ccc'
+			border: '1px solid #ccc',
+			'font-weight': 'bold',
 		}
+	},
+	{
+		name: '見てほしい人',
+		element: 'div',
+		styles: {
+			padding: '5px 10px',
+			background: '#f8d0b0',
+			border: '1px solid #f8afb3',
+			'font-weight': 'bold',
+		},
+		attributes: { 'class': 'recommend-container' }
+	},
+	{
+		name: '定義',
+		element: 'div',
+		styles: {
+			padding: '5px 10px',
+			background: '#eee',
+			border: '1px solid #ccc',
+			'font-weight': 'bold',
+		},
+		attributes: { 'class': 'define-container' }
+	},
+	{
+		name: 'まとめ',
+		element: 'div',
+		styles: {
+			padding: '5px 10px',
+			background: '#7adeff',
+			border: '2px solid #eee',
+			'border-radius': '5px',
+			'font-weight': 'bold',
+		},
+		attributes: { 'class': 'summarize-container' }
 	},
 
 	/* Inline styles */

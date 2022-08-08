@@ -1,5 +1,6 @@
-from ast import Return
-from django.views.generic import CreateView, ListView, DetailView, UpdateView, DeleteView
+from locale import currency
+from multiprocessing import context
+from django.views.generic import CreateView, ListView, DetailView, UpdateView, DeleteView, View
 from .forms import ArticleForm, ArticleCommentForm
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -10,6 +11,9 @@ from profiles.models import Profile
 from django.db.models import Q
 from notifications.models import Notifications
 from django.conf import settings
+from django.shortcuts import render
+import payjp
+
 
 def key_to_value(dict_obj, key):
     value = dict_obj[key]
@@ -298,3 +302,29 @@ def comment(request):
 
     else:
         return redirect('article:list')
+
+
+### payment ###
+class PaymentView(View):
+    def get(self, request):
+        return render(request, "article/payment.html", {"publick_key": settings.PUBLIC_KEY})
+    
+    def post(self, request):
+        amount = 500 #request.POST.get("amount")
+        payjp_token = request.POST.get("payjp-token")
+        
+        # get customer token
+        customer = payjp.Customer.create(email="example@pay.jp", card=payjp_token)
+
+        # payment
+        charge = payjp.Charge.create(
+            amount=amount,
+            currency="jpy",
+            customer=customer.id,
+            description="Django example charge",
+        )
+
+        context = {"amount": amount, "customer": customer, "charge": charge}
+
+        return render(request, "article/payment.html", context)
+        

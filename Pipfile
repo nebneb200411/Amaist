@@ -18,6 +18,7 @@ sqlparse = "==0.4.1"
 Django = "==3.2.5"
 Pillow = "==8.3.1"
 django-ckeditor-5 = "*"
+payjp = "*"
 
 [dev-packages]
 

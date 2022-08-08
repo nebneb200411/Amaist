@@ -173,6 +173,7 @@ EMAIL_USE_TLS = True
 DEFAUL_FROM_EMAIL = 'noreply.datalabo@gmail.com'
 
 
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
@@ -259,7 +260,7 @@ CKEDITOR_CONFIGS = {
         'tabSpaces': 4,
         'extraPlugins': ','.join([
             'uploadimage',  # the upload image feature
-            'image2', 
+            #'image2', 
             'balloonpanel',
             'balloontoolbar',
             # your extra plugins here
@@ -291,20 +292,3 @@ CKEDITOR_CONFIGS = {
 
     ### pbckcode ###
 }
-
-"""
-'pbckcode' : [
-        {'cls': ''},
-        {'highlighter': 'PRETTIFY'},
-        {'modes': [
-            ['Python' , 'python'],
-            ['HTML', 'html'], 
-            ['CSS', 'css'], 
-            ['PHP', 'php'], 
-            ['JS', 'javascript'],
-        ]},
-
-        {'theme': 'chrome'},
-        {'tab_size': '8'},
-    ],
-    """
