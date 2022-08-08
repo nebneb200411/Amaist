@@ -212,15 +212,15 @@ img.image-grayscale {
 .summarize-container:before {
     font-size: 1rem;
     color: white;
-    content: 'まとめ';
+    content: '【まとめ】';
 }
 
 .define-container:before {
     font-size: 1rem;
-    content: '定義';
+    content: '【定義】';
 }
 
 .recommend-container:before {
     font-size: 1rem;
-    content: 'こんな方におすすめ！';
+    content: '【こんな方におすすめ！】';
 }

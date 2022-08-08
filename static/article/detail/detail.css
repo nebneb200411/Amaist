@@ -737,15 +737,15 @@ span {
   #article-content-box .summarize-container:before {
     font-size: 1rem;
     color: white;
-    content: 'まとめ';
+    content: '【まとめ】';
   }
   #article-content-box .define-container:before {
     font-size: 1rem;
-    content: '定義';
+    content: '【定義】';
   }
   #article-content-box .recommend-container:before {
     font-size: 1rem;
-    content: 'こんな方におすすめ！';
+    content: '【こんな方におすすめ！】';
   }
 }
 /*# sourceMappingURL=detail.css.map */
