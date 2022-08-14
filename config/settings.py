@@ -248,8 +248,8 @@ CKEDITOR_CONFIGS = {
             {'name': 'insert',
                 'items': ['Table', 'HorizontalRule', 'SpecialChar', 'Iframe', '-', 'RemoveFormat', 'pbckcode']},
             {'name': 'mathtools', 'items': ['Mathjax']},
-            {'name': 'tools', 'items': ['Maximize']},
-            {'name': 'about', 'items': ['About', 'Source', 'Image']},
+            {'name': 'tools', 'items': ['Maximize', 'About', 'Source']},
+            {'name': 'about', 'items': ['Image']},
         ],
         'toolbar': 'Custom',
         #x'YourCustomToolbarConfig',  # put selected toolbar config here
