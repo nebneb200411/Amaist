@@ -145,7 +145,7 @@ class ArticleDetailView(DetailView):
         context['form'] = form
 
         # get new articles
-        new_articles = Article.objects.all().order_by('-created_at')
+        new_articles = Article.objects.filter(is_published=True).order_by('-created_at')
         if len(new_articles) < 5:
             new_articles = new_articles
         else:
@@ -154,7 +154,7 @@ class ArticleDetailView(DetailView):
 
         # get related articles
         genre = article.genre
-        relate_articles = Article.objects.filter(genre=genre).order_by('-created_at')
+        relate_articles = Article.objects.filter(genre=genre, is_published=True).order_by('-created_at')
         if len(relate_articles) < 5:
             relate_articles = relate_articles
         else:
