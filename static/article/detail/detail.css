@@ -385,6 +385,10 @@ span {
     font-size: 1rem;
     content: 'こんな方におすすめ！';
   }
+  #article-content-box .conclusion-container:before {
+    font-size: 1rem;
+    content: '【結論】';
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -746,6 +750,10 @@ span {
   #article-content-box .recommend-container:before {
     font-size: 1rem;
     content: '【こんな方におすすめ！】';
+  }
+  #article-content-box .conclusion-container:before {
+    font-size: 1rem;
+    content: '【結論】';
   }
 }
 /*# sourceMappingURL=detail.css.map */

@@ -72,12 +72,24 @@ CKEDITOR.stylesSet.add('default', [
 		element: 'div',
 		styles: {
 			padding: '5px 10px',
-			background: '#7adeff',
+			background: '#c6ddec',
 			border: '2px solid #eee',
 			'border-radius': '5px',
 			'font-weight': 'bold',
 		},
 		attributes: { 'class': 'summarize-container' }
+	},
+	{
+		name: '結論',
+		element: 'div',
+		styles: {
+			padding: '5px 10px',
+			background: '#fcdce0',
+			border: '2px solid #eee',
+			'border-radius': '5px',
+			'font-weight': 'bold',
+		},
+		attributes: { 'class': 'conclusion-container' }
 	},
 
 	/* Inline styles */
@@ -138,7 +150,8 @@ CKEDITOR.stylesSet.add('default', [
 			bordercolor: '#ccc'
 		},
 		styles: {
-			'border-collapse': 'collapse'
+			'border-collapse': 'collapse',
+			'background-color' : "#7adeff",
 		}
 	},
 

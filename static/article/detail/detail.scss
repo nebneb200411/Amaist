@@ -465,6 +465,11 @@ span {
             font-size: 1rem;
             content: 'こんな方におすすめ！';
         }
+
+        .conclusion-container:before {
+            font-size: 1rem;
+            content: '【結論】';
+        }
     }
 }
 
@@ -914,6 +919,11 @@ span {
         .recommend-container:before {
             font-size: 1rem;
             content: '【こんな方におすすめ！】';
+        }
+
+        .conclusion-container:before {
+            font-size: 1rem;
+            content: '【結論】';
         }
     }
 }

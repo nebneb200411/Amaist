@@ -224,3 +224,8 @@ img.image-grayscale {
     font-size: 1rem;
     content: '【こんな方におすすめ！】';
 }
+
+.conclusion-container:before {
+    font-size: 1rem;
+    content: '【結論】';
+}
