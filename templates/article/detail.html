@@ -41,14 +41,15 @@
                 </div>
             </div>
             <div id="user-info" class="d-flex">
-                <a href="{% url 'profiles:otheruser_profile' profile.pk %}" class="align-self-center">
-                    <img src="{{MEDIA_URL}}{{object.author.user.icon}}">
-                </a>
+                <img src="{{MEDIA_URL}}{{object.author.user.icon}}">
                 <div class="align-self-center">
-                    <a href="{% url 'profiles:otheruser_profile' profile.pk %}" class="align-self-center">
                         <span class="common-font">{{object.author}}</span>
-                    </a>
                 </div>
+            </div>
+            <div id="payment-box">
+                {% if request.user.is_authenticated %}
+                <a href="{% url 'article:payment' article_id=object.pk %}">購入する</a>
+                {% endif %}
             </div>
             <div id="good-box">
                 {% if request.user.is_authenticated %}

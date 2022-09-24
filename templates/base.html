@@ -54,31 +54,6 @@
                         <li class="link-to-contents">
                             <a href="{% url 'article:list' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>記事一覧</a>
                         </li>
-                        <li class="link-to-contents">
-                            <a href="{% url 'article:CreateArticle' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>記事作成</a>
-                        </li>
-                    </ul>
-                </li>
-                <li id="datalibrary-first-menu" class="first-menu">
-                    <ul class="second-menu" id="datalibrary-second-menu">
-                        <li id="datalibrary-menu"><i class="fas fa-database"></i><span class="mgr-10"></span>DataLibrary</li>
-                        <li class="link-to-contents">
-                            <a href="{% url 'data_library:list' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>データ一覧</a>
-                        </li>
-                        <li class="link-to-contents">
-                            <a href="{% url 'data_library:create' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>データの投稿</a>
-                        </li>
-                    </ul>
-                </li>
-                <li id="question-first-menu" class="first-menu">
-                    <ul class="second-menu" id="question-second-menu">
-                        <li id="question-menu"><i class="fas fa-question"></i></i><span class="mgr-10"></span>Questions</li>
-                        <li class="link-to-contents">
-                            <a href="{% url 'question:list' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>質問一覧</a>
-                        </li>
-                        <li class="link-to-contents">
-                            <a href="{% url 'question:create' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>質問作成</a>
-                        </li>
                     </ul>
                 </li>
                 {% if request.user.is_authenticated %}
@@ -87,9 +62,6 @@
                         <li id="profile-menu"><i class="fas fa-user-circle"></i><span class="mgr-10"></span>Profile</li>
                         <li class="link-to-contents">
                             <a href="{% url 'profiles:found_or_not_found' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>{{request.user.username}}さんのプロフィール</a>
-                        </li>
-                        <li class="link-to-contents">
-                            <a href="{% url 'profiles:profile_list' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>プロフィール一覧</a>
                         </li>
                         <li class="link-to-contents"><a href="{% url 'login' %}"><i class="fas fa-sign-in-alt"></i><span class="mgr-10"></span>Login</a></li>
                         <li class="link-to-contents">
@@ -139,31 +111,6 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'article:list' %}">記事一覧</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'article:CreateArticle' %}">記事作成</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item top-nav">
-                    <a class="nav-link" href="{% url 'data_library:list' %}">DataLibrary</a>
-                    <ul class="sub-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'data_library:list' %}">データ一覧</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'data_library:create' %}">記事作成</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item top-nav">
-                    <a class="nav-link" href="{% url 'question:list' %}">Question</a>
-                    <ul class="sub-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'question:list' %}">質問一覧</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'question:create' %}">質問作成</a>
-                        </li>
                     </ul>
                 </li>
                 {% if request.user.is_authenticated %}
@@ -172,9 +119,6 @@
                     <ul class="sub-nav">
                         <li class="link-to-contents">
                             <a class="nav-link" href="{% url 'profiles:found_or_not_found' %}">{{request.user.username}}さんのプロフィール</a>
-                        </li>
-                        <li class="link-to-contents">
-                            <a class="nav-link" href="{% url 'profiles:profile_list' %}">プロフィール一覧</a>
                         </li>
                         <li class="link-to-contents">
                             <a class="nav-link" href="{% url 'login' %}">Login</a>
@@ -225,7 +169,7 @@
         <div id="app-box" class="d-flex">
             <img id="footer-icon" src="{% static 'images/base/icon.png' %}"></img>
             <div class="align-self-center">
-                <span id="app-subtitle" class="font"><span class="app-title-emphasize">データ分析愛好家</span>のための記事作成サービス</span><br>
+                <span id="app-subtitle" class="font">
                 <span id="app-maintitle" class="font">Dataラボ</span>
             </div>
         </div>
@@ -235,36 +179,12 @@
                 <li class="link-hover-big">
                     <a href="{% url 'article:list' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>記事一覧</a>
                 </li>
-                <li class="link-hover-big">
-                    <a href="{% url 'article:CreateArticle' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>記事作成</a>
-                </li>
-            </ul>
-            <ul>
-                <h5>データ</h5>
-                <li class="link-hover-big">
-                    <a href="{% url 'data_library:list' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>データ一覧</a>
-                </li>
-                <li class="link-hover-big">
-                    <a href="{% url 'data_library:create' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>データの投稿</a>
-                </li>
-            </ul>
-            <ul>
-                <h5>質問</h5>
-                <li class="link-hover-big">
-                    <a href="{% url 'question:list' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>質問一覧</a>
-                </li>
-                <li class="link-hover-big">
-                    <a href="{% url 'question:create' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>質問作成</a>
-                </li>
             </ul>
             <ul>
                 <h5>アカウント</h5>
                 {% if request.user.is_authenticated %}
                     <li class="link-hover-big">
                         <a href="{% url 'profiles:found_or_not_found' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>{{request.user.username}}さんのプロフィール</a>
-                    </li>
-                    <li class="link-hover-big">
-                        <a href="{% url 'profiles:profile_list' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>プロフィール一覧</a>
                     </li>
                     <li class="link-hover-big"><a href="{% url 'login' %}"><i class="fas fa-angle-right"></i><span class="mgr-10"></span>ログイン</a></li>
                     <li class="link-hover-big">

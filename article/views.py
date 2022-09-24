@@ -1,11 +1,11 @@
 from locale import currency
 from multiprocessing import context
-from django.views.generic import CreateView, ListView, DetailView, UpdateView, DeleteView, View
+from django.views.generic import CreateView, ListView, DetailView, UpdateView, DeleteView, TemplateView
 from .forms import ArticleForm, ArticleCommentForm
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import redirect
-from .models import Article, Comment, Tag
+from .models import Article, Comment, Tag, Order
 from django.contrib import messages
 from profiles.models import Profile
 from django.db.models import Q
@@ -25,6 +25,12 @@ class ArticleFormCreateView(LoginRequiredMixin, CreateView):
     template_name = "article/create_article.html"
     success_url = reverse_lazy('article:list')
     model = Article
+
+    def get(self, request, *args, **kwargs):
+        if request.user.is_staff:
+            return super().get(request, *args, **kwargs)
+        else:
+            return redirect('article:list')
 
     def get_context_data(self, **kawargs):
         context = super().get_context_data(**kawargs)
@@ -304,27 +310,60 @@ def comment(request):
         return redirect('article:list')
 
 
-### payment ###
-class PaymentView(View):
-    def get(self, request):
-        return render(request, "article/payment.html", {"publick_key": settings.PUBLIC_KEY})
+class PaymentView(TemplateView, LoginRequiredMixin):
+    template_name = "article/payment.html"
+    def get(self, request, article_id):
+        article = Article.objects.get(pk=article_id)
+        is_payment = article.is_payment
+        if is_payment:
+            pass
+        else:
+            return redirect('article:list')
+        return render(request, "article/payment.html", {"publick_key": settings.PUBLIC_KEY, "purchase_article":article, "article_id":article_id})
     
-    def post(self, request):
-        amount = 500 #request.POST.get("amount")
+    def post(self, request, article_id):
+        """
+        return result to inform customer payment result
+        """
+        amount = request.POST.get("amount")
         payjp_token = request.POST.get("payjp-token")
+        email = request.POST.get("customer-email")
+        article_id = request.POST.get("article-id")
+
+        is_purchased = self.check_purchase(user_id=self.request.user.id, article_id=article_id)
         
-        # get customer token
-        customer = payjp.Customer.create(email="example@pay.jp", card=payjp_token)
+        if not is_purchased:
+            # get customer token
+            customer = payjp.Customer.create(email=email, card=payjp_token)
 
-        # payment
-        charge = payjp.Charge.create(
-            amount=amount,
-            currency="jpy",
-            customer=customer.id,
-            description="Django example charge",
-        )
+            # payment
+            charge = payjp.Charge.create(
+                amount=amount,
+                currency="jpy",
+                customer=customer.id,
+                description="Django example charge",
+            )
 
-        context = {"amount": amount, "customer": customer, "charge": charge}
+            if charge:
+                article = Article.objects.get(pk=article_id)
+                Order.objects.create(
+                        user=self.request.user, 
+                        customer_id=customer.id,
+                        article_id=article,
+                        token_id=payjp_token,
+                    )
+            else:
+                return render(request, "article/payment_error.html")
+        else:
+            return render(request, "article/already_purchased.html")
 
-        return render(request, "article/payment.html", context)
-        
+        #context = {"amount": amount, "customer": customer, "charge": charge, "article_id":article_id}
+        return render(request, "article/payment_done.html")
+    
+    def check_purchase(self, user_id, article_id):
+        orders = Order.objects.filter(user_id=user_id, article_id=article_id)
+        if orders:
+            is_purchased = True
+        else:
+            is_purchased = False
+        return is_purchased

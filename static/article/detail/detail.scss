@@ -88,17 +88,11 @@ span {
                             font-size: 1rem;
                         }
 
-                        a {
-                            margin: 0px 3px;
-                            color:#a17636;
-                            text-decoration: none;
-
-                            img {
-                                height: 80px;
-                                width: auto;
-                                background: linear-gradient(-45deg, #c21500 0%, #ffc500 100%);
-                                border-radius: 50%;
-                            }
+                        img {
+                            height: 80px;
+                            width: auto;
+                            background: linear-gradient(-45deg, #c21500 0%, #ffc500 100%);
+                            border-radius: 50%;
                         }
                     }
 
@@ -517,18 +511,11 @@ span {
     
                     #user-info {
                         margin: 10px 0;
-                        a {
-                            font-size: 1rem;
-                            text-decoration: none;
-                            font-weight: bold;
-                            margin: 0px 10px;
-                            color:black;
     
-                            img {
-                                height: 50px;
-                                width: auto;
-                                border-radius: 50%;
-                            }
+                        img {
+                            height: 50px;
+                            width: auto;
+                            border-radius: 50%;
                         }
                     }
     

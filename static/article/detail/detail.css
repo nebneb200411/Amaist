@@ -74,12 +74,7 @@ span {
   main div div #article-content #user-info h5 {
     font-size: 1rem;
   }
-  main div div #article-content #user-info a {
-    margin: 0px 3px;
-    color: #a17636;
-    text-decoration: none;
-  }
-  main div div #article-content #user-info a img {
+  main div div #article-content #user-info img {
     height: 80px;
     width: auto;
     background: linear-gradient(-45deg, #c21500 0%, #ffc500 100%);
@@ -421,14 +416,7 @@ span {
   main #container-box #row-box #article-content #user-info {
     margin: 10px 0;
   }
-  main #container-box #row-box #article-content #user-info a {
-    font-size: 1rem;
-    text-decoration: none;
-    font-weight: bold;
-    margin: 0px 10px;
-    color: black;
-  }
-  main #container-box #row-box #article-content #user-info a img {
+  main #container-box #row-box #article-content #user-info img {
     height: 50px;
     width: auto;
     border-radius: 50%;

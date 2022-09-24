@@ -10,15 +10,20 @@ urlpatterns = [
           views.profile_not_found, name='profile_detail'),
      path('profile_detail/<uuid:pk>/', views.UserProfileDetailView.as_view(),
           name='profile_detail'),
-     path('follow_or_unfollow/', views.follow_unfollow_view,
-          name='follow_unfollow_view'),
-     path('', views.ProfileListView.as_view(), name='profile_list'),
      path('profile_create/', views.UserProfileCreateView.as_view(),
           name='profile_create'),
      path('found_or_not_found/',
           views.profile_not_found, name='found_or_not_found'),
-     path('profile/<uuid:pk>/', views.OtherUserProfileView.as_view(),
-          name='otheruser_profile'),
-     path('follower_list/<uuid:pk>/', views.FollowerListView.as_view(), name = "follower_list"), 
-     path('follwing_list/<uuid:pk>/', views.FollowingListView.as_view(), name = "following_list"), 
 ]
+
+"""
+path('follow_or_unfollow/', views.follow_unfollow_view,
+     name='follow_unfollow_view'),
+path('', views.ProfileListView.as_view(), name='profile_list'),
+"""
+"""
+path('profile/<uuid:pk>/', views.OtherUserProfileView.as_view(),
+     name='otheruser_profile'),
+path('follower_list/<uuid:pk>/', views.FollowerListView.as_view(), name = "follower_list"), 
+path('follwing_list/<uuid:pk>/', views.FollowingListView.as_view(), name = "following_list"), 
+"""

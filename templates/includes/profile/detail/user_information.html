@@ -14,19 +14,6 @@
                     <span class="mgr-10"></span>
                     <div id="follower-following">
                         <p class="font-arial-MSGothic title-two-colorbar"><i class="fas fa-user"></i><span class="mgr-10"></span>{{object.user.username}}</p>
-                        <p class="font-arial-MSGothic">
-                            <span class="follow-follower">
-                                {{login_user_follow_count}}
-                                <span class="mgr-10"></span>
-                                <a class="link-hover-big" href="{% url 'profiles:following_list' profile.pk %}">フォロー中</a>
-                            </span>
-                            <span class="mgr-10"></span>
-                            <span class="follow-follower">
-                                {{login_user_follower_count}}
-                                <span class="mgr-10"></span>
-                                <a class="link-hover-big" href="{% url 'profiles:follower_list' profile.pk %}">フォロワー</a>
-                            </span>
-                        </p>
                     </div>
                 </div>
                 <div id="introduce-box" class="card">
