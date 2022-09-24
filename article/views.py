@@ -27,7 +27,7 @@ class ArticleFormCreateView(LoginRequiredMixin, CreateView):
     model = Article
 
     def get(self, request, *args, **kwargs):
-        if request.user.is_staff():
+        if request.user.is_staff:
             return super().get(request, *args, **kwargs)
         else:
             return redirect('article:list')
